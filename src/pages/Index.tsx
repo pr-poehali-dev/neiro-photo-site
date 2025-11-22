@@ -157,7 +157,7 @@ const Index = () => {
               </div>
               <CardContent className="p-6">
                 <h3 className="text-2xl font-bold mb-2">Мария</h3>
-                <p className="text-secondary font-semibold mb-3">Классический фотограф</p>
+                <p className="text-secondary font-semibold mb-3">Классический фотограф (г.Новосибирск)</p>
                 <p className="text-muted-foreground">Специализируюсь на Lifestyle стиле. Ловлю искренние эмоции и важные моменты.</p>
               </CardContent>
             </Card>
