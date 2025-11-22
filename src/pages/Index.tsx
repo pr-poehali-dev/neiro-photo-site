@@ -260,40 +260,6 @@ const Index = () => {
           </div>
         </div>
 
-        <!-- Карточка Марии -->
-        <div className="card">
-          <div className="flex items-start gap-6">
-            <div className="icon-box">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" width="32" height="32"><path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 12v6H6V6h6v6z"/></svg>
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold mb-2">Мария</h3>
-              <p className="font-semibold mb-4">Классический фотограф</p>
-              <p className="text-muted-foreground leading-relaxed">
-                В профессии 10 лет. Специализируюсь на свадебной и семейной фотографии. Мой стиль — естественность и искренность. Не ставлю жесткие позы, а создаю комфортную атмосферу, где люди чувствуют себя свободно. Сняла более 150 свадеб и сотни семейных фотосессий. Каждый проект для меня — это история любви.
-              </p>
-            </div>
-          </div>
-            </Card>
-
-            <Card className="p-8 hover:shadow-lg transition-shadow">
-              <div className="flex items-start gap-6">
-                <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                  <Icon name="Camera" className="text-secondary" size={32} />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">Мария</h3>
-                  <p className="text-secondary font-semibold mb-4">Классический фотограф</p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    В профессии 10 лет. Специализируюсь на свадебной и семейной фотографии. Мой стиль — естественность и искренность. Не ставлю жёсткие позы, а создаю комфортную атмосферу, где люди чувствуют себя свободно. Сняла более 150 свадеб и сотни семейных фотосессий. Каждый проект для меня — это история любви.
-                  </p>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       <section id="services" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto">
           <div className="text-center mb-12">
