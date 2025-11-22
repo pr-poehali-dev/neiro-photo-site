@@ -116,13 +116,8 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <Badge className="mb-6 text-sm px-4 py-2">Профессиональная фотография</Badge>
-            <h2 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Создаём{' '}
-              <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
-                искусство
-              </span>
-              <br />из ваших моментов
-            </h2>
+            <h2 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">Создаём искусство
+из ваших моментов</h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Александра — нейрофотограф с уникальным видением.<br />
               Мария — мастер классической фотографии для важных событий.
