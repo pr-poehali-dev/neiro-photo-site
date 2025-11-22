@@ -118,10 +118,8 @@ const Index = () => {
             <Badge className="mb-6 text-sm px-4 py-2">Профессиональная фотография</Badge>
             <h2 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">Создаём искусство
 из ваших моментов</h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Александра — нейрофотограф с уникальным видением.<br />
-              Мария — мастер классической фотографии для важных событий.
-            </p>
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">Александра — нейрофотограф с уникальным видением.
+Мария — мастер классической фотографии для важных событий.</p>
             <div className="flex gap-4 justify-center flex-wrap">
               <Button size="lg" onClick={() => scrollToSection('portfolio')} className="group">
                 Посмотреть работы
