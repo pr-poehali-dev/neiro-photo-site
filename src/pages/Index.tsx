@@ -142,10 +142,8 @@ const Index = () => {
               </div>
               <CardContent className="p-6">
                 <h3 className="text-2xl font-bold mb-2">Александра</h3>
-                <p className="text-primary font-semibold mb-3">Нейрофотограф</p>
-                <p className="text-muted-foreground">
-                  Авторская техника съёмки с элементами нейрографики. Превращаю портреты в уникальные арт-объекты.
-                </p>
+                <p className="text-primary font-semibold mb-3">AI-фотограф</p>
+                <p className="text-muted-foreground">Превращаю исходные портреты в уникальные арт-объекты с помощью искусственного интеллекта.</p>
               </CardContent>
             </Card>
 
