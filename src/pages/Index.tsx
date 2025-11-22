@@ -142,7 +142,7 @@ const Index = () => {
               </div>
               <CardContent className="p-6">
                 <h3 className="text-2xl font-bold mb-2">Александра</h3>
-                <p className="text-primary font-semibold mb-3">AI-фотограф (онлайн из любой точки)</p>
+                <p className="font-semibold mb-3 text-[#7f68ac]">AI-фотограф (онлайн из любой точки)</p>
                 <p className="text-muted-foreground">Превращаю исходные портреты в уникальные арт-объекты с помощью искусственного интеллекта.</p>
               </CardContent>
             </Card>
