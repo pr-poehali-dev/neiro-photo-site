@@ -88,7 +88,6 @@ const Index = () => {
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Alexandra & Maria
-AI photo  & Classica photo
 </h1>
           <div className="hidden md:flex gap-6">
             {['home', 'portfolio', 'about', 'services', 'reviews', 'contact'].map((section) => (
