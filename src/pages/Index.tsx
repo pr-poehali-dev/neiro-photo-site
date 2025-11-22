@@ -220,27 +220,60 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">О фотографах</h2>
-            <p className="text-muted-foreground text-lg">Наши истории и подход к работе</p>
-          </div>
+        <section id="about" className="py-20 px-4">
+    <div className="container mx-auto max-w-4xl">
+      <div className="text-center mb-12">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">О фотографах</h2>
+        <p className="text-muted-foreground text-lg">Наши истории и подход к работе</p>
+      </div>
 
-          <div className="space-y-12">
-            <Card className="p-8 hover:shadow-lg transition-shadow">
-              <div className="flex items-start gap-6">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Icon name="Sparkles" className="text-primary" size={32} />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">Александра</h3>
-                  <p className="text-primary font-semibold mb-4">Нейрофотограф</p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Более 7 лет в фотографии. Создала авторскую технику нейрофотографии, соединив классическую портретную съёмку с элементами нейрографики. Каждая работа — это уникальный арт-объект, отражающий внутренний мир человека. Работаю в студии и на выезде. Провожу мастер-классы по креативной фотографии.
-                  </p>
-                </div>
-              </div>
+      <div className="card-container">
+        <!-- Карточка Александры -->
+        <div className="card">
+          <div className="flex items-start gap-6">
+            <div className="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" width="32" height="32"><path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-2">Александра</h3>
+              <p className="font-semibold mb-4">Нейрофотограф</p>
+              <p className="text-muted-foreground leading-relaxed">
+                Более 7 лет в фотографии. Создала авторскую технику нейрофотографии, соединив классическую портретную съемку с элементами нейрографики. Каждая работа — это уникальный арт-объект, отражающий внутренний мир человека. Работаю в студии и на выезде. Провожу мастер-классы по креативной фотографии.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка Марии -->
+        <div className="card">
+          <div className="flex items-start gap-6">
+            <div className="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" width="32" height="32"><path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 12v6H6V6h6v6z"/></svg>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-2">Мария</h3>
+              <p className="font-semibold mb-4">Классический фотограф</p>
+              <p className="text-muted-foreground leading-relaxed">
+                В профессии 10 лет. Специализируюсь на свадебной и семейной фотографии. Мой стиль — естественность и искренность. Не ставлю жесткие позы, а создаю комфортную атмосферу, где люди чувствуют себя свободно. Сняла более 150 свадеб и сотни семейных фотосессий. Каждый проект для меня — это история любви.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Карточка Марии -->
+        <div className="card">
+          <div className="flex items-start gap-6">
+            <div className="icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none" width="32" height="32"><path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M12 12v6H6V6h6v6z"/></svg>
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold mb-2">Мария</h3>
+              <p className="font-semibold mb-4">Классический фотограф</p>
+              <p className="text-muted-foreground leading-relaxed">
+                В профессии 10 лет. Специализируюсь на свадебной и семейной фотографии. Мой стиль — естественность и искренность. Не ставлю жесткие позы, а создаю комфортную атмосферу, где люди чувствуют себя свободно. Сняла более 150 свадеб и сотни семейных фотосессий. Каждый проект для меня — это история любви.
+              </p>
+            </div>
+          </div>
             </Card>
 
             <Card className="p-8 hover:shadow-lg transition-shadow">
