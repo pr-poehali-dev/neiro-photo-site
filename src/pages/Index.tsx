@@ -1712,6 +1712,144 @@ const Index = () => {
           </div>
         </div>
       </section>
+      <section id="quiz" className="py-20 px-4">
+        <div className="container mx-auto max-w-2xl">
+          <h2 className="text-4xl font-heading font-bold text-center mb-12">
+            Какая съёмка вам подойдёт?
+          </h2>
+          <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+            <div className="flex flex-col space-y-1.5 p-6">
+              <h3 className="text-2xl font-semibold leading-none tracking-tight flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-circle-help text-primary"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                  <path d="M12 17h.01"></path>
+                </svg>
+                Тест-помощник
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Ответьте на вопросы и получите рекомендацию.
+              </p>
+            </div>
+            <div className="p-6 pt-0 space-y-6">
+              {/* Вопрос 1 */}
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold">
+                  Что для вас важнее в фотографии?
+                </h3>
+                <div className="space-y-2">
+                  {[
+                    "Точная передача реалистичных моментов",
+                    "Яркие эффекты и необычные образы",
+                    "Пока не решил(-а)",
+                  ].map((answer, i) => (
+                    <button
+                      key={i}
+                      className="w-full justify-start py-4 px-6 text-left rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground text-sm font-medium transition-colors"
+                    >
+                      {answer}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Вопрос 2 */}
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold">
+                  Какой способ съёмки вам больше нравится?
+                </h3>
+                <div className="space-y-2">
+                  {[
+                    "С помощью фотоаппарата и профессионального фотографа",
+                    "Использование технологий искусственного интеллекта и цифровых эффектов",
+                    "Готов экспериментировать с любыми вариантами",
+                  ].map((answer, i) => (
+                    <button
+                      key={i}
+                      className="w-full justify-start py-4 px-6 text-left rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground text-sm font-medium transition-colors"
+                    >
+                      {answer}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Вопрос 3 */}
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold">
+                  Как вы относитесь к времени обработки фотографий?
+                </h3>
+                <div className="space-y-2">
+                  {[
+                    "Хочу получить фото быстро, в течение одного-двух дней",
+                    "Могу подождать дольше ради качественной и творческой обработки",
+                    "Время не имеет значения",
+                  ].map((answer, i) => (
+                    <button
+                      key={i}
+                      className="w-full justify-start py-4 px-6 text-left rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground text-sm font-medium transition-colors"
+                    >
+                      {answer}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Вопрос 4 */}
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold">
+                  Насколько для вас важен личный контакт с фотографом?
+                </h3>
+                <div className="space-y-2">
+                  {[
+                    "Очень важен, хочу обсудить все детали лично",
+                    "Можно ограничиться онлайн общением",
+                    "Не принципиально",
+                  ].map((answer, i) => (
+                    <button
+                      key={i}
+                      className="w-full justify-start py-4 px-6 text-left rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground text-sm font-medium transition-colors"
+                    >
+                      {answer}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Вопрос 5 */}
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold">
+                  Какой результат для вас предпочтительнее?
+                </h3>
+                <div className="space-y-2">
+                  {[
+                    "Естественные снимки без сильной обработки",
+                    "Креативные изображения с использованием AI и других технологий",
+                    "Готов попробовать разные стили",
+                  ].map((answer, i) => (
+                    <button
+                      key={i}
+                      className="w-full justify-start py-4 px-6 text-left rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground text-sm font-medium transition-colors"
+                    >
+                      {answer}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section id="reviews" className="py-20 px-4">
         <div className="container mx-auto max-w-5xl">
