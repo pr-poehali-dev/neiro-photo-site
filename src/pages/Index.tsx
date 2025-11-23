@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Icon from "@/components/ui/icon";
@@ -12,7 +18,13 @@ import SubscriptionDialog from "@/components/SubscriptionDialog";
 import QuizDialog from "@/components/QuizDialog";
 import ContactDialog from "@/components/ContactDialog";
 import { Calendar } from "@/components/ui/calendar";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import {
   Accordion,
   AccordionContent,
@@ -24,10 +36,14 @@ const Index = () => {
   const { toast } = useToast();
   const [activeSection, setActiveSection] = useState("home");
   const [subscriptionDialogOpen, setSubscriptionDialogOpen] = useState(false);
-  const [dialogDismissedAt, setDialogDismissedAt] = useState<number | null>(null);
+  const [dialogDismissedAt, setDialogDismissedAt] = useState<number | null>(
+    null,
+  );
   const [quizDialogOpen, setQuizDialogOpen] = useState(false);
   const [contactDialogOpen, setContactDialogOpen] = useState(false);
-  const [contactPhotographer, setContactPhotographer] = useState<"alexandra" | "maria">("alexandra");
+  const [contactPhotographer, setContactPhotographer] = useState<
+    "alexandra" | "maria"
+  >("alexandra");
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [selectedPhotographer, setSelectedPhotographer] = useState<string>("");
   const [selectedTime, setSelectedTime] = useState<string>("");
@@ -40,8 +56,11 @@ const Index = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-      
+      const scrollPercentage =
+        (window.scrollY /
+          (document.documentElement.scrollHeight - window.innerHeight)) *
+        100;
+
       if (scrollPercentage >= 90 && !subscriptionDialogOpen) {
         const now = Date.now();
         if (!dialogDismissedAt || now - dialogDismissedAt >= 5 * 60 * 1000) {
@@ -50,8 +69,8 @@ const Index = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [subscriptionDialogOpen, dialogDismissedAt]);
 
   const handleDialogClose = (open: boolean) => {
@@ -74,7 +93,7 @@ const Index = () => {
 
   const handleSubmitBooking = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!selectedPhotographer) {
       toast({
         title: "Ошибка",
@@ -90,20 +109,23 @@ const Index = () => {
       const bookingData = {
         name: formData.name,
         phone: formData.phone,
-        email: '',
+        email: "",
         photographer: selectedPhotographer,
-        date: date ? date.toLocaleDateString('ru-RU') : '',
+        date: date ? date.toLocaleDateString("ru-RU") : "",
         time: selectedTime,
         comment: formData.comment,
       };
 
-      const response = await fetch('https://functions.poehali.dev/e1899f9b-a689-473a-9d57-eb5209f75583', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      const response = await fetch(
+        "https://functions.poehali.dev/e1899f9b-a689-473a-9d57-eb5209f75583",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(bookingData),
         },
-        body: JSON.stringify(bookingData),
-      });
+      );
 
       const result = await response.json();
 
@@ -112,7 +134,7 @@ const Index = () => {
           title: "Заявка отправлена!",
           description: "Мы свяжемся с вами в ближайшее время",
         });
-        
+
         setFormData({ name: "", phone: "", comment: "" });
         setSelectedPhotographer("");
         setDate(undefined);
@@ -158,28 +180,38 @@ const Index = () => {
       name: "Елена Смирнова",
       text: "Александра создала невероятные нейрофото! Это настоящее искусство, которое передаёт глубину эмоций.",
       rating: 5,
-      image: "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/11bd7973-62f6-4eb6-a6f8-d388eb3afa8a.jpg"
+      image:
+        "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/11bd7973-62f6-4eb6-a6f8-d388eb3afa8a.jpg",
     },
     {
       name: "Дмитрий и Ольга",
       text: "Мария сняла нашу свадьбу просто волшебно. Каждый кадр — это история, которую хочется пересматривать снова.",
       rating: 5,
-      image: "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/69bf3ec7-5125-44fe-accb-af20b5684723.jpg"
+      image:
+        "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/69bf3ec7-5125-44fe-accb-af20b5684723.jpg",
     },
     {
       name: "Анна Петрова",
       text: "Семейная фотосессия с Марией прошла очень комфортно. Дети вели себя естественно, а результат превзошёл ожидания!",
       rating: 5,
-      image: "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/70a84839-0333-4f0d-92d9-939ae755a963.jpg"
+      image:
+        "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/70a84839-0333-4f0d-92d9-939ae755a963.jpg",
     },
   ];
 
   return (
     <div className="min-h-screen bg-background">
-      <SubscriptionDialog open={subscriptionDialogOpen} onOpenChange={handleDialogClose} />
+      <SubscriptionDialog
+        open={subscriptionDialogOpen}
+        onOpenChange={handleDialogClose}
+      />
       <QuizDialog open={quizDialogOpen} onOpenChange={setQuizDialogOpen} />
-      <ContactDialog open={contactDialogOpen} onOpenChange={setContactDialogOpen} photographer={contactPhotographer} />
-      
+      <ContactDialog
+        open={contactDialogOpen}
+        onOpenChange={setContactDialogOpen}
+        photographer={contactPhotographer}
+      />
+
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div>
@@ -191,33 +223,25 @@ const Index = () => {
             </p>
           </div>
           <div className="hidden md:flex gap-6">
-            {[
-              "home",
-              "portfolio",
-              "about",
-              "services",
-              "reviews",
-            ].map((section) => (
-              <button
-                key={section}
-                onClick={() => scrollToSection(section)}
-                className="text-sm font-medium hover:text-primary transition-colors capitalize"
-              >
-                {section === "home"
-                  ? "Главная"
-                  : section === "portfolio"
-                    ? "Портфолио"
-                    : section === "services"
-                      ? "Прайс"
-                      : "Отзывы"}
-              </button>
-            ))}
+            {["home", "portfolio", "about", "services", "reviews"].map(
+              (section) => (
+                <button
+                  key={section}
+                  onClick={() => scrollToSection(section)}
+                  className="text-sm font-medium hover:text-primary transition-colors capitalize"
+                >
+                  {section === "home"
+                    ? "Главная"
+                    : section === "portfolio"
+                      ? "Портфолио"
+                      : section === "services"
+                        ? "Прайс"
+                        : "Отзывы"}
+                </button>
+              ),
+            )}
           </div>
-          <Button
-            variant="default"
-            size="sm"
-            onClick={handleContactClick}
-          >
+          <Button variant="default" size="sm" onClick={handleContactClick}>
             Связаться
           </Button>
         </div>
@@ -362,7 +386,8 @@ const Index = () => {
               Сравнение форматов съёмки
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Выберите то, что вам ближе: быстрые и креативные AI-снимки или классическую съёмку с живым общением
+              Выберите то, что вам ближе: быстрые и креативные AI-снимки или
+              классическую съёмку с живым общением
             </p>
           </div>
 
@@ -374,15 +399,27 @@ const Index = () => {
               </div>
               <div className="space-y-4">
                 <div className="flex items-start gap-2">
-                  <Icon name="Check" className="text-green-500 mt-1" size={20} />
+                  <Icon
+                    name="Check"
+                    className="text-green-500 mt-1"
+                    size={20}
+                  />
                   <p>Быстрый результат за 1-2 дня</p>
                 </div>
                 <div className="flex items-start gap-2">
-                  <Icon name="Check" className="text-green-500 mt-1" size={20} />
+                  <Icon
+                    name="Check"
+                    className="text-green-500 mt-1"
+                    size={20}
+                  />
                   <p>Уникальные, креативные AI-эффекты</p>
                 </div>
                 <div className="flex items-start gap-2">
-                  <Icon name="Check" className="text-green-500 mt-1" size={20} />
+                  <Icon
+                    name="Check"
+                    className="text-green-500 mt-1"
+                    size={20}
+                  />
                   <p>Доступная цена</p>
                 </div>
                 <div className="flex items-start gap-2">
@@ -403,15 +440,27 @@ const Index = () => {
               </div>
               <div className="space-y-4">
                 <div className="flex items-start gap-2">
-                  <Icon name="Check" className="text-green-500 mt-1" size={20} />
+                  <Icon
+                    name="Check"
+                    className="text-green-500 mt-1"
+                    size={20}
+                  />
                   <p>100% естественные фотографии</p>
                 </div>
                 <div className="flex items-start gap-2">
-                  <Icon name="Check" className="text-green-500 mt-1" size={20} />
+                  <Icon
+                    name="Check"
+                    className="text-green-500 mt-1"
+                    size={20}
+                  />
                   <p>Реалистичный результат без искажений</p>
                 </div>
                 <div className="flex items-start gap-2">
-                  <Icon name="Check" className="text-green-500 mt-1" size={20} />
+                  <Icon
+                    name="Check"
+                    className="text-green-500 mt-1"
+                    size={20}
+                  />
                   <p>Живая атмосфера и уникальность кадров</p>
                 </div>
                 <div className="flex items-start gap-2">
@@ -427,7 +476,9 @@ const Index = () => {
           </div>
 
           <div className="text-center pt-6 border-t max-w-4xl mx-auto mt-8">
-            <p className="text-muted-foreground mb-4">Не уверены? Пройдите короткий тест!</p>
+            <p className="text-muted-foreground mb-4">
+              Не уверены? Пройдите короткий тест!
+            </p>
             <Button onClick={() => setQuizDialogOpen(true)}>
               Помочь выбрать
             </Button>
@@ -435,11 +486,14 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="services" className="py-20 px-6 bg-gradient-to-br from-purple-50 to-white">
+      <section
+        id="services"
+        className="py-20 px-6 bg-gradient-to-br from-purple-50 to-white"
+      >
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent">
-              Наши услуги
+              Наши цены
             </h2>
             <p className="text-gray-600 text-lg">
               Выберите подходящий пакет для ваших потребностей
@@ -486,7 +540,10 @@ const Index = () => {
                     <span>Все исходные AI-обработки</span>
                   </div>
                 </div>
-                <Button className="w-full" onClick={() => scrollToSection("booking")}>
+                <Button
+                  className="w-full"
+                  onClick={() => scrollToSection("booking")}
+                >
                   Выбрать пакет
                 </Button>
               </CardContent>
@@ -496,7 +553,9 @@ const Index = () => {
               <CardHeader className="bg-gradient-to-r from-purple-50 to-white">
                 <div className="flex items-center gap-3 mb-2">
                   <Icon name="Camera" size={32} className="text-secondary" />
-                  <CardTitle className="text-3xl">Классическая съёмка</CardTitle>
+                  <CardTitle className="text-3xl">
+                    Классическая съёмка
+                  </CardTitle>
                 </div>
                 <CardDescription className="text-base">
                   Профессиональная фотосессия с Марией
@@ -505,16 +564,16 @@ const Index = () => {
               <CardContent className="space-y-6 pt-6">
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span>Мини (1 час, 20 фото)</span>
-                    <span className="font-bold text-xl">5 000 ₽</span>
+                    <span>Мини (30 мин, 7 обработанных фото)</span>
+                    <span className="font-bold text-xl">2 500 ₽</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span>Стандарт (2 часа, 50 фото)</span>
-                    <span className="font-bold text-xl">10 000 ₽</span>
+                    <span>Стандарт (1 час, 15 обработанных фото)</span>
+                    <span className="font-bold text-xl">4 000 ₽</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span>Премиум (4 часа, 100 фото)</span>
-                    <span className="font-bold text-xl">18 000 ₽</span>
+                    <span>Премиум (2 часа, 30 обработанных фото)</span>
+                    <span className="font-bold text-xl">7 500 ₽</span>
                   </div>
                 </div>
                 <div className="pt-4 border-t space-y-2">
@@ -531,7 +590,11 @@ const Index = () => {
                     <span>Все исходные фото в день съемки</span>
                   </div>
                 </div>
-                <Button className="w-full" variant="secondary" onClick={() => scrollToSection("booking")}>
+                <Button
+                  className="w-full"
+                  variant="secondary"
+                  onClick={() => scrollToSection("booking")}
+                >
                   Выбрать пакет
                 </Button>
               </CardContent>
@@ -562,7 +625,9 @@ const Index = () => {
                   <Icon name="CreditCard" className="text-primary" />
                   <div>
                     <div className="font-semibold">СБП</div>
-                    <div className="text-sm text-gray-600">Система быстрых платежей</div>
+                    <div className="text-sm text-gray-600">
+                      Система быстрых платежей
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
@@ -576,7 +641,9 @@ const Index = () => {
                   <Icon name="Wallet" className="text-primary" />
                   <div>
                     <div className="font-semibold">Наличные</div>
-                    <div className="text-sm text-gray-600">При реальной фотосъемке</div>
+                    <div className="text-sm text-gray-600">
+                      При реальной фотосъемке
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -591,7 +658,11 @@ const Index = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <Icon name="Undo2" className="text-green-500 mt-1" size={20} />
+                  <Icon
+                    name="Undo2"
+                    className="text-green-500 mt-1"
+                    size={20}
+                  />
                   <div>
                     <div className="font-semibold mb-1">Возврат средств</div>
                     <div className="text-sm text-gray-600">
@@ -603,8 +674,9 @@ const Index = () => {
                 <div className="bg-purple-50 p-4 rounded-lg">
                   <p className="text-sm text-gray-700">
                     <Icon name="Info" size={16} className="inline mr-1" />
-                    Для оплаты свяжитесь с фотографом удобным способом. 
-                    Реквизиты на оплату будут высланы после согласования деталей съёмки.
+                    Для оплаты свяжитесь с фотографом удобным способом.
+                    Реквизиты на оплату будут высланы после согласования деталей
+                    съёмки.
                   </p>
                 </div>
               </CardContent>
@@ -616,9 +688,13 @@ const Index = () => {
               <CardTitle className="text-center">Условия оплаты</CardTitle>
             </CardHeader>
             <CardContent className="text-center space-y-2">
-              <p className="text-lg">Предоплата <span className="font-bold text-2xl text-primary">30%</span></p>
+              <p className="text-lg">
+                Предоплата{" "}
+                <span className="font-bold text-2xl text-primary">30%</span>
+              </p>
               <p className="text-sm text-gray-600">
-                При отмене съёмки менее чем за 24 часа предоплата не возвращается
+                При отмене съёмки менее чем за 24 часа предоплата не
+                возвращается
               </p>
             </CardContent>
           </Card>
@@ -628,8 +704,12 @@ const Index = () => {
       <section id="faq" className="py-20 px-6 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Часто задаваемые вопросы</h2>
-            <p className="text-muted-foreground text-lg">Ответы на популярные вопросы</p>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Часто задаваемые вопросы
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Ответы на популярные вопросы
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -643,27 +723,42 @@ const Index = () => {
               <CardContent>
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="ai-1">
-                    <AccordionTrigger>Как работает AI-фотография?</AccordionTrigger>
+                    <AccordionTrigger>
+                      Как работает AI-фотография?
+                    </AccordionTrigger>
                     <AccordionContent>
-                      Вы отправляете нам свои исходные фотографии, а мы с помощью нейросетей создаем уникальные художественные образы, сохраняя ваши черты лица.
+                      Вы отправляете нам свои исходные фотографии, а мы с
+                      помощью нейросетей создаем уникальные художественные
+                      образы, сохраняя ваши черты лица.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="ai-2">
-                    <AccordionTrigger>Какие фото нужны для AI-обработки?</AccordionTrigger>
+                    <AccordionTrigger>
+                      Какие фото нужны для AI-обработки?
+                    </AccordionTrigger>
                     <AccordionContent>
-                      Нужны качественные фото в хорошем освещении, где четко видно лицо. Подойдут селфи или портреты, сделанные на современный смартфон.
+                      Нужны качественные фото в хорошем освещении, где четко
+                      видно лицо. Подойдут селфи или портреты, сделанные на
+                      современный смартфон.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="ai-3">
-                    <AccordionTrigger>Сколько времени занимает обработка?</AccordionTrigger>
+                    <AccordionTrigger>
+                      Сколько времени занимает обработка?
+                    </AccordionTrigger>
                     <AccordionContent>
-                      Обычно 1-2 дня. В некоторых случаях можем сделать за несколько часов.
+                      Обычно 1-2 дня. В некоторых случаях можем сделать за
+                      несколько часов.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="ai-4">
-                    <AccordionTrigger>Можно ли выбрать стиль обработки?</AccordionTrigger>
+                    <AccordionTrigger>
+                      Можно ли выбрать стиль обработки?
+                    </AccordionTrigger>
                     <AccordionContent>
-                      Да! Вы можете выбрать любой стиль: от классического портрета до фэнтези или аниме. Мы обсудим это перед началом работы.
+                      Да! Вы можете выбрать любой стиль: от классического
+                      портрета до фэнтези или аниме. Мы обсудим это перед
+                      началом работы.
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
@@ -680,27 +775,41 @@ const Index = () => {
               <CardContent>
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="real-1">
-                    <AccordionTrigger>Где проходит фотосъемка?</AccordionTrigger>
+                    <AccordionTrigger>
+                      Где проходит фотосъемка?
+                    </AccordionTrigger>
                     <AccordionContent>
-                      Съемка проходит в Новосибирске. Мы можем выбрать локацию вместе: студия, парк, городские улицы или ваше место.
+                      Съемка проходит в Новосибирске. Мы можем выбрать локацию
+                      вместе: студия, парк, городские улицы или ваше место.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="real-2">
-                    <AccordionTrigger>Сколько времени длится съемка?</AccordionTrigger>
+                    <AccordionTrigger>
+                      Сколько времени длится съемка?
+                    </AccordionTrigger>
                     <AccordionContent>
-                      В зависимости от пакета: от 1 до 4 часов. Этого достаточно для создания качественных фотографий в разных образах и локациях.
+                      В зависимости от пакета: от 1 до 4 часов. Этого достаточно
+                      для создания качественных фотографий в разных образах и
+                      локациях.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="real-3">
-                    <AccordionTrigger>Когда я получу готовые фото?</AccordionTrigger>
+                    <AccordionTrigger>
+                      Когда я получу готовые фото?
+                    </AccordionTrigger>
                     <AccordionContent>
-                      Все исходные фото вы получаете в день съемки. Обработанные фотографии будут готовы через 5-7 дней.
+                      Все исходные фото вы получаете в день съемки. Обработанные
+                      фотографии будут готовы через 5-7 дней.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="real-4">
-                    <AccordionTrigger>Нужно ли готовиться к съемке?</AccordionTrigger>
+                    <AccordionTrigger>
+                      Нужно ли готовиться к съемке?
+                    </AccordionTrigger>
                     <AccordionContent>
-                      Подготовьте несколько образов одежды, продумайте макияж. Мы обсудим детали заранее и дадим рекомендации по подготовке.
+                      Подготовьте несколько образов одежды, продумайте макияж.
+                      Мы обсудим детали заранее и дадим рекомендации по
+                      подготовке.
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
@@ -714,7 +823,9 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Отзывы</h2>
-            <p className="text-muted-foreground text-lg">Что говорят наши клиенты</p>
+            <p className="text-muted-foreground text-lg">
+              Что говорят наши клиенты
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -747,7 +858,10 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="booking" className="py-20 px-6 bg-gradient-to-br from-purple-50 to-white">
+      <section
+        id="booking"
+        className="py-20 px-6 bg-gradient-to-br from-purple-50 to-white"
+      >
         <div className="container mx-auto max-w-2xl">
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent">
             Записаться на съёмку
@@ -761,30 +875,40 @@ const Index = () => {
               <form onSubmit={handleSubmitBooking} className="space-y-4">
                 <div className="space-y-2">
                   <label className="text-sm font-semibold">Ваше имя</label>
-                  <Input 
-                    placeholder="Введите ваше имя" 
+                  <Input
+                    placeholder="Введите ваше имя"
                     value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                     required
                   />
                 </div>
 
                 <div className="space-y-2">
                   <label className="text-sm font-semibold">Телефон</label>
-                  <Input 
-                    placeholder="+7 (___) ___-__-__" 
+                  <Input
+                    placeholder="+7 (___) ___-__-__"
                     value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
                     required
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-semibold">Выберите фотографа</label>
+                  <label className="text-sm font-semibold">
+                    Выберите фотографа
+                  </label>
                   <div className="grid grid-cols-2 gap-4">
                     <Button
                       type="button"
-                      variant={selectedPhotographer === "alexandra" ? "default" : "outline"}
+                      variant={
+                        selectedPhotographer === "alexandra"
+                          ? "default"
+                          : "outline"
+                      }
                       className="h-auto p-4 flex-col items-start gap-2"
                       onClick={() => setSelectedPhotographer("alexandra")}
                     >
@@ -796,7 +920,9 @@ const Index = () => {
                     </Button>
                     <Button
                       type="button"
-                      variant={selectedPhotographer === "maria" ? "default" : "outline"}
+                      variant={
+                        selectedPhotographer === "maria" ? "default" : "outline"
+                      }
                       className="h-auto p-4 flex-col items-start gap-2"
                       onClick={() => setSelectedPhotographer("maria")}
                     >
@@ -812,7 +938,9 @@ const Index = () => {
                 {selectedPhotographer === "maria" && (
                   <>
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold">Дата съёмки</label>
+                      <label className="text-sm font-semibold">
+                        Дата съёмки
+                      </label>
                       <Calendar
                         mode="single"
                         selected={date}
@@ -823,7 +951,10 @@ const Index = () => {
 
                     <div className="space-y-2">
                       <label className="text-sm font-semibold">Время</label>
-                      <Select value={selectedTime} onValueChange={setSelectedTime}>
+                      <Select
+                        value={selectedTime}
+                        onValueChange={setSelectedTime}
+                      >
                         <SelectTrigger>
                           <SelectValue placeholder="Выберите время" />
                         </SelectTrigger>
@@ -853,15 +984,22 @@ const Index = () => {
 
                 <div className="space-y-2">
                   <label className="text-sm font-semibold">Комментарий</label>
-                  <Textarea 
-                    placeholder="Расскажите о ваших пожеланиях к съёмке..." 
+                  <Textarea
+                    placeholder="Расскажите о ваших пожеланиях к съёмке..."
                     rows={4}
                     value={formData.comment}
-                    onChange={(e) => setFormData({...formData, comment: e.target.value})}
+                    onChange={(e) =>
+                      setFormData({ ...formData, comment: e.target.value })
+                    }
                   />
                 </div>
 
-                <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
+                <Button
+                  type="submit"
+                  className="w-full"
+                  size="lg"
+                  disabled={isSubmitting}
+                >
                   {isSubmitting ? "Отправка..." : "Отправить заявку"}
                 </Button>
               </form>
@@ -873,8 +1011,13 @@ const Index = () => {
       <footer className="py-8 px-4 bg-muted/50 border-t">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-4">
-            <p className="font-semibold">Два взгляда на фотографию — выберите свой стиль</p>
-            <Link to="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+            <p className="font-semibold">
+              Два взгляда на фотографию — выберите свой стиль
+            </p>
+            <Link
+              to="/privacy"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
               Политика конфиденциальности
             </Link>
             <div className="text-xs text-muted-foreground pt-4 border-t">
