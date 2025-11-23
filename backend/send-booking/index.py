@@ -7,7 +7,7 @@ from typing import Dict, Any
 def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     '''
     Business: Отправка заявки на фотосъемку в Telegram соответствующему фотографу
-    Args: event - dict с httpMethod, body (name, phone, email, photographer, date, time, comment)
+    Args: event - dict с httpMethod, body (name, phone, email, photographer, package, date, time, comment)
           context - object с request_id, function_name
     Returns: HTTP response dict
     '''
@@ -39,6 +39,7 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
         phone = body_data.get('phone', '')
         email = body_data.get('email', '')
         photographer = body_data.get('photographer', '')
+        package = body_data.get('package', '')
         date = body_data.get('date', '')
         time = body_data.get('time', '')
         comment = body_data.get('comment', '')
@@ -75,9 +76,19 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
         message = f"""🎯 Новая заявка для {photographer_name}!
 
 👤 Имя: {name}
-📱 Телефон: {phone}
-📧 Email: {email}"""
+📱 Телефон: {phone}"""
         
+        if email:
+            message += f"\n📧 Email: {email}"
+        if package:
+            package_names = {
+                'trial': 'Пробный пакет (3 фото, 1 образ) — 1 000 ₽',
+                'standard': 'Стандарт (10 фото, 2-3 образа) — 2 500 ₽' if photographer == 'alexandra' else 'Стандарт (1 час, 15 обработанных фото) — 4 000 ₽',
+                'premium': 'Премиум (20 фото, 5 образов) — 3 500 ₽' if photographer == 'alexandra' else 'Премиум (2 часа, 30 обработанных фото) — 7 500 ₽',
+                'mini': 'Мини (30 мин, 7 обработанных фото) — 2 500 ₽',
+                'other': 'Другое'
+            }
+            message += f"\n📦 Пакет: {package_names.get(package, package)}"
         if date:
             message += f"\n📅 Дата: {date}"
         if time:

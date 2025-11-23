@@ -8,6 +8,7 @@
         "phone": "+7 (999) 123-45-67",
         "email": "test@example.com",
         "photographer": "maria",
+        "package": "standard",
         "date": "2025-12-01",
         "time": "14:00",
         "comment": "Тестовая заявка"
@@ -26,6 +27,7 @@
         "phone": "+7 (999) 123-45-67",
         "email": "test@example.com",
         "photographer": "alexandra",
+        "package": "premium",
         "comment": "Тестовая заявка AI"
       },
       "expectedStatus": 200,
