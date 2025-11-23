@@ -1098,7 +1098,7 @@ const Index = () => {
                       data-component-name="span"
                       data-component-content="%7B%22text%22%3A%22%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%20(10%20%D1%84%D0%BE%D1%82%D0%BE)%22%7D"
                     >
-                      Базовый пакет (10 фото)
+                      Пробный пакет (3 фото, 1 образ)
                     </span>
                     <span
                       data-pp-id="src/pages/Index.tsx:383:20"
@@ -1110,7 +1110,7 @@ const Index = () => {
                       data-component-content="%7B%22text%22%3A%222%20500%20%E2%82%BD%22%2C%22className%22%3A%22font-bold%20text-xl%22%7D"
                       class="font-bold text-xl"
                     >
-                      2 500 ₽
+                      1 000 ₽
                     </span>
                   </div>
                   <div
@@ -1132,7 +1132,7 @@ const Index = () => {
                       data-component-name="span"
                       data-component-content="%7B%22text%22%3A%22%D0%A1%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%20(25%20%D1%84%D0%BE%D1%82%D0%BE)%22%7D"
                     >
-                      Стандарт (25 фото)
+                      Стандарт (10 фото, 2-3 образа)
                     </span>
                     <span
                       data-pp-id="src/pages/Index.tsx:387:20"
@@ -1144,7 +1144,7 @@ const Index = () => {
                       data-component-content="%7B%22text%22%3A%225%20000%20%E2%82%BD%22%2C%22className%22%3A%22font-bold%20text-xl%22%7D"
                       class="font-bold text-xl"
                     >
-                      5 000 ₽
+                      2 500 ₽
                     </span>
                   </div>
                   <div
@@ -1166,7 +1166,7 @@ const Index = () => {
                       data-component-name="span"
                       data-component-content="%7B%22text%22%3A%22%D0%9F%D1%80%D0%B5%D0%BC%D0%B8%D1%83%D0%BC%20(50%20%D1%84%D0%BE%D1%82%D0%BE)%22%7D"
                     >
-                      Премиум (50 фото)
+                      Премиум (20 фото, 5 образов)
                     </span>
                     <span
                       data-pp-id="src/pages/Index.tsx:391:20"
@@ -1178,7 +1178,7 @@ const Index = () => {
                       data-component-content="%7B%22text%22%3A%228%20000%20%E2%82%BD%22%2C%22className%22%3A%22font-bold%20text-xl%22%7D"
                       class="font-bold text-xl"
                     >
-                      8 000 ₽
+                      3 500 ₽
                     </span>
                   </div>
                 </div>
@@ -1233,7 +1233,7 @@ const Index = () => {
                       data-component-name="span"
                       data-component-content="%7B%22text%22%3A%22%D0%93%D0%BE%D1%82%D0%BE%D0%B2%D0%BE%20%D0%B7%D0%B0%201%20%D0%B4%D0%B5%D0%BD%D1%8C%22%7D"
                     >
-                      Готово за 1 день
+                      Готовность 1 день
                     </span>
                   </div>
                   <div
@@ -1469,7 +1469,8 @@ const Index = () => {
                       data-component-name="span"
                       data-component-content="%7B%22text%22%3A%22%D0%9C%D0%B8%D0%BD%D0%B8-%D1%81%D1%8A%D1%91%D0%BC%D0%BA%D0%B0%20(1%20%D1%87%D0%B0%D1%81%2C%2020%20%D1%84%D0%BE%D1%82%D0%BE)%22%7D"
                     >
-                      Мини-съёмка (1 час, 20 фото)
+                      Мини-съёмка (30 мин, 7 фото в авторской цветокореекциии
+                      легкой ретуши)
                     </span>
                     <span
                       data-pp-id="src/pages/Index.tsx:424:20"
@@ -1481,7 +1482,7 @@ const Index = () => {
                       data-component-content="%7B%22text%22%3A%225%20000%20%E2%82%BD%22%2C%22className%22%3A%22font-bold%20text-xl%22%7D"
                       class="font-bold text-xl"
                     >
-                      5 000 ₽
+                      2 500 ₽
                     </span>
                   </div>
                   <div
@@ -1503,7 +1504,8 @@ const Index = () => {
                       data-component-name="span"
                       data-component-content="%7B%22text%22%3A%22%D0%A1%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%20(2%20%D1%87%D0%B0%D1%81%D0%B0%2C%2050%20%D1%84%D0%BE%D1%82%D0%BE)%22%7D"
                     >
-                      Стандарт (2 часа, 50 фото)
+                      Стандарт (1 час, 15 фото в авторской цветокореекциии
+                      легкой ретуши)
                     </span>
                     <span
                       data-pp-id="src/pages/Index.tsx:428:20"
@@ -1515,41 +1517,7 @@ const Index = () => {
                       data-component-content="%7B%22text%22%3A%2210%20000%20%E2%82%BD%22%2C%22className%22%3A%22font-bold%20text-xl%22%7D"
                       class="font-bold text-xl"
                     >
-                      10 000 ₽
-                    </span>
-                  </div>
-                  <div
-                    data-pp-id="src/pages/Index.tsx:430:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="430"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%22className%22%3A%22flex%20justify-between%20items-center%22%7D"
-                    class="flex justify-between items-center"
-                  >
-                    <span
-                      data-pp-id="src/pages/Index.tsx:431:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="431"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22%D0%9F%D1%80%D0%B5%D0%BC%D0%B8%D1%83%D0%BC%20(4%20%D1%87%D0%B0%D1%81%D0%B0%2C%20100%20%D1%84%D0%BE%D1%82%D0%BE)%22%7D"
-                    >
-                      Премиум (4 часа, 100 фото)
-                    </span>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:432:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="432"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%2218%20000%20%E2%82%BD%22%2C%22className%22%3A%22font-bold%20text-xl%22%7D"
-                      class="font-bold text-xl"
-                    >
-                      18 000 ₽
+                      4 000 ₽
                     </span>
                   </div>
                 </div>
