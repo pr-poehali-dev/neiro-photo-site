@@ -101,13 +101,11 @@ const Index = () => {
                   ? "Главная"
                   : section === "portfolio"
                     ? "Портфолио"
-                    : section === "about"
-                      ? "О нас"
-                      : section === "services"
-                        ? "Прайс"
-                        : section === "reviews"
-                          ? "Отзывы"
-                          : "Контакты"}
+                    : section === "services"
+                      ? "Прайс"
+                      : section === "reviews"
+                        ? "Отзывы"
+                        : "Контакты"}
               </button>
             ))}
           </div>
