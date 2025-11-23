@@ -475,35 +475,14 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Портфолио</h2>
-            <p className="text-muted-foreground text-lg">Наши лучшие работы</p>
+            <p className="text-muted-foreground text-lg">Наши работы</p>
           </div>
 
-          <Tabs defaultValue="all" className="max-w-6xl mx-auto">
-            <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto mb-12">
-              <TabsTrigger value="all">Все работы</TabsTrigger>
+          <Tabs defaultValue="alexandra" className="max-w-6xl mx-auto">
+            <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-12">
               <TabsTrigger value="alexandra">Александра</TabsTrigger>
               <TabsTrigger value="maria">Мария</TabsTrigger>
             </TabsList>
-
-            <TabsContent value="all" className="grid md:grid-cols-3 gap-6">
-              {portfolioImages.map((img, idx) => (
-                <div
-                  key={idx}
-                  className="group relative overflow-hidden rounded-lg aspect-square animate-fade-in"
-                >
-                  <img
-                    src={img.url}
-                    alt={`Portfolio ${idx + 1}`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                    <span className="text-white font-semibold capitalize">
-                      {img.category}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </TabsContent>
 
             <TabsContent
               value="alexandra"
@@ -544,7 +523,6 @@ const Index = () => {
           </Tabs>
         </div>
       </section>
-
       <section
         data-pp-id="src/pages/Index.tsx:122:6"
         data-pp-name="section"
