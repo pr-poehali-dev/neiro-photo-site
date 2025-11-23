@@ -11,12 +11,12 @@ interface ContactDialogProps {
 export const ContactDialog = ({ open, onOpenChange, photographer }: ContactDialogProps) => {
   const contacts = {
     alexandra: {
-      name: "Александра",
+      name: "Александрой",
       telegram: "https://t.me/aleksa25t",
       whatsapp: "https://wa.me/79998887766",
     },
     maria: {
-      name: "Мария",
+      name: "Марией",
       telegram: "https://t.me/+79139083148",
       whatsapp: "https://wa.me/79231234567",
     },

@@ -18,6 +18,7 @@ import SubscriptionDialog from "@/components/SubscriptionDialog";
 import QuizDialog from "@/components/QuizDialog";
 import ContactDialog from "@/components/ContactDialog";
 import { Calendar } from "@/components/ui/calendar";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import {
   Select,
   SelectContent,
@@ -44,6 +45,7 @@ const Index = () => {
   const [contactPhotographer, setContactPhotographer] = useState<
     "alexandra" | "maria"
   >("alexandra");
+  const [showPhotographerChoice, setShowPhotographerChoice] = useState(false);
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [selectedPhotographer, setSelectedPhotographer] = useState<string>("");
   const [selectedTime, setSelectedTime] = useState<string>("");
@@ -87,7 +89,12 @@ const Index = () => {
   };
 
   const handleContactClick = () => {
-    setContactPhotographer("alexandra");
+    setShowPhotographerChoice(true);
+  };
+
+  const handlePhotographerSelect = (photographer: "alexandra" | "maria") => {
+    setContactPhotographer(photographer);
+    setShowPhotographerChoice(false);
     setContactDialogOpen(true);
   };
 
@@ -211,6 +218,41 @@ const Index = () => {
         onOpenChange={setContactDialogOpen}
         photographer={contactPhotographer}
       />
+      
+      <Dialog open={showPhotographerChoice} onOpenChange={setShowPhotographerChoice}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-2xl text-center">С кем хотите связаться?</DialogTitle>
+            <DialogDescription className="text-center">
+              Выберите фотографа
+            </DialogDescription>
+          </DialogHeader>
+          <div className="grid gap-4">
+            <Button
+              onClick={() => handlePhotographerSelect("alexandra")}
+              className="h-auto p-6 flex-col items-start gap-2"
+              variant="outline"
+            >
+              <div className="flex items-center gap-2">
+                <Icon name="Sparkles" size={24} />
+                <span className="text-xl font-bold">Александра</span>
+              </div>
+              <span className="text-sm text-muted-foreground">AI-фотография (онлайн)</span>
+            </Button>
+            <Button
+              onClick={() => handlePhotographerSelect("maria")}
+              className="h-auto p-6 flex-col items-start gap-2"
+              variant="outline"
+            >
+              <div className="flex items-center gap-2">
+                <Icon name="Camera" size={24} />
+                <span className="text-xl font-bold">Мария</span>
+              </div>
+              <span className="text-sm text-muted-foreground">Классическая съёмка (Новосибирск)</span>
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
