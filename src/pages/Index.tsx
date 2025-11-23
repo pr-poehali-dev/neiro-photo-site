@@ -1860,7 +1860,6 @@ const Index = () => {
             </div>
           </div>
           <div
-          
             data-pp-id="src/pages/Index.tsx:437:10"
             data-pp-name="div"
             data-component-path="src/pages/Index.tsx"
