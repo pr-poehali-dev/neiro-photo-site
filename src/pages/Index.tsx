@@ -592,7 +592,7 @@ const Index = () => {
                         Не требуется выезд, макияж и специальная подготовка
                       </p>
                     </div>
-<div
+<div>
                       data-pp-id="src/pages/Index.tsx:140:20"
                       data-pp-name="div"
                       data-component-path="src/pages/Index.tsx"
@@ -635,7 +635,7 @@ const Index = () => {
                         Можно создать образы, невозможные в реальности
                       </p>
                     </div>
-<div
+<div>
                       data-pp-id="src/pages/Index.tsx:140:20"
                       data-pp-name="div"
                       data-component-path="src/pages/Index.tsx"
@@ -678,7 +678,7 @@ const Index = () => {
                         Неограниченное количество локаций и стилей
                       </p>
                     </div>
-<div
+<div>
                       data-pp-id="src/pages/Index.tsx:140:20"
                       data-pp-name="div"
                       data-component-path="src/pages/Index.tsx"
@@ -720,7 +720,7 @@ const Index = () => {
                       >
                         Доступнее по цене
                       </p>
-                    </div
+                    </div>
 
                     <div
                       data-pp-id="src/pages/Index.tsx:148:20"
