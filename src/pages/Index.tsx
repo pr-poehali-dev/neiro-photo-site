@@ -1,14 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Separator } from "@/components/ui/separator";
+import { Link } from "react-router-dom";
+import SubscriptionDialog from "@/components/SubscriptionDialog";
+import QuizDialog from "@/components/QuizDialog";
+import { Calendar } from "@/components/ui/calendar";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
+  const [subscriptionDialogOpen, setSubscriptionDialogOpen] = useState(false);
+  const [quizDialogOpen, setQuizDialogOpen] = useState(false);
+  const [date, setDate] = useState<Date | undefined>(undefined);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSubscriptionDialogOpen(true);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -58,21 +73,27 @@ const Index = () => {
       name: "Елена Смирнова",
       text: "Александра создала невероятные нейрофото! Это настоящее искусство, которое передаёт глубину эмоций.",
       rating: 5,
+      image: "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/11bd7973-62f6-4eb6-a6f8-d388eb3afa8a.jpg"
     },
     {
       name: "Дмитрий и Ольга",
       text: "Мария сняла нашу свадьбу просто волшебно. Каждый кадр — это история, которую хочется пересматривать снова.",
       rating: 5,
+      image: "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/69bf3ec7-5125-44fe-accb-af20b5684723.jpg"
     },
     {
       name: "Анна Петрова",
       text: "Семейная фотосессия с Марией прошла очень комфортно. Дети вели себя естественно, а результат превзошёл ожидания!",
       rating: 5,
+      image: "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/70a84839-0333-4f0d-92d9-939ae755a963.jpg"
     },
   ];
 
   return (
     <div className="min-h-screen bg-background">
+      <SubscriptionDialog open={subscriptionDialogOpen} onOpenChange={setSubscriptionDialogOpen} />
+      <QuizDialog open={quizDialogOpen} onOpenChange={setQuizDialogOpen} />
+      
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div>
@@ -218,13 +239,14 @@ const Index = () => {
                 .map((img, idx) => (
                   <div
                     key={idx}
-                    className="group relative overflow-hidden rounded-lg aspect-square animate-fade-in"
+                    className="group relative overflow-hidden rounded-lg aspect-square"
                   >
                     <img
                       src={img.url}
-                      alt={`Alexandra portfolio ${idx + 1}`}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      alt={`Работа ${idx + 1}`}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                 ))}
             </TabsContent>
@@ -235,3388 +257,600 @@ const Index = () => {
                 .map((img, idx) => (
                   <div
                     key={idx}
-                    className="group relative overflow-hidden rounded-lg aspect-square animate-fade-in"
+                    className="group relative overflow-hidden rounded-lg aspect-square"
                   >
                     <img
                       src={img.url}
-                      alt={`Maria portfolio ${idx + 1}`}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      alt={`Работа ${idx + 1}`}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
                 ))}
             </TabsContent>
           </Tabs>
         </div>
       </section>
-      <section
-        data-pp-id="src/pages/Index.tsx:122:6"
-        data-pp-name="section"
-        data-component-path="src/pages/Index.tsx"
-        data-component-line="122"
-        data-component-file="Index.tsx"
-        data-component-name="section"
-        data-component-content="%7B%22className%22%3A%22py-20%20px-4%20bg-muted%2F30%22%7D"
-        id="comparison"
-        class="py-20 px-4 bg-muted/30"
-      >
-        <div
-          data-pp-id="src/pages/Index.tsx:123:8"
-          data-pp-name="div"
-          data-component-path="src/pages/Index.tsx"
-          data-component-line="123"
-          data-component-file="Index.tsx"
-          data-component-name="div"
-          data-component-content="%7B%22className%22%3A%22container%20mx-auto%22%7D"
-          class="container mx-auto"
-        >
-          <h2
-            data-pp-id="src/pages/Index.tsx:124:10"
-            data-pp-name="h2"
-            data-component-path="src/pages/Index.tsx"
-            data-component-line="124"
-            data-component-file="Index.tsx"
-            data-component-name="h2"
-            data-component-content="%7B%22text%22%3A%22%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5%20%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%22%2C%22className%22%3A%22text-4xl%20font-heading%20font-bold%20text-center%20mb-12%22%7D"
-            class="text-4xl font-heading font-bold text-center mb-12"
-          >
-            Сравнение форматов съёмки
-          </h2>
-          <div
-            data-pp-id="src/pages/Index.tsx:127:10"
-            data-pp-name="Card"
-            data-component-path="src/pages/Index.tsx"
-            data-component-line="127"
-            data-component-file="Index.tsx"
-            data-component-name="Card"
-            data-component-content="%7B%22className%22%3A%22max-w-4xl%20mx-auto%22%7D"
-            class="rounded-lg border bg-card text-card-foreground shadow-sm max-w-4xl mx-auto"
-          >
-            <div
-              data-pp-id="src/pages/Index.tsx:128:12"
-              data-pp-name="CardContent"
-              data-component-path="src/pages/Index.tsx"
-              data-component-line="128"
-              data-component-file="Index.tsx"
-              data-component-name="CardContent"
-              data-component-content="%7B%22className%22%3A%22p-8%22%7D"
-              class="p-8"
-            >
-              <div
-                data-pp-id="src/pages/Index.tsx:129:14"
-                data-pp-name="div"
-                data-component-path="src/pages/Index.tsx"
-                data-component-line="129"
-                data-component-file="Index.tsx"
-                data-component-name="div"
-                data-component-content="%7B%22className%22%3A%22grid%20md%3Agrid-cols-2%20gap-8%20mb-8%22%7D"
-                class="grid md:grid-cols-2 gap-8 mb-8"
-              >
-                <div
-                  data-pp-id="src/pages/Index.tsx:130:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="130"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22space-y-4%22%7D"
-                  class="space-y-4"
-                >
-                  <div
-                    data-pp-id="src/pages/Index.tsx:131:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="131"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%20mb-4%22%7D"
-                    class="flex items-center gap-3 mb-4"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="28"
-                      height="28"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-sparkles text-primary"
-                      data-pp-id="src/pages/Index.tsx:132:20"
-                      data-pp-name="Icon"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="132"
-                      data-component-file="Index.tsx"
-                      data-component-name="Icon"
-                      data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                    >
-                      <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path>
-                      <path d="M20 3v4"></path>
-                      <path d="M22 5h-4"></path>
-                      <path d="M4 17v2"></path>
-                      <path d="M5 18H3"></path>
-                    </svg>
-                    <h3
-                      data-pp-id="src/pages/Index.tsx:133:20"
-                      data-pp-name="h3"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="133"
-                      data-component-file="Index.tsx"
-                      data-component-name="h3"
-                      data-component-content="%7B%22text%22%3A%22AI-%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F%22%2C%22className%22%3A%22text-2xl%20font-heading%20font-bold%22%7D"
-                      class="text-2xl font-heading font-bold"
-                    >
-                      AI-фотография
-                    </h3>
-                  </div>
-                  <div
-                    data-pp-id="src/pages/Index.tsx:135:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="135"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%22className%22%3A%22space-y-3%22%7D"
-                    class="space-y-3"
-                  >
-                    <div
-                      data-pp-id="src/pages/Index.tsx:136:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="136"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
-                      class="flex items-start gap-2"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-check text-green-500 mt-1"
-                        data-pp-id="src/pages/Index.tsx:137:22"
-                        data-pp-name="Icon"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="137"
-                        data-component-file="Index.tsx"
-                        data-component-name="Icon"
-                        data-component-content="%7B%22className%22%3A%22text-green-500%20mt-1%22%7D"
-                      >
-                        <path d="M20 6 9 17l-5-5"></path>
-                      </svg>
-                      <p
-                        data-pp-id="src/pages/Index.tsx:138:22"
-                        data-pp-name="p"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="138"
-                        data-component-file="Index.tsx"
-                        data-component-name="p"
-                        data-component-content="%7B%22text%22%3A%22%D0%93%D0%BE%D1%82%D0%BE%D0%B2%D0%BE%20%D0%B7%D0%B0%20%D0%BD%D0%B5%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2%22%7D"
-                      >
-                        Работа полностью онлайн
-                      </p>
-                    </div>
-                    <div
-                      data-pp-id="src/pages/Index.tsx:140:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="140"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
-                      class="flex items-start gap-2"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-check text-green-500 mt-1"
-                        data-pp-id="src/pages/Index.tsx:141:22"
-                        data-pp-name="Icon"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="141"
-                        data-component-file="Index.tsx"
-                        data-component-name="Icon"
-                        data-component-content="%7B%22className%22%3A%22text-green-500%20mt-1%22%7D"
-                      >
-                        <path d="M20 6 9 17l-5-5"></path>
-                      </svg>
-                      <p
-                        data-pp-id="src/pages/Index.tsx:142:22"
-                        data-pp-name="p"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="142"
-                        data-component-file="Index.tsx"
-                        data-component-name="p"
-                        data-component-content="%7B%22text%22%3A%22%D0%9D%D0%B5%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%D1%8B%20%D1%81%D1%82%D0%B8%D0%BB%D0%B5%D0%B9%22%7D"
-                      >
-                        Уникальные, креативные AI-эффекты
-                      </p>
-                    </div>
-                    <div
-                      data-pp-id="src/pages/Index.tsx:144:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="144"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
-                      class="flex items-start gap-2"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-check text-green-500 mt-1"
-                        data-pp-id="src/pages/Index.tsx:145:22"
-                        data-pp-name="Icon"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="145"
-                        data-component-file="Index.tsx"
-                        data-component-name="Icon"
-                        data-component-content="%7B%22className%22%3A%22text-green-500%20mt-1%22%7D"
-                      >
-                        <path d="M20 6 9 17l-5-5"></path>
-                      </svg>
-                      <p
-                        data-pp-id="src/pages/Index.tsx:146:22"
-                        data-pp-name="p"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="146"
-                        data-component-file="Index.tsx"
-                        data-component-name="p"
-                        data-component-content="%7B%22text%22%3A%22%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%2C%20%D0%B1%D0%B5%D0%B7%20%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%87%22%7D"
-                      >
-                        Доступная цена
-                      </p>
-                    </div>
-                    <div
-                      data-pp-id="src/pages/Index.tsx:148:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="148"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
-                      class="flex items-start gap-2"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-x text-red-500 mt-1"
-                        data-pp-id="src/pages/Index.tsx:149:22"
-                        data-pp-name="Icon"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="149"
-                        data-component-file="Index.tsx"
-                        data-component-name="Icon"
-                        data-component-content="%7B%22className%22%3A%22text-red-500%20mt-1%22%7D"
-                      >
-                        <path d="M18 6 6 18"></path>
-                        <path d="m6 6 12 12"></path>
-                      </svg>
-                      <p
-                        data-pp-id="src/pages/Index.tsx:150:22"
-                        data-pp-name="p"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="150"
-                        data-component-file="Index.tsx"
-                        data-component-name="p"
-                        data-component-content="%7B%22text%22%3A%22%D0%9C%D0%B5%D0%BD%D1%8C%D1%88%D0%B5%20%D0%B5%D1%81%D1%82%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8%22%7D"
-                      >
-                        Требуется исходное фото хорошего качества
-                      </p>
-                    </div>
-                    <div
-                      data-pp-id="src/pages/Index.tsx:152:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="152"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
-                      class="flex items-start gap-2"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-x text-red-500 mt-1"
-                        data-pp-id="src/pages/Index.tsx:153:22"
-                        data-pp-name="Icon"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="153"
-                        data-component-file="Index.tsx"
-                        data-component-name="Icon"
-                        data-component-content="%7B%22className%22%3A%22text-red-500%20mt-1%22%7D"
-                      >
-                        <path d="M18 6 6 18"></path>
-                        <path d="m6 6 12 12"></path>
-                      </svg>
-                      <p
-                        data-pp-id="src/pages/Index.tsx:154:22"
-                        data-pp-name="p"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="154"
-                        data-component-file="Index.tsx"
-                        data-component-name="p"
-                        data-component-content="%7B%22text%22%3A%22%D0%9D%D0%B5%D1%82%20%D0%B6%D0%B8%D0%B2%D0%BE%D0%B3%D0%BE%20%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%22%7D"
-                      >
-                        Сходство с оригиналом фото до 85-95%
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-pp-id="src/pages/Index.tsx:159:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="159"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22space-y-4%22%7D"
-                  class="space-y-4"
-                >
-                  <div
-                    data-pp-id="src/pages/Index.tsx:160:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="160"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%20mb-4%22%7D"
-                    class="flex items-center gap-3 mb-4"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="28"
-                      height="28"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-camera text-secondary"
-                      data-pp-id="src/pages/Index.tsx:161:20"
-                      data-pp-name="Icon"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="161"
-                      data-component-file="Index.tsx"
-                      data-component-name="Icon"
-                      data-component-content="%7B%22className%22%3A%22text-secondary%22%7D"
-                    >
-                      <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
-                      <circle cx="12" cy="13" r="3"></circle>
-                    </svg>
-                    <h3
-                      data-pp-id="src/pages/Index.tsx:162:20"
-                      data-pp-name="h3"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="162"
-                      data-component-file="Index.tsx"
-                      data-component-name="h3"
-                      data-component-content="%7B%22text%22%3A%22%D0%9A%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D1%81%D1%8A%D1%91%D0%BC%D0%BA%D0%B0%22%2C%22className%22%3A%22text-2xl%20font-heading%20font-bold%22%7D"
-                      class="text-2xl font-heading font-bold"
-                    >
-                      Классическая съёмка
-                    </h3>
-                  </div>
-                  <div
-                    data-pp-id="src/pages/Index.tsx:164:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="164"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%22className%22%3A%22space-y-3%22%7D"
-                    class="space-y-3"
-                  >
-                    <div
-                      data-pp-id="src/pages/Index.tsx:165:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="165"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
-                      class="flex items-start gap-2"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-check text-green-500 mt-1"
-                        data-pp-id="src/pages/Index.tsx:166:22"
-                        data-pp-name="Icon"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="166"
-                        data-component-file="Index.tsx"
-                        data-component-name="Icon"
-                        data-component-content="%7B%22className%22%3A%22text-green-500%20mt-1%22%7D"
-                      >
-                        <path d="M20 6 9 17l-5-5"></path>
-                      </svg>
-                      <p
-                        data-pp-id="src/pages/Index.tsx:167:22"
-                        data-pp-name="p"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="167"
-                        data-component-file="Index.tsx"
-                        data-component-name="p"
-                        data-component-content="%7B%22text%22%3A%22100%25%20%D0%B5%D1%81%D1%82%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%8D%D0%BC%D0%BE%D1%86%D0%B8%D0%B8%22%7D"
-                      >
-                        Живые эмоции и естественные снимки
-                      </p>
-                    </div>
-                    <div
-                      data-pp-id="src/pages/Index.tsx:169:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="169"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
-                      class="flex items-start gap-2"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-check text-green-500 mt-1"
-                        data-pp-id="src/pages/Index.tsx:170:22"
-                        data-pp-name="Icon"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="170"
-                        data-component-file="Index.tsx"
-                        data-component-name="Icon"
-                        data-component-content="%7B%22className%22%3A%22text-green-500%20mt-1%22%7D"
-                      >
-                        <path d="M20 6 9 17l-5-5"></path>
-                      </svg>
-                      <p
-                        data-pp-id="src/pages/Index.tsx:171:22"
-                        data-pp-name="p"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="171"
-                        data-component-file="Index.tsx"
-                        data-component-name="p"
-                        data-component-content="%7B%22text%22%3A%22%D0%9B%D0%B8%D1%87%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%20%D1%81%20%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%BE%D0%BC%22%7D"
-                      >
-                        Реалистичный результат без искажений
-                      </p>
-                    </div>
-                    <div
-                      data-pp-id="src/pages/Index.tsx:173:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="173"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
-                      class="flex items-start gap-2"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-check text-green-500 mt-1"
-                        data-pp-id="src/pages/Index.tsx:174:22"
-                        data-pp-name="Icon"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="174"
-                        data-component-file="Index.tsx"
-                        data-component-name="Icon"
-                        data-component-content="%7B%22className%22%3A%22text-green-500%20mt-1%22%7D"
-                      >
-                        <path d="M20 6 9 17l-5-5"></path>
-                      </svg>
-                      <p
-                        data-pp-id="src/pages/Index.tsx:175:22"
-                        data-pp-name="p"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="175"
-                        data-component-file="Index.tsx"
-                        data-component-name="p"
-                        data-component-content="%7B%22text%22%3A%22%D0%A3%D0%BD%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BC%D0%BE%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%22%7D"
-                      >
-                        Живая атмосфера и уникальность кадров
-                      </p>
-                    </div>
-                    <div
-                      data-pp-id="src/pages/Index.tsx:177:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="177"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
-                      class="flex items-start gap-2"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-x text-red-500 mt-1"
-                        data-pp-id="src/pages/Index.tsx:178:22"
-                        data-pp-name="Icon"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="178"
-                        data-component-file="Index.tsx"
-                        data-component-name="Icon"
-                        data-component-content="%7B%22className%22%3A%22text-red-500%20mt-1%22%7D"
-                      >
-                        <path d="M18 6 6 18"></path>
-                        <path d="m6 6 12 12"></path>
-                      </svg>
-                      <p
-                        data-pp-id="src/pages/Index.tsx:179:22"
-                        data-pp-name="p"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="179"
-                        data-component-file="Index.tsx"
-                        data-component-name="p"
-                        data-component-content="%7B%22text%22%3A%22%D0%9E%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%201-2%20%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D0%B8%22%7D"
-                      >
-                        Только для жителей Новосибирска
-                      </p>
-                    </div>
-                    <div
-                      data-pp-id="src/pages/Index.tsx:181:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="181"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
-                      class="flex items-start gap-2"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="lucide lucide-x text-red-500 mt-1"
-                        data-pp-id="src/pages/Index.tsx:182:22"
-                        data-pp-name="Icon"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="182"
-                        data-component-file="Index.tsx"
-                        data-component-name="Icon"
-                        data-component-content="%7B%22className%22%3A%22text-red-500%20mt-1%22%7D"
-                      >
-                        <path d="M18 6 6 18"></path>
-                        <path d="m6 6 12 12"></path>
-                      </svg>
-                      <p
-                        data-pp-id="src/pages/Index.tsx:183:22"
-                        data-pp-name="p"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="183"
-                        data-component-file="Index.tsx"
-                        data-component-name="p"
-                        data-component-content="%7B%22text%22%3A%22%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BB%D0%B8%D1%87%D0%BD%D0%B0%D1%8F%20%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%87%D0%B0%22%7D"
-                      >
-                        Длительная обработка (5-7 дней)
-                      </p>
-                    </div>
-                  </div>
-                </div>
+
+      <section id="about" className="py-20 px-6 bg-white/50">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent">
+              Два подхода к фотографии
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Выберите то, что вам ближе: быстрые и креативные AI-снимки или классическую съёмку с живым общением
+            </p>
+          </div>
+
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <div className="flex items-center gap-3 mb-4">
+                <Icon name="Sparkles" size={28} className="text-primary" />
+                <h3 className="text-2xl font-bold">AI-фотография</h3>
               </div>
-              <div
-                data-pp-id="src/pages/Index.tsx:189:14"
-                data-pp-name="div"
-                data-component-path="src/pages/Index.tsx"
-                data-component-line="189"
-                data-component-file="Index.tsx"
-                data-component-name="div"
-                data-component-content="%7B%22className%22%3A%22text-center%20pt-6%20border-t%22%7D"
-                class="text-center pt-6 border-t"
-              >
-                <p
-                  data-pp-id="src/pages/Index.tsx:190:16"
-                  data-pp-name="p"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="190"
-                  data-component-file="Index.tsx"
-                  data-component-name="p"
-                  data-component-content="%7B%22text%22%3A%22%D0%9D%D0%B5%20%D1%83%D0%B2%D0%B5%D1%80%D0%B5%D0%BD%D1%8B%3F%20%D0%9F%D1%80%D0%BE%D0%B9%D0%B4%D0%B8%D1%82%D0%B5%20%D0%BA%D0%BE%D1%80%D0%BE%D1%82%D0%BA%D0%B8%D0%B9%20%D1%82%D0%B5%D1%81%D1%82!%22%2C%22className%22%3A%22text-muted-foreground%20mb-4%22%7D"
-                  class="text-muted-foreground mb-4"
-                >
-                  Не уверены? Пройдите короткий тест!
-                </p>
-                <button
-                  data-pp-id="src/pages/Index.tsx:191:16"
-                  data-pp-name="Button"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="191"
-                  data-component-file="Index.tsx"
-                  data-component-name="Button"
-                  data-component-content="%7B%22text%22%3A%22%D0%9F%D0%BE%D0%BC%D0%BE%D1%87%D1%8C%20%D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D1%82%D1%8C%22%7D"
-                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-circle-help mr-2"
-                    data-pp-id="src/pages/Index.tsx:192:18"
-                    data-pp-name="Icon"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="192"
-                    data-component-file="Index.tsx"
-                    data-component-name="Icon"
-                    data-component-content="%7B%22className%22%3A%22mr-2%22%7D"
-                  >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                    <path d="M12 17h.01"></path>
-                  </svg>
-                  Помочь выбрать
-                </button>
+              <div className="space-y-4">
+                <div className="flex items-start gap-2">
+                  <Icon name="Check" className="text-green-500 mt-1" size={20} />
+                  <p>Быстрый результат за 1-2 дня</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Icon name="Check" className="text-green-500 mt-1" size={20} />
+                  <p>Уникальные, креативные AI-эффекты</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Icon name="Check" className="text-green-500 mt-1" size={20} />
+                  <p>Доступная цена</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Icon name="X" className="text-red-500 mt-1" size={20} />
+                  <p>Требуется исходное фото хорошего качества</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Icon name="X" className="text-red-500 mt-1" size={20} />
+                  <p>Сходство с оригиналом фото до 85-95%</p>
+                </div>
               </div>
             </div>
+
+            <div className="space-y-6">
+              <div className="flex items-center gap-3 mb-4">
+                <Icon name="Camera" size={28} className="text-secondary" />
+                <h3 className="text-2xl font-bold">Классическая съёмка</h3>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-start gap-2">
+                  <Icon name="Check" className="text-green-500 mt-1" size={20} />
+                  <p>100% естественные фотографии</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Icon name="Check" className="text-green-500 mt-1" size={20} />
+                  <p>Живая атмосфера и уникальность кадров</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Icon name="X" className="text-red-500 mt-1" size={20} />
+                  <p>Только для жителей Новосибирска</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Icon name="X" className="text-red-500 mt-1" size={20} />
+                  <p>Длительная обработка (5-7 дней)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center pt-6 border-t max-w-4xl mx-auto mt-8">
+            <p className="text-muted-foreground mb-4">Не уверены? Пройдите короткий тест!</p>
+            <Button onClick={() => setQuizDialogOpen(true)}>
+              Помочь выбрать
+            </Button>
           </div>
         </div>
       </section>
 
-      <section
-        data-pp-id="src/pages/Index.tsx:369:6"
-        data-pp-name="section"
-        data-component-path="src/pages/Index.tsx"
-        data-component-line="369"
-        data-component-file="Index.tsx"
-        data-component-name="section"
-        data-component-content="%7B%22className%22%3A%22py-20%20px-4%20bg-muted%2F30%22%7D"
-        id="pricing"
-        class="py-20 px-4 bg-muted/30"
-      >
-        <div
-          data-pp-id="src/pages/Index.tsx:370:8"
-          data-pp-name="div"
-          data-component-path="src/pages/Index.tsx"
-          data-component-line="370"
-          data-component-file="Index.tsx"
-          data-component-name="div"
-          data-component-content="%7B%22className%22%3A%22container%20mx-auto%22%7D"
-          class="container mx-auto"
-        >
-          <h2
-            data-pp-id="src/pages/Index.tsx:371:10"
-            data-pp-name="h2"
-            data-component-path="src/pages/Index.tsx"
-            data-component-line="371"
-            data-component-file="Index.tsx"
-            data-component-name="h2"
-            data-component-content="%7B%22text%22%3A%22%D0%9F%D1%80%D0%B0%D0%B9%D1%81%22%2C%22className%22%3A%22text-4xl%20font-heading%20font-bold%20text-center%20mb-12%22%7D"
-            class="text-4xl font-heading font-bold text-center mb-12"
-          >
-            Прайс
-          </h2>
-          <div
-            data-pp-id="src/pages/Index.tsx:372:10"
-            data-pp-name="div"
-            data-component-path="src/pages/Index.tsx"
-            data-component-line="372"
-            data-component-file="Index.tsx"
-            data-component-name="div"
-            data-component-content="%7B%22className%22%3A%22grid%20md%3Agrid-cols-2%20gap-8%20max-w-5xl%20mx-auto%22%7D"
-            class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto"
-          >
-            <div
-              data-pp-id="src/pages/Index.tsx:373:12"
-              data-pp-name="Card"
-              data-component-path="src/pages/Index.tsx"
-              data-component-line="373"
-              data-component-file="Index.tsx"
-              data-component-name="Card"
-              data-component-content="%7B%22className%22%3A%22border-primary%2F50%22%7D"
-              class="rounded-lg border bg-card text-card-foreground shadow-sm border-primary/50"
-            >
-              <div
-                data-pp-id="src/pages/Index.tsx:374:14"
-                data-pp-name="CardHeader"
-                data-component-path="src/pages/Index.tsx"
-                data-component-line="374"
-                data-component-file="Index.tsx"
-                data-component-name="CardHeader"
-                data-component-content="%7B%7D"
-                class="flex flex-col space-y-1.5 p-6"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-sparkles text-primary mb-4"
-                  data-pp-id="src/pages/Index.tsx:375:16"
-                  data-pp-name="Icon"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="375"
-                  data-component-file="Index.tsx"
-                  data-component-name="Icon"
-                  data-component-content="%7B%22className%22%3A%22text-primary%20mb-4%22%7D"
-                >
-                  <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path>
-                  <path d="M20 3v4"></path>
-                  <path d="M22 5h-4"></path>
-                  <path d="M4 17v2"></path>
-                  <path d="M5 18H3"></path>
-                </svg>
-                <h3
-                  data-pp-id="src/pages/Index.tsx:376:16"
-                  data-pp-name="CardTitle"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="376"
-                  data-component-file="Index.tsx"
-                  data-component-name="CardTitle"
-                  data-component-content="%7B%22text%22%3A%22AI-%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F%22%2C%22className%22%3A%22text-3xl%20font-heading%22%7D"
-                  class="font-semibold tracking-tight text-3xl font-heading"
-                >
-                  AI-фотография
-                </h3>
-                <p
-                  data-pp-id="src/pages/Index.tsx:377:16"
-                  data-pp-name="CardDescription"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="377"
-                  data-component-file="Index.tsx"
-                  data-component-name="CardDescription"
-                  data-component-content="%7B%22text%22%3A%22%D1%81%20%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%BE%D0%B9%22%7D"
-                  class="text-sm text-muted-foreground"
-                >
-                  с Александрой
-                </p>
-              </div>
-              <div
-                data-pp-id="src/pages/Index.tsx:379:14"
-                data-pp-name="CardContent"
-                data-component-path="src/pages/Index.tsx"
-                data-component-line="379"
-                data-component-file="Index.tsx"
-                data-component-name="CardContent"
-                data-component-content="%7B%22className%22%3A%22space-y-6%22%7D"
-                class="p-6 pt-0 space-y-6"
-              >
-                <div
-                  data-pp-id="src/pages/Index.tsx:380:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="380"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22space-y-4%22%7D"
-                  class="space-y-4"
-                >
-                  <div
-                    data-pp-id="src/pages/Index.tsx:381:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="381"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%22className%22%3A%22flex%20justify-between%20items-center%22%7D"
-                    class="flex justify-between items-center"
-                  >
-                    <span
-                      data-pp-id="src/pages/Index.tsx:382:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="382"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%20(10%20%D1%84%D0%BE%D1%82%D0%BE)%22%7D"
-                    >
-                      Пробный пакет (3 фото, 1 образ)
-                    </span>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:383:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="383"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%222%20500%20%E2%82%BD%22%2C%22className%22%3A%22font-bold%20text-xl%22%7D"
-                      class="font-bold text-xl"
-                    >
-                      1 000 ₽
-                    </span>
+      <section id="services" className="py-20 px-6 bg-gradient-to-br from-purple-50 to-white">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent">
+              Наши услуги
+            </h2>
+            <p className="text-gray-600 text-lg">
+              Выберите подходящий пакет для ваших потребностей
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="border-2 border-purple-200">
+              <CardHeader className="bg-gradient-to-r from-purple-50 to-white">
+                <div className="flex items-center gap-3 mb-2">
+                  <Icon name="Sparkles" size={32} className="text-primary" />
+                  <CardTitle className="text-3xl">AI-фотография</CardTitle>
+                </div>
+                <CardDescription className="text-base">
+                  Нейрофотография с Александрой
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6 pt-6">
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span>Пробный пакет (3 фото, 1 образ)</span>
+                    <span className="font-bold text-xl">1 000 ₽</span>
                   </div>
-                  <div
-                    data-pp-id="src/pages/Index.tsx:385:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="385"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%22className%22%3A%22flex%20justify-between%20items-center%22%7D"
-                    class="flex justify-between items-center"
-                  >
-                    <span
-                      data-pp-id="src/pages/Index.tsx:386:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="386"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22%D0%A1%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%20(25%20%D1%84%D0%BE%D1%82%D0%BE)%22%7D"
-                    >
-                      Стандарт (10 фото, 2-3 образа)
-                    </span>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:387:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="387"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%225%20000%20%E2%82%BD%22%2C%22className%22%3A%22font-bold%20text-xl%22%7D"
-                      class="font-bold text-xl"
-                    >
-                      2 500 ₽
-                    </span>
+                  <div className="flex justify-between items-center">
+                    <span>Стандарт (10 фото, 2-3 образа)</span>
+                    <span className="font-bold text-xl">2 500 ₽</span>
                   </div>
-                  <div
-                    data-pp-id="src/pages/Index.tsx:389:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="389"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%22className%22%3A%22flex%20justify-between%20items-center%22%7D"
-                    class="flex justify-between items-center"
-                  >
-                    <span
-                      data-pp-id="src/pages/Index.tsx:390:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="390"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22%D0%9F%D1%80%D0%B5%D0%BC%D0%B8%D1%83%D0%BC%20(50%20%D1%84%D0%BE%D1%82%D0%BE)%22%7D"
-                    >
-                      Премиум (20 фото, 5 образов)
-                    </span>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:391:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="391"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%228%20000%20%E2%82%BD%22%2C%22className%22%3A%22font-bold%20text-xl%22%7D"
-                      class="font-bold text-xl"
-                    >
-                      3 500 ₽
+                  <div className="flex justify-between items-center">
+                    <span>Премиум (20 фото, 5 образов)</span>
+                    <span className="font-bold text-xl">3 500 ₽</span>
+                  </div>
+                </div>
+                <div className="pt-4 border-t space-y-2">
+                  <div className="flex items-center gap-2 text-sm">
+                    <Icon name="Clock" size={16} className="text-primary" />
+                    <span>Готовность 1 день</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <Icon name="Palette" size={16} className="text-primary" />
+                    <span>Любые образы и стили</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <Icon name="Image" size={16} className="text-primary" />
+                    <span>
+                      <img 
+                        src="https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/7d484231-557f-401e-83b6-ba2117e483c2.jpg"
+                        alt="Все исходные фото в день съемки"
+                        className="w-6 h-6 inline-block mr-1"
+                      />
+                      Все исходные AI-обработки
                     </span>
                   </div>
                 </div>
-                <div
-                  data-pp-id="src/pages/Index.tsx:394:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="394"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22pt-4%20border-t%20space-y-2%22%7D"
-                  class="pt-4 border-t space-y-2"
-                >
-                  <div
-                    data-pp-id="src/pages/Index.tsx:395:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="395"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-2%20text-sm%22%7D"
-                    class="flex items-center gap-2 text-sm"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-clock text-primary"
-                      data-pp-id="src/pages/Index.tsx:396:20"
-                      data-pp-name="Icon"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="396"
-                      data-component-file="Index.tsx"
-                      data-component-name="Icon"
-                      data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:397:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="397"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22%D0%93%D0%BE%D1%82%D0%BE%D0%B2%D0%BE%20%D0%B7%D0%B0%201%20%D0%B4%D0%B5%D0%BD%D1%8C%22%7D"
-                    >
-                      Готовность 1 день
-                    </span>
-                  </div>
-                  <div
-                    data-pp-id="src/pages/Index.tsx:399:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="399"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-2%20text-sm%22%7D"
-                    class="flex items-center gap-2 text-sm"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-palette text-primary"
-                      data-pp-id="src/pages/Index.tsx:400:20"
-                      data-pp-name="Icon"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="400"
-                      data-component-file="Index.tsx"
-                      data-component-name="Icon"
-                      data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                    >
-                      <circle
-                        cx="13.5"
-                        cy="6.5"
-                        r=".5"
-                        fill="currentColor"
-                      ></circle>
-                      <circle
-                        cx="17.5"
-                        cy="10.5"
-                        r=".5"
-                        fill="currentColor"
-                      ></circle>
-                      <circle
-                        cx="8.5"
-                        cy="7.5"
-                        r=".5"
-                        fill="currentColor"
-                      ></circle>
-                      <circle
-                        cx="6.5"
-                        cy="12.5"
-                        r=".5"
-                        fill="currentColor"
-                      ></circle>
-                      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
-                    </svg>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:401:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="401"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22%D0%9B%D1%8E%D0%B1%D1%8B%D0%B5%20%D1%81%D1%82%D0%B8%D0%BB%D0%B8%20%D0%B8%20%D1%8D%D1%84%D1%84%D0%B5%D0%BA%D1%82%D1%8B%22%7D"
-                    >
-                      Любые стили и эффекты
-                    </span>
-                  </div>
-                  <div
-                    data-pp-id="src/pages/Index.tsx:403:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="403"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-2%20text-sm%22%7D"
-                    class="flex items-center gap-2 text-sm"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-monitor text-primary"
-                      data-pp-id="src/pages/Index.tsx:404:20"
-                      data-pp-name="Icon"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="404"
-                      data-component-file="Index.tsx"
-                      data-component-name="Icon"
-                      data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                    >
-                      <rect width="20" height="14" x="2" y="3" rx="2"></rect>
-                      <line x1="8" x2="16" y1="21" y2="21"></line>
-                      <line x1="12" x2="12" y1="17" y2="21"></line>
-                    </svg>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:405:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="405"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%22%7D"
-                    >
-                      Работа онлайн
-                    </span>
-                  </div>
-                </div>
-                <button
-                  data-pp-id="src/pages/Index.tsx:408:16"
-                  data-pp-name="Button"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="408"
-                  data-component-file="Index.tsx"
-                  data-component-name="Button"
-                  data-component-content="%7B%22text%22%3A%22%D0%92%D1%8B%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%22%2C%22className%22%3A%22w-full%22%7D"
-                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8 w-full"
-                >
+                <Button className="w-full" onClick={() => scrollToSection("contact")}>
                   Выбрать пакет
-                </button>
-              </div>
-            </div>
-            <div
-              data-pp-id="src/pages/Index.tsx:414:12"
-              data-pp-name="Card"
-              data-component-path="src/pages/Index.tsx"
-              data-component-line="414"
-              data-component-file="Index.tsx"
-              data-component-name="Card"
-              data-component-content="%7B%22className%22%3A%22border-secondary%2F50%22%7D"
-              class="rounded-lg border bg-card text-card-foreground shadow-sm border-secondary/50"
-            >
-              <div
-                data-pp-id="src/pages/Index.tsx:415:14"
-                data-pp-name="CardHeader"
-                data-component-path="src/pages/Index.tsx"
-                data-component-line="415"
-                data-component-file="Index.tsx"
-                data-component-name="CardHeader"
-                data-component-content="%7B%7D"
-                class="flex flex-col space-y-1.5 p-6"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="40"
-                  height="40"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-camera text-secondary mb-4"
-                  data-pp-id="src/pages/Index.tsx:416:16"
-                  data-pp-name="Icon"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="416"
-                  data-component-file="Index.tsx"
-                  data-component-name="Icon"
-                  data-component-content="%7B%22className%22%3A%22text-secondary%20mb-4%22%7D"
-                >
-                  <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
-                  <circle cx="12" cy="13" r="3"></circle>
-                </svg>
-                <h3
-                  data-pp-id="src/pages/Index.tsx:417:16"
-                  data-pp-name="CardTitle"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="417"
-                  data-component-file="Index.tsx"
-                  data-component-name="CardTitle"
-                  data-component-content="%7B%22text%22%3A%22%D0%9A%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D1%81%D1%8A%D1%91%D0%BC%D0%BA%D0%B0%22%2C%22className%22%3A%22text-3xl%20font-heading%22%7D"
-                  class="font-semibold tracking-tight text-3xl font-heading"
-                >
-                  Классическая съёмка
-                </h3>
-                <p
-                  data-pp-id="src/pages/Index.tsx:418:16"
-                  data-pp-name="CardDescription"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="418"
-                  data-component-file="Index.tsx"
-                  data-component-name="CardDescription"
-                  data-component-content="%7B%22text%22%3A%22%D1%81%20%D0%9C%D0%B0%D1%80%D0%B8%D0%B5%D0%B9%22%7D"
-                  class="text-sm text-muted-foreground"
-                >
-                  с Марией
-                </p>
-              </div>
-              <div
-                data-pp-id="src/pages/Index.tsx:420:14"
-                data-pp-name="CardContent"
-                data-component-path="src/pages/Index.tsx"
-                data-component-line="420"
-                data-component-file="Index.tsx"
-                data-component-name="CardContent"
-                data-component-content="%7B%22className%22%3A%22space-y-6%22%7D"
-                class="p-6 pt-0 space-y-6"
-              >
-                <div
-                  data-pp-id="src/pages/Index.tsx:421:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="421"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22space-y-4%22%7D"
-                  class="space-y-4"
-                >
-                  <div
-                    data-pp-id="src/pages/Index.tsx:422:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="422"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%22className%22%3A%22flex%20justify-between%20items-center%22%7D"
-                    class="flex justify-between items-center"
-                  >
-                    <span
-                      data-pp-id="src/pages/Index.tsx:423:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="423"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22%D0%9C%D0%B8%D0%BD%D0%B8-%D1%81%D1%8A%D1%91%D0%BC%D0%BA%D0%B0%20(1%20%D1%87%D0%B0%D1%81%2C%2020%20%D1%84%D0%BE%D1%82%D0%BE)%22%7D"
-                    >
-                      Мини-съёмка (30 мин, 7 обработанных фото)
-                    </span>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:424:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="424"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%225%20000%20%E2%82%BD%22%2C%22className%22%3A%22font-bold%20text-xl%22%7D"
-                      class="font-bold text-xl"
-                    >
-                      2 500 ₽
-                    </span>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-purple-200">
+              <CardHeader className="bg-gradient-to-r from-purple-50 to-white">
+                <div className="flex items-center gap-3 mb-2">
+                  <Icon name="Camera" size={32} className="text-secondary" />
+                  <CardTitle className="text-3xl">Классическая съёмка</CardTitle>
+                </div>
+                <CardDescription className="text-base">
+                  Профессиональная фотосессия с Марией
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6 pt-6">
+                <div className="space-y-3">
+                  <div className="flex justify-between items-center">
+                    <span>Мини (1 час, 20 фото)</span>
+                    <span className="font-bold text-xl">5 000 ₽</span>
                   </div>
-                  <div
-                    data-pp-id="src/pages/Index.tsx:426:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="426"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%22className%22%3A%22flex%20justify-between%20items-center%22%7D"
-                    class="flex justify-between items-center"
-                  >
-                    <span
-                      data-pp-id="src/pages/Index.tsx:427:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="427"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22%D0%A1%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%20(2%20%D1%87%D0%B0%D1%81%D0%B0%2C%2050%20%D1%84%D0%BE%D1%82%D0%BE)%22%7D"
-                    >
-                      Стандарт (1 час, 15 обработанных фото)
-                    </span>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:428:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="428"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%2210%20000%20%E2%82%BD%22%2C%22className%22%3A%22font-bold%20text-xl%22%7D"
-                      class="font-bold text-xl"
-                    >
-                      4 000 ₽
-                    </span>
+                  <div className="flex justify-between items-center">
+                    <span>Стандарт (2 часа, 50 фото)</span>
+                    <span className="font-bold text-xl">10 000 ₽</span>
                   </div>
-                  <div
-                    data-pp-id="src/pages/Index.tsx:430:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="430"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%22className%22%3A%22flex%20justify-between%20items-center%22%7D"
-                    class="flex justify-between items-center"
-                  >
-                    <span
-                      data-pp-id="src/pages/Index.tsx:431:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="431"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22%D0%9F%D1%80%D0%B5%D0%BC%D0%B8%D1%83%D0%BC%20(4%20%D1%87%D0%B0%D1%81%D0%B0%2C%20100%20%D1%84%D0%BE%D1%82%D0%BE)%22%7D"
-                    >
-                      Премиум (2 часа, 30 обработанных фото)
-                    </span>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:432:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="432"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%2218%20000%20%E2%82%BD%22%2C%22className%22%3A%22font-bold%20text-xl%22%7D"
-                      class="font-bold text-xl"
-                    >
-                      7 500 ₽
-                    </span>
+                  <div className="flex justify-between items-center">
+                    <span>Премиум (4 часа, 100 фото)</span>
+                    <span className="font-bold text-xl">18 000 ₽</span>
                   </div>
                 </div>
-                <div
-                  data-pp-id="src/pages/Index.tsx:435:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="435"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22pt-4%20border-t%20space-y-2%22%7D"
-                  class="pt-4 border-t space-y-2"
-                >
-                  <div
-                    data-pp-id="src/pages/Index.tsx:436:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="436"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-2%20text-sm%22%7D"
-                    class="flex items-center gap-2 text-sm"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-clock text-secondary"
-                      data-pp-id="src/pages/Index.tsx:437:20"
-                      data-pp-name="Icon"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="437"
-                      data-component-file="Index.tsx"
-                      data-component-name="Icon"
-                      data-component-content="%7B%22className%22%3A%22text-secondary%22%7D"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <polyline points="12 6 12 12 16 14"></polyline>
-                    </svg>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:438:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="438"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22%D0%9E%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%207-14%20%D0%B4%D0%BD%D0%B5%D0%B9%22%7D"
-                    >
-                      Обработка 5-7 дней
-                    </span>
+                <div className="pt-4 border-t space-y-2">
+                  <div className="flex items-center gap-2 text-sm">
+                    <Icon name="Clock" size={16} className="text-secondary" />
+                    <span>Готовность 5-7 дней</span>
                   </div>
-                  <div
-                    data-pp-id="src/pages/Index.tsx:440:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="440"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-2%20text-sm%22%7D"
-                    class="flex items-center gap-2 text-sm"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-map-pin text-secondary"
-                      data-pp-id="src/pages/Index.tsx:441:20"
-                      data-pp-name="Icon"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="441"
-                      data-component-file="Index.tsx"
-                      data-component-name="Icon"
-                      data-component-content="%7B%22className%22%3A%22text-secondary%22%7D"
-                    >
-                      <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
-                      <circle cx="12" cy="10" r="3"></circle>
-                    </svg>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:442:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="442"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22%D0%A1%D1%82%D1%83%D0%B4%D0%B8%D1%8F%20%D0%B8%D0%BB%D0%B8%20%D0%B2%D1%8B%D0%B5%D0%B7%D0%B4%22%7D"
-                    >
-                      Студия или выезд
-                    </span>
+                  <div className="flex items-center gap-2 text-sm">
+                    <Icon name="MapPin" size={16} className="text-secondary" />
+                    <span>Съёмка в Новосибирске</span>
                   </div>
-                  <div
-                    data-pp-id="src/pages/Index.tsx:444:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="444"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-2%20text-sm%22%7D"
-                    class="flex items-center gap-2 text-sm"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-smile text-secondary"
-                      data-pp-id="src/pages/Index.tsx:445:20"
-                      data-pp-name="Icon"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="445"
-                      data-component-file="Index.tsx"
-                      data-component-name="Icon"
-                      data-component-content="%7B%22className%22%3A%22text-secondary%22%7D"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-                      <line x1="9" x2="9.01" y1="9" y2="9"></line>
-                      <line x1="15" x2="15.01" y1="9" y2="9"></line>
-                    </svg>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:446:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="446"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22%D0%96%D0%B8%D0%B2%D1%8B%D0%B5%20%D1%8D%D0%BC%D0%BE%D1%86%D0%B8%D0%B8%22%7D"
-                    >
+                  <div className="flex items-center gap-2 text-sm">
+                    <Icon name="Camera" size={16} className="text-secondary" />
+                    <span>
+                      <img 
+                        src="https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/7d484231-557f-401e-83b6-ba2117e483c2.jpg"
+                        alt="Все исходные фото в день съемки"
+                        className="w-6 h-6 inline-block mr-1"
+                      />
                       Все исходные фото в день съемки
                     </span>
                   </div>
                 </div>
-                <button
-                  data-pp-id="src/pages/Index.tsx:449:16"
-                  data-pp-name="Button"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="449"
-                  data-component-file="Index.tsx"
-                  data-component-name="Button"
-                  data-component-content="%7B%22text%22%3A%22%D0%92%D1%8B%D0%B1%D1%80%D0%B0%D1%82%D1%8C%20%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%22%2C%22className%22%3A%22w-full%22%7D"
-                  class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-11 rounded-md px-8 w-full"
-                >
+                <Button className="w-full" variant="secondary" onClick={() => scrollToSection("contact")}>
                   Выбрать пакет
-                </button>
-              </div>
-            </div>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
-      <section
-        data-pp-id="src/pages/Index.tsx:610:6"
-        data-pp-name="section"
-        data-component-path="src/pages/Index.tsx"
-        data-component-line="610"
-        data-component-file="Index.tsx"
-        data-component-name="section"
-        data-component-content="%7B%22className%22%3A%22py-20%20px-6%20bg-white%2F50%22%7D"
-        id="payment"
-        class="py-20 px-6 bg-white/50"
-      >
-        <div
-          data-pp-id="src/pages/Index.tsx:611:8"
-          data-pp-name="div"
-          data-component-path="src/pages/Index.tsx"
-          data-component-line="611"
-          data-component-file="Index.tsx"
-          data-component-name="div"
-          data-component-content="%7B%22className%22%3A%22container%20mx-auto%20max-w-4xl%22%7D"
-          class="container mx-auto max-w-4xl"
-        >
-          <h2
-            data-pp-id="src/pages/Index.tsx:612:10"
-            data-pp-name="h2"
-            data-component-path="src/pages/Index.tsx"
-            data-component-line="612"
-            data-component-file="Index.tsx"
-            data-component-name="h2"
-            data-component-content="%7B%22text%22%3A%22%D0%9E%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D0%B0%22%2C%22className%22%3A%22text-4xl%20md%3Atext-5xl%20font-bold%20text-center%20mb-4%20bg-gradient-to-r%20from-purple-600%20to-black%20bg-clip-text%20text-transparent%22%7D"
-            class="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent"
-          >
-            Онлайн оплата
+
+      <section id="payment" className="py-20 px-6 bg-white/50">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent">
+            Оплата
           </h2>
-          <p
-            data-pp-id="src/pages/Index.tsx:615:10"
-            data-pp-name="p"
-            data-component-path="src/pages/Index.tsx"
-            data-component-line="615"
-            data-component-file="Index.tsx"
-            data-component-name="p"
-            data-component-content="%7B%22text%22%3A%22%D0%9E%D0%BF%D0%BB%D0%B0%D1%87%D0%B8%D0%B2%D0%B0%D0%B9%D1%82%D0%B5%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8%20%D1%83%D0%B4%D0%BE%D0%B1%D0%BD%D1%8B%D0%BC%20%D0%B4%D0%BB%D1%8F%20%D0%B2%D0%B0%D1%81%20%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D0%BE%D0%BC%22%2C%22className%22%3A%22text-center%20text-gray-600%20mb-12%20text-lg%22%7D"
-            class="text-center text-gray-600 mb-12 text-lg"
-          >
+          <p className="text-center text-gray-600 mb-12 text-lg">
             Оплачивайте услуги удобным для вас способом
           </p>
-          <div
-            data-pp-id="src/pages/Index.tsx:619:10"
-            data-pp-name="div"
-            data-component-path="src/pages/Index.tsx"
-            data-component-line="619"
-            data-component-file="Index.tsx"
-            data-component-name="div"
-            data-component-content="%7B%22className%22%3A%22grid%20md%3Agrid-cols-2%20gap-8%20mb-12%22%7D"
-            class="grid md:grid-cols-2 gap-8 mb-12"
-          >
-            <div
-              data-pp-id="src/pages/Index.tsx:620:12"
-              data-pp-name="Card"
-              data-component-path="src/pages/Index.tsx"
-              data-component-line="620"
-              data-component-file="Index.tsx"
-              data-component-name="Card"
-              data-component-content="%7B%22className%22%3A%22border-2%20border-purple-200%22%7D"
-              class="rounded-lg bg-card text-card-foreground shadow-sm border-2 border-purple-200"
-            >
-              <div
-                data-pp-id="src/pages/Index.tsx:621:14"
-                data-pp-name="CardHeader"
-                data-component-path="src/pages/Index.tsx"
-                data-component-line="621"
-                data-component-file="Index.tsx"
-                data-component-name="CardHeader"
-                data-component-content="%7B%7D"
-                class="flex flex-col space-y-1.5 p-6"
-              >
-                <h3
-                  data-pp-id="src/pages/Index.tsx:622:16"
-                  data-pp-name="CardTitle"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="622"
-                  data-component-file="Index.tsx"
-                  data-component-name="CardTitle"
-                  data-component-content="%7B%22text%22%3A%22%D0%A1%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D1%8B%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%8B%22%2C%22className%22%3A%22text-2xl%20flex%20items-center%20gap-2%22%7D"
-                  class="font-semibold tracking-tight text-2xl flex items-center gap-2"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-credit-card text-primary"
-                    data-pp-id="src/pages/Index.tsx:623:18"
-                    data-pp-name="Icon"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="623"
-                    data-component-file="Index.tsx"
-                    data-component-name="Icon"
-                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                  >
-                    <rect width="20" height="14" x="2" y="5" rx="2"></rect>
-                    <line x1="2" x2="22" y1="10" y2="10"></line>
-                  </svg>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card className="border-2 border-purple-200">
+              <CardHeader>
+                <CardTitle className="text-2xl flex items-center gap-2">
+                  <Icon name="CreditCard" className="text-primary" />
                   Способы оплаты
-                </h3>
-              </div>
-              <div
-                data-pp-id="src/pages/Index.tsx:627:14"
-                data-pp-name="CardContent"
-                data-component-path="src/pages/Index.tsx"
-                data-component-line="627"
-                data-component-file="Index.tsx"
-                data-component-name="CardContent"
-                data-component-content="%7B%22className%22%3A%22space-y-4%22%7D"
-                class="p-6 pt-0 space-y-4"
-              >
-                <div
-                  data-pp-id="src/pages/Index.tsx:628:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="628"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%20p-3%20bg-gray-50%20rounded-lg%22%7D"
-                  class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-credit-card text-primary"
-                    data-pp-id="src/pages/Index.tsx:629:18"
-                    data-pp-name="Icon"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="629"
-                    data-component-file="Index.tsx"
-                    data-component-name="Icon"
-                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                  >
-                    <rect width="20" height="14" x="2" y="5" rx="2"></rect>
-                    <line x1="2" x2="22" y1="10" y2="10"></line>
-                  </svg>
-                  <div
-                    data-pp-id="src/pages/Index.tsx:630:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="630"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%7D"
-                  >
-                    <div
-                      data-pp-id="src/pages/Index.tsx:631:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="631"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22text%22%3A%22%D0%91%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BA%D0%B0%D1%80%D1%82%D0%B0%22%2C%22className%22%3A%22font-semibold%22%7D"
-                      class="font-semibold"
-                    >
-                      Банковская карта
-                    </div>
-                    <div
-                      data-pp-id="src/pages/Index.tsx:632:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="632"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22text%22%3A%22Visa%2C%20MasterCard%2C%20%D0%9C%D0%98%D0%A0%22%2C%22className%22%3A%22text-sm%20text-gray-600%22%7D"
-                      class="text-sm text-gray-600"
-                    >
-                      Visa, MasterCard, МИР
-                    </div>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                  <Icon name="CreditCard" className="text-primary" />
+                  <div>
+                    <div className="font-semibold">СБП</div>
+                    <div className="text-sm text-gray-600">Система быстрых платежей</div>
                   </div>
                 </div>
-                <div
-                  data-pp-id="src/pages/Index.tsx:635:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="635"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%20p-3%20bg-gray-50%20rounded-lg%22%7D"
-                  class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-smartphone text-primary"
-                    data-pp-id="src/pages/Index.tsx:636:18"
-                    data-pp-name="Icon"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="636"
-                    data-component-file="Index.tsx"
-                    data-component-name="Icon"
-                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                  >
-                    <rect
-                      width="14"
-                      height="20"
-                      x="5"
-                      y="2"
-                      rx="2"
-                      ry="2"
-                    ></rect>
-                    <path d="M12 18h.01"></path>
-                  </svg>
-                  <div
-                    data-pp-id="src/pages/Index.tsx:637:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="637"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%7D"
-                  >
-                    <div
-                      data-pp-id="src/pages/Index.tsx:638:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="638"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22text%22%3A%22%D0%A1%D0%91%D0%9F%22%2C%22className%22%3A%22font-semibold%22%7D"
-                      class="font-semibold"
-                    >
-                      СБП
-                    </div>
-                    <div
-                      data-pp-id="src/pages/Index.tsx:639:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="639"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22text%22%3A%22%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%20%D0%B1%D1%8B%D1%81%D1%82%D1%80%D1%8B%D1%85%20%D0%BF%D0%BB%D0%B0%D1%82%D0%B5%D0%B6%D0%B5%D0%B9%22%2C%22className%22%3A%22text-sm%20text-gray-600%22%7D"
-                      class="text-sm text-gray-600"
-                    >
-                      Система быстрых платежей
-                    </div>
+                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                  <Icon name="Building" className="text-primary" />
+                  <div>
+                    <div className="font-semibold">Банковский перевод</div>
+                    <div className="text-sm text-gray-600">По реквизитам</div>
                   </div>
                 </div>
-                <div
-                  data-pp-id="src/pages/Index.tsx:642:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="642"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%20p-3%20bg-gray-50%20rounded-lg%22%7D"
-                  class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-wallet text-primary"
-                    data-pp-id="src/pages/Index.tsx:643:18"
-                    data-pp-name="Icon"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="643"
-                    data-component-file="Index.tsx"
-                    data-component-name="Icon"
-                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                  >
-                    <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path>
-                    <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path>
-                  </svg>
-                  <div
-                    data-pp-id="src/pages/Index.tsx:644:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="644"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%7D"
-                  >
-                    <div
-                      data-pp-id="src/pages/Index.tsx:645:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="645"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22text%22%3A%22%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B8%22%2C%22className%22%3A%22font-semibold%22%7D"
-                      class="font-semibold"
-                    >
-                      Электронные кошельки
-                    </div>
-                    <div
-                      data-pp-id="src/pages/Index.tsx:646:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="646"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22text%22%3A%22%D0%AEMoney%2C%20QIWI%22%2C%22className%22%3A%22text-sm%20text-gray-600%22%7D"
-                      class="text-sm text-gray-600"
-                    >
-                      ЮMoney, QIWI
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-pp-id="src/pages/Index.tsx:649:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="649"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%20p-3%20bg-gray-50%20rounded-lg%22%7D"
-                  class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-building text-primary"
-                    data-pp-id="src/pages/Index.tsx:650:18"
-                    data-pp-name="Icon"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="650"
-                    data-component-file="Index.tsx"
-                    data-component-name="Icon"
-                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                  >
-                    <rect
-                      width="16"
-                      height="20"
-                      x="4"
-                      y="2"
-                      rx="2"
-                      ry="2"
-                    ></rect>
-                    <path d="M9 22v-4h6v4"></path>
-                    <path d="M8 6h.01"></path>
-                    <path d="M16 6h.01"></path>
-                    <path d="M12 6h.01"></path>
-                    <path d="M12 10h.01"></path>
-                    <path d="M12 14h.01"></path>
-                    <path d="M16 10h.01"></path>
-                    <path d="M16 14h.01"></path>
-                    <path d="M8 10h.01"></path>
-                    <path d="M8 14h.01"></path>
-                  </svg>
-                  <div
-                    data-pp-id="src/pages/Index.tsx:651:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="651"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%7D"
-                  >
-                    <div
-                      data-pp-id="src/pages/Index.tsx:652:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="652"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22text%22%3A%22%D0%91%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%22%2C%22className%22%3A%22font-semibold%22%7D"
-                      class="font-semibold"
-                    >
-                      Банковский перевод
-                    </div>
-                    <div
-                      data-pp-id="src/pages/Index.tsx:653:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="653"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22text%22%3A%22%D0%9F%D0%BE%20%D1%80%D0%B5%D0%BA%D0%B2%D0%B8%D0%B7%D0%B8%D1%82%D0%B0%D0%BC%22%2C%22className%22%3A%22text-sm%20text-gray-600%22%7D"
-                      class="text-sm text-gray-600"
-                    >
-                      По реквизитам
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              data-pp-id="src/pages/Index.tsx:659:12"
-              data-pp-name="Card"
-              data-component-path="src/pages/Index.tsx"
-              data-component-line="659"
-              data-component-file="Index.tsx"
-              data-component-name="Card"
-              data-component-content="%7B%22className%22%3A%22border-2%20border-purple-200%22%7D"
-              class="rounded-lg bg-card text-card-foreground shadow-sm border-2 border-purple-200"
-            >
-              <div
-                data-pp-id="src/pages/Index.tsx:660:14"
-                data-pp-name="CardHeader"
-                data-component-path="src/pages/Index.tsx"
-                data-component-line="660"
-                data-component-file="Index.tsx"
-                data-component-name="CardHeader"
-                data-component-content="%7B%7D"
-                class="flex flex-col space-y-1.5 p-6"
-              >
-                <h3
-                  data-pp-id="src/pages/Index.tsx:661:16"
-                  data-pp-name="CardTitle"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="661"
-                  data-component-file="Index.tsx"
-                  data-component-name="CardTitle"
-                  data-component-content="%7B%22text%22%3A%22%D0%91%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C%22%2C%22className%22%3A%22text-2xl%20flex%20items-center%20gap-2%22%7D"
-                  class="font-semibold tracking-tight text-2xl flex items-center gap-2"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-shield-check text-primary"
-                    data-pp-id="src/pages/Index.tsx:662:18"
-                    data-pp-name="Icon"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="662"
-                    data-component-file="Index.tsx"
-                    data-component-name="Icon"
-                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                  >
-                    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
-                    <path d="m9 12 2 2 4-4"></path>
-                  </svg>
-                  Безопасность
-                </h3>
-              </div>
-              <div
-                data-pp-id="src/pages/Index.tsx:666:14"
-                data-pp-name="CardContent"
-                data-component-path="src/pages/Index.tsx"
-                data-component-line="666"
-                data-component-file="Index.tsx"
-                data-component-name="CardContent"
-                data-component-content="%7B%22className%22%3A%22space-y-4%22%7D"
-                class="p-6 pt-0 space-y-4"
-              >
-                <div
-                  data-pp-id="src/pages/Index.tsx:667:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="667"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-3%22%7D"
-                  class="flex items-start gap-3"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-lock text-green-500 mt-1"
-                    data-pp-id="src/pages/Index.tsx:668:18"
-                    data-pp-name="Icon"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="668"
-                    data-component-file="Index.tsx"
-                    data-component-name="Icon"
-                    data-component-content="%7B%22className%22%3A%22text-green-500%20mt-1%22%7D"
-                  >
-                    <rect
-                      width="18"
-                      height="11"
-                      x="3"
-                      y="11"
-                      rx="2"
-                      ry="2"
-                    ></rect>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                  </svg>
-                  <div
-                    data-pp-id="src/pages/Index.tsx:669:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="669"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%7D"
-                  >
-                    <div
-                      data-pp-id="src/pages/Index.tsx:670:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="670"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22text%22%3A%22%D0%97%D0%B0%D1%89%D0%B8%D1%89%D1%91%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%BB%D0%B0%D1%82%D0%B5%D0%B6%D0%B8%22%2C%22className%22%3A%22font-semibold%20mb-1%22%7D"
-                      class="font-semibold mb-1"
-                    >
-                      Защищённые платежи
-                    </div>
-                    <div
-                      data-pp-id="src/pages/Index.tsx:671:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="671"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22text%22%3A%22%D0%92%D1%81%D0%B5%20%D1%82%D1%80%D0%B0%D0%BD%D0%B7%D0%B0%D0%BA%D1%86%D0%B8%D0%B8%20%D0%BF%D1%80%D0%BE%D1%85%D0%BE%D0%B4%D1%8F%D1%82%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20%D0%B7%D0%B0%D1%89%D0%B8%D1%89%D1%91%D0%BD%D0%BD%D0%BE%D0%B5%20%D1%81%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20SSL%22%2C%22className%22%3A%22text-sm%20text-gray-600%22%7D"
-                      class="text-sm text-gray-600"
-                    >
-                      Все транзакции проходят через защищённое соединение SSL
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-pp-id="src/pages/Index.tsx:674:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="674"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-3%22%7D"
-                  class="flex items-start gap-3"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-file-check text-green-500 mt-1"
-                    data-pp-id="src/pages/Index.tsx:675:18"
-                    data-pp-name="Icon"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="675"
-                    data-component-file="Index.tsx"
-                    data-component-name="Icon"
-                    data-component-content="%7B%22className%22%3A%22text-green-500%20mt-1%22%7D"
-                  >
-                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                    <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                    <path d="m9 15 2 2 4-4"></path>
-                  </svg>
-                  <div
-                    data-pp-id="src/pages/Index.tsx:676:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="676"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%7D"
-                  >
-                    <div
-                      data-pp-id="src/pages/Index.tsx:677:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="677"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22text%22%3A%22%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%B8%20%D1%87%D0%B5%D0%BA%22%2C%22className%22%3A%22font-semibold%20mb-1%22%7D"
-                      class="font-semibold mb-1"
-                    >
-                      Договор и чек
-                    </div>
-                    <div
-                      data-pp-id="src/pages/Index.tsx:678:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="678"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22text%22%3A%22%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%8B%20%D0%B2%D1%8B%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B0%D0%B5%D1%82%D0%B5%20%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%B8%20%D1%84%D0%B8%D1%81%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%87%D0%B5%D0%BA%22%2C%22className%22%3A%22text-sm%20text-gray-600%22%7D"
-                      class="text-sm text-gray-600"
-                    >
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-purple-200">
+              <CardHeader>
+                <CardTitle className="text-2xl flex items-center gap-2">
+                  <Icon name="Shield" className="text-green-500" />
+                  Гарантии
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <Icon name="FileCheck" className="text-green-500 mt-1" size={20} />
+                  <div>
+                    <div className="font-semibold mb-1">Договор и чек</div>
+                    <div className="text-sm text-gray-600">
                       После оплаты вы получаете договор и фискальный чек
                     </div>
                   </div>
                 </div>
-                <div
-                  data-pp-id="src/pages/Index.tsx:681:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="681"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-3%22%7D"
-                  class="flex items-start gap-3"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-undo2 text-green-500 mt-1"
-                    data-pp-id="src/pages/Index.tsx:682:18"
-                    data-pp-name="Icon"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="682"
-                    data-component-file="Index.tsx"
-                    data-component-name="Icon"
-                    data-component-content="%7B%22className%22%3A%22text-green-500%20mt-1%22%7D"
-                  >
-                    <path d="M9 14 4 9l5-5"></path>
-                    <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"></path>
-                  </svg>
-                  <div
-                    data-pp-id="src/pages/Index.tsx:683:18"
-                    data-pp-name="div"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="683"
-                    data-component-file="Index.tsx"
-                    data-component-name="div"
-                    data-component-content="%7B%7D"
-                  >
-                    <div
-                      data-pp-id="src/pages/Index.tsx:684:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="684"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22text%22%3A%22%D0%92%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%22%2C%22className%22%3A%22font-semibold%20mb-1%22%7D"
-                      class="font-semibold mb-1"
-                    >
-                      Возврат средств
-                    </div>
-                    <div
-                      data-pp-id="src/pages/Index.tsx:685:20"
-                      data-pp-name="div"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="685"
-                      data-component-file="Index.tsx"
-                      data-component-name="div"
-                      data-component-content="%7B%22text%22%3A%22%D0%92%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%B2%D0%B5%D1%80%D0%BD%D1%83%D1%82%D1%8C%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%83%20%D0%B2%20%D1%82%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%2014%20%D0%B4%D0%BD%D0%B5%D0%B9%22%2C%22className%22%3A%22text-sm%20text-gray-600%22%7D"
-                      class="text-sm text-gray-600"
-                    >
+                <div className="flex items-start gap-3">
+                  <Icon name="Undo2" className="text-green-500 mt-1" size={20} />
+                  <div>
+                    <div className="font-semibold mb-1">Возврат средств</div>
+                    <div className="text-sm text-gray-600">
                       Возможность вернуть предоплату в течение 14 дней
                     </div>
                   </div>
                 </div>
-                <div
-                  data-orientation="horizontal"
-                  role="none"
-                  data-pp-id="src/pages/Index.tsx:688:16"
-                  data-pp-name="Separator"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="688"
-                  data-component-file="Index.tsx"
-                  data-component-name="Separator"
-                  data-component-content="%7B%22className%22%3A%22my-4%22%7D"
-                  class="shrink-0 bg-border h-[1px] w-full my-4"
-                ></div>
-                <div
-                  data-pp-id="src/pages/Index.tsx:689:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="689"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22bg-purple-50%20p-4%20rounded-lg%22%7D"
-                  class="bg-purple-50 p-4 rounded-lg"
-                >
-                  <p
-                    data-pp-id="src/pages/Index.tsx:690:18"
-                    data-pp-name="p"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="690"
-                    data-component-file="Index.tsx"
-                    data-component-name="p"
-                    data-component-content="%7B%22text%22%3A%22%D0%94%D0%BB%D1%8F%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%8B%20%D1%81%D0%B2%D1%8F%D0%B6%D0%B8%D1%82%D0%B5%D1%81%D1%8C%20%D1%81%20%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%BE%D0%BC%20%D1%83%D0%B4%D0%BE%D0%B1%D0%BD%D1%8B%D0%BC%20%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D0%BE%D0%BC.%20%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B0%20%D0%BD%D0%B0%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%83%20%D0%B1%D1%83%D0%B4%D0%B5%D1%82%20%D0%B2%D1%8B%D1%81%D0%BB%D0%B0%D0%BD%D0%B0%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%20%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B4%D0%B5%D1%82%D0%B0%D0%BB%D0%B5%D0%B9%20%D1%81%D1%8A%D1%91%D0%BC%D0%BA%D0%B8.%22%2C%22className%22%3A%22text-sm%20text-gray-700%22%7D"
-                    class="text-sm text-gray-700"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-info inline mr-1"
-                      data-pp-id="src/pages/Index.tsx:691:20"
-                      data-pp-name="Icon"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="691"
-                      data-component-file="Index.tsx"
-                      data-component-name="Icon"
-                      data-component-content="%7B%22className%22%3A%22inline%20mr-1%22%7D"
-                    >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M12 16v-4"></path>
-                      <path d="M12 8h.01"></path>
-                    </svg>
-                    Для оплаты свяжитесь с фотографом удобным способом. Ссылка
-                    на оплату будет выслана после согласования деталей съёмки.
+                <Separator className="my-4" />
+                <div className="bg-purple-50 p-4 rounded-lg">
+                  <p className="text-sm text-gray-700">
+                    <Icon name="Info" size={16} className="inline mr-1" />
+                    Для оплаты свяжитесь с фотографом удобным способом. 
+                    Реквизиты на оплату будут высланы после согласования деталей съёмки.
                   </p>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           </div>
-          <div
-            data-pp-id="src/pages/Index.tsx:699:10"
-            data-pp-name="Card"
-            data-component-path="src/pages/Index.tsx"
-            data-component-line="699"
-            data-component-file="Index.tsx"
-            data-component-name="Card"
-            data-component-content="%7B%22className%22%3A%22border-2%20border-purple-200%22%7D"
-            class="rounded-lg bg-card text-card-foreground shadow-sm border-2 border-purple-200"
-          >
-            <div
-              data-pp-id="src/pages/Index.tsx:700:12"
-              data-pp-name="CardHeader"
-              data-component-path="src/pages/Index.tsx"
-              data-component-line="700"
-              data-component-file="Index.tsx"
-              data-component-name="CardHeader"
-              data-component-content="%7B%7D"
-              class="flex flex-col space-y-1.5 p-6"
-            >
-              <h3
-                data-pp-id="src/pages/Index.tsx:701:14"
-                data-pp-name="CardTitle"
-                data-component-path="src/pages/Index.tsx"
-                data-component-line="701"
-                data-component-file="Index.tsx"
-                data-component-name="CardTitle"
-                data-component-content="%7B%22text%22%3A%22%D0%A3%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%8B%22%2C%22className%22%3A%22text-xl%22%7D"
-                class="font-semibold tracking-tight text-xl"
-              >
-                Условия оплаты
-              </h3>
-            </div>
-            <div
-              data-pp-id="src/pages/Index.tsx:703:12"
-              data-pp-name="CardContent"
-              data-component-path="src/pages/Index.tsx"
-              data-component-line="703"
-              data-component-file="Index.tsx"
-              data-component-name="CardContent"
-              data-component-content="%7B%22className%22%3A%22space-y-3%20text-gray-600%22%7D"
-              class="p-6 pt-0 space-y-3 text-gray-600"
-            >
-              <div
-                data-pp-id="src/pages/Index.tsx:704:14"
-                data-pp-name="div"
-                data-component-path="src/pages/Index.tsx"
-                data-component-line="704"
-                data-component-file="Index.tsx"
-                data-component-name="div"
-                data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
-                class="flex items-start gap-2"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-check text-primary mt-1"
-                  data-pp-id="src/pages/Index.tsx:705:16"
-                  data-pp-name="Icon"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="705"
-                  data-component-file="Index.tsx"
-                  data-component-name="Icon"
-                  data-component-content="%7B%22className%22%3A%22text-primary%20mt-1%22%7D"
-                >
-                  <path d="M20 6 9 17l-5-5"></path>
-                </svg>
-                <span
-                  data-pp-id="src/pages/Index.tsx:706:16"
-                  data-pp-name="span"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="706"
-                  data-component-file="Index.tsx"
-                  data-component-name="span"
-                  data-component-content="%7B%22text%22%3A%22%D0%9F%D1%80%D0%B5%D0%B4%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D0%B0%2030%25%20%D0%B4%D0%BB%D1%8F%20%D0%B1%D1%80%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B4%D0%B0%D1%82%D1%8B%20%D1%81%D1%8A%D1%91%D0%BC%D0%BA%D0%B8%22%7D"
-                >
-                  Предоплата 30% для бронирования даты съёмки
-                </span>
-              </div>
-              <div
-                data-pp-id="src/pages/Index.tsx:708:14"
-                data-pp-name="div"
-                data-component-path="src/pages/Index.tsx"
-                data-component-line="708"
-                data-component-file="Index.tsx"
-                data-component-name="div"
-                data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
-                class="flex items-start gap-2"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-check text-primary mt-1"
-                  data-pp-id="src/pages/Index.tsx:709:16"
-                  data-pp-name="Icon"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="709"
-                  data-component-file="Index.tsx"
-                  data-component-name="Icon"
-                  data-component-content="%7B%22className%22%3A%22text-primary%20mt-1%22%7D"
-                >
-                  <path d="M20 6 9 17l-5-5"></path>
-                </svg>
-                <span
-                  data-pp-id="src/pages/Index.tsx:710:16"
-                  data-pp-name="span"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="710"
-                  data-component-file="Index.tsx"
-                  data-component-name="span"
-                  data-component-content="%7B%22text%22%3A%22%D0%9E%D0%BA%D0%BE%D0%BD%D1%87%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%80%D0%B0%D1%81%D1%87%D1%91%D1%82%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D1%8B%D1%85%20%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%B9%22%7D"
-                >
-                  Окончательный расчёт после получения готовых фотографий
-                </span>
-              </div>
-              <div
-                data-pp-id="src/pages/Index.tsx:712:14"
-                data-pp-name="div"
-                data-component-path="src/pages/Index.tsx"
-                data-component-line="712"
-                data-component-file="Index.tsx"
-                data-component-name="div"
-                data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
-                class="flex items-start gap-2"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-check text-primary mt-1"
-                  data-pp-id="src/pages/Index.tsx:713:16"
-                  data-pp-name="Icon"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="713"
-                  data-component-file="Index.tsx"
-                  data-component-name="Icon"
-                  data-component-content="%7B%22className%22%3A%22text-primary%20mt-1%22%7D"
-                >
-                  <path d="M20 6 9 17l-5-5"></path>
-                </svg>
-                <span
-                  data-pp-id="src/pages/Index.tsx:714:16"
-                  data-pp-name="span"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="714"
-                  data-component-file="Index.tsx"
-                  data-component-name="span"
-                  data-component-content="%7B%22text%22%3A%22%D0%92%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%B0%20%D1%80%D0%B0%D1%81%D1%81%D1%80%D0%BE%D1%87%D0%BA%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D1%80%D1%83%D0%BF%D0%BD%D1%8B%D1%85%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%BE%D0%B2%20(%D1%81%D0%B2%D0%B0%D0%B4%D1%8C%D0%B1%D1%8B%2C%20%D0%BA%D0%BE%D1%80%D0%BF%D0%BE%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D1%8B)%22%7D"
-                >
-                  Возможна рассрочка для крупных заказов (свадьбы, корпоративы)
-                </span>
-              </div>
-              <div
-                data-pp-id="src/pages/Index.tsx:716:14"
-                data-pp-name="div"
-                data-component-path="src/pages/Index.tsx"
-                data-component-line="716"
-                data-component-file="Index.tsx"
-                data-component-name="div"
-                data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
-                class="flex items-start gap-2"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="lucide lucide-check text-primary mt-1"
-                  data-pp-id="src/pages/Index.tsx:717:16"
-                  data-pp-name="Icon"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="717"
-                  data-component-file="Index.tsx"
-                  data-component-name="Icon"
-                  data-component-content="%7B%22className%22%3A%22text-primary%20mt-1%22%7D"
-                >
-                  <path d="M20 6 9 17l-5-5"></path>
-                </svg>
-                <span
-                  data-pp-id="src/pages/Index.tsx:718:16"
-                  data-pp-name="span"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="718"
-                  data-component-file="Index.tsx"
-                  data-component-name="span"
-                  data-component-content="%7B%22text%22%3A%22%D0%9F%D1%80%D0%B8%20%D0%BE%D1%82%D0%BC%D0%B5%D0%BD%D0%B5%20%D1%81%D1%8A%D1%91%D0%BC%D0%BA%D0%B8%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B5%20%D1%87%D0%B5%D0%BC%20%D0%B7%D0%B0%2048%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D0%B0%20%D0%BD%D0%B5%20%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%89%D0%B0%D0%B5%D1%82%D1%81%D1%8F%22%7D"
-                >
-                  При отмене съёмки менее чем за 48 часов предоплата не
-                  возвращается
-                </span>
-              </div>
-            </div>
-          </div>
+
+          <Card className="bg-gradient-to-r from-purple-50 to-white border-2 border-purple-200">
+            <CardHeader>
+              <CardTitle className="text-center">Условия оплаты</CardTitle>
+            </CardHeader>
+            <CardContent className="text-center space-y-2">
+              <p className="text-lg">Предоплата <span className="font-bold text-2xl text-primary">30%</span></p>
+              <p className="text-sm text-gray-600">
+                При отмене съёмки менее чем за 24 часа предоплата не возвращается
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
-      <section id="reviews" className="py-20 px-4">
-        <div className="container mx-auto max-w-5xl">
+
+      <section id="reviews" className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Отзывы</h2>
-            <p className="text-muted-foreground text-lg">
-              Что говорят наши клиенты
-            </p>
+            <p className="text-muted-foreground text-lg">Что говорят наши клиенты</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, idx) => (
-              <Card key={idx} className="p-6 hover:shadow-lg transition-shadow">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Icon
-                      key={i}
-                      name="Star"
-                      className="text-yellow-500 fill-yellow-500"
-                      size={16}
-                    />
-                  ))}
-                </div>
-                <p className="text-muted-foreground mb-4 italic">
-                  &ldquo;{testimonial.text}&rdquo;
-                </p>
-                <p className="font-semibold">{testimonial.name}</p>
+              <Card key={idx} className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6 space-y-4">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-full h-48 object-cover rounded-lg"
+                  />
+                  <div className="flex gap-1">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Icon
+                        key={i}
+                        name="Star"
+                        className="text-yellow-500 fill-yellow-500"
+                        size={16}
+                      />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground mb-4 italic">
+                    &ldquo;{testimonial.text}&rdquo;
+                  </p>
+                  <p className="font-semibold">{testimonial.name}</p>
+                </CardContent>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      <section
-        data-pp-id="src/pages/Index.tsx:725:6"
-        data-pp-name="section"
-        data-component-path="src/pages/Index.tsx"
-        data-component-line="725"
-        data-component-file="Index.tsx"
-        data-component-name="section"
-        data-component-content="%7B%22className%22%3A%22py-20%20px-6%20bg-gradient-to-br%20from-purple-50%20to-white%22%7D"
-        id="contacts"
-        class="py-20 px-6 bg-gradient-to-br from-purple-50 to-white"
-      >
-        <div
-          data-pp-id="src/pages/Index.tsx:726:8"
-          data-pp-name="div"
-          data-component-path="src/pages/Index.tsx"
-          data-component-line="726"
-          data-component-file="Index.tsx"
-          data-component-name="div"
-          data-component-content="%7B%22className%22%3A%22container%20mx-auto%20max-w-4xl%22%7D"
-          class="container mx-auto max-w-4xl"
-        >
-          <h2
-            data-pp-id="src/pages/Index.tsx:727:10"
-            data-pp-name="h2"
-            data-component-path="src/pages/Index.tsx"
-            data-component-line="727"
-            data-component-file="Index.tsx"
-            data-component-name="h2"
-            data-component-content="%7B%22text%22%3A%22%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D1%8B%22%2C%22className%22%3A%22text-4xl%20md%3Atext-5xl%20font-bold%20text-center%20mb-12%20bg-gradient-to-r%20from-purple-600%20to-black%20bg-clip-text%20text-transparent%22%7D"
-            class="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent"
-          >
+      <section id="contacts" className="py-20 px-6 bg-gradient-to-br from-purple-50 to-white">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent">
             Контакты
           </h2>
-          <div
-            data-pp-id="src/pages/Index.tsx:730:10"
-            data-pp-name="div"
-            data-component-path="src/pages/Index.tsx"
-            data-component-line="730"
-            data-component-file="Index.tsx"
-            data-component-name="div"
-            data-component-content="%7B%22className%22%3A%22grid%20md%3Agrid-cols-2%20gap-8%22%7D"
-            class="grid md:grid-cols-2 gap-8"
-          >
-            <div
-              data-pp-id="src/pages/Index.tsx:731:12"
-              data-pp-name="Card"
-              data-component-path="src/pages/Index.tsx"
-              data-component-line="731"
-              data-component-file="Index.tsx"
-              data-component-name="Card"
-              data-component-content="%7B%22className%22%3A%22border-2%20border-purple-200%22%7D"
-              class="rounded-lg bg-card text-card-foreground shadow-sm border-2 border-purple-200"
-            >
-              <div
-                data-pp-id="src/pages/Index.tsx:732:14"
-                data-pp-name="CardHeader"
-                data-component-path="src/pages/Index.tsx"
-                data-component-line="732"
-                data-component-file="Index.tsx"
-                data-component-name="CardHeader"
-                data-component-content="%7B%7D"
-                class="flex flex-col space-y-1.5 p-6"
-              >
-                <h3
-                  data-pp-id="src/pages/Index.tsx:733:16"
-                  data-pp-name="CardTitle"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="733"
-                  data-component-file="Index.tsx"
-                  data-component-name="CardTitle"
-                  data-component-content="%7B%22text%22%3A%22%D0%9C%D0%B0%D1%80%D0%B8%D1%8F%22%2C%22className%22%3A%22text-2xl%22%7D"
-                  class="font-semibold tracking-tight text-2xl"
-                >
-                  Мария
-                </h3>
-                <p
-                  data-pp-id="src/pages/Index.tsx:734:16"
-                  data-pp-name="CardDescription"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="734"
-                  data-component-file="Index.tsx"
-                  data-component-name="CardDescription"
-                  data-component-content="%7B%22text%22%3A%22%D0%9A%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F%20%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F%22%7D"
-                  class="text-sm text-muted-foreground"
-                >
-                  Классическая фотография
-                </p>
-              </div>
-              <div
-                data-pp-id="src/pages/Index.tsx:736:14"
-                data-pp-name="CardContent"
-                data-component-path="src/pages/Index.tsx"
-                data-component-line="736"
-                data-component-file="Index.tsx"
-                data-component-name="CardContent"
-                data-component-content="%7B%22className%22%3A%22space-y-4%22%7D"
-                class="p-6 pt-0 space-y-4"
-              >
-                <div
-                  data-pp-id="src/pages/Index.tsx:737:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="737"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%22%7D"
-                  class="flex items-center gap-3"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-map-pin text-primary"
-                    data-pp-id="src/pages/Index.tsx:738:18"
-                    data-pp-name="Icon"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="738"
-                    data-component-file="Index.tsx"
-                    data-component-name="Icon"
-                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                  >
-                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                  </svg>
-                  <span
-                    data-pp-id="src/pages/Index.tsx:739:18"
-                    data-pp-name="span"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="739"
-                    data-component-file="Index.tsx"
-                    data-component-name="span"
-                    data-component-content="%7B%22text%22%3A%22%D0%B3.%20%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA%22%7D"
-                  >
-                    г. Новосибирск
-                  </span>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="border-2 border-purple-200">
+              <CardHeader>
+                <CardTitle className="text-2xl">Александра</CardTitle>
+                <CardDescription>AI-фотография</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <Icon name="Globe" className="text-primary" />
+                  <span>Онлайн, из любой точки мира</span>
                 </div>
-                <div
-                  data-pp-id="src/pages/Index.tsx:741:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="741"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%22%7D"
-                  class="flex items-center gap-3"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-phone text-primary"
-                    data-pp-id="src/pages/Index.tsx:742:18"
-                    data-pp-name="Icon"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="742"
-                    data-component-file="Index.tsx"
-                    data-component-name="Icon"
-                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                  >
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                  </svg>
-                  <a
-                    data-pp-id="src/pages/Index.tsx:743:18"
-                    data-pp-name="a"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="743"
-                    data-component-file="Index.tsx"
-                    data-component-name="a"
-                    data-component-content="%7B%22text%22%3A%22%2B7%20(923)%20123-45-67%22%2C%22className%22%3A%22hover%3Atext-primary%20transition-colors%22%7D"
-                    href="tel:+79231234567"
-                    class="hover:text-primary transition-colors"
-                  >
-                    +7 (923) 123-45-67
-                  </a>
-                </div>
-                <div
-                  data-pp-id="src/pages/Index.tsx:745:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="745"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%22%7D"
-                  class="flex items-center gap-3"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-mail text-primary"
-                    data-pp-id="src/pages/Index.tsx:746:18"
-                    data-pp-name="Icon"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="746"
-                    data-component-file="Index.tsx"
-                    data-component-name="Icon"
-                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                  >
-                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                  </svg>
-                  <a
-                    data-pp-id="src/pages/Index.tsx:747:18"
-                    data-pp-name="a"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="747"
-                    data-component-file="Index.tsx"
-                    data-component-name="a"
-                    data-component-content="%7B%22text%22%3A%22maria.photo%40example.com%22%2C%22className%22%3A%22hover%3Atext-primary%20transition-colors%22%7D"
-                    href="mailto:maria.photo@example.com"
-                    class="hover:text-primary transition-colors"
-                  >
-                    maria.photo@example.com
-                  </a>
-                </div>
-                <div
-                  data-orientation="horizontal"
-                  role="none"
-                  data-pp-id="src/pages/Index.tsx:749:16"
-                  data-pp-name="Separator"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="749"
-                  data-component-file="Index.tsx"
-                  data-component-name="Separator"
-                  data-component-content="%7B%7D"
-                  class="shrink-0 bg-border h-[1px] w-full"
-                ></div>
-                <div
-                  data-pp-id="src/pages/Index.tsx:750:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="750"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22space-y-2%22%7D"
-                  class="space-y-2"
-                >
-                  <p
-                    data-pp-id="src/pages/Index.tsx:751:18"
-                    data-pp-name="p"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="751"
-                    data-component-file="Index.tsx"
-                    data-component-name="p"
-                    data-component-content="%7B%22text%22%3A%22%D0%9C%D0%B5%D1%81%D1%81%D0%B5%D0%BD%D0%B4%D0%B6%D0%B5%D1%80%D1%8B%20%D0%B8%20%D1%81%D0%BE%D1%86%D1%81%D0%B5%D1%82%D0%B8%3A%22%2C%22className%22%3A%22text-sm%20font-semibold%20text-gray-600%22%7D"
-                    class="text-sm font-semibold text-gray-600"
-                  >
-                    Мессенджеры и соцсети:
-                  </p>
-                  <a
-                    data-pp-id="src/pages/Index.tsx:752:18"
-                    data-pp-name="a"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="752"
-                    data-component-file="Index.tsx"
-                    data-component-name="a"
-                    data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%20hover%3Atext-primary%20transition-colors%22%7D"
-                    href="https://wa.me/79231234567"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="flex items-center gap-3 hover:text-primary transition-colors"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-message-circle text-primary"
-                      data-pp-id="src/pages/Index.tsx:753:20"
-                      data-pp-name="Icon"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="753"
-                      data-component-file="Index.tsx"
-                      data-component-name="Icon"
-                      data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                    >
-                      <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
-                    </svg>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:754:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="754"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22WhatsApp%22%7D"
-                    >
-                      WhatsApp
-                    </span>
-                  </a>
-                  <a
-                    data-pp-id="src/pages/Index.tsx:756:18"
-                    data-pp-name="a"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="756"
-                    data-component-file="Index.tsx"
-                    data-component-name="a"
-                    data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%20hover%3Atext-primary%20transition-colors%22%7D"
-                    href="https://t.me/maria_photo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="flex items-center gap-3 hover:text-primary transition-colors"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-send text-primary"
-                      data-pp-id="src/pages/Index.tsx:757:20"
-                      data-pp-name="Icon"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="757"
-                      data-component-file="Index.tsx"
-                      data-component-name="Icon"
-                      data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                    >
-                      <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path>
-                      <path d="m21.854 2.147-10.94 10.939"></path>
-                    </svg>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:758:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="758"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22Telegram%3A%20%40maria_photo%22%7D"
-                    >
-                      Telegram: @maria_photo
-                    </span>
-                  </a>
-                  <a
-                    data-pp-id="src/pages/Index.tsx:760:18"
-                    data-pp-name="a"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="760"
-                    data-component-file="Index.tsx"
-                    data-component-name="a"
-                    data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%20hover%3Atext-primary%20transition-colors%22%7D"
-                    href="https://vk.com/maria_photo_nsk"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="flex items-center gap-3 hover:text-primary transition-colors"
-                  >
-                    <svg
-                      data-pp-id="src/pages/Index.tsx:761:20"
-                      data-pp-name="svg"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="761"
-                      data-component-file="Index.tsx"
-                      data-component-name="svg"
-                      data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                      class="text-primary"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        data-pp-id="src/pages/Index.tsx:762:22"
-                        data-pp-name="path"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="762"
-                        data-component-file="Index.tsx"
-                        data-component-name="path"
-                        data-component-content="%7B%7D"
-                        d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.48 14.94h-1.39c-.58 0-.76-.47-1.79-1.5-.91-.87-1.31-1-1.53-1-.32 0-.41.09-.41.52v1.37c0 .37-.11.58-1.07.58-1.59 0-3.35-.96-4.59-2.75-1.87-2.59-2.38-4.54-2.38-4.93 0-.22.09-.43.52-.43h1.39c.39 0 .54.18.69.59.76 2.19 2.03 4.11 2.56 4.11.2 0 .29-.09.29-.59v-2.28c-.07-1.13-.65-1.22-.65-1.62 0-.18.15-.36.39-.36h2.18c.33 0 .45.17.45.55v3.08c0 .33.15.45.24.45.2 0 .36-.12.72-.48 1.1-1.24 1.89-3.15 1.89-3.15.11-.22.28-.43.7-.43h1.39c.47 0 .57.24.47.55-.17.78-1.85 3.28-1.85 3.28-.17.27-.23.39 0 .7.17.23.72.71 1.09 1.14.67.77 1.18 1.41 1.32 1.86.13.44-.1.67-.54.67z"
-                      ></path>
-                    </svg>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:764:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="764"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22%D0%92%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%B5%22%7D"
-                    >
-                      ВКонтакте
-                    </span>
-                  </a>
-                  <a
-                    data-pp-id="src/pages/Index.tsx:766:18"
-                    data-pp-name="a"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="766"
-                    data-component-file="Index.tsx"
-                    data-component-name="a"
-                    data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%20hover%3Atext-primary%20transition-colors%22%7D"
-                    href="https://instagram.com/maria_photo_nsk"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="flex items-center gap-3 hover:text-primary transition-colors"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-instagram text-primary"
-                      data-pp-id="src/pages/Index.tsx:767:20"
-                      data-pp-name="Icon"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="767"
-                      data-component-file="Index.tsx"
-                      data-component-name="Icon"
-                      data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                    >
-                      <rect
-                        width="20"
-                        height="20"
-                        x="2"
-                        y="2"
-                        rx="5"
-                        ry="5"
-                      ></rect>
-                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-                    </svg>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:768:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="768"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22%40maria_photo_nsk%22%7D"
-                    >
-                      @maria_photo_nsk
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div
-              data-pp-id="src/pages/Index.tsx:774:12"
-              data-pp-name="Card"
-              data-component-path="src/pages/Index.tsx"
-              data-component-line="774"
-              data-component-file="Index.tsx"
-              data-component-name="Card"
-              data-component-content="%7B%22className%22%3A%22border-2%20border-purple-200%22%7D"
-              class="rounded-lg bg-card text-card-foreground shadow-sm border-2 border-purple-200"
-            >
-              <div
-                data-pp-id="src/pages/Index.tsx:775:14"
-                data-pp-name="CardHeader"
-                data-component-path="src/pages/Index.tsx"
-                data-component-line="775"
-                data-component-file="Index.tsx"
-                data-component-name="CardHeader"
-                data-component-content="%7B%7D"
-                class="flex flex-col space-y-1.5 p-6"
-              >
-                <h3
-                  data-pp-id="src/pages/Index.tsx:776:16"
-                  data-pp-name="CardTitle"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="776"
-                  data-component-file="Index.tsx"
-                  data-component-name="CardTitle"
-                  data-component-content="%7B%22text%22%3A%22%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%B0%22%2C%22className%22%3A%22text-2xl%22%7D"
-                  class="font-semibold tracking-tight text-2xl"
-                >
-                  Александра
-                </h3>
-                <p
-                  data-pp-id="src/pages/Index.tsx:777:16"
-                  data-pp-name="CardDescription"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="777"
-                  data-component-file="Index.tsx"
-                  data-component-name="CardDescription"
-                  data-component-content="%7B%22text%22%3A%22%D0%9D%D0%B5%D0%B9%D1%80%D0%BE%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%8F%22%7D"
-                  class="text-sm text-muted-foreground"
-                >
-                  Нейрофотография
-                </p>
-              </div>
-              <div
-                data-pp-id="src/pages/Index.tsx:779:14"
-                data-pp-name="CardContent"
-                data-component-path="src/pages/Index.tsx"
-                data-component-line="779"
-                data-component-file="Index.tsx"
-                data-component-name="CardContent"
-                data-component-content="%7B%22className%22%3A%22space-y-4%22%7D"
-                class="p-6 pt-0 space-y-4"
-              >
-                <div
-                  data-pp-id="src/pages/Index.tsx:780:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="780"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%22%7D"
-                  class="flex items-center gap-3"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-globe text-primary"
-                    data-pp-id="src/pages/Index.tsx:781:18"
-                    data-pp-name="Icon"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="781"
-                    data-component-file="Index.tsx"
-                    data-component-name="Icon"
-                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                  >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
-                    <path d="M2 12h20"></path>
-                  </svg>
-                  <span
-                    data-pp-id="src/pages/Index.tsx:782:18"
-                    data-pp-name="span"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="782"
-                    data-component-file="Index.tsx"
-                    data-component-name="span"
-                    data-component-content="%7B%22text%22%3A%22%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D1%8E%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%22%7D"
-                  >
-                    Работаю онлайн
-                  </span>
-                </div>
-                <div
-                  data-pp-id="src/pages/Index.tsx:784:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="784"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%22%7D"
-                  class="flex items-center gap-3"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-phone text-primary"
-                    data-pp-id="src/pages/Index.tsx:785:18"
-                    data-pp-name="Icon"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="785"
-                    data-component-file="Index.tsx"
-                    data-component-name="Icon"
-                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                  >
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                  </svg>
-                  <a
-                    data-pp-id="src/pages/Index.tsx:786:18"
-                    data-pp-name="a"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="786"
-                    data-component-file="Index.tsx"
-                    data-component-name="a"
-                    data-component-content="%7B%22text%22%3A%22%2B7%20(999)%20888-77-66%22%2C%22className%22%3A%22hover%3Atext-primary%20transition-colors%22%7D"
-                    href="tel:+79998887766"
-                    class="hover:text-primary transition-colors"
-                  >
+                <div className="flex items-center gap-3">
+                  <Icon name="Phone" className="text-primary" />
+                  <a href="tel:+79998887766" className="hover:text-primary transition-colors">
                     +7 (999) 888-77-66
                   </a>
                 </div>
-                <div
-                  data-pp-id="src/pages/Index.tsx:788:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="788"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%22%7D"
-                  class="flex items-center gap-3"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-mail text-primary"
-                    data-pp-id="src/pages/Index.tsx:789:18"
-                    data-pp-name="Icon"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="789"
-                    data-component-file="Index.tsx"
-                    data-component-name="Icon"
-                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                  >
-                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                  </svg>
-                  <a
-                    data-pp-id="src/pages/Index.tsx:790:18"
-                    data-pp-name="a"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="790"
-                    data-component-file="Index.tsx"
-                    data-component-name="a"
-                    data-component-content="%7B%22text%22%3A%22alexandra.neuro%40example.com%22%2C%22className%22%3A%22hover%3Atext-primary%20transition-colors%22%7D"
-                    href="mailto:alexandra.neuro@example.com"
-                    class="hover:text-primary transition-colors"
-                  >
+                <div className="flex items-center gap-3">
+                  <Icon name="Mail" className="text-primary" />
+                  <a href="mailto:alexandra.neuro@example.com" className="hover:text-primary transition-colors">
                     alexandra.neuro@example.com
                   </a>
                 </div>
-                <div
-                  data-orientation="horizontal"
-                  role="none"
-                  data-pp-id="src/pages/Index.tsx:792:16"
-                  data-pp-name="Separator"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="792"
-                  data-component-file="Index.tsx"
-                  data-component-name="Separator"
-                  data-component-content="%7B%7D"
-                  class="shrink-0 bg-border h-[1px] w-full"
-                ></div>
-                <div
-                  data-pp-id="src/pages/Index.tsx:793:16"
-                  data-pp-name="div"
-                  data-component-path="src/pages/Index.tsx"
-                  data-component-line="793"
-                  data-component-file="Index.tsx"
-                  data-component-name="div"
-                  data-component-content="%7B%22className%22%3A%22space-y-2%22%7D"
-                  class="space-y-2"
-                >
-                  <p
-                    data-pp-id="src/pages/Index.tsx:794:18"
-                    data-pp-name="p"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="794"
-                    data-component-file="Index.tsx"
-                    data-component-name="p"
-                    data-component-content="%7B%22text%22%3A%22%D0%9C%D0%B5%D1%81%D1%81%D0%B5%D0%BD%D0%B4%D0%B6%D0%B5%D1%80%D1%8B%20%D0%B8%20%D1%81%D0%BE%D1%86%D1%81%D0%B5%D1%82%D0%B8%3A%22%2C%22className%22%3A%22text-sm%20font-semibold%20text-gray-600%22%7D"
-                    class="text-sm font-semibold text-gray-600"
-                  >
-                    Мессенджеры и соцсети:
-                  </p>
+                <Separator />
+                <div className="space-y-2">
+                  <p className="text-sm font-semibold text-gray-600">Мессенджеры и соцсети:</p>
                   <a
-                    data-pp-id="src/pages/Index.tsx:795:18"
-                    data-pp-name="a"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="795"
-                    data-component-file="Index.tsx"
-                    data-component-name="a"
-                    data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%20hover%3Atext-primary%20transition-colors%22%7D"
                     href="https://wa.me/79998887766"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="flex items-center gap-3 hover:text-primary transition-colors"
+                    className="flex items-center gap-3 hover:text-primary transition-colors"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-message-circle text-primary"
-                      data-pp-id="src/pages/Index.tsx:796:20"
-                      data-pp-name="Icon"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="796"
-                      data-component-file="Index.tsx"
-                      data-component-name="Icon"
-                      data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                    >
-                      <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
-                    </svg>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:797:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="797"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22WhatsApp%22%7D"
-                    >
-                      WhatsApp
-                    </span>
+                    <Icon name="MessageCircle" className="text-primary" />
+                    <span>WhatsApp</span>
                   </a>
                   <a
-                    data-pp-id="src/pages/Index.tsx:799:18"
-                    data-pp-name="a"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="799"
-                    data-component-file="Index.tsx"
-                    data-component-name="a"
-                    data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%20hover%3Atext-primary%20transition-colors%22%7D"
                     href="https://t.me/aleksa25t"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="flex items-center gap-3 hover:text-primary transition-colors"
+                    className="flex items-center gap-3 hover:text-primary transition-colors"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-send text-primary"
-                      data-pp-id="src/pages/Index.tsx:800:20"
-                      data-pp-name="Icon"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="800"
-                      data-component-file="Index.tsx"
-                      data-component-name="Icon"
-                      data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                    >
-                      <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path>
-                      <path d="m21.854 2.147-10.94 10.939"></path>
-                    </svg>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:801:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="801"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22Telegram%3A%20%40alexandra_neuro%22%7D"
-                    >
-                      Telegram: @alexandra_neuro
-                    </span>
+                    <Icon name="Send" className="text-primary" />
+                    <span>Telegram: @aleksa25t</span>
                   </a>
                   <a
-                    data-pp-id="src/pages/Index.tsx:803:18"
-                    data-pp-name="a"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="803"
-                    data-component-file="Index.tsx"
-                    data-component-name="a"
-                    data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%20hover%3Atext-primary%20transition-colors%22%7D"
-                    href="https://vk.com/alexandra_neuro_art"
+                    href="https://t.me/online_photosessiya"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="flex items-center gap-3 hover:text-primary transition-colors"
+                    className="flex items-center gap-3 hover:text-primary transition-colors"
                   >
-                    <svg
-                      data-pp-id="src/pages/Index.tsx:804:20"
-                      data-pp-name="svg"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="804"
-                      data-component-file="Index.tsx"
-                      data-component-name="svg"
-                      data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                      class="text-primary"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path
-                        data-pp-id="src/pages/Index.tsx:805:22"
-                        data-pp-name="path"
-                        data-component-path="src/pages/Index.tsx"
-                        data-component-line="805"
-                        data-component-file="Index.tsx"
-                        data-component-name="path"
-                        data-component-content="%7B%7D"
-                        d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.48 14.94h-1.39c-.58 0-.76-.47-1.79-1.5-.91-.87-1.31-1-1.53-1-.32 0-.41.09-.41.52v1.37c0 .37-.11.58-1.07.58-1.59 0-3.35-.96-4.59-2.75-1.87-2.59-2.38-4.54-2.38-4.93 0-.22.09-.43.52-.43h1.39c.39 0 .54.18.69.59.76 2.19 2.03 4.11 2.56 4.11.2 0 .29-.09.29-.59v-2.28c-.07-1.13-.65-1.22-.65-1.62 0-.18.15-.36.39-.36h2.18c.33 0 .45.17.45.55v3.08c0 .33.15.45.24.45.2 0 .36-.12.72-.48 1.1-1.24 1.89-3.15 1.89-3.15.11-.22.28-.43.7-.43h1.39c.47 0 .57.24.47.55-.17.78-1.85 3.28-1.85 3.28-.17.27-.23.39 0 .7.17.23.72.71 1.09 1.14.67.77 1.18 1.41 1.32 1.86.13.44-.1.67-.54.67z"
-                      ></path>
-                    </svg>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:807:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="807"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22%D0%92%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D0%B5%22%7D"
-                    >
-                      ВКонтакте
-                    </span>
+                    <Icon name="Send" className="text-primary" />
+                    <span>Телеграм канал</span>
                   </a>
                   <a
-                    data-pp-id="src/pages/Index.tsx:809:18"
-                    data-pp-name="a"
-                    data-component-path="src/pages/Index.tsx"
-                    data-component-line="809"
-                    data-component-file="Index.tsx"
-                    data-component-name="a"
-                    data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%20hover%3Atext-primary%20transition-colors%22%7D"
-                    href="https://instagram.com/alexandra_neuro_art"
+                    href="https://vk.me/pandalola25"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="flex items-center gap-3 hover:text-primary transition-colors"
+                    className="flex items-center gap-3 hover:text-primary transition-colors"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="lucide lucide-instagram text-primary"
-                      data-pp-id="src/pages/Index.tsx:810:20"
-                      data-pp-name="Icon"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="810"
-                      data-component-file="Index.tsx"
-                      data-component-name="Icon"
-                      data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
-                    >
-                      <rect
-                        width="20"
-                        height="20"
-                        x="2"
-                        y="2"
-                        rx="5"
-                        ry="5"
-                      ></rect>
-                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                    <svg className="text-primary" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.48 14.94h-1.39c-.58 0-.76-.47-1.79-1.5-.91-.87-1.31-1-1.53-1-.32 0-.41.09-.41.52v1.37c0 .37-.11.58-1.07.58-1.59 0-3.35-.96-4.59-2.75-1.87-2.59-2.38-4.54-2.38-4.93 0-.22.09-.43.52-.43h1.39c.39 0 .54.18.69.59.76 2.19 2.03 4.11 2.56 4.11.2 0 .29-.09.29-.59v-2.28c-.07-1.13-.65-1.22-.65-1.62 0-.18.15-.36.39-.36h2.18c.33 0 .45.17.45.55v3.08c0 .33.15.45.24.45.2 0 .36-.12.72-.48 1.1-1.24 1.89-3.15 1.89-3.15.11-.22.28-.43.7-.43h1.39c.47 0 .57.24.47.55-.17.78-1.85 3.28-1.85 3.28-.17.27-.23.39 0 .7.17.23.72.71 1.09 1.14.67.77 1.18 1.41 1.32 1.86.13.44-.1.67-.54.67z"></path>
                     </svg>
-                    <span
-                      data-pp-id="src/pages/Index.tsx:811:20"
-                      data-pp-name="span"
-                      data-component-path="src/pages/Index.tsx"
-                      data-component-line="811"
-                      data-component-file="Index.tsx"
-                      data-component-name="span"
-                      data-component-content="%7B%22text%22%3A%22%40alexandra_neuro_art%22%7D"
-                    >
-                      @alexandra_neuro_art
-                    </span>
+                    <span>ВКонтакте</span>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/aleksandraglu_"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 hover:text-primary transition-colors"
+                  >
+                    <Icon name="Instagram" className="text-primary" />
+                    <span>@aleksandraglu_</span>
                   </a>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-purple-200">
+              <CardHeader>
+                <CardTitle className="text-2xl">Мария</CardTitle>
+                <CardDescription>Классическая фотография</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <Icon name="MapPin" className="text-primary" />
+                  <span>г. Новосибирск</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Icon name="Phone" className="text-primary" />
+                  <a href="tel:+79231234567" className="hover:text-primary transition-colors">
+                    +7 (923) 123-45-67
+                  </a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Icon name="Mail" className="text-primary" />
+                  <a href="mailto:maria.photo@example.com" className="hover:text-primary transition-colors">
+                    maria.photo@example.com
+                  </a>
+                </div>
+                <Separator />
+                <div className="space-y-2">
+                  <p className="text-sm font-semibold text-gray-600">Мессенджеры и соцсети:</p>
+                  <a
+                    href="https://wa.me/79231234567"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 hover:text-primary transition-colors"
+                  >
+                    <Icon name="MessageCircle" className="text-primary" />
+                    <span>WhatsApp</span>
+                  </a>
+                  <a
+                    href="https://t.me/+79139083148"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 hover:text-primary transition-colors"
+                  >
+                    <Icon name="Send" className="text-primary" />
+                    <span>Telegram: +79139083148</span>
+                  </a>
+                  <a
+                    href="https://vk.com/id342866396"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 hover:text-primary transition-colors"
+                  >
+                    <svg className="text-primary" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.48 14.94h-1.39c-.58 0-.76-.47-1.79-1.5-.91-.87-1.31-1-1.53-1-.32 0-.41.09-.41.52v1.37c0 .37-.11.58-1.07.58-1.59 0-3.35-.96-4.59-2.75-1.87-2.59-2.38-4.54-2.38-4.93 0-.22.09-.43.52-.43h1.39c.39 0 .54.18.69.59.76 2.19 2.03 4.11 2.56 4.11.2 0 .29-.09.29-.59v-2.28c-.07-1.13-.65-1.22-.65-1.62 0-.18.15-.36.39-.36h2.18c.33 0 .45.17.45.55v3.08c0 .33.15.45.24.45.2 0 .36-.12.72-.48 1.1-1.24 1.89-3.15 1.89-3.15.11-.22.28-.43.7-.43h1.39c.47 0 .57.24.47.55-.17.78-1.85 3.28-1.85 3.28-.17.27-.23.39 0 .7.17.23.72.71 1.09 1.14.67.77 1.18 1.41 1.32 1.86.13.44-.1.67-.54.67z"></path>
+                    </svg>
+                    <span>ВКонтакте</span>
+                  </a>
+                  <a
+                    href="https://vk.com/club_photograph_novosibirsk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 hover:text-primary transition-colors"
+                  >
+                    <svg className="text-primary" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.48 14.94h-1.39c-.58 0-.76-.47-1.79-1.5-.91-.87-1.31-1-1.53-1-.32 0-.41.09-.41.52v1.37c0 .37-.11.58-1.07.58-1.59 0-3.35-.96-4.59-2.75-1.87-2.59-2.38-4.54-2.38-4.93 0-.22.09-.43.52-.43h1.39c.39 0 .54.18.69.59.76 2.19 2.03 4.11 2.56 4.11.2 0 .29-.09.29-.59v-2.28c-.07-1.13-.65-1.22-.65-1.62 0-.18.15-.36.39-.36h2.18c.33 0 .45.17.45.55v3.08c0 .33.15.45.24.45.2 0 .36-.12.72-.48 1.1-1.24 1.89-3.15 1.89-3.15.11-.22.28-.43.7-.43h1.39c.47 0 .57.24.47.55-.17.78-1.85 3.28-1.85 3.28-.17.27-.23.39 0 .7.17.23.72.71 1.09 1.14.67.77 1.18 1.41 1.32 1.86.13.44-.1.67-.54.67z"></path>
+                    </svg>
+                    <span>Группа ВКонтакте</span>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/mary_is94"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 hover:text-primary transition-colors"
+                  >
+                    <Icon name="Instagram" className="text-primary" />
+                    <span>@mary_is94</span>
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
           </div>
+
+          <Card className="mt-8 border-2 border-purple-200">
+            <CardHeader>
+              <CardTitle>Форма записи</CardTitle>
+              <CardDescription>Выберите фотографа и способ связи</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="grid md:grid-cols-2 gap-4">
+                <Button 
+                  variant="outline" 
+                  className="h-auto p-6 flex-col items-start gap-2"
+                  onClick={() => {
+                    document.getElementById("contacts")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  <div className="flex items-center gap-2">
+                    <Icon name="Sparkles" />
+                    <span className="font-bold">Александра</span>
+                  </div>
+                  <span className="text-xs text-muted-foreground">AI-фотография</span>
+                </Button>
+                <Button 
+                  variant="outline" 
+                  className="h-auto p-6 flex-col items-start gap-2"
+                  onClick={() => {
+                    setDate(undefined);
+                  }}
+                >
+                  <div className="flex items-center gap-2">
+                    <Icon name="Camera" />
+                    <span className="font-bold">Мария</span>
+                  </div>
+                  <span className="text-xs text-muted-foreground">Классическая съёмка в Новосибирске</span>
+                </Button>
+              </div>
+              {date !== undefined && (
+                <div className="space-y-4 border-t pt-4">
+                  <p className="text-sm font-semibold">Выберите дату съёмки:</p>
+                  <Calendar
+                    mode="single"
+                    selected={date}
+                    onSelect={setDate}
+                    className="rounded-md border mx-auto"
+                  />
+                  {date && (
+                    <div className="space-y-4">
+                      <p className="text-sm">Выбранная дата: {date.toLocaleDateString('ru-RU')}</p>
+                      <div className="grid grid-cols-2 gap-2">
+                        <a href="https://t.me/+79139083148" target="_blank" rel="noopener noreferrer">
+                          <Button variant="outline" className="w-full">
+                            <Icon name="Send" className="mr-2" size={16} />
+                            Telegram
+                          </Button>
+                        </a>
+                        <a href="https://wa.me/79231234567" target="_blank" rel="noopener noreferrer">
+                          <Button variant="outline" className="w-full">
+                            <Icon name="MessageCircle" className="mr-2" size={16} />
+                            WhatsApp
+                          </Button>
+                        </a>
+                        <a href="https://vk.com/id342866396" target="_blank" rel="noopener noreferrer">
+                          <Button variant="outline" className="w-full">
+                            ВКонтакте
+                          </Button>
+                        </a>
+                        <a href="tel:+79231234567">
+                          <Button variant="outline" className="w-full">
+                            <Icon name="Phone" className="mr-2" size={16} />
+                            Позвонить
+                          </Button>
+                        </a>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
+            </CardContent>
+          </Card>
         </div>
       </section>
 
-      <footer className="py-8 px-4 border-t border-border">
-        <div className="container mx-auto text-center text-muted-foreground">
-          <p>&copy; 2024 Alexandra & Maria Photography. Все права защищены.</p>
+      <footer className="py-8 px-4 bg-muted/50 border-t">
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-center md:text-left">
+              <p className="font-semibold mb-1">Два взгляда на фотографию — выберите свой стиль</p>
+              <p className="text-sm text-muted-foreground">
+                Сайт сделан с помощью искусственного интеллекта
+              </p>
+            </div>
+            <div className="flex gap-4 items-center">
+              <Link to="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                Политика конфиденциальности
+              </Link>
+            </div>
+          </div>
+          <div className="text-center mt-4 text-xs text-muted-foreground">
+            © 2025 Aleksandra & Maria Photography
+          </div>
         </div>
       </footer>
     </div>
