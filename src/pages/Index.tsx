@@ -431,7 +431,7 @@ const Index = () => {
             <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in">
               <div className="h-64 bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden">
                 <img
-                  src="https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/ae83c122-3d9f-4040-85f8-cbdcff5516e7.jpg"
+                  src="https://cdn.poehali.dev/files/fe75699e-c452-4a3d-afb5-7477e525d402.JPG"
                   alt="Александра"
                   className="w-full h-full object-cover opacity-90"
                 />
@@ -451,7 +451,7 @@ const Index = () => {
             <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in [animation-delay:150ms]">
               <div className="h-64 bg-gradient-to-br from-secondary/20 to-primary/20 relative overflow-hidden">
                 <img
-                  src="https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/647c12fe-b2d4-4576-938b-8568acf1de25.jpg"
+                  src="https://cdn.poehali.dev/files/7cd5fbec-41bf-456d-98de-1c14f91b5e42.jpg"
                   alt="Мария"
                   className="w-full h-full object-cover opacity-90"
                 />
