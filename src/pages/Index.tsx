@@ -349,7 +349,7 @@ const Index = () => {
             <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Alexandra & Maria
             </h1>
-            <p className="text-sm mt-1" style={{ fontSize: "0.875rem" }}>
+            <p className="text-sm mt-1 px-0.5" style={{ fontSize: "0.875rem" }}>
               Профессиональная фотография
             </p>
           </div>
