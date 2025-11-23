@@ -3,38 +3,64 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 import SubscriptionDialog from "@/components/SubscriptionDialog";
 import QuizDialog from "@/components/QuizDialog";
 import ContactDialog from "@/components/ContactDialog";
 import { Calendar } from "@/components/ui/calendar";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Index = () => {
+  const { toast } = useToast();
   const [activeSection, setActiveSection] = useState("home");
   const [subscriptionDialogOpen, setSubscriptionDialogOpen] = useState(false);
+  const [dialogDismissedAt, setDialogDismissedAt] = useState<number | null>(null);
   const [quizDialogOpen, setQuizDialogOpen] = useState(false);
   const [contactDialogOpen, setContactDialogOpen] = useState(false);
   const [contactPhotographer, setContactPhotographer] = useState<"alexandra" | "maria">("alexandra");
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [selectedPhotographer, setSelectedPhotographer] = useState<string>("");
   const [selectedTime, setSelectedTime] = useState<string>("");
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    comment: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      
       if (scrollPercentage >= 90 && !subscriptionDialogOpen) {
-        setSubscriptionDialogOpen(true);
+        const now = Date.now();
+        if (!dialogDismissedAt || now - dialogDismissedAt >= 5 * 60 * 1000) {
+          setSubscriptionDialogOpen(true);
+        }
       }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [subscriptionDialogOpen]);
+  }, [subscriptionDialogOpen, dialogDismissedAt]);
+
+  const handleDialogClose = (open: boolean) => {
+    setSubscriptionDialogOpen(open);
+    if (!open) {
+      setDialogDismissedAt(Date.now());
+    }
+  };
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -45,6 +71,69 @@ const Index = () => {
   const handleContactClick = () => {
     setContactPhotographer("alexandra");
     setContactDialogOpen(true);
+  };
+
+  const handleSubmitBooking = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!selectedPhotographer) {
+      toast({
+        title: "Ошибка",
+        description: "Выберите фотографа",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const bookingData = {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        photographer: selectedPhotographer,
+        date: date ? date.toLocaleDateString('ru-RU') : '',
+        time: selectedTime,
+        comment: formData.comment,
+      };
+
+      const response = await fetch('https://functions.poehali.dev/e1899f9b-a689-473a-9d57-eb5209f75583', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(bookingData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Заявка отправлена!",
+          description: "Мы свяжемся с вами в ближайшее время",
+        });
+        
+        setFormData({ name: "", phone: "", email: "", comment: "" });
+        setSelectedPhotographer("");
+        setDate(undefined);
+        setSelectedTime("");
+      } else {
+        toast({
+          title: "Ошибка",
+          description: result.error || "Не удалось отправить заявку",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Ошибка",
+        description: "Произошла ошибка при отправке заявки",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const portfolioImages = [
@@ -62,25 +151,6 @@ const Index = () => {
       url: "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/647c12fe-b2d4-4576-938b-8568acf1de25.jpg",
       category: "portrait",
       photographer: "maria",
-    },
-  ];
-
-  const services = [
-    {
-      photographer: "alexandra",
-      name: "AI-фотография",
-      description: "с Александрой",
-      price:
-        "2 500 ₽ (Базовый пакет, 10 фото), 5 000 ₽ (Стандарт, 25 фото), 8 000 ₽ (Премиум, 50 фото)",
-      icon: "Sparkles",
-    },
-    {
-      photographer: "maria",
-      name: "Классическая съёмка",
-      description: "с Марией",
-      price:
-        "5 000 ₽ (Мини-съёмка, 1 час, 20 фото), 10 000 ₽ (Стандарт, 2 часа, 50 фото), 18 000 ₽ (Премиум, 4 часа, 100 фото)",
-      icon: "Camera",
     },
   ];
 
@@ -107,7 +177,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SubscriptionDialog open={subscriptionDialogOpen} onOpenChange={setSubscriptionDialogOpen} />
+      <SubscriptionDialog open={subscriptionDialogOpen} onOpenChange={handleDialogClose} />
       <QuizDialog open={quizDialogOpen} onOpenChange={setQuizDialogOpen} />
       <ContactDialog open={contactDialogOpen} onOpenChange={setContactDialogOpen} photographer={contactPhotographer} />
       
@@ -287,7 +357,7 @@ const Index = () => {
       </section>
 
       <section id="about" className="py-20 px-6 bg-white/50">
-        <div className="container mx-auto">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent">
               Сравнение форматов съёмки
@@ -297,7 +367,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-6">
               <div className="flex items-center gap-3 mb-4">
                 <Icon name="Sparkles" size={28} className="text-primary" />
@@ -410,14 +480,7 @@ const Index = () => {
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <Icon name="Image" size={16} className="text-primary" />
-                    <span>
-                      <img 
-                        src="https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/7d484231-557f-401e-83b6-ba2117e483c2.jpg"
-                        alt="Все исходные фото в день съемки"
-                        className="w-6 h-6 inline-block mr-1"
-                      />
-                      Все исходные AI-обработки
-                    </span>
+                    <span>Все исходные AI-обработки</span>
                   </div>
                 </div>
                 <Button className="w-full" onClick={() => scrollToSection("booking")}>
@@ -462,14 +525,7 @@ const Index = () => {
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <Icon name="Camera" size={16} className="text-secondary" />
-                    <span>
-                      <img 
-                        src="https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/7d484231-557f-401e-83b6-ba2117e483c2.jpg"
-                        alt="Все исходные фото в день съемки"
-                        className="w-6 h-6 inline-block mr-1"
-                      />
-                      Все исходные фото в день съемки
-                    </span>
+                    <span>Все исходные фото в день съемки</span>
                   </div>
                 </div>
                 <Button className="w-full" variant="secondary" onClick={() => scrollToSection("booking")}>
@@ -511,6 +567,13 @@ const Index = () => {
                   <div>
                     <div className="font-semibold">Банковский перевод</div>
                     <div className="text-sm text-gray-600">По реквизитам</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                  <Icon name="Wallet" className="text-primary" />
+                  <div>
+                    <div className="font-semibold">Наличные</div>
+                    <div className="text-sm text-gray-600">При реальной фотосъемке</div>
                   </div>
                 </div>
               </CardContent>
@@ -559,7 +622,92 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="reviews" className="py-20 px-4 bg-muted/30">
+      <section id="faq" className="py-20 px-6 bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Часто задаваемые вопросы</h2>
+            <p className="text-muted-foreground text-lg">Ответы на популярные вопросы</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="border-2 border-purple-200">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Icon name="Sparkles" className="text-primary" />
+                  AI-фотография
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="ai-1">
+                    <AccordionTrigger>Как работает AI-фотография?</AccordionTrigger>
+                    <AccordionContent>
+                      Вы отправляете нам свои исходные фотографии, а мы с помощью нейросетей создаем уникальные художественные образы, сохраняя ваши черты лица.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="ai-2">
+                    <AccordionTrigger>Какие фото нужны для AI-обработки?</AccordionTrigger>
+                    <AccordionContent>
+                      Нужны качественные фото в хорошем освещении, где четко видно лицо. Подойдут селфи или портреты, сделанные на современный смартфон.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="ai-3">
+                    <AccordionTrigger>Сколько времени занимает обработка?</AccordionTrigger>
+                    <AccordionContent>
+                      Обычно 1-2 дня. В некоторых случаях можем сделать за несколько часов.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="ai-4">
+                    <AccordionTrigger>Можно ли выбрать стиль обработки?</AccordionTrigger>
+                    <AccordionContent>
+                      Да! Вы можете выбрать любой стиль: от классического портрета до фэнтези или аниме. Мы обсудим это перед началом работы.
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-purple-200">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Icon name="Camera" className="text-secondary" />
+                  Реальная фотосъемка
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <Accordion type="single" collapsible className="w-full">
+                  <AccordionItem value="real-1">
+                    <AccordionTrigger>Где проходит фотосъемка?</AccordionTrigger>
+                    <AccordionContent>
+                      Съемка проходит в Новосибирске. Мы можем выбрать локацию вместе: студия, парк, городские улицы или ваше место.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="real-2">
+                    <AccordionTrigger>Сколько времени длится съемка?</AccordionTrigger>
+                    <AccordionContent>
+                      В зависимости от пакета: от 1 до 4 часов. Этого достаточно для создания качественных фотографий в разных образах и локациях.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="real-3">
+                    <AccordionTrigger>Когда я получу готовые фото?</AccordionTrigger>
+                    <AccordionContent>
+                      Все исходные фото вы получаете в день съемки. Обработанные фотографии будут готовы через 5-7 дней.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="real-4">
+                    <AccordionTrigger>Нужно ли готовиться к съемке?</AccordionTrigger>
+                    <AccordionContent>
+                      Подготовьте несколько образов одежды, продумайте макияж. Мы обсудим детали заранее и дадим рекомендации по подготовке.
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" className="py-20 px-4 bg-white/50">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Отзывы</h2>
@@ -606,91 +754,113 @@ const Index = () => {
           </p>
 
           <Card className="border-2 border-purple-200">
-            <CardContent className="p-6 space-y-4">
-              <div className="space-y-2">
-                <label className="text-sm font-semibold">Ваше имя</label>
-                <Input placeholder="Введите ваше имя" />
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-semibold">Телефон</label>
-                <Input placeholder="+7 (___) ___-__-__" />
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-semibold">Email</label>
-                <Input type="email" placeholder="your@email.com" />
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-semibold">Выберите фотографа</label>
-                <div className="grid grid-cols-2 gap-4">
-                  <Button
-                    variant={selectedPhotographer === "alexandra" ? "default" : "outline"}
-                    className="h-auto p-4 flex-col items-start gap-2"
-                    onClick={() => setSelectedPhotographer("alexandra")}
-                  >
-                    <div className="flex items-center gap-2">
-                      <Icon name="Sparkles" size={20} />
-                      <span className="font-bold">Александра</span>
-                    </div>
-                    <span className="text-xs">Нейрофото</span>
-                  </Button>
-                  <Button
-                    variant={selectedPhotographer === "maria" ? "default" : "outline"}
-                    className="h-auto p-4 flex-col items-start gap-2"
-                    onClick={() => setSelectedPhotographer("maria")}
-                  >
-                    <div className="flex items-center gap-2">
-                      <Icon name="Camera" size={20} />
-                      <span className="font-bold">Мария</span>
-                    </div>
-                    <span className="text-xs">Классика</span>
-                  </Button>
+            <CardContent className="p-6">
+              <form onSubmit={handleSubmitBooking} className="space-y-4">
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold">Ваше имя</label>
+                  <Input 
+                    placeholder="Введите ваше имя" 
+                    value={formData.name}
+                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    required
+                  />
                 </div>
-              </div>
 
-              {selectedPhotographer === "maria" && (
-                <>
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold">Дата съёмки</label>
-                    <Calendar
-                      mode="single"
-                      selected={date}
-                      onSelect={setDate}
-                      className="rounded-md border"
-                    />
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold">Телефон</label>
+                  <Input 
+                    placeholder="+7 (___) ___-__-__" 
+                    value={formData.phone}
+                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold">Email</label>
+                  <Input 
+                    type="email" 
+                    placeholder="your@email.com" 
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold">Выберите фотографа</label>
+                  <div className="grid grid-cols-2 gap-4">
+                    <Button
+                      type="button"
+                      variant={selectedPhotographer === "alexandra" ? "default" : "outline"}
+                      className="h-auto p-4 flex-col items-start gap-2"
+                      onClick={() => setSelectedPhotographer("alexandra")}
+                    >
+                      <div className="flex items-center gap-2">
+                        <Icon name="Sparkles" size={20} />
+                        <span className="font-bold">Александра</span>
+                      </div>
+                      <span className="text-xs">Нейрофото</span>
+                    </Button>
+                    <Button
+                      type="button"
+                      variant={selectedPhotographer === "maria" ? "default" : "outline"}
+                      className="h-auto p-4 flex-col items-start gap-2"
+                      onClick={() => setSelectedPhotographer("maria")}
+                    >
+                      <div className="flex items-center gap-2">
+                        <Icon name="Camera" size={20} />
+                        <span className="font-bold">Мария</span>
+                      </div>
+                      <span className="text-xs">Классика</span>
+                    </Button>
                   </div>
+                </div>
 
-                  <div className="space-y-2">
-                    <label className="text-sm font-semibold">Время</label>
-                    <Select value={selectedTime} onValueChange={setSelectedTime}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Выберите время" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="10:00">10:00</SelectItem>
-                        <SelectItem value="12:00">12:00</SelectItem>
-                        <SelectItem value="14:00">14:00</SelectItem>
-                        <SelectItem value="16:00">16:00</SelectItem>
-                        <SelectItem value="18:00">18:00</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                </>
-              )}
+                {selectedPhotographer === "maria" && (
+                  <>
+                    <div className="space-y-2">
+                      <label className="text-sm font-semibold">Дата съёмки</label>
+                      <Calendar
+                        mode="single"
+                        selected={date}
+                        onSelect={setDate}
+                        className="rounded-md border"
+                      />
+                    </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-semibold">Комментарий</label>
-                <Textarea 
-                  placeholder="Расскажите о ваших пожеланиях к съёмке..." 
-                  rows={4}
-                />
-              </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-semibold">Время</label>
+                      <Select value={selectedTime} onValueChange={setSelectedTime}>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Выберите время" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="10:00">10:00</SelectItem>
+                          <SelectItem value="12:00">12:00</SelectItem>
+                          <SelectItem value="14:00">14:00</SelectItem>
+                          <SelectItem value="16:00">16:00</SelectItem>
+                          <SelectItem value="18:00">18:00</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </>
+                )}
 
-              <Button className="w-full" size="lg">
-                Отправить заявку
-              </Button>
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold">Комментарий</label>
+                  <Textarea 
+                    placeholder="Расскажите о ваших пожеланиях к съёмке..." 
+                    rows={4}
+                    value={formData.comment}
+                    onChange={(e) => setFormData({...formData, comment: e.target.value})}
+                  />
+                </div>
+
+                <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
+                  {isSubmitting ? "Отправка..." : "Отправить заявку"}
+                </Button>
+              </form>
             </CardContent>
           </Card>
         </div>

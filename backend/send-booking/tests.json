@@ -1,0 +1,38 @@
+{
+  "tests": [
+    {
+      "name": "Test booking submission for Maria",
+      "method": "POST",
+      "body": {
+        "name": "Тест Тестов",
+        "phone": "+7 (999) 123-45-67",
+        "email": "test@example.com",
+        "photographer": "maria",
+        "date": "2025-12-01",
+        "time": "14:00",
+        "comment": "Тестовая заявка"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Test booking submission for Alexandra",
+      "method": "POST",
+      "body": {
+        "name": "Тест Тестов",
+        "phone": "+7 (999) 123-45-67",
+        "email": "test@example.com",
+        "photographer": "alexandra",
+        "comment": "Тестовая заявка AI"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
