@@ -1518,6 +1518,41 @@ const Index = () => {
                       4 000 ₽
                     </span>
                   </div>
+                 </div>
+                  <div
+                    data-pp-id="src/pages/Index.tsx:426:18"
+                    data-pp-name="div"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="426"
+                    data-component-file="Index.tsx"
+                    data-component-name="div"
+                    data-component-content="%7B%22className%22%3A%22flex%20justify-between%20items-center%22%7D"
+                    class="flex justify-between items-center"
+                  >
+                    <span
+                      data-pp-id="src/pages/Index.tsx:427:20"
+                      data-pp-name="span"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="427"
+                      data-component-file="Index.tsx"
+                      data-component-name="span"
+                      data-component-content="%7B%22text%22%3A%22%D0%A1%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%20(2%20%D1%87%D0%B0%D1%81%D0%B0%2C%2050%20%D1%84%D0%BE%D1%82%D0%BE)%22%7D"
+                    >
+                      Премиум (2 часа, 30 обработанных фото)
+                    </span>
+                    <span
+                      data-pp-id="src/pages/Index.tsx:428:20"
+                      data-pp-name="span"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="428"
+                      data-component-file="Index.tsx"
+                      data-component-name="span"
+                      data-component-content="%7B%22text%22%3A%2210%20000%20%E2%82%BD%22%2C%22className%22%3A%22font-bold%20text-xl%22%7D"
+                      class="font-bold text-xl"
+                    >
+                      7 500 ₽
+                    </span>
+                  </div>
                 </div>
                 <div
                   data-pp-id="src/pages/Index.tsx:435:16"
