@@ -343,53 +343,53 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-  <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
-    <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-      <div>
-        <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-          Alexandra & Maria
-        </h1>
-        <p className="text-sm mt-1" style={{ fontSize: "0.875rem" }}>
-          Профессиональная фотография
-        </p>
-      </div>
-      <div className="hidden md:flex gap-6">
-        {[
-          "home",
-          "portfolio",
-          "about",
-          "services",
-          "reviews",
-          "contact",
-        ].map((section) => (
-          <button
-            key={section}
-            onClick={() => scrollToSection(section)}
-            className="text-sm font-medium hover:text-primary transition-colors capitalize"
+      <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <div>
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Alexandra & Maria
+            </h1>
+            <p className="text-sm mt-1" style={{ fontSize: "0.875rem" }}>
+              Профессиональная фотография
+            </p>
+          </div>
+          <div className="hidden md:flex gap-6">
+            {[
+              "home",
+              "portfolio",
+              "about",
+              "services",
+              "reviews",
+              "contact",
+            ].map((section) => (
+              <button
+                key={section}
+                onClick={() => scrollToSection(section)}
+                className="text-sm font-medium hover:text-primary transition-colors capitalize"
+              >
+                {section === "home"
+                  ? "Главная"
+                  : section === "portfolio"
+                    ? "Портфолио"
+                    : section === "about"
+                      ? "О нас"
+                      : section === "services"
+                        ? "Услуги и цены"
+                        : section === "reviews"
+                          ? "Отзывы"
+                          : "Контакты"}
+              </button>
+            ))}
+          </div>
+          <Button
+            variant="default"
+            size="sm"
+            onClick={() => scrollToSection("contact")}
           >
-            {section === "home"
-              ? "Главная"
-              : section === "portfolio"
-              ? "Портфолио"
-              : section === "about"
-              ? "О нас"
-              : section === "services"
-              ? "Услуги и цены"
-              : section === "reviews"
-              ? "Отзывы"
-              : "Контакты"}
-          </button>
-        ))}
-      </div>
-      <Button
-        variant="default"
-        size="sm"
-        onClick={() => scrollToSection("contact")}
-      >
-        Связаться
-      </Button>
-    </div>
-  </nav>
+            Связаться
+          </Button>
+        </div>
+      </nav>
 
       <section id="home" className="pt-32 pb-20 px-4">
         <div className="container mx-auto">
@@ -475,10 +475,35 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Портфолио</h2>
-            <p className="text-muted-foreground text-lg">Наши работы</p>
+            <p className="text-muted-foreground text-lg">Наши лучшие работы</p>
           </div>
 
-          
+          <Tabs defaultValue="all" className="max-w-6xl mx-auto">
+            <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto mb-12">
+              <TabsTrigger value="all">Все работы</TabsTrigger>
+              <TabsTrigger value="alexandra">Александра</TabsTrigger>
+              <TabsTrigger value="maria">Мария</TabsTrigger>
+            </TabsList>
+
+            <TabsContent value="all" className="grid md:grid-cols-3 gap-6">
+              {portfolioImages.map((img, idx) => (
+                <div
+                  key={idx}
+                  className="group relative overflow-hidden rounded-lg aspect-square animate-fade-in"
+                >
+                  <img
+                    src={img.url}
+                    alt={`Portfolio ${idx + 1}`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                    <span className="text-white font-semibold capitalize">
+                      {img.category}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </TabsContent>
 
             <TabsContent
               value="alexandra"
