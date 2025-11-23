@@ -1712,14 +1712,63 @@ const Index = () => {
           </div>
         </div>
       </section>
-      <section id="quiz" className="py-20 px-4">
-        <div className="container mx-auto max-w-2xl">
-          <h2 className="text-4xl font-heading font-bold text-center mb-12">
+      <section
+        data-pp-id="src/pages/Index.tsx:458:6"
+        data-pp-name="section"
+        data-component-path="src/pages/Index.tsx"
+        data-component-line="458"
+        data-component-file="Index.tsx"
+        data-component-name="section"
+        className="py-20 px-4"
+        id="quiz"
+      >
+        <div
+          data-pp-id="src/pages/Index.tsx:459:8"
+          data-pp-name="div"
+          data-component-path="src/pages/Index.tsx"
+          data-component-line="459"
+          data-component-file="Index.tsx"
+          data-component-name="div"
+          className="container mx-auto max-w-2xl"
+        >
+          <h2
+            data-pp-id="src/pages/Index.tsx:460:10"
+            data-pp-name="h2"
+            data-component-path="src/pages/Index.tsx"
+            data-component-line="460"
+            data-component-file="Index.tsx"
+            data-component-name="h2"
+            className="text-4xl font-heading font-bold text-center mb-12"
+          >
             Какая съёмка вам подойдёт?
           </h2>
-          <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
-            <div className="flex flex-col space-y-1.5 p-6">
-              <h3 className="text-2xl font-semibold leading-none tracking-tight flex items-center gap-2">
+          <div
+            data-pp-id="src/pages/Index.tsx:463:10"
+            data-pp-name="Card"
+            data-component-path="src/pages/Index.tsx"
+            data-component-line="463"
+            data-component-file="Index.tsx"
+            data-component-name="Card"
+            className="rounded-lg border bg-card text-card-foreground shadow-sm"
+          >
+            <div
+              data-pp-id="src/pages/Index.tsx:464:12"
+              data-pp-name="CardHeader"
+              data-component-path="src/pages/Index.tsx"
+              data-component-line="464"
+              data-component-file="Index.tsx"
+              data-component-name="CardHeader"
+              className="flex flex-col space-y-1.5 p-6"
+            >
+              <h3
+                data-pp-id="src/pages/Index.tsx:465:14"
+                data-pp-name="CardTitle"
+                data-component-path="src/pages/Index.tsx"
+                data-component-line="465"
+                data-component-file="Index.tsx"
+                data-component-name="CardTitle"
+                className="text-2xl font-semibold leading-none tracking-tight flex items-center gap-2"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -1737,11 +1786,27 @@ const Index = () => {
                 </svg>
                 Тест-помощник
               </h3>
-              <p className="text-sm text-muted-foreground">
+              <p
+                data-pp-id="src/pages/Index.tsx:469:14"
+                data-pp-name="CardDescription"
+                data-component-path="src/pages/Index.tsx"
+                data-component-line="469"
+                data-component-file="Index.tsx"
+                data-component-name="CardDescription"
+                className="text-sm text-muted-foreground"
+              >
                 Ответьте на вопросы и получите рекомендацию.
               </p>
             </div>
-            <div className="p-6 pt-0 space-y-6">
+            <div
+              data-pp-id="src/pages/Index.tsx:473:12"
+              data-pp-name="CardContent"
+              data-component-path="src/pages/Index.tsx"
+              data-component-line="473"
+              data-component-file="Index.tsx"
+              data-component-name="CardContent"
+              className="p-6 pt-0 space-y-6"
+            >
               {/* Вопрос 1 */}
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold">
@@ -1762,7 +1827,6 @@ const Index = () => {
                   ))}
                 </div>
               </div>
-
               {/* Вопрос 2 */}
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold">
@@ -1783,7 +1847,6 @@ const Index = () => {
                   ))}
                 </div>
               </div>
-
               {/* Вопрос 3 */}
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold">
@@ -1804,7 +1867,6 @@ const Index = () => {
                   ))}
                 </div>
               </div>
-
               {/* Вопрос 4 */}
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold">
@@ -1825,7 +1887,6 @@ const Index = () => {
                   ))}
                 </div>
               </div>
-
               {/* Вопрос 5 */}
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold">
