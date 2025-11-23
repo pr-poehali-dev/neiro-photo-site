@@ -419,7 +419,7 @@ const Index = () => {
                         data-component-name="p"
                         data-component-content="%7B%22text%22%3A%22%D0%93%D0%BE%D1%82%D0%BE%D0%B2%D0%BE%20%D0%B7%D0%B0%20%D0%BD%D0%B5%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2%22%7D"
                       >
-                        Готово за несколько часов
+                        Работа полностью онлайн из любой точки мира
                       </p>
                     </div>
                     <div
@@ -462,7 +462,7 @@ const Index = () => {
                         data-component-name="p"
                         data-component-content="%7B%22text%22%3A%22%D0%9D%D0%B5%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%D1%8B%20%D1%81%D1%82%D0%B8%D0%BB%D0%B5%D0%B9%22%7D"
                       >
-                        Неограниченные варианты стилей
+                        Уникальные AI-эффекты и креативная обработка
                       </p>
                     </div>
                     <div
@@ -505,7 +505,93 @@ const Index = () => {
                         data-component-name="p"
                         data-component-content="%7B%22text%22%3A%22%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%2C%20%D0%B1%D0%B5%D0%B7%20%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%87%22%7D"
                       >
-                        Работа онлайн, без встреч
+                        Быстрая обработка — результат за 1-2 дня
+                      </p>
+                    </div>
+                    <div
+                      data-pp-id="src/pages/Index.tsx:144:20"
+                      data-pp-name="div"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="144"
+                      data-component-file="Index.tsx"
+                      data-component-name="div"
+                      data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
+                      class="flex items-start gap-2"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-check text-green-500 mt-1"
+                        data-pp-id="src/pages/Index.tsx:145:22"
+                        data-pp-name="Icon"
+                        data-component-path="src/pages/Index.tsx"
+                        data-component-line="145"
+                        data-component-file="Index.tsx"
+                        data-component-name="Icon"
+                        data-component-content="%7B%22className%22%3A%22text-green-500%20mt-1%22%7D"
+                      >
+                        <path d="M20 6 9 17l-5-5"></path>
+                      </svg>
+                      <p
+                        data-pp-id="src/pages/Index.tsx:146:22"
+                        data-pp-name="p"
+                        data-component-path="src/pages/Index.tsx"
+                        data-component-line="146"
+                        data-component-file="Index.tsx"
+                        data-component-name="p"
+                        data-component-content="%7B%22text%22%3A%22%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%2C%20%D0%B1%D0%B5%D0%B7%20%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%87%22%7D"
+                      >
+                        Неограниченные возможности для фантазии
+                      </p>
+                    </div>
+                    <div
+                      data-pp-id="src/pages/Index.tsx:144:20"
+                      data-pp-name="div"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="144"
+                      data-component-file="Index.tsx"
+                      data-component-name="div"
+                      data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
+                      class="flex items-start gap-2"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-check text-green-500 mt-1"
+                        data-pp-id="src/pages/Index.tsx:145:22"
+                        data-pp-name="Icon"
+                        data-component-path="src/pages/Index.tsx"
+                        data-component-line="145"
+                        data-component-file="Index.tsx"
+                        data-component-name="Icon"
+                        data-component-content="%7B%22className%22%3A%22text-green-500%20mt-1%22%7D"
+                      >
+                        <path d="M20 6 9 17l-5-5"></path>
+                      </svg>
+                      <p
+                        data-pp-id="src/pages/Index.tsx:146:22"
+                        data-pp-name="p"
+                        data-component-path="src/pages/Index.tsx"
+                        data-component-line="146"
+                        data-component-file="Index.tsx"
+                        data-component-name="p"
+                        data-component-content="%7B%22text%22%3A%22%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%20%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%2C%20%D0%B1%D0%B5%D0%B7%20%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%87%22%7D"
+                      >
+                        Доступная цена
                       </p>
                     </div>
                     <div
@@ -549,7 +635,7 @@ const Index = () => {
                         data-component-name="p"
                         data-component-content="%7B%22text%22%3A%22%D0%9C%D0%B5%D0%BD%D1%8C%D1%88%D0%B5%20%D0%B5%D1%81%D1%82%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8%22%7D"
                       >
-                        Меньше естественности
+                        Требуется исходное фото хорошего качества
                       </p>
                     </div>
                     <div
@@ -593,7 +679,54 @@ const Index = () => {
                         data-component-name="p"
                         data-component-content="%7B%22text%22%3A%22%D0%9D%D0%B5%D1%82%20%D0%B6%D0%B8%D0%B2%D0%BE%D0%B3%D0%BE%20%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%22%7D"
                       >
-                        Нет живого общения
+                        Сходство с оригиналом исходного фото примерно 85-95%
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                 </div>
+                    <div
+                      data-pp-id="src/pages/Index.tsx:152:20"
+                      data-pp-name="div"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="152"
+                      data-component-file="Index.tsx"
+                      data-component-name="div"
+                      data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
+                      class="flex items-start gap-2"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-x text-red-500 mt-1"
+                        data-pp-id="src/pages/Index.tsx:153:22"
+                        data-pp-name="Icon"
+                        data-component-path="src/pages/Index.tsx"
+                        data-component-line="153"
+                        data-component-file="Index.tsx"
+                        data-component-name="Icon"
+                        data-component-content="%7B%22className%22%3A%22text-red-500%20mt-1%22%7D"
+                      >
+                        <path d="M18 6 6 18"></path>
+                        <path d="m6 6 12 12"></path>
+                      </svg>
+                      <p
+                        data-pp-id="src/pages/Index.tsx:154:22"
+                        data-pp-name="p"
+                        data-component-path="src/pages/Index.tsx"
+                        data-component-line="154"
+                        data-component-file="Index.tsx"
+                        data-component-name="p"
+                        data-component-content="%7B%22text%22%3A%22%D0%9D%D0%B5%D1%82%20%D0%B6%D0%B8%D0%B2%D0%BE%D0%B3%D0%BE%20%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%22%7D"
+                      >
+                        Требуется конкретный запрос или референс
                       </p>
                     </div>
                   </div>
