@@ -125,7 +125,7 @@ const Index = () => {
             <h2 className="md:text-5xl mb-6 leading-tight font-bold text-4xl">
               Искусство фотосъёмки: от классики до нейросетей
             </h2>
-            <h3 className="md:text-3xl mb-6 leading-tight font-bold text-4xl">
+            <h3 className="md:text-2xl mb-6 leading-tight font-bold text-4xl">
               Выберите свой путь к совершенным снимкам: нейрофотография с
               AI-эффектами или классическая фотосессия
             </h3>
