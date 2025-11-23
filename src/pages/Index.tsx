@@ -2118,7 +2118,7 @@ const Index = () => {
                   data-component-content="%7B%22text%22%3A%22%D0%9C%D0%B0%D1%80%D0%B8%D1%8F%22%2C%22className%22%3A%22text-xl%22%7D"
                   class="font-semibold tracking-tight text-xl"
                 >
-                  Мария
+                  Александра
                 </h3>
                 <p
                   data-pp-id="src/pages/Index.tsx:391:16"
@@ -2130,7 +2130,7 @@ const Index = () => {
                   data-component-content="%7B%22text%22%3A%22%D0%9A%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%22%7D"
                   class="text-sm text-muted-foreground"
                 >
-                  Классический фотограф
+                  AI фотограф
                 </p>
               </div>
               <div
@@ -2227,7 +2227,7 @@ const Index = () => {
                     data-component-name="span"
                     data-component-content="%7B%22text%22%3A%22maria.photo%40mail.ru%22%7D"
                   >
-                    maria.photo@mail.ru
+                    alex.ai.photo@gmail.com
                   </span>
                 </div>
                 <div
@@ -2279,7 +2279,7 @@ const Index = () => {
                     data-component-name="span"
                     data-component-content="%7B%22text%22%3A%22%40maria_photo_nsk%22%7D"
                   >
-                    @maria_photo_nsk
+                    @alex_ai_art
                   </span>
                 </div>
                 <div
@@ -2323,7 +2323,7 @@ const Index = () => {
                     data-component-name="span"
                     data-component-content="%7B%22text%22%3A%22%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA%22%7D"
                   >
-                    Новосибирск
+                    Онлайн
                   </span>
                 </div>
               </div>
@@ -2358,7 +2358,7 @@ const Index = () => {
                   data-component-content="%7B%22text%22%3A%22%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%B0%22%2C%22className%22%3A%22text-xl%22%7D"
                   class="font-semibold tracking-tight text-xl"
                 >
-                  Александра
+                  Мария
                 </h3>
                 <p
                   data-pp-id="src/pages/Index.tsx:415:16"
@@ -2370,7 +2370,7 @@ const Index = () => {
                   data-component-content="%7B%22text%22%3A%22%D0%9D%D0%B5%D0%B9%D1%80%D0%BE%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%22%7D"
                   class="text-sm text-muted-foreground"
                 >
-                  Нейрофотограф
+                  Классический фотограф
                 </p>
               </div>
               <div
@@ -2467,7 +2467,7 @@ const Index = () => {
                     data-component-name="span"
                     data-component-content="%7B%22text%22%3A%22alex.ai.photo%40gmail.com%22%7D"
                   >
-                    alex.ai.photo@gmail.com
+                    maria.photo@mail.ru
                   </span>
                 </div>
                 <div
@@ -2519,7 +2519,7 @@ const Index = () => {
                     data-component-name="span"
                     data-component-content="%7B%22text%22%3A%22%40alex_ai_art%22%7D"
                   >
-                    @alex_ai_art
+                    @maria_photo_nsk
                   </span>
                 </div>
                 <div
