@@ -1719,8 +1719,9 @@ const Index = () => {
         data-component-line="458"
         data-component-file="Index.tsx"
         data-component-name="section"
-        className="py-20 px-4"
+        data-component-content="%7B%22className%22%3A%22py-20%20px-4%22%7D"
         id="quiz"
+        class="py-20 px-4"
       >
         <div
           data-pp-id="src/pages/Index.tsx:459:8"
@@ -1729,7 +1730,8 @@ const Index = () => {
           data-component-line="459"
           data-component-file="Index.tsx"
           data-component-name="div"
-          className="container mx-auto max-w-2xl"
+          data-component-content="%7B%22className%22%3A%22container%20mx-auto%20max-w-2xl%22%7D"
+          class="container mx-auto max-w-2xl"
         >
           <h2
             data-pp-id="src/pages/Index.tsx:460:10"
@@ -1738,7 +1740,8 @@ const Index = () => {
             data-component-line="460"
             data-component-file="Index.tsx"
             data-component-name="h2"
-            className="text-4xl font-heading font-bold text-center mb-12"
+            data-component-content="%7B%22text%22%3A%22%D0%9A%D0%B0%D0%BA%D0%B0%D1%8F%20%D1%81%D1%8A%D1%91%D0%BC%D0%BA%D0%B0%20%D0%B2%D0%B0%D0%BC%20%D0%BF%D0%BE%D0%B4%D0%BE%D0%B9%D0%B4%D1%91%D1%82%3F%22%2C%22className%22%3A%22text-4xl%20font-heading%20font-bold%20text-center%20mb-12%22%7D"
+            class="text-4xl font-heading font-bold text-center mb-12"
           >
             Какая съёмка вам подойдёт?
           </h2>
@@ -1749,7 +1752,8 @@ const Index = () => {
             data-component-line="463"
             data-component-file="Index.tsx"
             data-component-name="Card"
-            className="rounded-lg border bg-card text-card-foreground shadow-sm"
+            data-component-content="%7B%7D"
+            class="rounded-lg border bg-card text-card-foreground shadow-sm"
           >
             <div
               data-pp-id="src/pages/Index.tsx:464:12"
@@ -1758,7 +1762,8 @@ const Index = () => {
               data-component-line="464"
               data-component-file="Index.tsx"
               data-component-name="CardHeader"
-              className="flex flex-col space-y-1.5 p-6"
+              data-component-content="%7B%7D"
+              class="flex flex-col space-y-1.5 p-6"
             >
               <h3
                 data-pp-id="src/pages/Index.tsx:465:14"
@@ -1767,18 +1772,27 @@ const Index = () => {
                 data-component-line="465"
                 data-component-file="Index.tsx"
                 data-component-name="CardTitle"
-                className="text-2xl font-semibold leading-none tracking-tight flex items-center gap-2"
+                data-component-content="%7B%22text%22%3A%22%D0%A2%D0%B5%D1%81%D1%82-%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D0%BD%D0%B8%D0%BA%22%2C%22className%22%3A%22flex%20items-center%20gap-2%22%7D"
+                class="text-2xl font-semibold leading-none tracking-tight flex items-center gap-2"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
+                  viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-circle-help text-primary"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-circle-help text-primary"
+                  data-pp-id="src/pages/Index.tsx:466:16"
+                  data-pp-name="Icon"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="466"
+                  data-component-file="Index.tsx"
+                  data-component-name="Icon"
+                  data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
                 >
                   <circle cx="12" cy="12" r="10"></circle>
                   <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
@@ -1793,9 +1807,11 @@ const Index = () => {
                 data-component-line="469"
                 data-component-file="Index.tsx"
                 data-component-name="CardDescription"
-                className="text-sm text-muted-foreground"
+                data-component-content="%7B%22text%22%3A%22%D0%9E%D1%82%D0%B2%D0%B5%D1%82%D1%8C%D1%82%D0%B5%20%D0%BD%D0%B0%20%D0%BD%D0%B5%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D0%BE%D0%B2%2C%20%D0%B8%20%D0%BC%D1%8B%20%D0%BF%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B5%D0%BC%20%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%B2%D0%B0%D1%80%D0%B8%D0%B0%D0%BD%D1%82%22%7D"
+                class="text-sm text-muted-foreground"
               >
-                Ответьте на вопросы и получите рекомендацию.
+                Ответьте на несколько вопросов, и мы подскажем оптимальный
+                вариант
               </p>
             </div>
             <div
@@ -1805,106 +1821,150 @@ const Index = () => {
               data-component-line="473"
               data-component-file="Index.tsx"
               data-component-name="CardContent"
-              className="p-6 pt-0 space-y-6"
+              data-component-content="%7B%22className%22%3A%22space-y-6%22%7D"
+              class="p-6 pt-0 space-y-6"
             >
-              {/* Вопрос 1 */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold">
-                  Что для вас важнее в фотографии?
-                </h3>
-                <div className="space-y-2">
-                  {[
-                    "Точная передача реалистичных моментов",
-                    "Яркие эффекты и необычные образы",
-                    "Пока не решил(-а)",
-                  ].map((answer, i) => (
-                    <button
-                      key={i}
-                      className="w-full justify-start py-4 px-6 text-left rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground text-sm font-medium transition-colors"
-                    >
-                      {answer}
-                    </button>
-                  ))}
+              <div
+                data-pp-id="src/pages/Index.tsx:476:18"
+                data-pp-name="div"
+                data-component-path="src/pages/Index.tsx"
+                data-component-line="476"
+                data-component-file="Index.tsx"
+                data-component-name="div"
+                data-component-content="%7B%22className%22%3A%22space-y-4%22%7D"
+                class="space-y-4"
+              >
+                <div
+                  data-pp-id="src/pages/Index.tsx:477:20"
+                  data-pp-name="div"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="477"
+                  data-component-file="Index.tsx"
+                  data-component-name="div"
+                  data-component-content="%7B%22className%22%3A%22flex%20justify-between%20text-sm%20text-muted-foreground%22%7D"
+                  class="flex justify-between text-sm text-muted-foreground"
+                >
+                  <span
+                    data-pp-id="src/pages/Index.tsx:478:22"
+                    data-pp-name="span"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="478"
+                    data-component-file="Index.tsx"
+                    data-component-name="span"
+                    data-component-content="%7B%22text%22%3A%22%D0%92%D0%BE%D0%BF%D1%80%D0%BE%D1%81%20%D0%B8%D0%B7%22%7D"
+                  >
+                    Вопрос 1 из 3
+                  </span>
+                  <span
+                    data-pp-id="src/pages/Index.tsx:479:22"
+                    data-pp-name="span"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="479"
+                    data-component-file="Index.tsx"
+                    data-component-name="span"
+                    data-component-content="%7B%22text%22%3A%22%25%22%7D"
+                  >
+                    0%
+                  </span>
+                </div>
+                <div
+                  aria-valuemax="100"
+                  aria-valuemin="0"
+                  role="progressbar"
+                  data-state="indeterminate"
+                  data-max="100"
+                  data-pp-id="src/components/ui/progress.tsx:10:2"
+                  data-pp-name="ProgressPrimitive.Root"
+                  data-component-path="src/components/ui/progress.tsx"
+                  data-component-line="10"
+                  data-component-file="progress.tsx"
+                  data-component-name="ProgressPrimitive.Root"
+                  data-component-content="%7B%7D"
+                  class="relative w-full overflow-hidden rounded-full bg-secondary h-2"
+                >
+                  <div
+                    data-state="indeterminate"
+                    data-max="100"
+                    data-pp-id="src/components/ui/progress.tsx:18:4"
+                    data-pp-name="ProgressPrimitive.Indicator"
+                    data-component-path="src/components/ui/progress.tsx"
+                    data-component-line="18"
+                    data-component-file="progress.tsx"
+                    data-component-name="ProgressPrimitive.Indicator"
+                    data-component-content="%7B%22className%22%3A%22h-full%20w-full%20flex-1%20bg-primary%20transition-all%22%7D"
+                    class="h-full w-full flex-1 bg-primary transition-all"
+                    style="transform: translateX(-100%);"
+                  ></div>
                 </div>
               </div>
-              {/* Вопрос 2 */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold">
-                  Какой способ съёмки вам больше нравится?
+              <div
+                data-pp-id="src/pages/Index.tsx:484:18"
+                data-pp-name="div"
+                data-component-path="src/pages/Index.tsx"
+                data-component-line="484"
+                data-component-file="Index.tsx"
+                data-component-name="div"
+                data-component-content="%7B%22className%22%3A%22space-y-4%20pt-4%22%7D"
+                class="space-y-4 pt-4"
+              >
+                <h3
+                  data-pp-id="src/pages/Index.tsx:485:20"
+                  data-pp-name="h3"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="485"
+                  data-component-file="Index.tsx"
+                  data-component-name="h3"
+                  data-component-content="%7B%22className%22%3A%22text-xl%20font-semibold%22%7D"
+                  class="text-xl font-semibold"
+                >
+                  Какой стиль фотографий вам ближе?
                 </h3>
-                <div className="space-y-2">
-                  {[
-                    "С помощью фотоаппарата и профессионального фотографа",
-                    "Использование технологий искусственного интеллекта и цифровых эффектов",
-                    "Готов экспериментировать с любыми вариантами",
-                  ].map((answer, i) => (
-                    <button
-                      key={i}
-                      className="w-full justify-start py-4 px-6 text-left rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground text-sm font-medium transition-colors"
-                    >
-                      {answer}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              {/* Вопрос 3 */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold">
-                  Как вы относитесь к времени обработки фотографий?
-                </h3>
-                <div className="space-y-2">
-                  {[
-                    "Хочу получить фото быстро, в течение одного-двух дней",
-                    "Могу подождать дольше ради качественной и творческой обработки",
-                    "Время не имеет значения",
-                  ].map((answer, i) => (
-                    <button
-                      key={i}
-                      className="w-full justify-start py-4 px-6 text-left rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground text-sm font-medium transition-colors"
-                    >
-                      {answer}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              {/* Вопрос 4 */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold">
-                  Насколько для вас важен личный контакт с фотографом?
-                </h3>
-                <div className="space-y-2">
-                  {[
-                    "Очень важен, хочу обсудить все детали лично",
-                    "Можно ограничиться онлайн общением",
-                    "Не принципиально",
-                  ].map((answer, i) => (
-                    <button
-                      key={i}
-                      className="w-full justify-start py-4 px-6 text-left rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground text-sm font-medium transition-colors"
-                    >
-                      {answer}
-                    </button>
-                  ))}
-                </div>
-              </div>
-              {/* Вопрос 5 */}
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold">
-                  Какой результат для вас предпочтительнее?
-                </h3>
-                <div className="space-y-2">
-                  {[
-                    "Естественные снимки без сильной обработки",
-                    "Креативные изображения с использованием AI и других технологий",
-                    "Готов попробовать разные стили",
-                  ].map((answer, i) => (
-                    <button
-                      key={i}
-                      className="w-full justify-start py-4 px-6 text-left rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground text-sm font-medium transition-colors"
-                    >
-                      {answer}
-                    </button>
-                  ))}
+                <div
+                  data-pp-id="src/pages/Index.tsx:486:20"
+                  data-pp-name="div"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="486"
+                  data-component-file="Index.tsx"
+                  data-component-name="div"
+                  data-component-content="%7B%22className%22%3A%22space-y-2%22%7D"
+                  class="space-y-2"
+                >
+                  <button
+                    data-pp-id="src/pages/Index.tsx:488:24"
+                    data-pp-name="Button"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="488"
+                    data-component-file="Index.tsx"
+                    data-component-name="Button"
+                    data-component-content="%7B%22className%22%3A%22w-full%20justify-start%20h-auto%20py-4%20px-6%20text-left%20hover%3Aborder-primary%22%7D"
+                    class="inline-flex items-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground w-full justify-start h-auto py-4 px-6 text-left hover:border-primary"
+                  >
+                    Классические, естественные
+                  </button>
+                  <button
+                    data-pp-id="src/pages/Index.tsx:488:24"
+                    data-pp-name="Button"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="488"
+                    data-component-file="Index.tsx"
+                    data-component-name="Button"
+                    data-component-content="%7B%22className%22%3A%22w-full%20justify-start%20h-auto%20py-4%20px-6%20text-left%20hover%3Aborder-primary%22%7D"
+                    class="inline-flex items-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground w-full justify-start h-auto py-4 px-6 text-left hover:border-primary"
+                  >
+                    Креативные, с эффектами
+                  </button>
+                  <button
+                    data-pp-id="src/pages/Index.tsx:488:24"
+                    data-pp-name="Button"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="488"
+                    data-component-file="Index.tsx"
+                    data-component-name="Button"
+                    data-component-content="%7B%22className%22%3A%22w-full%20justify-start%20h-auto%20py-4%20px-6%20text-left%20hover%3Aborder-primary%22%7D"
+                    class="inline-flex items-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground w-full justify-start h-auto py-4 px-6 text-left hover:border-primary"
+                  >
+                    Не знаю, хочу узнать
+                  </button>
                 </div>
               </div>
             </div>
