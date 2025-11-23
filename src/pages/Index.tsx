@@ -829,9 +829,21 @@ const Index = () => {
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="10:00">10:00</SelectItem>
+                          <SelectItem value="10:30">10:30</SelectItem>
+                          <SelectItem value="11:00">11:00</SelectItem>
+                          <SelectItem value="11:30">11:30</SelectItem>
                           <SelectItem value="12:00">12:00</SelectItem>
+                          <SelectItem value="12:30">12:30</SelectItem>
+                          <SelectItem value="13:00">13:00</SelectItem>
+                          <SelectItem value="13:30">13:30</SelectItem>
                           <SelectItem value="14:00">14:00</SelectItem>
+                          <SelectItem value="14:30">14:30</SelectItem>
+                          <SelectItem value="15:00">15:00</SelectItem>
+                          <SelectItem value="15:30">15:30</SelectItem>
                           <SelectItem value="16:00">16:00</SelectItem>
+                          <SelectItem value="16:30">16:30</SelectItem>
+                          <SelectItem value="17:00">17:00</SelectItem>
+                          <SelectItem value="17:30">17:30</SelectItem>
                           <SelectItem value="18:00">18:00</SelectItem>
                         </SelectContent>
                       </Select>
