@@ -345,9 +345,14 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Alexandra & Maria
-          </h1>
+          <div>
+            <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              Alexandra & Maria
+            </h1>
+            <p className="text-sm mt-1" style={{ fontSize: "0.875rem" }}>
+              Профессиональная фотография
+            </p>
+          </div>
           <div className="hidden md:flex gap-6">
             {[
               "home",
