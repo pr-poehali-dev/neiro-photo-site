@@ -391,7 +391,7 @@ const Index = () => {
         </div>
       </nav>
 
-      <section id="home" className="pt-32 pb-20 px-4">
+      <section id="home" className="pt-22 pb-20 px-4">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h2 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
