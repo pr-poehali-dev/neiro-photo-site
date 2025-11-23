@@ -77,7 +77,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div>
             <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Alexandra & Maria
+              Aleksandra & Maria
             </h1>
             <p className="text-sm mt-1 px-0.5" style={{ fontSize: "0.875rem" }}>
               Профессиональная фотография
