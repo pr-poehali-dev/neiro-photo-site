@@ -419,7 +419,7 @@ const Index = () => {
                         data-component-name="p"
                         data-component-content="%7B%22text%22%3A%22%D0%93%D0%BE%D1%82%D0%BE%D0%B2%D0%BE%20%D0%B7%D0%B0%20%D0%BD%D0%B5%D1%81%D0%BA%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2%22%7D"
                       >
-                        Готово за несколько часов
+                        Готово за несколько
                       </p>
                     </div>
                     <div
