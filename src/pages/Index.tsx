@@ -408,6 +408,10 @@ const Index = () => {
                 </div>
                 <div className="flex items-start gap-2">
                   <Icon name="Check" className="text-green-500 mt-1" size={20} />
+                  <p>Реалистичный результат без искажений</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Icon name="Check" className="text-green-500 mt-1" size={20} />
                   <p>Живая атмосфера и уникальность кадров</p>
                 </div>
                 <div className="flex items-start gap-2">
