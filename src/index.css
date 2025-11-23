@@ -111,3 +111,34 @@
     font-family: "Montserrat", sans-serif;
   }
 }
+
+@layer utilities {
+  /* Mobile optimization for small screens (320px+) */
+  @media (max-width: 640px) {
+    .container {
+      @apply px-3;
+    }
+
+    /* Ensure text is readable */
+    p,
+    li,
+    span,
+    label {
+      font-size: clamp(0.875rem, 3.5vw, 1rem);
+    }
+
+    /* Prevent horizontal overflow */
+    * {
+      max-width: 100%;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    /* Better touch targets for mobile */
+    button,
+    a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+}

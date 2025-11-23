@@ -255,12 +255,12 @@ const Index = () => {
       </Dialog>
 
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="container mx-auto px-3 py-3 flex justify-between items-center">
           <div>
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <h1 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
               Aleksandra & Maria
             </h1>
-            <p className="text-sm mt-1 px-0.5" style={{ fontSize: "0.875rem" }}>
+            <p className="text-xs sm:text-sm mt-1 px-0.5">
               Профессиональная фотография
             </p>
           </div>
@@ -283,60 +283,61 @@ const Index = () => {
               ),
             )}
           </div>
-          <Button variant="default" size="sm" onClick={handleContactClick}>
+          <Button variant="default" size="sm" onClick={handleContactClick} className="text-xs sm:text-sm px-3 sm:px-4">
             Связаться
           </Button>
         </div>
       </nav>
 
-      <section id="home" className="pt-32 pb-20 px-4">
+      <section id="home" className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-3 sm:px-4">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h2 className="md:text-5xl mb-6 leading-tight font-bold text-4xl">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl mb-4 sm:mb-6 leading-tight font-bold">
               Искусство фотосъёмки: от классики до нейросетей
             </h2>
-            <h3 className="md:text-2xl mb-6 leading-tight font-bold text-4xl">
+            <h3 className="text-base sm:text-lg md:text-2xl mb-4 sm:mb-6 leading-tight font-bold">
               Выберите свой путь к совершенным снимкам: нейрофотография с
               AI-эффектами или классическая фотосессия
             </h3>
-            <div className="flex gap-4 justify-center flex-wrap">
+            <div className="flex gap-2 sm:gap-4 justify-center flex-wrap">
               <Button
                 size="lg"
                 onClick={() => scrollToSection("portfolio")}
-                className="group"
+                className="group text-sm sm:text-base"
               >
                 Посмотреть работы
                 <Icon
                   name="ArrowRight"
                   className="ml-2 group-hover:translate-x-1 transition-transform"
-                  size={20}
+                  size={16}
                 />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 onClick={() => scrollToSection("services")}
+                className="text-sm sm:text-base"
               >
                 Прайс
               </Button>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mt-20 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto">
             <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in">
-              <div className="h-[24rem] bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden">
+              <div className="h-64 sm:h-80 md:h-96 bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden">
                 <img
                   src="https://cdn.poehali.dev/files/fe75699e-c452-4a3d-afb5-7477e525d402.JPG"
                   alt="Александра"
                   className="w-full h-full object-cover opacity-90"
                 />
               </div>
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-bold mb-2">Александра</h3>
-                <p className="font-semibold mb-3 text-[#7f68ac]">
+              <CardContent className="p-4 sm:p-6">
+                <h3 className="text-xl sm:text-2xl font-bold mb-2">Александра</h3>
+                <p className="font-semibold mb-2 sm:mb-3 text-[#7f68ac] text-sm sm:text-base">
                   AI-фотограф (онлайн из любой точки)
                 </p>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-sm sm:text-base">
                   Превращаю исходные портреты в уникальные арт-объекты с помощью
                   искусственного интеллекта.
                 </p>
@@ -344,19 +345,19 @@ const Index = () => {
             </Card>
 
             <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in [animation-delay:150ms]">
-              <div className="h-[24rem] bg-gradient-to-br from-secondary/20 to-primary/20 relative overflow-hidden">
+              <div className="h-64 sm:h-80 md:h-96 bg-gradient-to-br from-secondary/20 to-primary/20 relative overflow-hidden">
                 <img
                   src="https://cdn.poehali.dev/files/7cd5fbec-41bf-456d-98de-1c14f91b5e42.jpg"
                   alt="Мария"
                   className="w-full h-full object-cover opacity-90"
                 />
               </div>
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-bold mb-2">Мария</h3>
-                <p className="text-secondary font-semibold mb-3">
+              <CardContent className="p-4 sm:p-6">
+                <h3 className="text-xl sm:text-2xl font-bold mb-2">Мария</h3>
+                <p className="text-secondary font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
                   Классический фотограф (г.Новосибирск)
                 </p>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-sm sm:text-base">
                   Специализируюсь на Lifestyle стиле. Ловлю искренние эмоции и
                   важные моменты.
                 </p>
@@ -366,22 +367,22 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="portfolio" className="py-20 px-4 bg-muted/30">
+      <section id="portfolio" className="py-12 sm:py-20 px-3 sm:px-4 bg-muted/30">
         <div className="container mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Портфолио</h2>
-            <p className="text-muted-foreground text-lg">Наши работы</p>
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-2 sm:mb-4">Портфолио</h2>
+            <p className="text-muted-foreground text-sm sm:text-lg">Наши работы</p>
           </div>
 
           <Tabs defaultValue="alexandra" className="max-w-6xl mx-auto">
-            <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-12">
-              <TabsTrigger value="alexandra">Александра (AI-фото)</TabsTrigger>
-              <TabsTrigger value="maria">Мария (Классика)</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8 sm:mb-12">
+              <TabsTrigger value="alexandra" className="text-xs sm:text-sm">Александра (AI-фото)</TabsTrigger>
+              <TabsTrigger value="maria" className="text-xs sm:text-sm">Мария (Классика)</TabsTrigger>
             </TabsList>
 
             <TabsContent
               value="alexandra"
-              className="grid md:grid-cols-3 gap-6"
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6"
             >
               {portfolioImages
                 .filter((img) => img.photographer === "alexandra")
@@ -400,7 +401,7 @@ const Index = () => {
                 ))}
             </TabsContent>
 
-            <TabsContent value="maria" className="grid md:grid-cols-3 gap-6">
+            <TabsContent value="maria" className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
               {portfolioImages
                 .filter((img) => img.photographer === "maria")
                 .map((img, idx) => (
@@ -421,107 +422,107 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-20 px-6 bg-white/50">
+      <section id="about" className="py-12 sm:py-20 px-3 sm:px-6 bg-white/50">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent">
               Сравнение форматов съёмки
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-2">
               Выберите то, что вам ближе: быстрые и креативные AI-снимки или
               классическую съёмку с живым общением
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 mb-4">
-                <Icon name="Sparkles" size={28} className="text-primary" />
-                <h3 className="text-2xl font-bold">AI-фотография</h3>
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <Icon name="Sparkles" size={24} className="text-primary sm:w-7 sm:h-7" />
+                <h3 className="text-xl sm:text-2xl font-bold">AI-фотография</h3>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-start gap-2">
                   <Icon
                     name="Check"
-                    className="text-green-500 mt-1"
-                    size={20}
+                    className="text-green-500 mt-1 flex-shrink-0"
+                    size={18}
                   />
-                  <p>Быстрый результат за 1-2 дня</p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Icon
-                    name="Check"
-                    className="text-green-500 mt-1"
-                    size={20}
-                  />
-                  <p>Уникальные, креативные AI-эффекты</p>
+                  <p className="text-sm sm:text-base">Быстрый результат за 1-2 дня</p>
                 </div>
                 <div className="flex items-start gap-2">
                   <Icon
                     name="Check"
-                    className="text-green-500 mt-1"
-                    size={20}
+                    className="text-green-500 mt-1 flex-shrink-0"
+                    size={18}
                   />
-                  <p>Доступная цена</p>
+                  <p className="text-sm sm:text-base">Уникальные, креативные AI-эффекты</p>
                 </div>
                 <div className="flex items-start gap-2">
-                  <Icon name="X" className="text-red-500 mt-1" size={20} />
-                  <p>Требуется исходное фото хорошего качества</p>
+                  <Icon
+                    name="Check"
+                    className="text-green-500 mt-1 flex-shrink-0"
+                    size={18}
+                  />
+                  <p className="text-sm sm:text-base">Доступная цена</p>
                 </div>
                 <div className="flex items-start gap-2">
-                  <Icon name="X" className="text-red-500 mt-1" size={20} />
-                  <p>Сходство с оригиналом фото до 85-95%</p>
+                  <Icon name="X" className="text-red-500 mt-1 flex-shrink-0" size={18} />
+                  <p className="text-sm sm:text-base">Требуется исходное фото хорошего качества</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Icon name="X" className="text-red-500 mt-1 flex-shrink-0" size={18} />
+                  <p className="text-sm sm:text-base">Сходство с оригиналом фото до 85-95%</p>
                 </div>
               </div>
             </div>
 
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 mb-4">
-                <Icon name="Camera" size={28} className="text-secondary" />
-                <h3 className="text-2xl font-bold">Классическая съёмка</h3>
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                <Icon name="Camera" size={24} className="text-secondary sm:w-7 sm:h-7" />
+                <h3 className="text-xl sm:text-2xl font-bold">Классическая съёмка</h3>
               </div>
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-start gap-2">
                   <Icon
                     name="Check"
-                    className="text-green-500 mt-1"
-                    size={20}
+                    className="text-green-500 mt-1 flex-shrink-0"
+                    size={18}
                   />
-                  <p>100% естественные фотографии</p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <Icon
-                    name="Check"
-                    className="text-green-500 mt-1"
-                    size={20}
-                  />
-                  <p>Реалистичный результат без искажений</p>
+                  <p className="text-sm sm:text-base">100% естественные фотографии</p>
                 </div>
                 <div className="flex items-start gap-2">
                   <Icon
                     name="Check"
-                    className="text-green-500 mt-1"
-                    size={20}
+                    className="text-green-500 mt-1 flex-shrink-0"
+                    size={18}
                   />
-                  <p>Живая атмосфера и уникальность кадров</p>
+                  <p className="text-sm sm:text-base">Реалистичный результат без искажений</p>
                 </div>
                 <div className="flex items-start gap-2">
-                  <Icon name="X" className="text-red-500 mt-1" size={20} />
-                  <p>Только для жителей Новосибирска</p>
+                  <Icon
+                    name="Check"
+                    className="text-green-500 mt-1 flex-shrink-0"
+                    size={18}
+                  />
+                  <p className="text-sm sm:text-base">Живая атмосфера и уникальность кадров</p>
                 </div>
                 <div className="flex items-start gap-2">
-                  <Icon name="X" className="text-red-500 mt-1" size={20} />
-                  <p>Длительная обработка (5-7 дней)</p>
+                  <Icon name="X" className="text-red-500 mt-1 flex-shrink-0" size={18} />
+                  <p className="text-sm sm:text-base">Только для жителей Новосибирска</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Icon name="X" className="text-red-500 mt-1 flex-shrink-0" size={18} />
+                  <p className="text-sm sm:text-base">Длительная обработка (5-7 дней)</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="text-center pt-6 border-t max-w-4xl mx-auto mt-8">
-            <p className="text-muted-foreground mb-4">
+          <div className="text-center pt-4 sm:pt-6 border-t max-w-4xl mx-auto mt-6 sm:mt-8">
+            <p className="text-muted-foreground mb-3 sm:mb-4 text-sm sm:text-base">
               Не уверены? Пройдите короткий тест!
             </p>
-            <Button onClick={() => setQuizDialogOpen(true)}>
+            <Button onClick={() => setQuizDialogOpen(true)} className="text-sm sm:text-base">
               Помочь выбрать
             </Button>
           </div>
@@ -530,30 +531,30 @@ const Index = () => {
 
       <section
         id="services"
-        className="py-20 px-6 bg-gradient-to-br from-purple-50 to-white"
+        className="py-12 sm:py-20 px-3 sm:px-6 bg-gradient-to-br from-purple-50 to-white"
       >
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent">
               Наши цены
             </h2>
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-600 text-sm sm:text-base md:text-lg px-2">
               Выберите подходящий пакет для ваших потребностей
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-8">
             <Card className="border-2 border-purple-200">
-              <CardHeader className="bg-gradient-to-r from-purple-50 to-white">
-                <div className="flex items-center gap-3 mb-2">
-                  <Icon name="Sparkles" size={32} className="text-primary" />
-                  <CardTitle className="text-3xl">AI-фотография</CardTitle>
+              <CardHeader className="bg-gradient-to-r from-purple-50 to-white p-4 sm:p-6">
+                <div className="flex items-center gap-2 sm:gap-3 mb-2">
+                  <Icon name="Sparkles" size={24} className="text-primary sm:w-8 sm:h-8" />
+                  <CardTitle className="text-xl sm:text-2xl md:text-3xl">AI-фотография</CardTitle>
                 </div>
-                <CardDescription className="text-base">
+                <CardDescription className="text-sm sm:text-base">
                   Нейрофотография с Александрой
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6 pt-6">
+              <CardContent className="space-y-4 sm:space-y-6 pt-4 sm:pt-6 p-4 sm:p-6">
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span>Пробный пакет (3 фото, 1 образ)</span>
