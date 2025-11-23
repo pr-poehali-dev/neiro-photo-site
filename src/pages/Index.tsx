@@ -279,7 +279,7 @@ const Index = () => {
             data-component-content="%7B%22text%22%3A%22%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B5%20%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%22%2C%22className%22%3A%22text-4xl%20font-heading%20font-bold%20text-center%20mb-12%22%7D"
             class="text-4xl font-heading font-bold text-center mb-12"
           >
-            Интерактивное сравнение
+            Сравнение форматов съёмки
           </h2>
           <div
             data-pp-id="src/pages/Index.tsx:127:10"
