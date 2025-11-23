@@ -431,7 +431,7 @@ const Index = () => {
             <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in">
               <div className="h-64 bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden">
                 <img
-                  src="https://cdn.poehali.dev/projects/fd4a0664-6167-4055-https://allwebs.ru/image/Aleksandra-AI-photo.Ofd5pX91b3-61ca5fd95ac8/files/ae83c122-3d9f-4040-85f8-cbdcff5516e7.jpg"
+                  src="https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/ae83c122-3d9f-4040-85f8-cbdcff5516e7.jpg"
                   alt="Александра"
                   className="w-full h-full object-cover opacity-90"
                 />
