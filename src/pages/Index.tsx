@@ -34,7 +34,6 @@ const Index = () => {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
-    email: "",
     comment: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -91,7 +90,7 @@ const Index = () => {
       const bookingData = {
         name: formData.name,
         phone: formData.phone,
-        email: formData.email,
+        email: '',
         photographer: selectedPhotographer,
         date: date ? date.toLocaleDateString('ru-RU') : '',
         time: selectedTime,
@@ -114,7 +113,7 @@ const Index = () => {
           description: "Мы свяжемся с вами в ближайшее время",
         });
         
-        setFormData({ name: "", phone: "", email: "", comment: "" });
+        setFormData({ name: "", phone: "", comment: "" });
         setSelectedPhotographer("");
         setDate(undefined);
         setSelectedTime("");
@@ -772,17 +771,6 @@ const Index = () => {
                     placeholder="+7 (___) ___-__-__" 
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    required
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-semibold">Email</label>
-                  <Input 
-                    type="email" 
-                    placeholder="your@email.com" 
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
                     required
                   />
                 </div>
