@@ -429,7 +429,7 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 gap-8 mt-20 max-w-5xl mx-auto">
             <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in">
-              <div className="h-[20.8rem] bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden">
+              <div className="h-[24rem] bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden">
                 <img
                   src="https://cdn.poehali.dev/files/fe75699e-c452-4a3d-afb5-7477e525d402.JPG"
                   alt="Александра"
