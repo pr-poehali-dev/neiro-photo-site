@@ -374,7 +374,7 @@ const Index = () => {
                     : section === "about"
                       ? "О нас"
                       : section === "services"
-                        ? "Услуги и цены"
+                        ? "Прайс"
                         : section === "reviews"
                           ? "Отзывы"
                           : "Контакты"}
@@ -416,7 +416,7 @@ const Index = () => {
                 variant="outline"
                 onClick={() => scrollToSection("services")}
               >
-                Услуги и цены
+                Прайс
               </Button>
             </div>
           </div>
