@@ -2495,7 +2495,7 @@ const Index = () => {
                     data-component-file="Index.tsx"
                     data-component-name="a"
                     data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%20hover%3Atext-primary%20transition-colors%22%7D"
-                    href="https://t.me/alexandra_neuro"
+                    href="https://t.me/aleksa25t"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="flex items-center gap-3 hover:text-primary transition-colors"
