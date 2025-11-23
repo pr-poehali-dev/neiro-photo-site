@@ -2098,69 +2098,574 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-20 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-2xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Контакты</h2>
-            <p className="text-muted-foreground text-lg">
-              Свяжитесь с нами для обсуждения съёмки
-            </p>
-          </div>
-
-          <Card className="p-8">
-            <form className="space-y-6">
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  Ваше имя
-                </label>
-                <Input placeholder="Иван Иванов" />
+      <section
+        data-pp-id="src/pages/Index.tsx:384:6"
+        data-pp-name="section"
+        data-component-path="src/pages/Index.tsx"
+        data-component-line="384"
+        data-component-file="Index.tsx"
+        data-component-name="section"
+        data-component-content="%7B%22className%22%3A%22py-20%20px-4%20bg-muted%2F30%22%7D"
+        id="contacts"
+        class="py-20 px-4 bg-muted/30"
+      >
+        <div
+          data-pp-id="src/pages/Index.tsx:385:8"
+          data-pp-name="div"
+          data-component-path="src/pages/Index.tsx"
+          data-component-line="385"
+          data-component-file="Index.tsx"
+          data-component-name="div"
+          data-component-content="%7B%22className%22%3A%22container%20mx-auto%20max-w-4xl%22%7D"
+          class="container mx-auto max-w-4xl"
+        >
+          <h2
+            data-pp-id="src/pages/Index.tsx:386:10"
+            data-pp-name="h2"
+            data-component-path="src/pages/Index.tsx"
+            data-component-line="386"
+            data-component-file="Index.tsx"
+            data-component-name="h2"
+            data-component-content="%7B%22text%22%3A%22%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D1%8B%22%2C%22className%22%3A%22text-4xl%20font-bold%20text-center%20mb-12%22%7D"
+            class="text-4xl font-bold text-center mb-12"
+          >
+            Контакты
+          </h2>
+          <div
+            data-pp-id="src/pages/Index.tsx:387:10"
+            data-pp-name="div"
+            data-component-path="src/pages/Index.tsx"
+            data-component-line="387"
+            data-component-file="Index.tsx"
+            data-component-name="div"
+            data-component-content="%7B%22className%22%3A%22grid%20md%3Agrid-cols-2%20gap-8%22%7D"
+            class="grid md:grid-cols-2 gap-8"
+          >
+            <div
+              data-pp-id="src/pages/Index.tsx:388:12"
+              data-pp-name="Card"
+              data-component-path="src/pages/Index.tsx"
+              data-component-line="388"
+              data-component-file="Index.tsx"
+              data-component-name="Card"
+              data-component-content="%7B%7D"
+              class="rounded-lg border bg-card text-card-foreground shadow-sm"
+            >
+              <div
+                data-pp-id="src/pages/Index.tsx:389:14"
+                data-pp-name="CardHeader"
+                data-component-path="src/pages/Index.tsx"
+                data-component-line="389"
+                data-component-file="Index.tsx"
+                data-component-name="CardHeader"
+                data-component-content="%7B%7D"
+                class="flex flex-col space-y-1.5 p-6"
+              >
+                <h3
+                  data-pp-id="src/pages/Index.tsx:390:16"
+                  data-pp-name="CardTitle"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="390"
+                  data-component-file="Index.tsx"
+                  data-component-name="CardTitle"
+                  data-component-content="%7B%22text%22%3A%22%D0%9C%D0%B0%D1%80%D0%B8%D1%8F%22%2C%22className%22%3A%22text-xl%22%7D"
+                  class="font-semibold tracking-tight text-xl"
+                >
+                  Мария
+                </h3>
+                <p
+                  data-pp-id="src/pages/Index.tsx:391:16"
+                  data-pp-name="CardDescription"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="391"
+                  data-component-file="Index.tsx"
+                  data-component-name="CardDescription"
+                  data-component-content="%7B%22text%22%3A%22%D0%9A%D0%BB%D0%B0%D1%81%D1%81%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9%20%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%22%7D"
+                  class="text-sm text-muted-foreground"
+                >
+                  Классический фотограф
+                </p>
               </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  Email или телефон
-                </label>
-                <Input placeholder="example@mail.ru или +7 900 000 00 00" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  Выберите фотографа
-                </label>
-                <select className="w-full border border-input rounded-md px-3 py-2 bg-background">
-                  <option>Александра (нейрофотография)</option>
-                  <option>Мария (классическая фотография)</option>
-                  <option>Нужна консультация</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">
-                  Сообщение
-                </label>
-                <Textarea
-                  placeholder="Расскажите о вашей идее съёмки..."
-                  rows={5}
-                />
-              </div>
-              <Button className="w-full" size="lg">
-                Отправить заявку
-                <Icon name="Send" className="ml-2" size={18} />
-              </Button>
-            </form>
-
-            <div className="mt-8 pt-8 border-t border-border space-y-4">
-              <div className="flex items-center gap-3 text-muted-foreground">
-                <Icon name="Mail" size={20} />
-                <span>info@alexandramaria.photo</span>
-              </div>
-              <div className="flex items-center gap-3 text-muted-foreground">
-                <Icon name="Phone" size={20} />
-                <span>+7 (900) 000-00-00</span>
-              </div>
-              <div className="flex items-center gap-3 text-muted-foreground">
-                <Icon name="MapPin" size={20} />
-                <span>Москва, ул. Примерная, д. 123</span>
+              <div
+                data-pp-id="src/pages/Index.tsx:393:14"
+                data-pp-name="CardContent"
+                data-component-path="src/pages/Index.tsx"
+                data-component-line="393"
+                data-component-file="Index.tsx"
+                data-component-name="CardContent"
+                data-component-content="%7B%22className%22%3A%22space-y-4%22%7D"
+                class="p-6 pt-0 space-y-4"
+              >
+                <div
+                  data-pp-id="src/pages/Index.tsx:394:16"
+                  data-pp-name="div"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="394"
+                  data-component-file="Index.tsx"
+                  data-component-name="div"
+                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%22%7D"
+                  class="flex items-center gap-3"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-phone text-primary"
+                    data-pp-id="src/pages/Index.tsx:395:18"
+                    data-pp-name="Icon"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="395"
+                    data-component-file="Index.tsx"
+                    data-component-name="Icon"
+                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
+                  >
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <span
+                    data-pp-id="src/pages/Index.tsx:396:18"
+                    data-pp-name="span"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="396"
+                    data-component-file="Index.tsx"
+                    data-component-name="span"
+                    data-component-content="%7B%22text%22%3A%22%2B7%20(923)%20123-45-67%22%7D"
+                  >
+                    +7 (923) 123-45-67
+                  </span>
+                </div>
+                <div
+                  data-pp-id="src/pages/Index.tsx:398:16"
+                  data-pp-name="div"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="398"
+                  data-component-file="Index.tsx"
+                  data-component-name="div"
+                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%22%7D"
+                  class="flex items-center gap-3"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-mail text-primary"
+                    data-pp-id="src/pages/Index.tsx:399:18"
+                    data-pp-name="Icon"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="399"
+                    data-component-file="Index.tsx"
+                    data-component-name="Icon"
+                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
+                  >
+                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                  <span
+                    data-pp-id="src/pages/Index.tsx:400:18"
+                    data-pp-name="span"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="400"
+                    data-component-file="Index.tsx"
+                    data-component-name="span"
+                    data-component-content="%7B%22text%22%3A%22maria.photo%40mail.ru%22%7D"
+                  >
+                    maria.photo@mail.ru
+                  </span>
+                </div>
+                <div
+                  data-pp-id="src/pages/Index.tsx:402:16"
+                  data-pp-name="div"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="402"
+                  data-component-file="Index.tsx"
+                  data-component-name="div"
+                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%22%7D"
+                  class="flex items-center gap-3"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-instagram text-primary"
+                    data-pp-id="src/pages/Index.tsx:403:18"
+                    data-pp-name="Icon"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="403"
+                    data-component-file="Index.tsx"
+                    data-component-name="Icon"
+                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
+                  >
+                    <rect
+                      width="20"
+                      height="20"
+                      x="2"
+                      y="2"
+                      rx="5"
+                      ry="5"
+                    ></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                  </svg>
+                  <span
+                    data-pp-id="src/pages/Index.tsx:404:18"
+                    data-pp-name="span"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="404"
+                    data-component-file="Index.tsx"
+                    data-component-name="span"
+                    data-component-content="%7B%22text%22%3A%22%40maria_photo_nsk%22%7D"
+                  >
+                    @maria_photo_nsk
+                  </span>
+                </div>
+                <div
+                  data-pp-id="src/pages/Index.tsx:406:16"
+                  data-pp-name="div"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="406"
+                  data-component-file="Index.tsx"
+                  data-component-name="div"
+                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%22%7D"
+                  class="flex items-center gap-3"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-map-pin text-primary"
+                    data-pp-id="src/pages/Index.tsx:407:18"
+                    data-pp-name="Icon"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="407"
+                    data-component-file="Index.tsx"
+                    data-component-name="Icon"
+                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
+                  >
+                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span
+                    data-pp-id="src/pages/Index.tsx:408:18"
+                    data-pp-name="span"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="408"
+                    data-component-file="Index.tsx"
+                    data-component-name="span"
+                    data-component-content="%7B%22text%22%3A%22%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA%22%7D"
+                  >
+                    Новосибирск
+                  </span>
+                </div>
               </div>
             </div>
-          </Card>
+            <div
+              data-pp-id="src/pages/Index.tsx:412:12"
+              data-pp-name="Card"
+              data-component-path="src/pages/Index.tsx"
+              data-component-line="412"
+              data-component-file="Index.tsx"
+              data-component-name="Card"
+              data-component-content="%7B%7D"
+              class="rounded-lg border bg-card text-card-foreground shadow-sm"
+            >
+              <div
+                data-pp-id="src/pages/Index.tsx:413:14"
+                data-pp-name="CardHeader"
+                data-component-path="src/pages/Index.tsx"
+                data-component-line="413"
+                data-component-file="Index.tsx"
+                data-component-name="CardHeader"
+                data-component-content="%7B%7D"
+                class="flex flex-col space-y-1.5 p-6"
+              >
+                <h3
+                  data-pp-id="src/pages/Index.tsx:414:16"
+                  data-pp-name="CardTitle"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="414"
+                  data-component-file="Index.tsx"
+                  data-component-name="CardTitle"
+                  data-component-content="%7B%22text%22%3A%22%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%B0%22%2C%22className%22%3A%22text-xl%22%7D"
+                  class="font-semibold tracking-tight text-xl"
+                >
+                  Александра
+                </h3>
+                <p
+                  data-pp-id="src/pages/Index.tsx:415:16"
+                  data-pp-name="CardDescription"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="415"
+                  data-component-file="Index.tsx"
+                  data-component-name="CardDescription"
+                  data-component-content="%7B%22text%22%3A%22%D0%9D%D0%B5%D0%B9%D1%80%D0%BE%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%22%7D"
+                  class="text-sm text-muted-foreground"
+                >
+                  Нейрофотограф
+                </p>
+              </div>
+              <div
+                data-pp-id="src/pages/Index.tsx:417:14"
+                data-pp-name="CardContent"
+                data-component-path="src/pages/Index.tsx"
+                data-component-line="417"
+                data-component-file="Index.tsx"
+                data-component-name="CardContent"
+                data-component-content="%7B%22className%22%3A%22space-y-4%22%7D"
+                class="p-6 pt-0 space-y-4"
+              >
+                <div
+                  data-pp-id="src/pages/Index.tsx:418:16"
+                  data-pp-name="div"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="418"
+                  data-component-file="Index.tsx"
+                  data-component-name="div"
+                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%22%7D"
+                  class="flex items-center gap-3"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-phone text-primary"
+                    data-pp-id="src/pages/Index.tsx:419:18"
+                    data-pp-name="Icon"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="419"
+                    data-component-file="Index.tsx"
+                    data-component-name="Icon"
+                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
+                  >
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <span
+                    data-pp-id="src/pages/Index.tsx:420:18"
+                    data-pp-name="span"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="420"
+                    data-component-file="Index.tsx"
+                    data-component-name="span"
+                    data-component-content="%7B%22text%22%3A%22%2B7%20(913)%20987-65-43%22%7D"
+                  >
+                    +7 (913) 987-65-43
+                  </span>
+                </div>
+                <div
+                  data-pp-id="src/pages/Index.tsx:422:16"
+                  data-pp-name="div"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="422"
+                  data-component-file="Index.tsx"
+                  data-component-name="div"
+                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%22%7D"
+                  class="flex items-center gap-3"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-mail text-primary"
+                    data-pp-id="src/pages/Index.tsx:423:18"
+                    data-pp-name="Icon"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="423"
+                    data-component-file="Index.tsx"
+                    data-component-name="Icon"
+                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
+                  >
+                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                  <span
+                    data-pp-id="src/pages/Index.tsx:424:18"
+                    data-pp-name="span"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="424"
+                    data-component-file="Index.tsx"
+                    data-component-name="span"
+                    data-component-content="%7B%22text%22%3A%22alex.ai.photo%40gmail.com%22%7D"
+                  >
+                    alex.ai.photo@gmail.com
+                  </span>
+                </div>
+                <div
+                  data-pp-id="src/pages/Index.tsx:426:16"
+                  data-pp-name="div"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="426"
+                  data-component-file="Index.tsx"
+                  data-component-name="div"
+                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%22%7D"
+                  class="flex items-center gap-3"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-instagram text-primary"
+                    data-pp-id="src/pages/Index.tsx:427:18"
+                    data-pp-name="Icon"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="427"
+                    data-component-file="Index.tsx"
+                    data-component-name="Icon"
+                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
+                  >
+                    <rect
+                      width="20"
+                      height="20"
+                      x="2"
+                      y="2"
+                      rx="5"
+                      ry="5"
+                    ></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                  </svg>
+                  <span
+                    data-pp-id="src/pages/Index.tsx:428:18"
+                    data-pp-name="span"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="428"
+                    data-component-file="Index.tsx"
+                    data-component-name="span"
+                    data-component-content="%7B%22text%22%3A%22%40alex_ai_art%22%7D"
+                  >
+                    @alex_ai_art
+                  </span>
+                </div>
+                <div
+                  data-pp-id="src/pages/Index.tsx:430:16"
+                  data-pp-name="div"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="430"
+                  data-component-file="Index.tsx"
+                  data-component-name="div"
+                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%22%7D"
+                  class="flex items-center gap-3"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-map-pin text-primary"
+                    data-pp-id="src/pages/Index.tsx:431:18"
+                    data-pp-name="Icon"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="431"
+                    data-component-file="Index.tsx"
+                    data-component-name="Icon"
+                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
+                  >
+                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span
+                    data-pp-id="src/pages/Index.tsx:432:18"
+                    data-pp-name="span"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="432"
+                    data-component-file="Index.tsx"
+                    data-component-name="span"
+                    data-component-content="%7B%22text%22%3A%22%D0%9D%D0%BE%D0%B2%D0%BE%D1%81%D0%B8%D0%B1%D0%B8%D1%80%D1%81%D0%BA%22%7D"
+                  >
+                    Новосибирск
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            data-pp-id="src/pages/Index.tsx:437:10"
+            data-pp-name="div"
+            data-component-path="src/pages/Index.tsx"
+            data-component-line="437"
+            data-component-file="Index.tsx"
+            data-component-name="div"
+            data-component-content="%7B%22className%22%3A%22text-center%20mt-12%22%7D"
+            class="text-center mt-12"
+          >
+            <button
+              data-pp-id="src/pages/Index.tsx:438:12"
+              data-pp-name="Button"
+              data-component-path="src/pages/Index.tsx"
+              data-component-line="438"
+              data-component-file="Index.tsx"
+              data-component-name="Button"
+              data-component-content="%7B%22text%22%3A%22%D0%97%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%81%D1%8A%D0%B5%D0%BC%D0%BA%D1%83%22%2C%22className%22%3A%22bg-primary%20hover%3Abg-primary%2F90%22%7D"
+              class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-11 rounded-md px-8 bg-primary hover:bg-primary/90"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-message-circle mr-2"
+                data-pp-id="src/pages/Index.tsx:439:14"
+                data-pp-name="Icon"
+                data-component-path="src/pages/Index.tsx"
+                data-component-line="439"
+                data-component-file="Index.tsx"
+                data-component-name="Icon"
+                data-component-content="%7B%22className%22%3A%22mr-2%22%7D"
+              >
+                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+              </svg>
+              Записаться на съемку
+            </button>
+          </div>
         </div>
       </section>
 
