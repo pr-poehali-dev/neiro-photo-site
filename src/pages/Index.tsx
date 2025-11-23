@@ -540,64 +540,6 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="about" className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              О фотографах
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Наши истории и подход к работе
-            </p>
-          </div>
-
-          <div className="space-y-12">
-            <Card className="p-8 hover:shadow-lg transition-shadow">
-              <div className="flex items-start gap-6">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Icon name="Sparkles" className="text-primary" size={32} />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">Александра</h3>
-                  <p className="text-primary font-semibold mb-4">
-                    Нейрофотограф
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Более 7 лет в фотографии. Создала авторскую технику
-                    нейрофотографии, соединив классическую портретную съёмку с
-                    элементами нейрографики. Каждая работа — это уникальный
-                    арт-объект, отражающий внутренний мир человека. Работаю в
-                    студии и на выезде. Провожу мастер-классы по креативной
-                    фотографии.
-                  </p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="p-8 hover:shadow-lg transition-shadow">
-              <div className="flex items-start gap-6">
-                <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                  <Icon name="Camera" className="text-secondary" size={32} />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold mb-2">Мария</h3>
-                  <p className="text-secondary font-semibold mb-4">
-                    Классический фотограф
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    В профессии 10 лет. Специализируюсь на свадебной и семейной
-                    фотографии. Мой стиль — естественность и искренность. Не
-                    ставлю жёсткие позы, а создаю комфортную атмосферу, где люди
-                    чувствуют себя свободно. Сняла более 150 свадеб и сотни
-                    семейных фотосессий. Каждый проект для меня — это история
-                    любви.
-                  </p>
-                </div>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
       <section
         data-pp-id="src/pages/Index.tsx:122:6"
         data-pp-name="section"
