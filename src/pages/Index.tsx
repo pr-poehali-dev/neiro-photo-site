@@ -1335,49 +1335,279 @@ const Index = () => {
         </div>
       </section>
 
-      <div class="grid md:grid-cols-2 gap-8">
-  <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
-    <div class="flex flex-col space-y-1.5 p-6">
-      <h3 class="font-semibold tracking-tight text-xl">Александра</h3>
-      <p class="text-sm text-muted-foreground">Нейрофотограф</p>
-    </div>
-    <div class="p-6 pt-0 space-y-4">
-      <div class="flex items-center gap-3">
-        <!-- телефон Александры -->
+      <section
+  data-pp-id="src/pages/Index.tsx:384:6"
+  data-pp-name="section"
+  data-component-path="src/pages/Index.tsx"
+  data-component-line="384"
+  data-component-file="Index.tsx"
+  data-component-name="section"
+  data-component-content="%7B%22className%22%3A%22py-20%20px-4%20bg-muted%2F30%22%7D"
+  id="contacts"
+  className="py-20 px-4 bg-muted/30"
+>
+  <div
+    data-pp-id="src/pages/Index.tsx:385:8"
+    data-pp-name="div"
+    data-component-path="src/pages/Index.tsx"
+    data-component-line="385"
+    data-component-file="Index.tsx"
+    data-component-name="div"
+    data-component-content="%7B%22className%22%3A%22container%20mx-auto%20max-w-4xl%22%7D"
+    className="container mx-auto max-w-4xl"
+  >
+    <h2
+      data-pp-id="src/pages/Index.tsx:386:10"
+      data-pp-name="h2"
+      data-component-path="src/pages/Index.tsx"
+      data-component-line="386"
+      data-component-file="Index.tsx"
+      data-component-name="h2"
+      data-component-content="%7B%22text%22%3A%22%D0%9A%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%D1%8B%22%7D"
+      className="text-4xl font-bold text-center mb-12"
+    >
+      Контакты
+    </h2>
+    <div
+      data-pp-id="src/pages/Index.tsx:387:10"
+      data-pp-name="div"
+      data-component-path="src/pages/Index.tsx"
+      data-component-line="387"
+      data-component-file="Index.tsx"
+      data-component-name="div"
+      data-component-content="%7B%22className%22%3A%22grid%20md%3Agrid-cols-2%20gap-8%22%7D"
+      className="grid md:grid-cols-2 gap-8"
+    >
+      {/* Карточка Александры теперь первая */}
+      <div
+        data-pp-id="src/pages/Index.tsx:412:12"
+        data-pp-name="Card"
+        data-component-path="src/pages/Index.tsx"
+        data-component-line="412"
+        data-component-file="Index.tsx"
+        data-component-name="Card"
+        data-component-content="%7B%7D"
+        className="rounded-lg border bg-card text-card-foreground shadow-sm"
+      >
+        <div
+          data-pp-id="src/pages/Index.tsx:413:14"
+          data-pp-name="CardHeader"
+          data-component-path="src/pages/Index.tsx"
+          data-component-line="413"
+          data-component-file="Index.tsx"
+          data-component-name="CardHeader"
+          data-component-content="%7B%7D"
+          className="flex flex-col space-y-1.5 p-6"
+        >
+          <h3 className="font-semibold tracking-tight text-xl">Александра</h3>
+          <p className="text-sm text-muted-foreground">Нейрофотограф</p>
+        </div>
+        <div className="p-6 pt-0 space-y-4">
+          <div className="flex items-center gap-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-phone text-primary"
+            >
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>+7 (913) 987-65-43</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-mail text-primary"
+            >
+              <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <span>alex.ai.photo@gmail.com</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-instagram text-primary"
+            >
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+            </svg>
+            <span>@alex_ai_art</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-map-pin text-primary"
+            >
+              <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Новосибирск</span>
+          </div>
+        </div>
       </div>
-      <div class="flex items-center gap-3">
-        <!-- почта Александры -->
-      </div>
-      <div class="flex items-center gap-3">
-        <!-- инстаграм Александры -->
-      </div>
-      <div class="flex items-center gap-3">
-        <!-- город Александры -->
-      </div>
-    </div>
-  </div>
 
-  <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
-    <div class="flex flex-col space-y-1.5 p-6">
-      <h3 class="font-semibold tracking-tight text-xl">Мария</h3>
-      <p class="text-sm text-muted-foreground">Классический фотограф</p>
+      {/* Карточка Марии теперь вторая */}
+      <div
+        data-pp-id="src/pages/Index.tsx:388:12"
+        data-pp-name="Card"
+        data-component-path="src/pages/Index.tsx"
+        data-component-line="388"
+        data-component-file="Index.tsx"
+        data-component-name="Card"
+        data-component-content="%7B%7D"
+        className="rounded-lg border bg-card text-card-foreground shadow-sm"
+      >
+        <div
+          data-pp-id="src/pages/Index.tsx:389:14"
+          data-pp-name="CardHeader"
+          data-component-path="src/pages/Index.tsx"
+          data-component-line="389"
+          data-component-file="Index.tsx"
+          data-component-name="CardHeader"
+          data-component-content="%7B%7D"
+          className="flex flex-col space-y-1.5 p-6"
+        >
+          <h3 className="font-semibold tracking-tight text-xl">Мария</h3>
+          <p className="text-sm text-muted-foreground">Классический фотограф</p>
+        </div>
+        <div className="p-6 pt-0 space-y-4">
+          <div className="flex items-center gap-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-phone text-primary"
+            >
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>+7 (923) 123-45-67</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-mail text-primary"
+            >
+              <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <span>maria.photo@mail.ru</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-instagram text-primary"
+            >
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+            </svg>
+            <span>@maria_photo_nsk</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-map-pin text-primary"
+            >
+              <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Новосибирск</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="p-6 pt-0 space-y-4">
-      <div class="flex items-center gap-3">
-        <!-- телефон Марии -->
-      </div>
-      <div class="flex items-center gap-3">
-        <!-- почта Марии -->
-      </div>
-      <div class="flex items-center gap-3">
-        <!-- инстаграм Марии -->
-      </div>
-      <div class="flex items-center gap-3">
-        <!-- город Марии -->
-      </div>
+    <div className="text-center mt-12">
+      <button
+        data-pp-id="src/pages/Index.tsx:438:12"
+        data-pp-name="Button"
+        data-component-path="src/pages/Index.tsx"
+        data-component-line="438"
+        data-component-file="Index.tsx"
+        data-component-name="Button"
+        data-component-content="%7B%22text%22%3A%22%D0%97%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D1%81%D1%8A%D0%B5%D0%BC%D0%BA%D1%83%22%7D"
+        className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary-foreground h-11 rounded-md px-8 bg-primary hover:bg-primary/90"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="lucide lucide-message-circle mr-2"
+        >
+          <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path>
+        </svg>
+        Записаться на съемку
+      </button>
     </div>
   </div>
-</div>
+</section>
 
 
       <footer className="py-8 px-4 border-t border-border">
