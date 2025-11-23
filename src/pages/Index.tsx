@@ -1715,7 +1715,975 @@ const Index = () => {
           </div>
         </div>
       </section>
-
+      <section
+        data-pp-id="src/pages/Index.tsx:610:6"
+        data-pp-name="section"
+        data-component-path="src/pages/Index.tsx"
+        data-component-line="610"
+        data-component-file="Index.tsx"
+        data-component-name="section"
+        data-component-content="%7B%22className%22%3A%22py-20%20px-6%20bg-white%2F50%22%7D"
+        id="payment"
+        class="py-20 px-6 bg-white/50"
+      >
+        <div
+          data-pp-id="src/pages/Index.tsx:611:8"
+          data-pp-name="div"
+          data-component-path="src/pages/Index.tsx"
+          data-component-line="611"
+          data-component-file="Index.tsx"
+          data-component-name="div"
+          data-component-content="%7B%22className%22%3A%22container%20mx-auto%20max-w-4xl%22%7D"
+          class="container mx-auto max-w-4xl"
+        >
+          <h2
+            data-pp-id="src/pages/Index.tsx:612:10"
+            data-pp-name="h2"
+            data-component-path="src/pages/Index.tsx"
+            data-component-line="612"
+            data-component-file="Index.tsx"
+            data-component-name="h2"
+            data-component-content="%7B%22text%22%3A%22%D0%9E%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D0%B0%22%2C%22className%22%3A%22text-4xl%20md%3Atext-5xl%20font-bold%20text-center%20mb-4%20bg-gradient-to-r%20from-purple-600%20to-black%20bg-clip-text%20text-transparent%22%7D"
+            class="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent"
+          >
+            Онлайн оплата
+          </h2>
+          <p
+            data-pp-id="src/pages/Index.tsx:615:10"
+            data-pp-name="p"
+            data-component-path="src/pages/Index.tsx"
+            data-component-line="615"
+            data-component-file="Index.tsx"
+            data-component-name="p"
+            data-component-content="%7B%22text%22%3A%22%D0%9E%D0%BF%D0%BB%D0%B0%D1%87%D0%B8%D0%B2%D0%B0%D0%B9%D1%82%D0%B5%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8%20%D1%83%D0%B4%D0%BE%D0%B1%D0%BD%D1%8B%D0%BC%20%D0%B4%D0%BB%D1%8F%20%D0%B2%D0%B0%D1%81%20%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D0%BE%D0%BC%22%2C%22className%22%3A%22text-center%20text-gray-600%20mb-12%20text-lg%22%7D"
+            class="text-center text-gray-600 mb-12 text-lg"
+          >
+            Оплачивайте услуги удобным для вас способом
+          </p>
+          <div
+            data-pp-id="src/pages/Index.tsx:619:10"
+            data-pp-name="div"
+            data-component-path="src/pages/Index.tsx"
+            data-component-line="619"
+            data-component-file="Index.tsx"
+            data-component-name="div"
+            data-component-content="%7B%22className%22%3A%22grid%20md%3Agrid-cols-2%20gap-8%20mb-12%22%7D"
+            class="grid md:grid-cols-2 gap-8 mb-12"
+          >
+            <div
+              data-pp-id="src/pages/Index.tsx:620:12"
+              data-pp-name="Card"
+              data-component-path="src/pages/Index.tsx"
+              data-component-line="620"
+              data-component-file="Index.tsx"
+              data-component-name="Card"
+              data-component-content="%7B%22className%22%3A%22border-2%20border-purple-200%22%7D"
+              class="rounded-lg bg-card text-card-foreground shadow-sm border-2 border-purple-200"
+            >
+              <div
+                data-pp-id="src/pages/Index.tsx:621:14"
+                data-pp-name="CardHeader"
+                data-component-path="src/pages/Index.tsx"
+                data-component-line="621"
+                data-component-file="Index.tsx"
+                data-component-name="CardHeader"
+                data-component-content="%7B%7D"
+                class="flex flex-col space-y-1.5 p-6"
+              >
+                <h3
+                  data-pp-id="src/pages/Index.tsx:622:16"
+                  data-pp-name="CardTitle"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="622"
+                  data-component-file="Index.tsx"
+                  data-component-name="CardTitle"
+                  data-component-content="%7B%22text%22%3A%22%D0%A1%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D1%8B%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%8B%22%2C%22className%22%3A%22text-2xl%20flex%20items-center%20gap-2%22%7D"
+                  class="font-semibold tracking-tight text-2xl flex items-center gap-2"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-credit-card text-primary"
+                    data-pp-id="src/pages/Index.tsx:623:18"
+                    data-pp-name="Icon"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="623"
+                    data-component-file="Index.tsx"
+                    data-component-name="Icon"
+                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
+                  >
+                    <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                    <line x1="2" x2="22" y1="10" y2="10"></line>
+                  </svg>
+                  Способы оплаты
+                </h3>
+              </div>
+              <div
+                data-pp-id="src/pages/Index.tsx:627:14"
+                data-pp-name="CardContent"
+                data-component-path="src/pages/Index.tsx"
+                data-component-line="627"
+                data-component-file="Index.tsx"
+                data-component-name="CardContent"
+                data-component-content="%7B%22className%22%3A%22space-y-4%22%7D"
+                class="p-6 pt-0 space-y-4"
+              >
+                <div
+                  data-pp-id="src/pages/Index.tsx:628:16"
+                  data-pp-name="div"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="628"
+                  data-component-file="Index.tsx"
+                  data-component-name="div"
+                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%20p-3%20bg-gray-50%20rounded-lg%22%7D"
+                  class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-credit-card text-primary"
+                    data-pp-id="src/pages/Index.tsx:629:18"
+                    data-pp-name="Icon"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="629"
+                    data-component-file="Index.tsx"
+                    data-component-name="Icon"
+                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
+                  >
+                    <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                    <line x1="2" x2="22" y1="10" y2="10"></line>
+                  </svg>
+                  <div
+                    data-pp-id="src/pages/Index.tsx:630:18"
+                    data-pp-name="div"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="630"
+                    data-component-file="Index.tsx"
+                    data-component-name="div"
+                    data-component-content="%7B%7D"
+                  >
+                    <div
+                      data-pp-id="src/pages/Index.tsx:631:20"
+                      data-pp-name="div"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="631"
+                      data-component-file="Index.tsx"
+                      data-component-name="div"
+                      data-component-content="%7B%22text%22%3A%22%D0%91%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BA%D0%B0%D1%80%D1%82%D0%B0%22%2C%22className%22%3A%22font-semibold%22%7D"
+                      class="font-semibold"
+                    >
+                      Банковская карта
+                    </div>
+                    <div
+                      data-pp-id="src/pages/Index.tsx:632:20"
+                      data-pp-name="div"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="632"
+                      data-component-file="Index.tsx"
+                      data-component-name="div"
+                      data-component-content="%7B%22text%22%3A%22Visa%2C%20MasterCard%2C%20%D0%9C%D0%98%D0%A0%22%2C%22className%22%3A%22text-sm%20text-gray-600%22%7D"
+                      class="text-sm text-gray-600"
+                    >
+                      Visa, MasterCard, МИР
+                    </div>
+                  </div>
+                </div>
+                <div
+                  data-pp-id="src/pages/Index.tsx:635:16"
+                  data-pp-name="div"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="635"
+                  data-component-file="Index.tsx"
+                  data-component-name="div"
+                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%20p-3%20bg-gray-50%20rounded-lg%22%7D"
+                  class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-smartphone text-primary"
+                    data-pp-id="src/pages/Index.tsx:636:18"
+                    data-pp-name="Icon"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="636"
+                    data-component-file="Index.tsx"
+                    data-component-name="Icon"
+                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
+                  >
+                    <rect
+                      width="14"
+                      height="20"
+                      x="5"
+                      y="2"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path d="M12 18h.01"></path>
+                  </svg>
+                  <div
+                    data-pp-id="src/pages/Index.tsx:637:18"
+                    data-pp-name="div"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="637"
+                    data-component-file="Index.tsx"
+                    data-component-name="div"
+                    data-component-content="%7B%7D"
+                  >
+                    <div
+                      data-pp-id="src/pages/Index.tsx:638:20"
+                      data-pp-name="div"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="638"
+                      data-component-file="Index.tsx"
+                      data-component-name="div"
+                      data-component-content="%7B%22text%22%3A%22%D0%A1%D0%91%D0%9F%22%2C%22className%22%3A%22font-semibold%22%7D"
+                      class="font-semibold"
+                    >
+                      СБП
+                    </div>
+                    <div
+                      data-pp-id="src/pages/Index.tsx:639:20"
+                      data-pp-name="div"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="639"
+                      data-component-file="Index.tsx"
+                      data-component-name="div"
+                      data-component-content="%7B%22text%22%3A%22%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%20%D0%B1%D1%8B%D1%81%D1%82%D1%80%D1%8B%D1%85%20%D0%BF%D0%BB%D0%B0%D1%82%D0%B5%D0%B6%D0%B5%D0%B9%22%2C%22className%22%3A%22text-sm%20text-gray-600%22%7D"
+                      class="text-sm text-gray-600"
+                    >
+                      Система быстрых платежей
+                    </div>
+                  </div>
+                </div>
+                <div
+                  data-pp-id="src/pages/Index.tsx:642:16"
+                  data-pp-name="div"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="642"
+                  data-component-file="Index.tsx"
+                  data-component-name="div"
+                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%20p-3%20bg-gray-50%20rounded-lg%22%7D"
+                  class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-wallet text-primary"
+                    data-pp-id="src/pages/Index.tsx:643:18"
+                    data-pp-name="Icon"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="643"
+                    data-component-file="Index.tsx"
+                    data-component-name="Icon"
+                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
+                  >
+                    <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path>
+                    <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path>
+                  </svg>
+                  <div
+                    data-pp-id="src/pages/Index.tsx:644:18"
+                    data-pp-name="div"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="644"
+                    data-component-file="Index.tsx"
+                    data-component-name="div"
+                    data-component-content="%7B%7D"
+                  >
+                    <div
+                      data-pp-id="src/pages/Index.tsx:645:20"
+                      data-pp-name="div"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="645"
+                      data-component-file="Index.tsx"
+                      data-component-name="div"
+                      data-component-content="%7B%22text%22%3A%22%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BA%D0%BE%D1%88%D0%B5%D0%BB%D1%8C%D0%BA%D0%B8%22%2C%22className%22%3A%22font-semibold%22%7D"
+                      class="font-semibold"
+                    >
+                      Электронные кошельки
+                    </div>
+                    <div
+                      data-pp-id="src/pages/Index.tsx:646:20"
+                      data-pp-name="div"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="646"
+                      data-component-file="Index.tsx"
+                      data-component-name="div"
+                      data-component-content="%7B%22text%22%3A%22%D0%AEMoney%2C%20QIWI%22%2C%22className%22%3A%22text-sm%20text-gray-600%22%7D"
+                      class="text-sm text-gray-600"
+                    >
+                      ЮMoney, QIWI
+                    </div>
+                  </div>
+                </div>
+                <div
+                  data-pp-id="src/pages/Index.tsx:649:16"
+                  data-pp-name="div"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="649"
+                  data-component-file="Index.tsx"
+                  data-component-name="div"
+                  data-component-content="%7B%22className%22%3A%22flex%20items-center%20gap-3%20p-3%20bg-gray-50%20rounded-lg%22%7D"
+                  class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-building text-primary"
+                    data-pp-id="src/pages/Index.tsx:650:18"
+                    data-pp-name="Icon"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="650"
+                    data-component-file="Index.tsx"
+                    data-component-name="Icon"
+                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
+                  >
+                    <rect
+                      width="16"
+                      height="20"
+                      x="4"
+                      y="2"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path d="M9 22v-4h6v4"></path>
+                    <path d="M8 6h.01"></path>
+                    <path d="M16 6h.01"></path>
+                    <path d="M12 6h.01"></path>
+                    <path d="M12 10h.01"></path>
+                    <path d="M12 14h.01"></path>
+                    <path d="M16 10h.01"></path>
+                    <path d="M16 14h.01"></path>
+                    <path d="M8 10h.01"></path>
+                    <path d="M8 14h.01"></path>
+                  </svg>
+                  <div
+                    data-pp-id="src/pages/Index.tsx:651:18"
+                    data-pp-name="div"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="651"
+                    data-component-file="Index.tsx"
+                    data-component-name="div"
+                    data-component-content="%7B%7D"
+                  >
+                    <div
+                      data-pp-id="src/pages/Index.tsx:652:20"
+                      data-pp-name="div"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="652"
+                      data-component-file="Index.tsx"
+                      data-component-name="div"
+                      data-component-content="%7B%22text%22%3A%22%D0%91%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%22%2C%22className%22%3A%22font-semibold%22%7D"
+                      class="font-semibold"
+                    >
+                      Банковский перевод
+                    </div>
+                    <div
+                      data-pp-id="src/pages/Index.tsx:653:20"
+                      data-pp-name="div"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="653"
+                      data-component-file="Index.tsx"
+                      data-component-name="div"
+                      data-component-content="%7B%22text%22%3A%22%D0%9F%D0%BE%20%D1%80%D0%B5%D0%BA%D0%B2%D0%B8%D0%B7%D0%B8%D1%82%D0%B0%D0%BC%22%2C%22className%22%3A%22text-sm%20text-gray-600%22%7D"
+                      class="text-sm text-gray-600"
+                    >
+                      По реквизитам
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-pp-id="src/pages/Index.tsx:659:12"
+              data-pp-name="Card"
+              data-component-path="src/pages/Index.tsx"
+              data-component-line="659"
+              data-component-file="Index.tsx"
+              data-component-name="Card"
+              data-component-content="%7B%22className%22%3A%22border-2%20border-purple-200%22%7D"
+              class="rounded-lg bg-card text-card-foreground shadow-sm border-2 border-purple-200"
+            >
+              <div
+                data-pp-id="src/pages/Index.tsx:660:14"
+                data-pp-name="CardHeader"
+                data-component-path="src/pages/Index.tsx"
+                data-component-line="660"
+                data-component-file="Index.tsx"
+                data-component-name="CardHeader"
+                data-component-content="%7B%7D"
+                class="flex flex-col space-y-1.5 p-6"
+              >
+                <h3
+                  data-pp-id="src/pages/Index.tsx:661:16"
+                  data-pp-name="CardTitle"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="661"
+                  data-component-file="Index.tsx"
+                  data-component-name="CardTitle"
+                  data-component-content="%7B%22text%22%3A%22%D0%91%D0%B5%D0%B7%D0%BE%D0%BF%D0%B0%D1%81%D0%BD%D0%BE%D1%81%D1%82%D1%8C%22%2C%22className%22%3A%22text-2xl%20flex%20items-center%20gap-2%22%7D"
+                  class="font-semibold tracking-tight text-2xl flex items-center gap-2"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-shield-check text-primary"
+                    data-pp-id="src/pages/Index.tsx:662:18"
+                    data-pp-name="Icon"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="662"
+                    data-component-file="Index.tsx"
+                    data-component-name="Icon"
+                    data-component-content="%7B%22className%22%3A%22text-primary%22%7D"
+                  >
+                    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                  Безопасность
+                </h3>
+              </div>
+              <div
+                data-pp-id="src/pages/Index.tsx:666:14"
+                data-pp-name="CardContent"
+                data-component-path="src/pages/Index.tsx"
+                data-component-line="666"
+                data-component-file="Index.tsx"
+                data-component-name="CardContent"
+                data-component-content="%7B%22className%22%3A%22space-y-4%22%7D"
+                class="p-6 pt-0 space-y-4"
+              >
+                <div
+                  data-pp-id="src/pages/Index.tsx:667:16"
+                  data-pp-name="div"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="667"
+                  data-component-file="Index.tsx"
+                  data-component-name="div"
+                  data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-3%22%7D"
+                  class="flex items-start gap-3"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-lock text-green-500 mt-1"
+                    data-pp-id="src/pages/Index.tsx:668:18"
+                    data-pp-name="Icon"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="668"
+                    data-component-file="Index.tsx"
+                    data-component-name="Icon"
+                    data-component-content="%7B%22className%22%3A%22text-green-500%20mt-1%22%7D"
+                  >
+                    <rect
+                      width="18"
+                      height="11"
+                      x="3"
+                      y="11"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                  <div
+                    data-pp-id="src/pages/Index.tsx:669:18"
+                    data-pp-name="div"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="669"
+                    data-component-file="Index.tsx"
+                    data-component-name="div"
+                    data-component-content="%7B%7D"
+                  >
+                    <div
+                      data-pp-id="src/pages/Index.tsx:670:20"
+                      data-pp-name="div"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="670"
+                      data-component-file="Index.tsx"
+                      data-component-name="div"
+                      data-component-content="%7B%22text%22%3A%22%D0%97%D0%B0%D1%89%D0%B8%D1%89%D1%91%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%BF%D0%BB%D0%B0%D1%82%D0%B5%D0%B6%D0%B8%22%2C%22className%22%3A%22font-semibold%20mb-1%22%7D"
+                      class="font-semibold mb-1"
+                    >
+                      Защищённые платежи
+                    </div>
+                    <div
+                      data-pp-id="src/pages/Index.tsx:671:20"
+                      data-pp-name="div"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="671"
+                      data-component-file="Index.tsx"
+                      data-component-name="div"
+                      data-component-content="%7B%22text%22%3A%22%D0%92%D1%81%D0%B5%20%D1%82%D1%80%D0%B0%D0%BD%D0%B7%D0%B0%D0%BA%D1%86%D0%B8%D0%B8%20%D0%BF%D1%80%D0%BE%D1%85%D0%BE%D0%B4%D1%8F%D1%82%20%D1%87%D0%B5%D1%80%D0%B5%D0%B7%20%D0%B7%D0%B0%D1%89%D0%B8%D1%89%D1%91%D0%BD%D0%BD%D0%BE%D0%B5%20%D1%81%D0%BE%D0%B5%D0%B4%D0%B8%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5%20SSL%22%2C%22className%22%3A%22text-sm%20text-gray-600%22%7D"
+                      class="text-sm text-gray-600"
+                    >
+                      Все транзакции проходят через защищённое соединение SSL
+                    </div>
+                  </div>
+                </div>
+                <div
+                  data-pp-id="src/pages/Index.tsx:674:16"
+                  data-pp-name="div"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="674"
+                  data-component-file="Index.tsx"
+                  data-component-name="div"
+                  data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-3%22%7D"
+                  class="flex items-start gap-3"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-file-check text-green-500 mt-1"
+                    data-pp-id="src/pages/Index.tsx:675:18"
+                    data-pp-name="Icon"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="675"
+                    data-component-file="Index.tsx"
+                    data-component-name="Icon"
+                    data-component-content="%7B%22className%22%3A%22text-green-500%20mt-1%22%7D"
+                  >
+                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                    <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                    <path d="m9 15 2 2 4-4"></path>
+                  </svg>
+                  <div
+                    data-pp-id="src/pages/Index.tsx:676:18"
+                    data-pp-name="div"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="676"
+                    data-component-file="Index.tsx"
+                    data-component-name="div"
+                    data-component-content="%7B%7D"
+                  >
+                    <div
+                      data-pp-id="src/pages/Index.tsx:677:20"
+                      data-pp-name="div"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="677"
+                      data-component-file="Index.tsx"
+                      data-component-name="div"
+                      data-component-content="%7B%22text%22%3A%22%D0%94%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%B8%20%D1%87%D0%B5%D0%BA%22%2C%22className%22%3A%22font-semibold%20mb-1%22%7D"
+                      class="font-semibold mb-1"
+                    >
+                      Договор и чек
+                    </div>
+                    <div
+                      data-pp-id="src/pages/Index.tsx:678:20"
+                      data-pp-name="div"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="678"
+                      data-component-file="Index.tsx"
+                      data-component-name="div"
+                      data-component-content="%7B%22text%22%3A%22%D0%9F%D0%BE%D1%81%D0%BB%D0%B5%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%8B%20%D0%B2%D1%8B%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B0%D0%B5%D1%82%D0%B5%20%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%20%D0%B8%20%D1%84%D0%B8%D1%81%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%87%D0%B5%D0%BA%22%2C%22className%22%3A%22text-sm%20text-gray-600%22%7D"
+                      class="text-sm text-gray-600"
+                    >
+                      После оплаты вы получаете договор и фискальный чек
+                    </div>
+                  </div>
+                </div>
+                <div
+                  data-pp-id="src/pages/Index.tsx:681:16"
+                  data-pp-name="div"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="681"
+                  data-component-file="Index.tsx"
+                  data-component-name="div"
+                  data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-3%22%7D"
+                  class="flex items-start gap-3"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-undo2 text-green-500 mt-1"
+                    data-pp-id="src/pages/Index.tsx:682:18"
+                    data-pp-name="Icon"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="682"
+                    data-component-file="Index.tsx"
+                    data-component-name="Icon"
+                    data-component-content="%7B%22className%22%3A%22text-green-500%20mt-1%22%7D"
+                  >
+                    <path d="M9 14 4 9l5-5"></path>
+                    <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"></path>
+                  </svg>
+                  <div
+                    data-pp-id="src/pages/Index.tsx:683:18"
+                    data-pp-name="div"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="683"
+                    data-component-file="Index.tsx"
+                    data-component-name="div"
+                    data-component-content="%7B%7D"
+                  >
+                    <div
+                      data-pp-id="src/pages/Index.tsx:684:20"
+                      data-pp-name="div"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="684"
+                      data-component-file="Index.tsx"
+                      data-component-name="div"
+                      data-component-content="%7B%22text%22%3A%22%D0%92%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82%20%D1%81%D1%80%D0%B5%D0%B4%D1%81%D1%82%D0%B2%22%2C%22className%22%3A%22font-semibold%20mb-1%22%7D"
+                      class="font-semibold mb-1"
+                    >
+                      Возврат средств
+                    </div>
+                    <div
+                      data-pp-id="src/pages/Index.tsx:685:20"
+                      data-pp-name="div"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="685"
+                      data-component-file="Index.tsx"
+                      data-component-name="div"
+                      data-component-content="%7B%22text%22%3A%22%D0%92%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D1%8C%20%D0%B2%D0%B5%D1%80%D0%BD%D1%83%D1%82%D1%8C%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%83%20%D0%B2%20%D1%82%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%2014%20%D0%B4%D0%BD%D0%B5%D0%B9%22%2C%22className%22%3A%22text-sm%20text-gray-600%22%7D"
+                      class="text-sm text-gray-600"
+                    >
+                      Возможность вернуть предоплату в течение 14 дней
+                    </div>
+                  </div>
+                </div>
+                <div
+                  data-orientation="horizontal"
+                  role="none"
+                  data-pp-id="src/pages/Index.tsx:688:16"
+                  data-pp-name="Separator"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="688"
+                  data-component-file="Index.tsx"
+                  data-component-name="Separator"
+                  data-component-content="%7B%22className%22%3A%22my-4%22%7D"
+                  class="shrink-0 bg-border h-[1px] w-full my-4"
+                ></div>
+                <div
+                  data-pp-id="src/pages/Index.tsx:689:16"
+                  data-pp-name="div"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="689"
+                  data-component-file="Index.tsx"
+                  data-component-name="div"
+                  data-component-content="%7B%22className%22%3A%22bg-purple-50%20p-4%20rounded-lg%22%7D"
+                  class="bg-purple-50 p-4 rounded-lg"
+                >
+                  <p
+                    data-pp-id="src/pages/Index.tsx:690:18"
+                    data-pp-name="p"
+                    data-component-path="src/pages/Index.tsx"
+                    data-component-line="690"
+                    data-component-file="Index.tsx"
+                    data-component-name="p"
+                    data-component-content="%7B%22text%22%3A%22%D0%94%D0%BB%D1%8F%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%8B%20%D1%81%D0%B2%D1%8F%D0%B6%D0%B8%D1%82%D0%B5%D1%81%D1%8C%20%D1%81%20%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%BE%D0%BC%20%D1%83%D0%B4%D0%BE%D0%B1%D0%BD%D1%8B%D0%BC%20%D1%81%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D0%BE%D0%BC.%20%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B0%20%D0%BD%D0%B0%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%83%20%D0%B1%D1%83%D0%B4%D0%B5%D1%82%20%D0%B2%D1%8B%D1%81%D0%BB%D0%B0%D0%BD%D0%B0%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%20%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B4%D0%B5%D1%82%D0%B0%D0%BB%D0%B5%D0%B9%20%D1%81%D1%8A%D1%91%D0%BC%D0%BA%D0%B8.%22%2C%22className%22%3A%22text-sm%20text-gray-700%22%7D"
+                    class="text-sm text-gray-700"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-info inline mr-1"
+                      data-pp-id="src/pages/Index.tsx:691:20"
+                      data-pp-name="Icon"
+                      data-component-path="src/pages/Index.tsx"
+                      data-component-line="691"
+                      data-component-file="Index.tsx"
+                      data-component-name="Icon"
+                      data-component-content="%7B%22className%22%3A%22inline%20mr-1%22%7D"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M12 16v-4"></path>
+                      <path d="M12 8h.01"></path>
+                    </svg>
+                    Для оплаты свяжитесь с фотографом удобным способом. Ссылка
+                    на оплату будет выслана после согласования деталей съёмки.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            data-pp-id="src/pages/Index.tsx:699:10"
+            data-pp-name="Card"
+            data-component-path="src/pages/Index.tsx"
+            data-component-line="699"
+            data-component-file="Index.tsx"
+            data-component-name="Card"
+            data-component-content="%7B%22className%22%3A%22border-2%20border-purple-200%22%7D"
+            class="rounded-lg bg-card text-card-foreground shadow-sm border-2 border-purple-200"
+          >
+            <div
+              data-pp-id="src/pages/Index.tsx:700:12"
+              data-pp-name="CardHeader"
+              data-component-path="src/pages/Index.tsx"
+              data-component-line="700"
+              data-component-file="Index.tsx"
+              data-component-name="CardHeader"
+              data-component-content="%7B%7D"
+              class="flex flex-col space-y-1.5 p-6"
+            >
+              <h3
+                data-pp-id="src/pages/Index.tsx:701:14"
+                data-pp-name="CardTitle"
+                data-component-path="src/pages/Index.tsx"
+                data-component-line="701"
+                data-component-file="Index.tsx"
+                data-component-name="CardTitle"
+                data-component-content="%7B%22text%22%3A%22%D0%A3%D1%81%D0%BB%D0%BE%D0%B2%D0%B8%D1%8F%20%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D1%8B%22%2C%22className%22%3A%22text-xl%22%7D"
+                class="font-semibold tracking-tight text-xl"
+              >
+                Условия оплаты
+              </h3>
+            </div>
+            <div
+              data-pp-id="src/pages/Index.tsx:703:12"
+              data-pp-name="CardContent"
+              data-component-path="src/pages/Index.tsx"
+              data-component-line="703"
+              data-component-file="Index.tsx"
+              data-component-name="CardContent"
+              data-component-content="%7B%22className%22%3A%22space-y-3%20text-gray-600%22%7D"
+              class="p-6 pt-0 space-y-3 text-gray-600"
+            >
+              <div
+                data-pp-id="src/pages/Index.tsx:704:14"
+                data-pp-name="div"
+                data-component-path="src/pages/Index.tsx"
+                data-component-line="704"
+                data-component-file="Index.tsx"
+                data-component-name="div"
+                data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
+                class="flex items-start gap-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-check text-primary mt-1"
+                  data-pp-id="src/pages/Index.tsx:705:16"
+                  data-pp-name="Icon"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="705"
+                  data-component-file="Index.tsx"
+                  data-component-name="Icon"
+                  data-component-content="%7B%22className%22%3A%22text-primary%20mt-1%22%7D"
+                >
+                  <path d="M20 6 9 17l-5-5"></path>
+                </svg>
+                <span
+                  data-pp-id="src/pages/Index.tsx:706:16"
+                  data-pp-name="span"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="706"
+                  data-component-file="Index.tsx"
+                  data-component-name="span"
+                  data-component-content="%7B%22text%22%3A%22%D0%9F%D1%80%D0%B5%D0%B4%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D0%B0%2030%25%20%D0%B4%D0%BB%D1%8F%20%D0%B1%D1%80%D0%BE%D0%BD%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B4%D0%B0%D1%82%D1%8B%20%D1%81%D1%8A%D1%91%D0%BC%D0%BA%D0%B8%22%7D"
+                >
+                  Предоплата 30% для бронирования даты съёмки
+                </span>
+              </div>
+              <div
+                data-pp-id="src/pages/Index.tsx:708:14"
+                data-pp-name="div"
+                data-component-path="src/pages/Index.tsx"
+                data-component-line="708"
+                data-component-file="Index.tsx"
+                data-component-name="div"
+                data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
+                class="flex items-start gap-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-check text-primary mt-1"
+                  data-pp-id="src/pages/Index.tsx:709:16"
+                  data-pp-name="Icon"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="709"
+                  data-component-file="Index.tsx"
+                  data-component-name="Icon"
+                  data-component-content="%7B%22className%22%3A%22text-primary%20mt-1%22%7D"
+                >
+                  <path d="M20 6 9 17l-5-5"></path>
+                </svg>
+                <span
+                  data-pp-id="src/pages/Index.tsx:710:16"
+                  data-pp-name="span"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="710"
+                  data-component-file="Index.tsx"
+                  data-component-name="span"
+                  data-component-content="%7B%22text%22%3A%22%D0%9E%D0%BA%D0%BE%D0%BD%D1%87%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D1%80%D0%B0%D1%81%D1%87%D1%91%D1%82%20%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%20%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D1%8F%20%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D1%8B%D1%85%20%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%B9%22%7D"
+                >
+                  Окончательный расчёт после получения готовых фотографий
+                </span>
+              </div>
+              <div
+                data-pp-id="src/pages/Index.tsx:712:14"
+                data-pp-name="div"
+                data-component-path="src/pages/Index.tsx"
+                data-component-line="712"
+                data-component-file="Index.tsx"
+                data-component-name="div"
+                data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
+                class="flex items-start gap-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-check text-primary mt-1"
+                  data-pp-id="src/pages/Index.tsx:713:16"
+                  data-pp-name="Icon"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="713"
+                  data-component-file="Index.tsx"
+                  data-component-name="Icon"
+                  data-component-content="%7B%22className%22%3A%22text-primary%20mt-1%22%7D"
+                >
+                  <path d="M20 6 9 17l-5-5"></path>
+                </svg>
+                <span
+                  data-pp-id="src/pages/Index.tsx:714:16"
+                  data-pp-name="span"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="714"
+                  data-component-file="Index.tsx"
+                  data-component-name="span"
+                  data-component-content="%7B%22text%22%3A%22%D0%92%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%B0%20%D1%80%D0%B0%D1%81%D1%81%D1%80%D0%BE%D1%87%D0%BA%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%BA%D1%80%D1%83%D0%BF%D0%BD%D1%8B%D1%85%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%BE%D0%B2%20(%D1%81%D0%B2%D0%B0%D0%B4%D1%8C%D0%B1%D1%8B%2C%20%D0%BA%D0%BE%D1%80%D0%BF%D0%BE%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D1%8B)%22%7D"
+                >
+                  Возможна рассрочка для крупных заказов (свадьбы, корпоративы)
+                </span>
+              </div>
+              <div
+                data-pp-id="src/pages/Index.tsx:716:14"
+                data-pp-name="div"
+                data-component-path="src/pages/Index.tsx"
+                data-component-line="716"
+                data-component-file="Index.tsx"
+                data-component-name="div"
+                data-component-content="%7B%22className%22%3A%22flex%20items-start%20gap-2%22%7D"
+                class="flex items-start gap-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-check text-primary mt-1"
+                  data-pp-id="src/pages/Index.tsx:717:16"
+                  data-pp-name="Icon"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="717"
+                  data-component-file="Index.tsx"
+                  data-component-name="Icon"
+                  data-component-content="%7B%22className%22%3A%22text-primary%20mt-1%22%7D"
+                >
+                  <path d="M20 6 9 17l-5-5"></path>
+                </svg>
+                <span
+                  data-pp-id="src/pages/Index.tsx:718:16"
+                  data-pp-name="span"
+                  data-component-path="src/pages/Index.tsx"
+                  data-component-line="718"
+                  data-component-file="Index.tsx"
+                  data-component-name="span"
+                  data-component-content="%7B%22text%22%3A%22%D0%9F%D1%80%D0%B8%20%D0%BE%D1%82%D0%BC%D0%B5%D0%BD%D0%B5%20%D1%81%D1%8A%D1%91%D0%BC%D0%BA%D0%B8%20%D0%BC%D0%B5%D0%BD%D0%B5%D0%B5%20%D1%87%D0%B5%D0%BC%20%D0%B7%D0%B0%2048%20%D1%87%D0%B0%D1%81%D0%BE%D0%B2%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BE%D0%BF%D0%BB%D0%B0%D1%82%D0%B0%20%D0%BD%D0%B5%20%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%89%D0%B0%D0%B5%D1%82%D1%81%D1%8F%22%7D"
+                >
+                  При отмене съёмки менее чем за 48 часов предоплата не
+                  возвращается
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="reviews" className="py-20 px-4">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-12">
