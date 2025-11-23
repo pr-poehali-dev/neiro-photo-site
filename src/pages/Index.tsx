@@ -703,7 +703,7 @@ const Index = () => {
                         data-component-name="p"
                         data-component-content="%7B%22text%22%3A%22100%25%20%D0%B5%D1%81%D1%82%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5%20%D1%8D%D0%BC%D0%BE%D1%86%D0%B8%D0%B8%22%7D"
                       >
-                        100% естественные эмоции
+                        Живые эмоции и естественные снимки
                       </p>
                     </div>
                     <div
@@ -746,7 +746,7 @@ const Index = () => {
                         data-component-name="p"
                         data-component-content="%7B%22text%22%3A%22%D0%9B%D0%B8%D1%87%D0%BD%D1%8B%D0%B9%20%D0%BA%D0%BE%D0%BD%D1%82%D0%B0%D0%BA%D1%82%20%D1%81%20%D1%84%D0%BE%D1%82%D0%BE%D0%B3%D1%80%D0%B0%D1%84%D0%BE%D0%BC%22%7D"
                       >
-                        Личный контакт с фотографом
+                        Реалистичный результат без искажений
                       </p>
                     </div>
                     <div
@@ -789,7 +789,7 @@ const Index = () => {
                         data-component-name="p"
                         data-component-content="%7B%22text%22%3A%22%D0%A3%D0%BD%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%BC%D0%BE%D0%BC%D0%B5%D0%BD%D1%82%D1%8B%22%7D"
                       >
-                        Уникальные моменты
+                        Живая атмосфера и уникальность кадров
                       </p>
                     </div>
                     <div
@@ -833,7 +833,7 @@ const Index = () => {
                         data-component-name="p"
                         data-component-content="%7B%22text%22%3A%22%D0%9E%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%201-2%20%D0%BD%D0%B5%D0%B4%D0%B5%D0%BB%D0%B8%22%7D"
                       >
-                        Обработка 1-2 недели
+                        Только для жителей Новосибирска
                       </p>
                     </div>
                     <div
@@ -877,7 +877,7 @@ const Index = () => {
                         data-component-name="p"
                         data-component-content="%7B%22text%22%3A%22%D0%9D%D1%83%D0%B6%D0%BD%D0%B0%20%D0%BB%D0%B8%D1%87%D0%BD%D0%B0%D1%8F%20%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%87%D0%B0%22%7D"
                       >
-                        Нужна личная встреча
+                        Более длительная обработка (3-7 дней)
                       </p>
                     </div>
                   </div>
