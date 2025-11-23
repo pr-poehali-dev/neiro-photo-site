@@ -1469,8 +1469,7 @@ const Index = () => {
                       data-component-name="span"
                       data-component-content="%7B%22text%22%3A%22%D0%9C%D0%B8%D0%BD%D0%B8-%D1%81%D1%8A%D1%91%D0%BC%D0%BA%D0%B0%20(1%20%D1%87%D0%B0%D1%81%2C%2020%20%D1%84%D0%BE%D1%82%D0%BE)%22%7D"
                     >
-                      Мини-съёмка (30 мин, 7 фото в авторской цветокореекциии
-                      легкой ретуши)
+                      Мини-съёмка (30 мин, 7 обработанных фото)
                     </span>
                     <span
                       data-pp-id="src/pages/Index.tsx:424:20"
@@ -1504,8 +1503,7 @@ const Index = () => {
                       data-component-name="span"
                       data-component-content="%7B%22text%22%3A%22%D0%A1%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%20(2%20%D1%87%D0%B0%D1%81%D0%B0%2C%2050%20%D1%84%D0%BE%D1%82%D0%BE)%22%7D"
                     >
-                      Стандарт (1 час, 15 фото в авторской цветокореекциии
-                      легкой ретуши)
+                      Стандарт (1 час, 15 обработанных фото)
                     </span>
                     <span
                       data-pp-id="src/pages/Index.tsx:428:20"
