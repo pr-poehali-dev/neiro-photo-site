@@ -394,7 +394,7 @@ const Index = () => {
       <section id="home" className="pt-32 pb-20 px-4">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h2 className="md:text-2xl mb-6 leading-tight font-bold text-2xl">
+            <h2 className="md:text-4xl mb-6 leading-tight font-bold text-4xl">
               Искусство фотосъёмки: от классики до нейросетей
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
