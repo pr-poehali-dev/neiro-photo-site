@@ -537,7 +537,7 @@ const Index = () => {
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <Icon name="Image" size={16} className="text-primary" />
-                    <span>Все исходные AI-обработки</span>
+                    <span>Работа онлайн</span>
                   </div>
                 </div>
                 <Button
