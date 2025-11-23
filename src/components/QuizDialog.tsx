@@ -3,6 +3,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
+import Icon from "@/components/ui/icon";
 
 interface QuizDialogProps {
   open: boolean;
@@ -163,14 +164,20 @@ export const QuizDialog = ({ open, onOpenChange }: QuizDialogProps) => {
                   <p className="text-gray-600">
                     Судя по вашим ответам, вам больше подойдёт традиционная съёмка с живым общением и естественными кадрами.
                   </p>
-                  <Button onClick={() => {
-                    onOpenChange(false);
-                    setTimeout(() => {
-                      document.getElementById("contacts")?.scrollIntoView({ behavior: "smooth" });
-                    }, 100);
-                  }}>
-                    Связаться с Марией
-                  </Button>
+                  <div className="flex gap-2">
+                    <a href="https://t.me/+79139083148" target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <Button className="w-full">
+                        <Icon name="Send" className="mr-2" size={16} />
+                        Telegram
+                      </Button>
+                    </a>
+                    <a href="https://wa.me/79231234567" target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <Button className="w-full">
+                        <Icon name="MessageCircle" className="mr-2" size={16} />
+                        WhatsApp
+                      </Button>
+                    </a>
+                  </div>
                 </div>
               ) : (
                 <div className="space-y-4">
@@ -179,14 +186,20 @@ export const QuizDialog = ({ open, onOpenChange }: QuizDialogProps) => {
                   <p className="text-gray-600">
                     Судя по вашим ответам, вам больше подойдёт нейрофотография с креативными эффектами и быстрым результатом.
                   </p>
-                  <Button onClick={() => {
-                    onOpenChange(false);
-                    setTimeout(() => {
-                      document.getElementById("contacts")?.scrollIntoView({ behavior: "smooth" });
-                    }, 100);
-                  }}>
-                    Связаться с Александрой
-                  </Button>
+                  <div className="flex gap-2">
+                    <a href="https://t.me/aleksa25t" target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <Button className="w-full">
+                        <Icon name="Send" className="mr-2" size={16} />
+                        Telegram
+                      </Button>
+                    </a>
+                    <a href="https://wa.me/79998887766" target="_blank" rel="noopener noreferrer" className="flex-1">
+                      <Button className="w-full">
+                        <Icon name="MessageCircle" className="mr-2" size={16} />
+                        WhatsApp
+                      </Button>
+                    </a>
+                  </div>
                 </div>
               )}
               <Button variant="outline" onClick={handleReset} className="mt-4">

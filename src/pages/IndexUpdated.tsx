@@ -10,25 +10,41 @@ import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router-dom";
 import SubscriptionDialog from "@/components/SubscriptionDialog";
 import QuizDialog from "@/components/QuizDialog";
+import ContactDialog from "@/components/ContactDialog";
 import { Calendar } from "@/components/ui/calendar";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [subscriptionDialogOpen, setSubscriptionDialogOpen] = useState(false);
   const [quizDialogOpen, setQuizDialogOpen] = useState(false);
+  const [contactDialogOpen, setContactDialogOpen] = useState(false);
+  const [contactPhotographer, setContactPhotographer] = useState<"alexandra" | "maria">("alexandra");
   const [date, setDate] = useState<Date | undefined>(undefined);
+  const [selectedPhotographer, setSelectedPhotographer] = useState<string>("");
+  const [selectedTime, setSelectedTime] = useState<string>("");
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setSubscriptionDialogOpen(true);
-    }, 5000);
-    return () => clearTimeout(timer);
-  }, []);
+    const handleScroll = () => {
+      const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      if (scrollPercentage >= 90 && !subscriptionDialogOpen) {
+        setSubscriptionDialogOpen(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [subscriptionDialogOpen]);
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleContactClick = () => {
+    setContactPhotographer("alexandra");
+    setContactDialogOpen(true);
   };
 
   const portfolioImages = [
@@ -93,6 +109,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <SubscriptionDialog open={subscriptionDialogOpen} onOpenChange={setSubscriptionDialogOpen} />
       <QuizDialog open={quizDialogOpen} onOpenChange={setQuizDialogOpen} />
+      <ContactDialog open={contactDialogOpen} onOpenChange={setContactDialogOpen} photographer={contactPhotographer} />
       
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -111,7 +128,6 @@ const Index = () => {
               "about",
               "services",
               "reviews",
-              "contact",
             ].map((section) => (
               <button
                 key={section}
@@ -124,16 +140,14 @@ const Index = () => {
                     ? "Портфолио"
                     : section === "services"
                       ? "Прайс"
-                      : section === "reviews"
-                        ? "Отзывы"
-                        : "Контакты"}
+                      : "Отзывы"}
               </button>
             ))}
           </div>
           <Button
             variant="default"
             size="sm"
-            onClick={() => scrollToSection("contact")}
+            onClick={handleContactClick}
           >
             Связаться
           </Button>
@@ -276,7 +290,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent">
-              Два подхода к фотографии
+              Сравнение форматов съёмки
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Выберите то, что вам ближе: быстрые и креативные AI-снимки или классическую съёмку с живым общением
@@ -406,7 +420,7 @@ const Index = () => {
                     </span>
                   </div>
                 </div>
-                <Button className="w-full" onClick={() => scrollToSection("contact")}>
+                <Button className="w-full" onClick={() => scrollToSection("booking")}>
                   Выбрать пакет
                 </Button>
               </CardContent>
@@ -458,7 +472,7 @@ const Index = () => {
                     </span>
                   </div>
                 </div>
-                <Button className="w-full" variant="secondary" onClick={() => scrollToSection("contact")}>
+                <Button className="w-full" variant="secondary" onClick={() => scrollToSection("booking")}>
                   Выбрать пакет
                 </Button>
               </CardContent>
@@ -510,15 +524,6 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <Icon name="FileCheck" className="text-green-500 mt-1" size={20} />
-                  <div>
-                    <div className="font-semibold mb-1">Договор и чек</div>
-                    <div className="text-sm text-gray-600">
-                      После оплаты вы получаете договор и фискальный чек
-                    </div>
-                  </div>
-                </div>
                 <div className="flex items-start gap-3">
                   <Icon name="Undo2" className="text-green-500 mt-1" size={20} />
                   <div>
@@ -591,243 +596,101 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contacts" className="py-20 px-6 bg-gradient-to-br from-purple-50 to-white">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent">
-            Контакты
+      <section id="booking" className="py-20 px-6 bg-gradient-to-br from-purple-50 to-white">
+        <div className="container mx-auto max-w-2xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent">
+            Записаться на съёмку
           </h2>
+          <p className="text-center text-gray-600 mb-12">
+            Заполните форму, и мы свяжемся с вами в ближайшее время
+          </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-2 border-purple-200">
-              <CardHeader>
-                <CardTitle className="text-2xl">Александра</CardTitle>
-                <CardDescription>AI-фотография</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <Icon name="Globe" className="text-primary" />
-                  <span>Онлайн, из любой точки мира</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Icon name="Phone" className="text-primary" />
-                  <a href="tel:+79998887766" className="hover:text-primary transition-colors">
-                    +7 (999) 888-77-66
-                  </a>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Icon name="Mail" className="text-primary" />
-                  <a href="mailto:alexandra.neuro@example.com" className="hover:text-primary transition-colors">
-                    alexandra.neuro@example.com
-                  </a>
-                </div>
-                <Separator />
-                <div className="space-y-2">
-                  <p className="text-sm font-semibold text-gray-600">Мессенджеры и соцсети:</p>
-                  <a
-                    href="https://wa.me/79998887766"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 hover:text-primary transition-colors"
-                  >
-                    <Icon name="MessageCircle" className="text-primary" />
-                    <span>WhatsApp</span>
-                  </a>
-                  <a
-                    href="https://t.me/aleksa25t"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 hover:text-primary transition-colors"
-                  >
-                    <Icon name="Send" className="text-primary" />
-                    <span>Telegram: @aleksa25t</span>
-                  </a>
-                  <a
-                    href="https://t.me/online_photosessiya"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 hover:text-primary transition-colors"
-                  >
-                    <Icon name="Send" className="text-primary" />
-                    <span>Телеграм канал</span>
-                  </a>
-                  <a
-                    href="https://vk.me/pandalola25"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 hover:text-primary transition-colors"
-                  >
-                    <svg className="text-primary" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.48 14.94h-1.39c-.58 0-.76-.47-1.79-1.5-.91-.87-1.31-1-1.53-1-.32 0-.41.09-.41.52v1.37c0 .37-.11.58-1.07.58-1.59 0-3.35-.96-4.59-2.75-1.87-2.59-2.38-4.54-2.38-4.93 0-.22.09-.43.52-.43h1.39c.39 0 .54.18.69.59.76 2.19 2.03 4.11 2.56 4.11.2 0 .29-.09.29-.59v-2.28c-.07-1.13-.65-1.22-.65-1.62 0-.18.15-.36.39-.36h2.18c.33 0 .45.17.45.55v3.08c0 .33.15.45.24.45.2 0 .36-.12.72-.48 1.1-1.24 1.89-3.15 1.89-3.15.11-.22.28-.43.7-.43h1.39c.47 0 .57.24.47.55-.17.78-1.85 3.28-1.85 3.28-.17.27-.23.39 0 .7.17.23.72.71 1.09 1.14.67.77 1.18 1.41 1.32 1.86.13.44-.1.67-.54.67z"></path>
-                    </svg>
-                    <span>ВКонтакте</span>
-                  </a>
-                  <a
-                    href="https://www.instagram.com/aleksandraglu_"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 hover:text-primary transition-colors"
-                  >
-                    <Icon name="Instagram" className="text-primary" />
-                    <span>@aleksandraglu_</span>
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-purple-200">
-              <CardHeader>
-                <CardTitle className="text-2xl">Мария</CardTitle>
-                <CardDescription>Классическая фотография</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <Icon name="MapPin" className="text-primary" />
-                  <span>г. Новосибирск</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Icon name="Phone" className="text-primary" />
-                  <a href="tel:+79231234567" className="hover:text-primary transition-colors">
-                    +7 (923) 123-45-67
-                  </a>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Icon name="Mail" className="text-primary" />
-                  <a href="mailto:maria.photo@example.com" className="hover:text-primary transition-colors">
-                    maria.photo@example.com
-                  </a>
-                </div>
-                <Separator />
-                <div className="space-y-2">
-                  <p className="text-sm font-semibold text-gray-600">Мессенджеры и соцсети:</p>
-                  <a
-                    href="https://wa.me/79231234567"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 hover:text-primary transition-colors"
-                  >
-                    <Icon name="MessageCircle" className="text-primary" />
-                    <span>WhatsApp</span>
-                  </a>
-                  <a
-                    href="https://t.me/+79139083148"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 hover:text-primary transition-colors"
-                  >
-                    <Icon name="Send" className="text-primary" />
-                    <span>Telegram: +79139083148</span>
-                  </a>
-                  <a
-                    href="https://vk.com/id342866396"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 hover:text-primary transition-colors"
-                  >
-                    <svg className="text-primary" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.48 14.94h-1.39c-.58 0-.76-.47-1.79-1.5-.91-.87-1.31-1-1.53-1-.32 0-.41.09-.41.52v1.37c0 .37-.11.58-1.07.58-1.59 0-3.35-.96-4.59-2.75-1.87-2.59-2.38-4.54-2.38-4.93 0-.22.09-.43.52-.43h1.39c.39 0 .54.18.69.59.76 2.19 2.03 4.11 2.56 4.11.2 0 .29-.09.29-.59v-2.28c-.07-1.13-.65-1.22-.65-1.62 0-.18.15-.36.39-.36h2.18c.33 0 .45.17.45.55v3.08c0 .33.15.45.24.45.2 0 .36-.12.72-.48 1.1-1.24 1.89-3.15 1.89-3.15.11-.22.28-.43.7-.43h1.39c.47 0 .57.24.47.55-.17.78-1.85 3.28-1.85 3.28-.17.27-.23.39 0 .7.17.23.72.71 1.09 1.14.67.77 1.18 1.41 1.32 1.86.13.44-.1.67-.54.67z"></path>
-                    </svg>
-                    <span>ВКонтакте</span>
-                  </a>
-                  <a
-                    href="https://vk.com/club_photograph_novosibirsk"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 hover:text-primary transition-colors"
-                  >
-                    <svg className="text-primary" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.48 14.94h-1.39c-.58 0-.76-.47-1.79-1.5-.91-.87-1.31-1-1.53-1-.32 0-.41.09-.41.52v1.37c0 .37-.11.58-1.07.58-1.59 0-3.35-.96-4.59-2.75-1.87-2.59-2.38-4.54-2.38-4.93 0-.22.09-.43.52-.43h1.39c.39 0 .54.18.69.59.76 2.19 2.03 4.11 2.56 4.11.2 0 .29-.09.29-.59v-2.28c-.07-1.13-.65-1.22-.65-1.62 0-.18.15-.36.39-.36h2.18c.33 0 .45.17.45.55v3.08c0 .33.15.45.24.45.2 0 .36-.12.72-.48 1.1-1.24 1.89-3.15 1.89-3.15.11-.22.28-.43.7-.43h1.39c.47 0 .57.24.47.55-.17.78-1.85 3.28-1.85 3.28-.17.27-.23.39 0 .7.17.23.72.71 1.09 1.14.67.77 1.18 1.41 1.32 1.86.13.44-.1.67-.54.67z"></path>
-                    </svg>
-                    <span>Группа ВКонтакте</span>
-                  </a>
-                  <a
-                    href="https://www.instagram.com/mary_is94"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 hover:text-primary transition-colors"
-                  >
-                    <Icon name="Instagram" className="text-primary" />
-                    <span>@mary_is94</span>
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Card className="mt-8 border-2 border-purple-200">
-            <CardHeader>
-              <CardTitle>Форма записи</CardTitle>
-              <CardDescription>Выберите фотографа и способ связи</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                <Button 
-                  variant="outline" 
-                  className="h-auto p-6 flex-col items-start gap-2"
-                  onClick={() => {
-                    document.getElementById("contacts")?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                >
-                  <div className="flex items-center gap-2">
-                    <Icon name="Sparkles" />
-                    <span className="font-bold">Александра</span>
-                  </div>
-                  <span className="text-xs text-muted-foreground">AI-фотография</span>
-                </Button>
-                <Button 
-                  variant="outline" 
-                  className="h-auto p-6 flex-col items-start gap-2"
-                  onClick={() => {
-                    setDate(undefined);
-                  }}
-                >
-                  <div className="flex items-center gap-2">
-                    <Icon name="Camera" />
-                    <span className="font-bold">Мария</span>
-                  </div>
-                  <span className="text-xs text-muted-foreground">Классическая съёмка в Новосибирске</span>
-                </Button>
+          <Card className="border-2 border-purple-200">
+            <CardContent className="p-6 space-y-4">
+              <div className="space-y-2">
+                <label className="text-sm font-semibold">Ваше имя</label>
+                <Input placeholder="Введите ваше имя" />
               </div>
-              {date !== undefined && (
-                <div className="space-y-4 border-t pt-4">
-                  <p className="text-sm font-semibold">Выберите дату съёмки:</p>
-                  <Calendar
-                    mode="single"
-                    selected={date}
-                    onSelect={setDate}
-                    className="rounded-md border mx-auto"
-                  />
-                  {date && (
-                    <div className="space-y-4">
-                      <p className="text-sm">Выбранная дата: {date.toLocaleDateString('ru-RU')}</p>
-                      <div className="grid grid-cols-2 gap-2">
-                        <a href="https://t.me/+79139083148" target="_blank" rel="noopener noreferrer">
-                          <Button variant="outline" className="w-full">
-                            <Icon name="Send" className="mr-2" size={16} />
-                            Telegram
-                          </Button>
-                        </a>
-                        <a href="https://wa.me/79231234567" target="_blank" rel="noopener noreferrer">
-                          <Button variant="outline" className="w-full">
-                            <Icon name="MessageCircle" className="mr-2" size={16} />
-                            WhatsApp
-                          </Button>
-                        </a>
-                        <a href="https://vk.com/id342866396" target="_blank" rel="noopener noreferrer">
-                          <Button variant="outline" className="w-full">
-                            ВКонтакте
-                          </Button>
-                        </a>
-                        <a href="tel:+79231234567">
-                          <Button variant="outline" className="w-full">
-                            <Icon name="Phone" className="mr-2" size={16} />
-                            Позвонить
-                          </Button>
-                        </a>
-                      </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-semibold">Телефон</label>
+                <Input placeholder="+7 (___) ___-__-__" />
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-semibold">Email</label>
+                <Input type="email" placeholder="your@email.com" />
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-semibold">Выберите фотографа</label>
+                <div className="grid grid-cols-2 gap-4">
+                  <Button
+                    variant={selectedPhotographer === "alexandra" ? "default" : "outline"}
+                    className="h-auto p-4 flex-col items-start gap-2"
+                    onClick={() => setSelectedPhotographer("alexandra")}
+                  >
+                    <div className="flex items-center gap-2">
+                      <Icon name="Sparkles" size={20} />
+                      <span className="font-bold">Александра</span>
                     </div>
-                  )}
+                    <span className="text-xs">Нейрофото</span>
+                  </Button>
+                  <Button
+                    variant={selectedPhotographer === "maria" ? "default" : "outline"}
+                    className="h-auto p-4 flex-col items-start gap-2"
+                    onClick={() => setSelectedPhotographer("maria")}
+                  >
+                    <div className="flex items-center gap-2">
+                      <Icon name="Camera" size={20} />
+                      <span className="font-bold">Мария</span>
+                    </div>
+                    <span className="text-xs">Классика</span>
+                  </Button>
                 </div>
+              </div>
+
+              {selectedPhotographer === "maria" && (
+                <>
+                  <div className="space-y-2">
+                    <label className="text-sm font-semibold">Дата съёмки</label>
+                    <Calendar
+                      mode="single"
+                      selected={date}
+                      onSelect={setDate}
+                      className="rounded-md border"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm font-semibold">Время</label>
+                    <Select value={selectedTime} onValueChange={setSelectedTime}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Выберите время" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="10:00">10:00</SelectItem>
+                        <SelectItem value="12:00">12:00</SelectItem>
+                        <SelectItem value="14:00">14:00</SelectItem>
+                        <SelectItem value="16:00">16:00</SelectItem>
+                        <SelectItem value="18:00">18:00</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </>
               )}
+
+              <div className="space-y-2">
+                <label className="text-sm font-semibold">Комментарий</label>
+                <Textarea 
+                  placeholder="Расскажите о ваших пожеланиях к съёмке..." 
+                  rows={4}
+                />
+              </div>
+
+              <Button className="w-full" size="lg">
+                Отправить заявку
+              </Button>
             </CardContent>
           </Card>
         </div>
@@ -835,21 +698,14 @@ const Index = () => {
 
       <footer className="py-8 px-4 bg-muted/50 border-t">
         <div className="container mx-auto max-w-6xl">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-center md:text-left">
-              <p className="font-semibold mb-1">Два взгляда на фотографию — выберите свой стиль</p>
-              <p className="text-sm text-muted-foreground">
-                Сайт сделан с помощью искусственного интеллекта
-              </p>
+          <div className="text-center space-y-4">
+            <p className="font-semibold">Два взгляда на фотографию — выберите свой стиль</p>
+            <Link to="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Политика конфиденциальности
+            </Link>
+            <div className="text-xs text-muted-foreground pt-4 border-t">
+              © 2025 Aleksandra & Maria Photography
             </div>
-            <div className="flex gap-4 items-center">
-              <Link to="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                Политика конфиденциальности
-              </Link>
-            </div>
-          </div>
-          <div className="text-center mt-4 text-xs text-muted-foreground">
-            © 2025 Aleksandra & Maria Photography
           </div>
         </div>
       </footer>
