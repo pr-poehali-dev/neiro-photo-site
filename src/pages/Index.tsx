@@ -397,10 +397,7 @@ const Index = () => {
             <h2 className="md:text-5xl mb-6 leading-tight font-bold text-4xl">
               Искусство фотосъёмки: от классики до нейросетей
             </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Александра — нейрофотограф с уникальным видением. Мария — мастер
-              классической фотографии для важных событий.
-            </p>
+
             <div className="flex gap-4 justify-center flex-wrap">
               <Button
                 size="lg"
