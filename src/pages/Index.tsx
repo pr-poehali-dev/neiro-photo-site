@@ -1427,7 +1427,7 @@ const Index = () => {
                   data-component-content="%7B%22text%22%3A%22%D1%81%20%D0%9C%D0%B0%D1%80%D0%B8%D0%B5%D0%B9%22%7D"
                   class="text-sm text-muted-foreground"
                 >
-                  с Марией (Новосибирск)
+                  с Марией
                 </p>
               </div>
               <div
