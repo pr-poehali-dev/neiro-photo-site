@@ -370,7 +370,7 @@ const Index = () => {
       <section id="portfolio" className="py-12 sm:py-20 px-3 sm:px-4 bg-muted/30">
         <div className="container mx-auto">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-2 sm:mb-4">Портфолио</h2>
+            <h2 className="sm:text-3xl md:text-5xl font-bold mb-2 sm:mb-4 text-xl">Портфолио</h2>
             <p className="text-muted-foreground text-sm sm:text-lg">Наши работы</p>
           </div>
 
@@ -425,7 +425,7 @@ const Index = () => {
       <section id="about" className="py-12 sm:py-20 px-3 sm:px-6 bg-white/50">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent">
+            <h2 className="sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent text-xl">
               Сравнение форматов съёмки
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-2">
@@ -438,7 +438,7 @@ const Index = () => {
             <div className="space-y-4 sm:space-y-6">
               <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
                 <Icon name="Sparkles" size={24} className="text-primary sm:w-7 sm:h-7" />
-                <h3 className="text-xl sm:text-2xl font-bold">AI-фотография</h3>
+                <h3 className="sm:text-2xl font-bold text-base">AI-фотография</h3>
               </div>
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-start gap-2">
@@ -479,7 +479,7 @@ const Index = () => {
             <div className="space-y-4 sm:space-y-6">
               <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
                 <Icon name="Camera" size={24} className="text-secondary sm:w-7 sm:h-7" />
-                <h3 className="text-xl sm:text-2xl font-bold">Классическая съёмка</h3>
+                <h3 className="sm:text-2xl font-bold text-base">Классическая съёмка</h3>
               </div>
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-start gap-2">
@@ -535,7 +535,7 @@ const Index = () => {
       >
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent">
+            <h2 className="sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent text-lg">
               Наши цены
             </h2>
             <p className="text-gray-600 text-sm sm:text-base md:text-lg px-2">
@@ -558,15 +558,15 @@ const Index = () => {
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span>Пробный пакет (3 фото, 1 образ)</span>
-                    <span className="font-bold text-xl">1 000 ₽</span>
+                    <span className="font-bold text-sm">1 000 ₽</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span>Стандарт (10 фото, 2-3 образа)</span>
-                    <span className="font-bold text-xl">2 500 ₽</span>
+                    <span className="font-bold text-sm">2 500 ₽</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span>Премиум (20 фото, 5 образов)</span>
-                    <span className="font-bold text-xl">3 500 ₽</span>
+                    <span className="font-bold text-sm">3 500 ₽</span>
                   </div>
                 </div>
                 <div className="pt-4 border-t space-y-2">
@@ -608,7 +608,7 @@ const Index = () => {
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span>Мини (30 мин, 7 обработанных фото)</span>
-                    <span className="font-bold text-xl">2 500 ₽</span>
+                    <span className="font-bold text-sm">2 500 ₽</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span>Стандарт (1 час, 15 обработанных фото)</span>
