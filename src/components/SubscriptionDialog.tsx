@@ -63,9 +63,7 @@ export const SubscriptionDialog = ({
             <Icon name="ExternalLink" size={16} />
           </a>
         </div>
-        <p className="text-xs text-center text-gray-500 mt-4">
-          После подписки напишите фотографу и получите промокод
-        </p>
+        <p className="text-xs text-center text-gray-500 mt-4">После подписки напишите фотографу и получите скидку</p>
       </DialogContent>
     </Dialog>
   );
