@@ -257,10 +257,10 @@ const Index = () => {
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
         <div className="container mx-auto px-3 py-3 flex justify-between items-center">
           <div>
-            <h1 className="text-lg sm:text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <h1 className="sm:text-2xl bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-semibold text-xs">
               Aleksandra & Maria
             </h1>
-            <p className="text-xs sm:text-sm mt-1 px-0.5">
+            <p className="sm:text-sm mt-1 px-0.5 text-xs">
               Профессиональная фотография
             </p>
           </div>
