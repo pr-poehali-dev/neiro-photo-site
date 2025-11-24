@@ -607,7 +607,7 @@ const Index = () => {
               <CardContent className="space-y-6 pt-6">
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span>Мини (30 мин, 7 фото в ретуши)</span>
+                    <span>Мини (30 мин, 7 обработанных фото)</span>
                     <span className="font-bold text-sm">2 500 ₽</span>
                   </div>
                   <div className="flex justify-between items-center">
