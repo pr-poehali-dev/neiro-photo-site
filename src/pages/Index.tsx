@@ -608,7 +608,7 @@ const Index = () => {
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span>Мини (30 минут, 7 обработанных фото)</span>
-                    <span className="font-bold text-sm">2 500 ₽</span>
+                    <span className="font-bold text-xs">2 500 ₽</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span>Стандарт (1 час, 15 обработанных фото)</span>
