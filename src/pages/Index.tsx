@@ -906,7 +906,7 @@ const Index = () => {
         className="py-20 px-6 bg-gradient-to-br from-purple-50 to-white"
       >
         <div className="container mx-auto max-w-2xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent">
+          <h2 className="md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent text-2xl">
             Записаться на съёмку
           </h2>
           <p className="text-center text-gray-600 mb-12">
