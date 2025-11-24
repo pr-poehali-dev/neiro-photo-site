@@ -535,7 +535,7 @@ const Index = () => {
       >
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent text-base">
+            <h2 className="sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent text-xl">
               Наши цены
             </h2>
             <p className="text-gray-600 text-sm sm:text-base md:text-lg px-2">
