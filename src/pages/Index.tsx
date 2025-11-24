@@ -1074,3 +1074,60 @@ const Index = () => {
 };
 
 export default Index;
+/* Add this CSS to your stylesheet for responsive design */
+
+/* Responsive styles for screen widths from 240px to 1600px */
+@media (max-width: 640px) {
+  /* Make images responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  /* Buttons and text adjustments */
+  button, .button {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  /* Prevent text overflow in buttons and other text */
+  .text-responsive {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media (min-width: 641px) and (max-width: 1024px) {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  button, .button {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .text-responsive {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+@media (min-width: 1025px) {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  button, .button {
+    max-width: 100%;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+  .text-responsive {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+}
