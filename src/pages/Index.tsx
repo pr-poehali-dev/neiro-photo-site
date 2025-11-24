@@ -370,7 +370,7 @@ const Index = () => {
       <section id="portfolio" className="py-12 sm:py-20 px-3 sm:px-4 bg-muted/30">
         <div className="container mx-auto">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="sm:text-3xl md:text-5xl font-bold mb-2 sm:mb-4 text-xl">Портфолио</h2>
+            <h2 className="sm:text-3xl md:text-5xl font-bold mb-2 sm:mb-4 text-2xl">Портфолио</h2>
             <p className="text-muted-foreground text-sm sm:text-lg">Наши работы</p>
           </div>
 
@@ -535,7 +535,7 @@ const Index = () => {
       >
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent text-xl">
+            <h2 className="sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent text-2xl">
               Наши цены
             </h2>
             <p className="text-gray-600 text-sm sm:text-base md:text-lg px-2">
