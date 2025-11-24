@@ -596,7 +596,7 @@ const Index = () => {
               <CardHeader className="bg-gradient-to-r from-purple-50 to-white">
                 <div className="flex items-center gap-3 mb-2">
                   <Icon name="Camera" size={32} className="text-secondary" />
-                  <CardTitle className="text-3xl">
+                  <CardTitle className="text-2xl">
                     Классическая съёмка
                   </CardTitle>
                 </div>
@@ -658,21 +658,11 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card className="border-2 border-purple-200">
               <CardHeader>
-                <CardTitle className="text-2xl flex items-center gap-2">
+                <CardTitle className="text-base flex items-center gap-2">
                   <Icon name="CreditCard" className="text-primary" />
                   Способы оплаты
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                  <Icon name="CreditCard" className="text-primary" />
-                  <div>
-                    <div className="font-semibold">СБП</div>
-                    <div className="text-sm text-gray-600">
-                      Система быстрых платежей
-                    </div>
-                  </div>
-                </div>
                 <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
                   <Icon name="Building" className="text-primary" />
                   <div>
@@ -694,7 +684,7 @@ const Index = () => {
 
             <Card className="border-2 border-purple-200">
               <CardHeader>
-                <CardTitle className="text-2xl flex items-center gap-2">
+                <CardTitle className="text-base flex items-center gap-2">
                   <Icon name="Shield" className="text-green-500" />
                   Гарантии
                 </CardTitle>
