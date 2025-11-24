@@ -353,7 +353,7 @@ const Index = () => {
                 />
               </div>
               <CardContent className="p-4 sm:p-6">
-                <h3 className="text-xl sm:text-2xl font-bold mb-2">Мария</h3>
+                <h3 className="sm:text-2xl font-bold mb-2 text-base">Мария</h3>
                 <p className="text-secondary font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
                   Классический фотограф (г.Новосибирск)
                 </p>
