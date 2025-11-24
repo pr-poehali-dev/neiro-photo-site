@@ -292,10 +292,10 @@ const Index = () => {
       <section id="home" className="pt-24 sm:pt-32 pb-12 sm:pb-20 px-3 sm:px-4">
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl mb-4 sm:mb-6 leading-tight font-bold">
+            <h2 className="sm:text-3xl md:text-5xl mb-4 sm:mb-6 leading-tight font-bold text-lg">
               Искусство фотосъёмки: от классики до нейросетей
             </h2>
-            <h3 className="text-base sm:text-lg md:text-2xl mb-4 sm:mb-6 leading-tight font-bold">
+            <h3 className="sm:text-lg md:text-2xl mb-4 sm:mb-6 leading-tight font-bold text-xs">
               Выберите свой путь к совершенным снимкам: нейрофотография с
               AI-эффектами или классическая фотосессия
             </h3>
