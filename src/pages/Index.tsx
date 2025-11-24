@@ -535,7 +535,7 @@ const Index = () => {
       >
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent text-lg">
+            <h2 className="sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent text-base">
               Наши цены
             </h2>
             <p className="text-gray-600 text-sm sm:text-base md:text-lg px-2">
@@ -648,7 +648,7 @@ const Index = () => {
 
       <section id="payment" className="py-20 px-6 bg-white/50">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent">
+          <h2 className="md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent text-4xl">
             Оплата
           </h2>
           <p className="text-center text-gray-600 mb-12 text-lg">
