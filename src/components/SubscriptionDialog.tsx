@@ -21,7 +21,7 @@ export const SubscriptionDialog = ({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-2xl text-center">
+          <DialogTitle className="text-xl text-center">
             Дарим 500₽ за подписку! 🎁
           </DialogTitle>
           <DialogDescription className="text-center">
