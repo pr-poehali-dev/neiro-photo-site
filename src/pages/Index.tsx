@@ -1043,7 +1043,7 @@ const Index = () => {
                         <Icon name="Sparkles" size={20} />
                         <span className="font-bold text-xss">Александра</span>
                       </div>
-                      <span className="text-xs">Нейрофото</span>
+                      <span className="text-[8px]">Нейрофото</span>
                     </Button>
                     <Button
                       type="button"
@@ -1057,7 +1057,7 @@ const Index = () => {
                         <Icon name="Camera" size={20} />
                         <span className="font-bold text-xss">Мария</span>
                       </div>
-                      <span className="text-xs">Классика</span>
+                      <span className="text-[8px]">Классика</span>
                     </Button>
                   </div>
                 </div>
