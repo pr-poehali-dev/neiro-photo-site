@@ -344,48 +344,99 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto">
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in">
-              <div className="h-32 sm:h-40 md:h-96 bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden">
-                <img
-                  src="https://cdn.poehali.dev/files/fe75699e-c452-4a3d-afb5-7477e525d402.JPG"
-                  alt="Александра"
-                  className="w-full h-full object-cover opacity-90"
-                />
-              </div>
-              <CardContent className="p-4 sm:p-6">
-                <h3 className="sm:text-2xl font-bold mb-2 text-base">
-                  Александра
-                </h3>
-                <p className="font-semibold mb-2 sm:mb-3 text-[#7f68ac] text-sm sm:text-base">
-                  AI-фотограф (онлайн из любой точки)
-                </p>
-                <p className="text-muted-foreground text-sm sm:text-base">
-                  Превращаю исходные портреты в уникальные арт-объекты с помощью
-                  искусственного интеллекта.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in [animation-delay:150ms]">
-              <div className="h-32 sm:h-40 md:h-96 bg-gradient-to-br from-secondary/20 to-primary/20 relative overflow-hidden">
-                <img
-                  src="https://cdn.poehali.dev/files/7cd5fbec-41bf-456d-98de-1c14f91b5e42.jpg"
-                  alt="Мария"
-                  className="w-full h-full object-cover opacity-90"
-                />
-              </div>
-              <CardContent className="p-4 sm:p-6">
-                <h3 className="sm:text-2xl font-bold mb-2 text-base">Мария</h3>
-                <p className="text-secondary font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
-                  Классический фотограф (г.Новосибирск)
-                </p>
-                <p className="text-muted-foreground text-sm sm:text-base">
-                  Специализируюсь на Lifestyle стиле. Ловлю искренние эмоции и
-                  важные моменты.
-                </p>
-              </CardContent>
-            </Card>
+      {/* Александра */}
+      <div className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in">
+        <div className="h-32 sm:h-40 md:h-96 bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden cursor-pointer" onClick={() => toggleCard('alexandra')}>
+          <img
+            src="https://cdn.poehali.dev/files/fe75699e-c452-4a3d-afb5-7477e525d402.JPG"
+            alt="Александра"
+            className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+        <div className="p-4 sm:p-6 border rounded-b-lg">
+          <div 
+            className="flex flex-col space-y-1.5 mb-4 cursor-pointer select-none"
+            onClick={() => toggleCard('alexandra')}
+          >
+            <h3 className="text-base sm:text-2xl font-bold flex items-center justify-between">
+              Александра
+              {openCard === 'alexandra' ? (
+                <ChevronUp className="w-6 h-6 text-primary" />
+              ) : (
+                <ChevronDown className="w-6 h-6 text-primary" />
+              )}
+            </h3>
+            <p className="text-sm sm:text-base text-muted-foreground flex items-center gap-2 font-semibold">
+              <Sparkles className="w-5 h-5 text-primary" />
+              Нейрофотограф
+            </p>
           </div>
+          
+          <div 
+            className={`overflow-hidden transition-all duration-300 ${
+              openCard === 'alexandra' ? 'max-h-96 opacity-100 p-6 pt-0' : 'max-h-0 opacity-0'
+            }`}
+          >
+            <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+              Специалист по созданию уникальных изображений с помощью искусственного интеллекта. 
+              Создаю фантастические, стилизованные и концептуальные портреты, которые выходят за 
+              рамки реальности и воплощают самые смелые идеи.
+            </p>
+          </div>
+          
+          <p className={`text-muted-foreground text-sm sm:text-base transition-opacity duration-300 ${
+            openCard === 'alexandra' ? 'opacity-50' : 'opacity-100'
+          }`}>
+            Превращаю исходные портреты в уникальные арт-объекты с помощью искусственного интеллекта.
+          </p>
+        </div>
+      </div>
+
+      {/* Мария */}
+      <div className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in [animation-delay:150ms]">
+        <div className="h-32 sm:h-40 md:h-96 bg-gradient-to-br from-secondary/20 to-primary/20 relative overflow-hidden cursor-pointer" onClick={() => toggleCard('maria')}>
+          <img
+            src="https://cdn.poehali.dev/files/7cd5fbec-41bf-456d-98de-1c14f91b5e42.jpg"
+            alt="Мария"
+            className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+        <div className="p-4 sm:p-6 border rounded-b-lg">
+          <div 
+            className="flex flex-col space-y-1.5 mb-4 cursor-pointer select-none"
+            onClick={() => toggleCard('maria')}
+          >
+            <h3 className="text-base sm:text-2xl font-bold flex items-center justify-between">
+              Мария
+              {openCard === 'maria' ? (
+                <ChevronUp className="w-6 h-6 text-primary" />
+              ) : (
+                <ChevronDown className="w-6 h-6 text-primary" />
+              )}
+            </h3>
+            <p className="text-sm sm:text-base text-muted-foreground flex items-center gap-2 font-semibold text-secondary">
+              <Camera className="w-5 h-5 text-primary" />
+              Классический фотограф
+            </p>
+          </div>
+          
+          <div 
+            className={`overflow-hidden transition-all duration-300 ${
+              openCard === 'maria' ? 'max-h-96 opacity-100 p-6 pt-0' : 'max-h-0 opacity-0'
+            }`}
+          >
+            <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+              Профессиональный фотограф с 8-летним опытом работы. Специализируется на портретной, 
+              семейной и свадебной съемке. Создаю живые, естественные кадры, которые передают 
+              настоящие эмоции и атмосферу момента.
+            </p>
+          </div>
+          
+          <p className={`text-muted-foreground text-sm sm:text-base transition-opacity duration-300 ${
+            openCard === 'maria' ? 'opacity-50' : 'opacity-100'
+          }`}>
+            Специализируюсь на Lifestyle стиле. Ловлю искренние эмоции и важные моменты.
+          </p>
         </div>
       </section>
 
