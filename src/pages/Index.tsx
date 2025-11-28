@@ -343,7 +343,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto md:grid-cols-2">
             <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in">
               <div className="h-64 sm:h-80 md:h-96 bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden">
                 <img
