@@ -790,7 +790,7 @@ const Index = () => {
                   />
                   <div>
                     <div className="font-semibold mb-1">Возврат средств</div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-base text-gray-600">
                       Возможность вернуть предоплату в течение 14 дней
                     </div>
                   </div>
