@@ -995,7 +995,7 @@ const Index = () => {
             Заполните форму, и мы свяжемся с вами в ближайшее время
           </p>
 
-          <Card className="border-2 border-purple-200">
+          <Card className="border-2 border-purple-600">
             <CardContent className="p-6">
               <form onSubmit={handleSubmitBooking} className="space-y-4">
                 <div className="space-y-2">
