@@ -41,7 +41,7 @@ export const ContactDialog = ({
           <DialogTitle className="text-xl text-left">
             Связаться с {contact.name}
           </DialogTitle>
-          <DialogDescription className="text-center">
+          <DialogDescription className="text-left">
             Выберите удобный способ связи
           </DialogDescription>
         </DialogHeader>
