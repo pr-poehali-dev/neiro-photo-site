@@ -359,20 +359,10 @@ const Index = () => {
                 <p className="font-semibold mb-2 sm:mb-3 text-[#7f68ac] text-sm sm:text-base">
                   AI-фотограф (онлайн из любой точки)
                 </p>
-                {/* Кнопка для показа / скрытия текста */}
-                <button
-                  onClick={() => setShowInfoAlexandra(!showInfoAlexandra)}
-                  className="text-primary font-medium mb-2"
-                >
-                  Обо мне
-                </button>
-                {/* Раскрывающийся текст */}
-                {showInfoAlexandra && (
-                  <p className="text-muted-foreground text-sm sm:text-base">
-                    Превращаю исходные портреты в уникальные арт-объекты с
-                    помощью искусственного интеллекта.
-                  </p>
-                )}
+                <p className="text-muted-foreground text-sm sm:text-base">
+                  Превращаю исходные портреты в уникальные арт-объекты с помощью
+                  искусственного интеллекта.
+                </p>
               </CardContent>
             </Card>
 
@@ -389,20 +379,10 @@ const Index = () => {
                 <p className="text-secondary font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
                   Классический фотограф (г.Новосибирск)
                 </p>
-                {/* Кнопка для показа / скрытия текста */}
-                <button
-                  onClick={() => setShowInfoMaria(!showInfoMaria)}
-                  className="text-primary font-medium mb-2"
-                >
-                  Обо мне
-                </button>
-                {/* Раскрывающийся текст */}
-                {showInfoMaria && (
-                  <p className="text-muted-foreground text-sm sm:text-base">
-                    Специализируюсь на Lifestyle стиле. Ловлю искренние эмоции и
-                    важные моменты.
-                  </p>
-                )}
+                <p className="text-muted-foreground text-sm sm:text-base">
+                  Специализируюсь на Lifestyle стиле. Ловлю искренние эмоции и
+                  важные моменты.
+                </p>
               </CardContent>
             </Card>
           </div>
