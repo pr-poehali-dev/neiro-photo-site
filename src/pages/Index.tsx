@@ -696,16 +696,16 @@ const Index = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6 pt-6">
-                <div className="space-y-6">
-                  <div className="flex justify-between items-center">
+                <div className="space-y-3">
+                  <div className="flex justify-between items-left">
                     <span>Мини (30 минут, 7 обработанных фото)</span>
                     <span className="font-bold text-sm">2 500 ₽</span>
                   </div>
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-left">
                     <span>Стандарт (1 час, 15 обработанных фото)</span>
                     <span className="font-bold text-sm">4 000 ₽</span>
                   </div>
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-left">
                     <span>Премиум (2 часа, 30 обработанных фото)</span>
                     <span className="font-bold text-sm">7 500 ₽</span>
                   </div>
