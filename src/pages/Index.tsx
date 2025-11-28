@@ -842,7 +842,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="border-2 border-purple-200">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+                <CardTitle className="flex items-center gap-1">
                   <Icon name="Sparkles" className="text-primary" />
                   AI-фотография
                 </CardTitle>
@@ -894,7 +894,7 @@ const Index = () => {
 
             <Card className="border-2 border-purple-200">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
+                <CardTitle className="flex items-center gap-1">
                   <Icon name="Camera" className="text-secondary" />
                   Классическая фотосъемка
                 </CardTitle>
