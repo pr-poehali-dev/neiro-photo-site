@@ -343,7 +343,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto">
             <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in">
               <div className="h-64 sm:h-80 md:h-96 bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden">
                 <img
@@ -359,10 +359,20 @@ const Index = () => {
                 <p className="font-semibold mb-2 sm:mb-3 text-[#7f68ac] text-sm sm:text-base">
                   AI-фотограф (онлайн из любой точки)
                 </p>
-                <p className="text-muted-foreground text-sm sm:text-base">
-                  Превращаю исходные портреты в уникальные арт-объекты с помощью
-                  искусственного интеллекта.
-                </p>
+                {/* Кнопка для показа / скрытия текста */}
+                <button
+                  onClick={() => setShowInfoAlexandra(!showInfoAlexandra)}
+                  className="text-primary font-medium mb-2"
+                >
+                  Обо мне
+                </button>
+                {/* Раскрывающийся текст */}
+                {showInfoAlexandra && (
+                  <p className="text-muted-foreground text-sm sm:text-base">
+                    Превращаю исходные портреты в уникальные арт-объекты с
+                    помощью искусственного интеллекта.
+                  </p>
+                )}
               </CardContent>
             </Card>
 
@@ -379,10 +389,20 @@ const Index = () => {
                 <p className="text-secondary font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
                   Классический фотограф (г.Новосибирск)
                 </p>
-                <p className="text-muted-foreground text-sm sm:text-base">
-                  Специализируюсь на Lifestyle стиле. Ловлю искренние эмоции и
-                  важные моменты.
-                </p>
+                {/* Кнопка для показа / скрытия текста */}
+                <button
+                  onClick={() => setShowInfoMaria(!showInfoMaria)}
+                  className="text-primary font-medium mb-2"
+                >
+                  Обо мне
+                </button>
+                {/* Раскрывающийся текст */}
+                {showInfoMaria && (
+                  <p className="text-muted-foreground text-sm sm:text-base">
+                    Специализируюсь на Lifestyle стиле. Ловлю искренние эмоции и
+                    важные моменты.
+                  </p>
+                )}
               </CardContent>
             </Card>
           </div>
