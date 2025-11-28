@@ -387,7 +387,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           : "alexandra",
                       )
                     }
-                    className="text-muted-foreground text-sm sm:text-base text-left w-full flex items-center gap-2"
+                    className="text-muted-foreground text-xs sm:text-base text-left w-full flex items-center gap-2"
                   >
                     <Icon
                       name={
@@ -446,7 +446,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                         expandedPhotographer === "maria" ? null : "maria",
                       )
                     }
-                    className="text-muted-foreground text-sm sm:text-base text-left w-full flex items-center gap-2"
+                    className="text-muted-foreground text-xs sm:text-base text-left w-full flex items-center gap-2"
                   >
                     <Icon
                       name={
