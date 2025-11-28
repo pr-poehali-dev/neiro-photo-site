@@ -755,18 +755,18 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-base">
                   <Icon name="Building" className="text-primary" />
                   <div>
                     <div className="font-semibold">Банковский перевод</div>
-                    <div className="text-sm text-gray-600">По реквизитам</div>
+                    <div className="text-xs text-gray-600">По реквизитам</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-base">
                   <Icon name="Wallet" className="text-primary" />
                   <div>
                     <div className="font-semibold">Наличные</div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-xs text-gray-600">
                       При реальной фотосъемке
                     </div>
                   </div>
@@ -776,7 +776,7 @@ const Index = () => {
 
             <Card className="border-2 border-purple-200">
               <CardHeader>
-                <CardTitle className="text-2xl flex items-center gap-2">
+                <CardTitle className="text-base flex items-center gap-2">
                   <Icon name="Shield" className="text-green-500" />
                   Гарантии
                 </CardTitle>
