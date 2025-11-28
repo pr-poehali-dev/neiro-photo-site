@@ -987,7 +987,7 @@ const Index = () => {
         id="booking"
         className="py-20 px-6 bg-gradient-to-br from-purple-50 to-white"
       >
-        <div className="container mx-auto">
+        <div className="container mx-auto max-w-4xl">
           <h2 className="md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent text-2xl">
             Записаться на съёмку
           </h2>
