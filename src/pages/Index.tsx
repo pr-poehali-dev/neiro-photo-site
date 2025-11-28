@@ -670,7 +670,7 @@ const Index = () => {
                     <span>Любые образы и стили</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Icon name="laptop" size={16} className="text-primary" />
+                    <Icon name="computer" size={16} className="text-primary" />
                     <span>Работа онлайн</span>
                   </div>
                 </div>
