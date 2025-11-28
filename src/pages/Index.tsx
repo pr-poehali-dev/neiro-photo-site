@@ -670,7 +670,7 @@ const Index = () => {
                     <span>Любые образы и стили</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Icon name="Image" size={16} className="text-primary" />
+                    <Icon name="laptop" size={16} className="text-primary" />
                     <span>Работа онлайн</span>
                   </div>
                 </div>
@@ -697,15 +697,15 @@ const Index = () => {
               </CardHeader>
               <CardContent className="space-y-6 pt-6">
                 <div className="space-y-3">
-                  <div className="flex justify-between items-left">
+                  <div className="flex justify-between items-center">
                     <span>Мини (30 минут, 7 обработанных фото)</span>
                     <span className="font-bold text-sm">2 500 ₽</span>
                   </div>
-                  <div className="flex justify-between items-left">
+                  <div className="flex justify-between items-center">
                     <span>Стандарт (1 час, 15 обработанных фото)</span>
                     <span className="font-bold text-sm">4 000 ₽</span>
                   </div>
-                  <div className="flex justify-between items-left">
+                  <div className="flex justify-between items-center">
                     <span>Премиум (2 часа, 30 обработанных фото)</span>
                     <span className="font-bold text-sm">7 500 ₽</span>
                   </div>
