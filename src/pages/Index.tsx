@@ -695,8 +695,8 @@ const Index = () => {
                   Профессиональная фотосессия с Марией
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-6 pt-10">
-                <div className="space-y-3">
+              <CardContent className="space-y-6 pt-6">
+                <div className="space-y-6">
                   <div className="flex justify-between items-center">
                     <span>Мини (30 минут, 7 обработанных фото)</span>
                     <span className="font-bold text-sm">2 500 ₽</span>
