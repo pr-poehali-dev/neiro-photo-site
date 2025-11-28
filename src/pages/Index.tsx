@@ -895,8 +895,8 @@ const Index = () => {
             <Card className="border-2 border-purple-200">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Icon name="Camera" className="text-secondary" />
-                  Реальная фотосъемка
+                  <Icon name="Camera" className="text-secondary text-xs" />
+                  Классическая фотосъемка
                 </CardTitle>
               </CardHeader>
               <CardContent>
