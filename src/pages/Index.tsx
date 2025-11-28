@@ -756,15 +756,6 @@ const Index = () => {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                  <Icon name="CreditCard" className="text-primary" />
-                  <div>
-                    <div className="font-semibold">СБП</div>
-                    <div className="text-sm text-gray-600">
-                      Система быстрых платежей
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
                   <Icon name="Building" className="text-primary" />
                   <div>
                     <div className="font-semibold">Банковский перевод</div>
