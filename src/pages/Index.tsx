@@ -359,10 +359,14 @@ const Index = () => {
                 <p className="font-semibold mb-2 sm:mb-3 text-[#7f68ac] text-sm sm:text-base">
                   AI-фотограф (онлайн из любой точки)
                 </p>
-                <p className="text-muted-foreground text-sm sm:text-base">
-                  Превращаю исходные портреты в уникальные арт-объекты с помощью
-                  искусственного интеллекта.
-                </p>
+                <div
+                  className={`CardContent p-6 pt-0 overflow-hidden transition-all duration-300 ${openCard === "alexandra" ? "max-h-96" : "max-h-0"}`}
+                >
+                  <p className="text-muted-foreground leading-relaxed">
+                    Превращаю исходные портреты в уникальные арт-объекты с
+                    помощью искусственного интеллекта
+                  </p>
+                </div>
               </CardContent>
             </Card>
 
@@ -376,9 +380,14 @@ const Index = () => {
               </div>
               <CardContent className="p-4 sm:p-6">
                 <h3 className="sm:text-2xl font-bold mb-2 text-base">Мария</h3>
-                <p className="text-secondary font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
-                  Классический фотограф (г.Новосибирск)
-                </p>
+                <div
+                  className={`CardContent p-6 pt-0 overflow-hidden transition-all duration-300 ${openCard === "alexandra" ? "max-h-96" : "max-h-0"}`}
+                >
+                  <p className="text-muted-foreground leading-relaxed">
+                    Специализируюсь на Lifestyle стиле. Ловлю искренние эмоции и
+                    важные моменты.
+                  </p>
+                </div>
                 <p className="text-muted-foreground text-sm sm:text-base">
                   Специализируюсь на Lifestyle стиле. Ловлю искренние эмоции и
                   важные моменты.
