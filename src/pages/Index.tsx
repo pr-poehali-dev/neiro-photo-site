@@ -54,6 +54,7 @@ const Index = () => {
   const [showPhotographerChoice, setShowPhotographerChoice] = useState(false);
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [selectedPhotographer, setSelectedPhotographer] = useState<string>("");
+  const [selectedPackage, setSelectedPackage] = useState<string>("");
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [formData, setFormData] = useState({
     name: "",
@@ -61,6 +62,7 @@ const Index = () => {
     comment: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [expandedPhotographer, setExpandedPhotographer] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -116,6 +118,15 @@ const Index = () => {
       return;
     }
 
+    if (!selectedPackage) {
+      toast({
+        title: "Ошибка",
+        description: "Выберите тариф",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -124,6 +135,7 @@ const Index = () => {
         phone: formData.phone,
         email: "",
         photographer: selectedPhotographer,
+        package: selectedPackage,
         date: date ? date.toLocaleDateString("ru-RU") : "",
         time: selectedTime,
         comment: formData.comment,
@@ -150,6 +162,7 @@ const Index = () => {
 
         setFormData({ name: "", phone: "", comment: "" });
         setSelectedPhotographer("");
+        setSelectedPackage("");
         setDate(undefined);
         setSelectedTime("");
       } else {
@@ -343,7 +356,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto">
             <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in">
               <div className="h-32 sm:h-40 md:h-96 bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden">
                 <img
@@ -359,10 +372,36 @@ const Index = () => {
                 <p className="font-semibold mb-2 sm:mb-3 text-[#7f68ac] text-sm sm:text-base">
                   AI-фотограф (онлайн из любой точки)
                 </p>
-                <p className="text-muted-foreground text-sm sm:text-base">
-                  Превращаю исходные портреты в уникальные арт-объекты с помощью
-                  искусственного интеллекта.
-                </p>
+                <div className="space-y-2">
+                  <button
+                    onClick={() => setExpandedPhotographer(expandedPhotographer === "alexandra" ? null : "alexandra")}
+                    className="text-muted-foreground text-sm sm:text-base text-left w-full"
+                  >
+                    <span className="flex items-center gap-2">
+                      Превращаю исходные портреты в уникальные арт-объекты с помощью искусственного интеллекта.
+                      <Icon name={expandedPhotographer === "alexandra" ? "ChevronUp" : "ChevronDown"} size={16} className="flex-shrink-0" />
+                    </span>
+                  </button>
+                  {expandedPhotographer === "alexandra" && (
+                    <div className="text-muted-foreground text-sm sm:text-base pt-2 border-t animate-fade-in">
+                      <p className="mb-2">
+                        Я использую передовые AI-технологии для создания уникальных фотографий, которые выглядят как настоящие произведения искусства.
+                      </p>
+                      <p>
+                        Вы присылаете мне свои фото, описываете желаемый образ, и я создаю для вас потрясающие снимки в любом стиле: от классического портрета до фэнтезийных образов.
+                      </p>
+                    </div>
+                  )}
+                </div>
+                <Button 
+                  className="w-full mt-4" 
+                  onClick={() => {
+                    setContactPhotographer("alexandra");
+                    scrollToSection("booking");
+                  }}
+                >
+                  Записаться
+                </Button>
               </CardContent>
             </Card>
 
@@ -377,12 +416,39 @@ const Index = () => {
               <CardContent className="p-4 sm:p-6">
                 <h3 className="sm:text-2xl font-bold mb-2 text-base">Мария</h3>
                 <p className="text-secondary font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
-                  Классический фотограф (г.Новосибирск)
+                  Классический фотограф (г. Новосибирск)
                 </p>
-                <p className="text-muted-foreground text-sm sm:text-base">
-                  Специализируюсь на Lifestyle стиле. Ловлю искренние эмоции и
-                  важные моменты.
-                </p>
+                <div className="space-y-2">
+                  <button
+                    onClick={() => setExpandedPhotographer(expandedPhotographer === "maria" ? null : "maria")}
+                    className="text-muted-foreground text-sm sm:text-base text-left w-full"
+                  >
+                    <span className="flex items-center gap-2">
+                      Специализируюсь на Lifestyle стиле. Ловлю искренние эмоции и важные моменты.
+                      <Icon name={expandedPhotographer === "maria" ? "ChevronUp" : "ChevronDown"} size={16} className="flex-shrink-0" />
+                    </span>
+                  </button>
+                  {expandedPhotographer === "maria" && (
+                    <div className="text-muted-foreground text-sm sm:text-base pt-2 border-t animate-fade-in">
+                      <p className="mb-2">
+                        Моя специализация — это искренние, живые фотографии, которые передают настоящие эмоции и атмосферу момента.
+                      </p>
+                      <p>
+                        Работаю в Новосибирске. Провожу семейные, свадебные и портретные фотосессии. Создаю комфортную атмосферу, чтобы вы чувствовали себя естественно.
+                      </p>
+                    </div>
+                  )}
+                </div>
+                <Button 
+                  className="w-full mt-4" 
+                  variant="secondary"
+                  onClick={() => {
+                    setContactPhotographer("maria");
+                    scrollToSection("booking");
+                  }}
+                >
+                  Записаться
+                </Button>
               </CardContent>
             </Card>
           </div>
@@ -697,17 +763,17 @@ const Index = () => {
               </CardHeader>
               <CardContent className="space-y-6 pt-6">
                 <div className="space-y-3">
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center gap-2">
                     <span>Мини (30 минут, 7 обработанных фото)</span>
-                    <span className="font-bold text-sm">2 500 ₽</span>
+                    <span className="font-bold text-sm whitespace-nowrap">2 500 ₽</span>
                   </div>
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center gap-2">
                     <span>Стандарт (1 час, 15 обработанных фото)</span>
-                    <span className="font-bold text-sm">4 000 ₽</span>
+                    <span className="font-bold text-sm whitespace-nowrap">4 000 ₽</span>
                   </div>
-                  <div className="flex justify-between items-center">
+                  <div className="flex justify-between items-center gap-2">
                     <span>Премиум (2 часа, 30 обработанных фото)</span>
-                    <span className="font-bold text-sm">7 500 ₽</span>
+                    <span className="font-bold text-sm whitespace-nowrap">7 500 ₽</span>
                   </div>
                 </div>
                 <div className="pt-4 border-t space-y-2">
@@ -1035,7 +1101,10 @@ const Index = () => {
                           : "outline"
                       }
                       className="h-auto p-4 flex-col items-start gap-2"
-                      onClick={() => setSelectedPhotographer("alexandra")}
+                      onClick={() => {
+                        setSelectedPhotographer("alexandra");
+                        setSelectedPackage("");
+                      }}
                     >
                       <div className="flex items-center gap-2">
                         <Icon name="Sparkles" size={20} />
@@ -1051,7 +1120,10 @@ const Index = () => {
                         selectedPhotographer === "maria" ? "default" : "outline"
                       }
                       className="h-auto p-4 flex-col items-start gap-2"
-                      onClick={() => setSelectedPhotographer("maria")}
+                      onClick={() => {
+                        setSelectedPhotographer("maria");
+                        setSelectedPackage("");
+                      }}
                     >
                       <div className="flex items-center gap-2">
                         <Icon name="Camera" size={20} />
@@ -1061,6 +1133,74 @@ const Index = () => {
                     </Button>
                   </div>
                 </div>
+
+                {selectedPhotographer && (
+                  <div className="space-y-2">
+                    <label className="text-sm font-semibold">Выберите тариф</label>
+                    {selectedPhotographer === "alexandra" && (
+                      <div className="space-y-2">
+                        <Button
+                          type="button"
+                          variant={selectedPackage === "trial" ? "default" : "outline"}
+                          className="w-full justify-between h-auto p-3"
+                          onClick={() => setSelectedPackage("trial")}
+                        >
+                          <span className="text-left text-xs sm:text-sm">Пробный пакет (3 фото, 1 образ)</span>
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">1 000 ₽</span>
+                        </Button>
+                        <Button
+                          type="button"
+                          variant={selectedPackage === "standard" ? "default" : "outline"}
+                          className="w-full justify-between h-auto p-3"
+                          onClick={() => setSelectedPackage("standard")}
+                        >
+                          <span className="text-left text-xs sm:text-sm">Стандарт (10 фото, 2-3 образа)</span>
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">2 500 ₽</span>
+                        </Button>
+                        <Button
+                          type="button"
+                          variant={selectedPackage === "premium" ? "default" : "outline"}
+                          className="w-full justify-between h-auto p-3"
+                          onClick={() => setSelectedPackage("premium")}
+                        >
+                          <span className="text-left text-xs sm:text-sm">Премиум (20 фото, 5 образов)</span>
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">3 500 ₽</span>
+                        </Button>
+                      </div>
+                    )}
+                    {selectedPhotographer === "maria" && (
+                      <div className="space-y-2">
+                        <Button
+                          type="button"
+                          variant={selectedPackage === "mini" ? "default" : "outline"}
+                          className="w-full justify-between h-auto p-3"
+                          onClick={() => setSelectedPackage("mini")}
+                        >
+                          <span className="text-left text-xs sm:text-sm">Мини (30 минут, 7 обработанных фото)</span>
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">2 500 ₽</span>
+                        </Button>
+                        <Button
+                          type="button"
+                          variant={selectedPackage === "standard" ? "default" : "outline"}
+                          className="w-full justify-between h-auto p-3"
+                          onClick={() => setSelectedPackage("standard")}
+                        >
+                          <span className="text-left text-xs sm:text-sm">Стандарт (1 час, 15 обработанных фото)</span>
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">4 000 ₽</span>
+                        </Button>
+                        <Button
+                          type="button"
+                          variant={selectedPackage === "premium" ? "default" : "outline"}
+                          className="w-full justify-between h-auto p-3"
+                          onClick={() => setSelectedPackage("premium")}
+                        >
+                          <span className="text-left text-xs sm:text-sm">Премиум (2 часа, 30 обработанных фото)</span>
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">7 500 ₽</span>
+                        </Button>
+                      </div>
+                    )}
+                  </div>
+                )}
 
                 {selectedPhotographer === "maria" && (
                   <>

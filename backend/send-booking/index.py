@@ -51,13 +51,12 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
                 'body': json.dumps({'error': 'Missing required fields'})
             }
         
-        bot_token = os.environ.get('TELEGRAM_BOT_TOKEN')
+        bot_token = os.environ.get('LIVEAIPHOTO_BOT')
+        chat_id = os.environ.get('TELEGRAM_CHAT_ID')
         
         if photographer == 'maria':
-            chat_id = os.environ.get('TELEGRAM_MARIA_CHAT_ID')
             photographer_name = 'Марии'
         elif photographer == 'alexandra':
-            chat_id = os.environ.get('TELEGRAM_ALEXANDRA_CHAT_ID')
             photographer_name = 'Александры'
         else:
             return {
