@@ -403,12 +403,12 @@ const Index = () => {
             </p>
           </div>
 
-          <Tabs defaultValue="alexandra" className="max-w-8xl mx-auto">
-            <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8 sm:mb-12">
-              <TabsTrigger value="alexandra" className="text-xs s:text-s">
+          <Tabs defaultValue="alexandra" className="max-w-6xl mx-auto">
+            <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8 sm:mb-10">
+              <TabsTrigger value="alexandra" className="text-xs sm:text-sm">
                 Александра (AI-фото)
               </TabsTrigger>
-              <TabsTrigger value="maria" className="text-xs s:text-s">
+              <TabsTrigger value="maria" className="text-xs sm:text-sm">
                 Мария (Классика)
               </TabsTrigger>
             </TabsList>
