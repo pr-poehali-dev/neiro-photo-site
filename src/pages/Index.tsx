@@ -1144,7 +1144,7 @@ const Index = () => {
             </p>
             <Link
               to="/privacy"
-              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+              className="text-xs text-muted-foreground hover:text-primary transition-colors"
             >
               Политика конфиденциальности
             </Link>
