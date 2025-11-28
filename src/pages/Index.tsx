@@ -1040,7 +1040,7 @@ const Index = () => {
                       onClick={() => setSelectedPhotographer("alexandra")}
                     >
                       <div className="flex items-center gap-2">
-                        <Icon name="Sparkles" size={20} />
+                        <Icon name="Sparkles" size={10} />
                         <span className="font-bold">Александра</span>
                       </div>
                       <span className="text-xs">Нейрофото</span>
