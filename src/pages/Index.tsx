@@ -749,7 +749,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card className="border-2 border-purple-200">
               <CardHeader>
-                <CardTitle className="text-sm flex items-center gap-2">
+                <CardTitle className="text-base flex items-center gap-2">
                   <Icon name="CreditCard" className="text-primary" />
                   Способы оплаты
                 </CardTitle>
