@@ -446,19 +446,18 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                         expandedPhotographer === "maria" ? null : "maria",
                       )
                     }
-                    className="text-muted-foreground text-sm sm:text-base text-left w-full"
+                    className="text-muted-foreground text-sm sm:text-base text-left w-full flex items-center gap-2"
                   >
-                    <span className="flex items-center gap-2">
-                      <Icon
-                        name={
-                          expandedPhotographer === "maria"
-                            ? "ChevronUp"
-                            : "ChevronDown"
-                        }
-                        size={16}
-                        className="flex-shrink-0"
-                      />
-                    </span>
+                    <Icon
+                      name={
+                        expandedPhotographer === "maria"
+                          ? "ChevronUp"
+                          : "ChevronDown"
+                      }
+                      size={16}
+                      className="flex-shrink-0"
+                    />
+                    <span>Подробнее</span>
                   </button>
                   {expandedPhotographer === "maria" && (
                     <div className="text-muted-foreground text-sm sm:text-base pt-2 border-t animate-fade-in">
