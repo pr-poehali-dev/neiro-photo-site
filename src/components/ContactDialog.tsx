@@ -38,7 +38,7 @@ export const ContactDialog = ({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-2xl text-left">
+          <DialogTitle className="text-xl text-left">
             Связаться с {contact.name}
           </DialogTitle>
           <DialogDescription className="text-center">
