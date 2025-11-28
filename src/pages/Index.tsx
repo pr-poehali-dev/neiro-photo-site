@@ -850,7 +850,7 @@ const Index = () => {
               <CardContent>
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="ai-1">
-                    <AccordionTrigger>
+                    <AccordionTrigger className="text-left">
                       Как работает AI-фотография?
                     </AccordionTrigger>
                     <AccordionContent>
@@ -860,7 +860,7 @@ const Index = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="ai-2">
-                    <AccordionTrigger>
+                    <AccordionTrigger className="text-left">
                       Какие фото нужны для AI-обработки?
                     </AccordionTrigger>
                     <AccordionContent>
@@ -870,7 +870,7 @@ const Index = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="ai-3">
-                    <AccordionTrigger>
+                    <AccordionTrigger className="text-left">
                       Сколько времени занимает обработка?
                     </AccordionTrigger>
                     <AccordionContent>
@@ -879,7 +879,7 @@ const Index = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="ai-4">
-                    <AccordionTrigger>
+                    <AccordionTrigger className="text-left">
                       Можно ли выбрать стиль обработки?
                     </AccordionTrigger>
                     <AccordionContent>
@@ -901,7 +901,7 @@ const Index = () => {
               <CardContent>
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="real-1">
-                    <AccordionTrigger>
+                    <AccordionTrigger className="text-left">
                       Где проходит фотосъемка?
                     </AccordionTrigger>
                     <AccordionContent>
@@ -910,7 +910,7 @@ const Index = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="real-2">
-                    <AccordionTrigger>
+                    <AccordionTrigger className="text-left">
                       Сколько времени длится съемка?
                     </AccordionTrigger>
                     <AccordionContent>
@@ -920,7 +920,7 @@ const Index = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="real-3">
-                    <AccordionTrigger>
+                    <AccordionTrigger className="text-left">
                       Когда я получу готовые фото?
                     </AccordionTrigger>
                     <AccordionContent>
@@ -929,7 +929,7 @@ const Index = () => {
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="real-4">
-                    <AccordionTrigger>
+                    <AccordionTrigger className="text-left">
                       Нужно ли готовиться к съемке?
                     </AccordionTrigger>
                     <AccordionContent>
