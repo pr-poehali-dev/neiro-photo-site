@@ -343,9 +343,9 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto">
             <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in">
-              <div className="h-64 sm:h-80 md:h-96 bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden">
+              <div className="h-64 sm:h-80 md:h-40 bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden">
                 <img
                   src="https://cdn.poehali.dev/files/fe75699e-c452-4a3d-afb5-7477e525d402.JPG"
                   alt="Александра"
