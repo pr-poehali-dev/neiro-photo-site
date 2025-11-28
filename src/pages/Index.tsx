@@ -405,10 +405,10 @@ const Index = () => {
 
           <Tabs defaultValue="alexandra" className="max-w-6xl mx-auto">
             <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8 sm:mb-12">
-              <TabsTrigger value="alexandra" className="text-xs sm:text-s">
+              <TabsTrigger value="alexandra" className="text-xxs s:text-s">
                 Александра (AI-фото)
               </TabsTrigger>
-              <TabsTrigger value="maria" className="text-xs sm:text-s">
+              <TabsTrigger value="maria" className="text-xxs s:text-s">
                 Мария (Классика)
               </TabsTrigger>
             </TabsList>
