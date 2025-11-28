@@ -813,9 +813,9 @@ const Index = () => {
               <CardTitle className="text-center">Условия оплаты</CardTitle>
             </CardHeader>
             <CardContent className="text-center space-y-2">
-              <p className="text-lg">
+              <p className="font-bold text-base">
                 Предоплата{" "}
-                <span className="font-bold text-2xl text-primary">30%</span>
+                <span className="font-bold text-lg text-primary">30%</span>
               </p>
               <p className="text-sm text-gray-600">
                 При отмене съёмки менее чем за 24 часа предоплата не
