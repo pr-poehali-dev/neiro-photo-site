@@ -737,7 +737,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="payment" className="py-20 px-6 bg-white/50">
+      <section id="payment" className="py-10 px-6 bg-white/50">
         <div className="container mx-auto max-w-4xl">
           <h2 className="md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent text-2xl">
             Оплата
