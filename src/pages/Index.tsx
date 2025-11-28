@@ -834,7 +834,7 @@ const Index = () => {
             <h2 className="md:text-5xl font-bold mb-4 text-2xl">
               Часто задаваемые вопросы
             </h2>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-muted-foreground text-xl">
               Ответы на популярные вопросы
             </p>
           </div>
@@ -894,7 +894,7 @@ const Index = () => {
 
             <Card className="border-2 border-purple-200">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-lg">
+                <CardTitle className="flex items-center gap-2 text-xl">
                   <Icon name="Camera" className="text-secondary" />
                   Классическая фотосъемка
                 </CardTitle>
