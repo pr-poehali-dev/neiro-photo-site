@@ -246,7 +246,7 @@ const Index = () => {
       >
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle className="text-lg text-center">
+            <DialogTitle className="text-xl text-left">
               С кем хотите связаться?
             </DialogTitle>
             <DialogDescription className="text-center">
