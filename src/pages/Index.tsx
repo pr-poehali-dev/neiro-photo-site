@@ -245,31 +245,45 @@ const Index = () => {
         onOpenChange={setShowPhotographerChoice}
       >
         <DialogContent className="sm:max-w-md">
-  <DialogHeader>
-    <div className="flex items-center justify-between">
-      <div>
-        <DialogTitle className="text-xl text-center">
-          С кем хотите связаться?
-        </DialogTitle>
-        <DialogDescription className="text-center">
-          Выберите фотографа
-        </DialogDescription>
-      </div>
-      <Button
-        variant="ghost"
-        size="sm"
-        className="h-8 w-8 p-0"
-        onClick={() => {/* закрыть диалог */}}
-      >
-        <Icon name="X" size={20} />
-      </Button>
-    </div>
-  </DialogHeader>
-  {/* остальной контент без изменений */}
-  <div className="grid gap-4">
-    {/* кнопки фотографов */}
-  </div>
-</DialogContent>
+          <DialogHeader>
+            <DialogTitle className="text-lg text-center">
+              С кем хотите связаться?
+            </DialogTitle>
+            <DialogDescription className="text-center">
+              Выберите фотографа
+            </DialogDescription>
+          </DialogHeader>
+          <div className="grid gap-4">
+            <Button
+              onClick={() => handlePhotographerSelect("alexandra")}
+              className="h-auto p-6 flex-col items-start gap-2"
+              variant="outline"
+            >
+              <div className="flex items-center gap-2">
+                <Icon name="Sparkles" size={24} />
+                <span className="text-lg font-bold">Александра</span>
+              </div>
+              <span className="text-sm text-muted-foreground">
+                AI-фотография (онлайн)
+              </span>
+            </Button>
+            <Button
+              onClick={() => handlePhotographerSelect("maria")}
+              className="h-auto p-6 flex-col items-start gap-2"
+              variant="outline"
+            >
+              <div className="flex items-center gap-2">
+                <Icon name="Camera" size={24} />
+                <span className="text-lg font-bold">Мария</span>
+              </div>
+              <span className="text-sm text-muted-foreground">
+                Классическая съемка (Новосибирск)
+              </span>
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
         <div className="container mx-auto px-3 py-3 flex justify-between items-center">
           <div>
@@ -413,59 +427,64 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
               </CardContent>
             </Card>
             <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in [animation-delay:150ms]">
-  <div className="h-32 sm:h-40 md:h-96 bg-gradient-to-br from-secondary/20 to-primary/20 relative overflow-hidden">
-    <img
-      src="https://cdn.poehali.dev/files/7cd5fbec-41bf-456d-98de-1c14f91b5e42.jpg"
-      alt="Мария"
-      className="w-full h-full object-cover opacity-90"
-    />
-  </div>
-  <CardContent className="p-4 sm:p-6">
-    <h3 className="sm:text-2xl font-bold mb-2 text-base">Мария</h3>
-    <p className="text-secondary font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
-      Классический фотограф (г. Новосибирск)
-    </p>
-    <div className="space-y-2">
-      <button
-        onClick={() =>
-          setExpandedPhotographer(
-            expandedPhotographer === "maria" ? null : "maria",
-          )
-        }
-        className="text-muted-foreground text-sm sm:text-base text-left w-full flex items-center gap-2"
-      >
-        <Icon
-          name={
-            expandedPhotographer === "maria" ? "ChevronUp" : "ChevronDown"
-          }
-          size={16}
-          className="flex-shrink-0"
-        />
-        <span>Подробнее</span>
-      </button>
-      {expandedPhotographer === "maria" && (
-        <div className="text-muted-foreground text-sm sm:text-base pt-2 border-t animate-fade-in">
-          <p className="mb-2">
-            Моя специализация — это искренние, живые фотографии, которые передают настоящие эмоции и атмосферу момента.
-          </p>
-          <p>
-            Работаю в Новосибирске. Провожу семейные, свадебные и портретные фотосессии. Создаю комфортную атмосферу, чтобы вы чувствовали себя естественно.
-          </p>
-        </div>
-      )}
-    </div>
-    <Button
-      className="w-full mt-4"
-      variant="secondary"
-      onClick={() => {
-        setContactPhotographer("maria");
-        scrollToSection("booking");
-      }}
-    >
-      Записаться
-    </Button>
-  </CardContent>
-</Card>
+              <div className="h-32 sm:h-40 md:h-96 bg-gradient-to-br from-secondary/20 to-primary/20 relative overflow-hidden">
+                <img
+                  src="https://cdn.poehali.dev/files/7cd5fbec-41bf-456d-98de-1c14f91b5e42.jpg"
+                  alt="Мария"
+                  className="w-full h-full object-cover opacity-90"
+                />
+              </div>
+              <CardContent className="p-4 sm:p-6">
+                <h3 className="sm:text-2xl font-bold mb-2 text-base">Мария</h3>
+                <p className="text-secondary font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
+                  Классический фотограф (г. Новосибирск)
+                </p>
+                <div className="space-y-2">
+                  <button
+                    onClick={() =>
+                      setExpandedPhotographer(
+                        expandedPhotographer === "maria" ? null : "maria",
+                      )
+                    }
+                    className="text-muted-foreground text-sm sm:text-base text-left w-full flex items-center gap-2"
+                  >
+                    <Icon
+                      name={
+                        expandedPhotographer === "maria"
+                          ? "ChevronUp"
+                          : "ChevronDown"
+                      }
+                      size={16}
+                      className="flex-shrink-0"
+                    />
+                    <span>Подробнее</span>
+                  </button>
+                  {expandedPhotographer === "maria" && (
+                    <div className="text-muted-foreground text-sm sm:text-base pt-2 border-t animate-fade-in">
+                      <p className="mb-2">
+                        Моя специализация — это искренние, живые фотографии,
+                        которые передают настоящие эмоции и атмосферу момента.
+                      </p>
+                      <p>
+                        Работаю в Новосибирске. Провожу семейные, свадебные и
+                        портретные фотосессии. Создаю комфортную атмосферу,
+                        чтобы вы чувствовали себя естественно.
+                      </p>
+                    </div>
+                  )}
+                </div>
+                <Button
+                  className="w-full mt-4"
+                  variant="secondary"
+                  onClick={() => {
+                    setContactPhotographer("maria");
+                    scrollToSection("booking");
+                  }}
+                >
+                  Записаться
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
