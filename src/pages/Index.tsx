@@ -1139,7 +1139,7 @@ const Index = () => {
 
       <footer className="py-8 px-4 bg-muted/50 border-t">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center space-y-4">
+          <div className="text-center space-y-4 text=[15px]">
             <p className="font-semibold">
               Два взгляда на фотографию — выберите свой стиль
             </p>
