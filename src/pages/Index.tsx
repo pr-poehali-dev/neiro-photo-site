@@ -749,7 +749,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card className="border-2 border-purple-200">
               <CardHeader>
-                <CardTitle className="text-base flex items-center gap-2">
+                <CardTitle className="text-lg flex items-center gap-2">
                   <Icon name="CreditCard" className="text-primary" />
                   Способы оплаты
                 </CardTitle>
@@ -776,7 +776,7 @@ const Index = () => {
 
             <Card className="border-2 border-purple-200">
               <CardHeader>
-                <CardTitle className="text-base flex items-center gap-2">
+                <CardTitle className="text-lg flex items-center gap-2">
                   <Icon name="Shield" className="text-green-500" />
                   Гарантии
                 </CardTitle>
@@ -790,7 +790,7 @@ const Index = () => {
                   />
                   <div>
                     <div className="font-semibold mb-1">Возврат средств</div>
-                    <div className="text-base text-gray-600">
+                    <div className="text-xs text-gray-600">
                       Возможность вернуть предоплату в течение 14 дней
                     </div>
                   </div>
