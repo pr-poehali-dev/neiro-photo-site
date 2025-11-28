@@ -387,22 +387,18 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           : "alexandra",
                       )
                     }
-                    className="text-muted-foreground text-sm sm:text-base text-left w-full"
+                    className="text-muted-foreground text-sm sm:text-base text-left w-full flex items-center gap-2"
                   >
-                    <span className="flex items-center gap-2">
-                      <Icon
-                        name={
-                          expandedPhotographer === "alexandra"
-                          <p className="mb-2">
-                        Подробнее
-                      </p>
-                            ? "ChevronUp"
-                            : "ChevronDown"
-                        }
-                        size={16}
-                        className="flex-shrink-0"
-                      />
-                    </span>
+                    <Icon
+                      name={
+                        expandedPhotographer === "alexandra"
+                          ? "ChevronUp"
+                          : "ChevronDown"
+                      }
+                      size={16}
+                      className="flex-shrink-0"
+                    />
+                    <span>Подробнее</span>
                   </button>
                   {expandedPhotographer === "alexandra" && (
                     <div className="text-muted-foreground text-sm sm:text-base pt-2 border-t animate-fade-in">
@@ -430,7 +426,6 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                 </Button>
               </CardContent>
             </Card>
-
             <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in [animation-delay:150ms]">
               <div className="h-32 sm:h-40 md:h-96 bg-gradient-to-br from-secondary/20 to-primary/20 relative overflow-hidden">
                 <img
@@ -457,9 +452,6 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                       <Icon
                         name={
                           expandedPhotographer === "maria"
-                          <p className="mb-2">
-                        Подробнее
-                      </p>
                             ? "ChevronUp"
                             : "ChevronDown"
                         }
