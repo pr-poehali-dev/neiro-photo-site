@@ -987,7 +987,7 @@ const Index = () => {
         id="booking"
         className="py-20 px-6 bg-gradient-to-br from-purple-50 to-white"
       >
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-6xl">
           <h2 className="md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent text-2xl">
             Записаться на съёмку
           </h2>
@@ -995,7 +995,7 @@ const Index = () => {
             Заполните форму, и мы свяжемся с вами в ближайшее время
           </p>
 
-          <Card className="border-2 border-purple-200">
+          <Card className="border-2 border-purple-600">
             <CardContent className="p-6">
               <form onSubmit={handleSubmitBooking} className="space-y-4">
                 <div className="space-y-2">
