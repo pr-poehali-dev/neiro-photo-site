@@ -834,7 +834,7 @@ const Index = () => {
             <h2 className="md:text-5xl font-bold mb-4 text-2xl">
               Часто задаваемые вопросы
             </h2>
-            <p className="text-muted-foreground text-xl">
+            <p className="text-muted-foreground text-lg">
               Ответы на популярные вопросы
             </p>
           </div>
@@ -842,7 +842,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="border-2 border-purple-200">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-lg">
+                <CardTitle className="flex items-center gap-2 text-xl">
                   <Icon name="Sparkles" className="text-primary" />
                   AI-фотография
                 </CardTitle>
@@ -891,7 +891,6 @@ const Index = () => {
                 </Accordion>
               </CardContent>
             </Card>
-
             <Card className="border-2 border-purple-200">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-xl">
@@ -945,7 +944,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
       <section id="reviews" className="py-20 px-4 bg-white/50">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
