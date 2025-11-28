@@ -843,7 +843,7 @@ const Index = () => {
             <Card className="border-2 border-purple-200">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Icon name="Sparkles" className="text-primary text-xs" />
+                  <Icon name="Sparkles" className="text-primary" />
                   AI-фотография
                 </CardTitle>
               </CardHeader>
@@ -895,7 +895,7 @@ const Index = () => {
             <Card className="border-2 border-purple-200">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Icon name="Camera" className="text-secondary text-xs" />
+                  <Icon name="Camera" className="text-secondary" />
                   Классическая фотосъемка
                 </CardTitle>
               </CardHeader>
