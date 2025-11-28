@@ -1,4 +1,10 @@
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 
@@ -8,7 +14,11 @@ interface ContactDialogProps {
   photographer: "alexandra" | "maria";
 }
 
-export const ContactDialog = ({ open, onOpenChange, photographer }: ContactDialogProps) => {
+export const ContactDialog = ({
+  open,
+  onOpenChange,
+  photographer,
+}: ContactDialogProps) => {
   const contacts = {
     alexandra: {
       name: "Александрой",
@@ -17,7 +27,7 @@ export const ContactDialog = ({ open, onOpenChange, photographer }: ContactDialo
     },
     maria: {
       name: "Марией",
-      telegram: "https://t.me/+79139083148",
+      telegram: "https://t.me/EkaterinaMikhailovnaM",
       whatsapp: "https://wa.me/79231234567",
     },
   };
@@ -28,7 +38,9 @@ export const ContactDialog = ({ open, onOpenChange, photographer }: ContactDialo
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-2xl text-center">Связаться с {contact.name}</DialogTitle>
+          <DialogTitle className="text-2xl text-center">
+            Связаться с {contact.name}
+          </DialogTitle>
           <DialogDescription className="text-center">
             Выберите удобный способ связи
           </DialogDescription>
@@ -47,7 +59,7 @@ export const ContactDialog = ({ open, onOpenChange, photographer }: ContactDialo
             </div>
             <Icon name="ExternalLink" size={16} />
           </a>
-          
+
           <a
             href={contact.whatsapp}
             target="_blank"
