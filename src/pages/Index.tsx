@@ -393,6 +393,9 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                       <Icon
                         name={
                           expandedPhotographer === "alexandra"
+                          <p className="mb-2">
+                        Подробнее
+                      </p>
                             ? "ChevronUp"
                             : "ChevronDown"
                         }
@@ -454,6 +457,9 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                       <Icon
                         name={
                           expandedPhotographer === "maria"
+                          <p className="mb-2">
+                        Подробнее
+                      </p>
                             ? "ChevronUp"
                             : "ChevronDown"
                         }
