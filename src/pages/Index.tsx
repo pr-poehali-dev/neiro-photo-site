@@ -259,17 +259,17 @@ const Index = () => {
         variant="ghost"
         size="sm"
         className="h-8 w-8 p-0"
-        onClick={() => }
+        onClick={() => {/* закрыть диалог */}}
       >
         <Icon name="X" size={20} />
       </Button>
     </div>
   </DialogHeader>
+  {/* остальной контент без изменений */}
   <div className="grid gap-4">
+    {/* кнопки фотографов */}
   </div>
 </DialogContent>
-
-
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
         <div className="container mx-auto px-3 py-3 flex justify-between items-center">
           <div>
