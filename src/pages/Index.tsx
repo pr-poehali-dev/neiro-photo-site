@@ -810,7 +810,9 @@ const Index = () => {
 
           <Card className="bg-gradient-to-r from-purple-50 to-white border-2 border-purple-200">
             <CardHeader>
-              <CardTitle className="text-center">Условия оплаты</CardTitle>
+              <CardTitle className="text-center">
+                Условия оплаты классической фотосъёмки
+              </CardTitle>
             </CardHeader>
             <CardContent className="text-center space-y-2">
               <p className="font-bold text-base">
