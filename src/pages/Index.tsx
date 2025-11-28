@@ -390,8 +390,6 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     className="text-muted-foreground text-sm sm:text-base text-left w-full"
                   >
                     <span className="flex items-center gap-2">
-                      Превращаю исходные портреты в уникальные арт-объекты с
-                      помощью искусственного интеллекта.
                       <Icon
                         name={
                           expandedPhotographer === "alexandra"
@@ -453,8 +451,6 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     className="text-muted-foreground text-sm sm:text-base text-left w-full"
                   >
                     <span className="flex items-center gap-2">
-                      Специализируюсь на Lifestyle стиле. Ловлю искренние эмоции
-                      и важные моменты.
                       <Icon
                         name={
                           expandedPhotographer === "maria"
