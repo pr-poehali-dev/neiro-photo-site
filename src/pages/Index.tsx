@@ -343,9 +343,9 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto md:grid-cols-2">
             <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in">
-              <div className="bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden custom-mobile-height md:h-96">
+              <div className="h-64 sm:h-80 md:h-96 bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden">
                 <img
                   src="https://cdn.poehali.dev/files/fe75699e-c452-4a3d-afb5-7477e525d402.JPG"
                   alt="Александра"
@@ -367,7 +367,7 @@ const Index = () => {
             </Card>
 
             <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in [animation-delay:150ms]">
-              <div className="bg-gradient-to-br from-secondary/20 to-primary/20 relative overflow-hidden custom-mobile-height md:h-96">
+              <div className="h-64 sm:h-80 md:h-96 bg-gradient-to-br from-secondary/20 to-primary/20 relative overflow-hidden">
                 <img
                   src="https://cdn.poehali.dev/files/7cd5fbec-41bf-456d-98de-1c14f91b5e42.jpg"
                   alt="Мария"
