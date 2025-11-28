@@ -359,18 +359,10 @@ const Index = () => {
                 <p className="font-semibold mb-2 sm:mb-3 text-[#7f68ac] text-sm sm:text-base">
                   AI-фотограф (онлайн из любой точки)
                 </p>
-                <div className="space-y-2">
-                  <p className="text-muted-foreground text-sm sm:text-base line-clamp-2 cursor-pointer transition-all duration-200 hover:text-foreground group">
-                    Превращаю исходные портреты в уникальные арт-объекты с
-                    помощью искусственного интеллекта.
-                    <ChevronDown className="h-4 w-4 inline ml-1 group-hover:rotate-180 transition-transform duration-200" />
-                  </p>
-                  <div className="text-muted-foreground text-sm sm:text-base max-h-0 overflow-hidden transition-all duration-300 ease-in-out group-hover:max-h-20">
-                    Работаю с нейросетями для создания уникальных стилизованных
-                    портретов. Подхожу для тех, кто хочет современный арт из
-                    своих фото без фотосессии.
-                  </div>
-                </div>
+                <p className="text-muted-foreground text-sm sm:text-base">
+                  Превращаю исходные портреты в уникальные арт-объекты с помощью
+                  искусственного интеллекта.
+                </p>
               </CardContent>
             </Card>
 
@@ -387,18 +379,10 @@ const Index = () => {
                 <p className="text-secondary font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
                   Классический фотограф (г.Новосибирск)
                 </p>
-                <div className="space-y-2">
-                  <p className="text-muted-foreground text-sm sm:text-base line-clamp-2 cursor-pointer transition-all duration-200 hover:text-foreground group">
-                    Специализируюсь на Lifestyle стиле. Ловлю искренние эмоции и
-                    важные моменты.
-                    <ChevronDown className="h-4 w-4 inline ml-1 group-hover:rotate-180 transition-transform duration-200" />
-                  </p>
-                  <div className="text-muted-foreground text-sm sm:text-base max-h-0 overflow-hidden transition-all duration-300 ease-in-out group-hover:max-h-20">
-                    Фотосессии на природе и в городе. Семейные, любовные
-                    истории, портреты. Создаю теплые, живые кадры, которые
-                    передают настоящие чувства.
-                  </div>
-                </div>
+                <p className="text-muted-foreground text-sm sm:text-base">
+                  Специализируюсь на Lifestyle стиле. Ловлю искренние эмоции и
+                  важные моменты.
+                </p>
               </CardContent>
             </Card>
           </div>
