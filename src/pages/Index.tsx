@@ -1041,9 +1041,9 @@ const Index = () => {
                     >
                       <div className="flex items-center gap-2">
                         <Icon name="Sparkles" size={20} />
-                        <span className="font-bold text-xs">Александра</span>
+                        <span className="font-bold text-xss">Александра</span>
                       </div>
-                      <span className="text-xss">Нейрофото</span>
+                      <span className="text-xs">Нейрофото</span>
                     </Button>
                     <Button
                       type="button"
@@ -1055,9 +1055,9 @@ const Index = () => {
                     >
                       <div className="flex items-center gap-2">
                         <Icon name="Camera" size={20} />
-                        <span className="font-bold text-xs">Мария</span>
+                        <span className="font-bold text-xss">Мария</span>
                       </div>
-                      <span className="text-xss">Классика</span>
+                      <span className="text-xs">Классика</span>
                     </Button>
                   </div>
                 </div>
