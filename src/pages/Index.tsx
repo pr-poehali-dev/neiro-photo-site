@@ -687,7 +687,7 @@ const Index = () => {
               <CardHeader className="bg-gradient-to-r from-purple-50 to-white">
                 <div className="flex items-center gap-3 mb-2">
                   <Icon name="Camera" size={32} className="text-secondary" />
-                  <CardTitle className="text-3xl">
+                  <CardTitle className="text-xl sm:text-2xl md:text-3xl">
                     Классическая съёмка
                   </CardTitle>
                 </div>
