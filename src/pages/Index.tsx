@@ -262,7 +262,7 @@ const Index = () => {
                 <span className="text-xl font-bold">Мария</span>
               </div>
               <span className="text-sm text-muted-foreground">
-                Классическая съёмка (Новосибирск)
+                Классическая съемка (Новосибирск)
               </span>
             </Button>
           </div>
@@ -313,7 +313,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h2 className="sm:text-3xl md:text-5xl mb-4 sm:mb-6 leading-tight font-bold text-xl">
-              Искусство фотосъёмки: от классики до нейросетей
+              Искусство фотосъемки: от классики до нейросетей
             </h2>
             <h3 className="sm:text-lg md:text-2xl mb-4 sm:mb-6 leading-tight font-bold text-xs">
               Выберите свой путь к совершенным снимкам: нейрофотография с
@@ -462,11 +462,11 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="sm:text-3xl md:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent text-xl">
-              Сравнение форматов съёмки
+              Сравнение форматов съемки
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-2">
               Выберите то, что вам ближе: быстрые и креативные AI-снимки или
-              классическую съёмку с живым общением
+              классическую съемку с живым общением
             </p>
           </div>
 
@@ -542,7 +542,7 @@ const Index = () => {
                   className="text-secondary sm:w-7 sm:h-7"
                 />
                 <h3 className="sm:text-2xl font-bold text-base">
-                  Классическая съёмка
+                  Классическая съемка
                 </h3>
               </div>
               <div className="space-y-3 sm:space-y-4">
