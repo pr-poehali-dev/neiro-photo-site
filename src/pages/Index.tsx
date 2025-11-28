@@ -18,7 +18,13 @@ import SubscriptionDialog from "@/components/SubscriptionDialog";
 import QuizDialog from "@/components/QuizDialog";
 import ContactDialog from "@/components/ContactDialog";
 import { Calendar } from "@/components/ui/calendar";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import {
   Select,
   SelectContent,
@@ -218,11 +224,16 @@ const Index = () => {
         onOpenChange={setContactDialogOpen}
         photographer={contactPhotographer}
       />
-      
-      <Dialog open={showPhotographerChoice} onOpenChange={setShowPhotographerChoice}>
+
+      <Dialog
+        open={showPhotographerChoice}
+        onOpenChange={setShowPhotographerChoice}
+      >
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle className="text-2xl text-center">С кем хотите связаться?</DialogTitle>
+            <DialogTitle className="text-2xl text-center">
+              С кем хотите связаться?
+            </DialogTitle>
             <DialogDescription className="text-center">
               Выберите фотографа
             </DialogDescription>
@@ -237,7 +248,9 @@ const Index = () => {
                 <Icon name="Sparkles" size={24} />
                 <span className="text-xl font-bold">Александра</span>
               </div>
-              <span className="text-sm text-muted-foreground">AI-фотография (онлайн)</span>
+              <span className="text-sm text-muted-foreground">
+                AI-фотография (онлайн)
+              </span>
             </Button>
             <Button
               onClick={() => handlePhotographerSelect("maria")}
@@ -248,7 +261,9 @@ const Index = () => {
                 <Icon name="Camera" size={24} />
                 <span className="text-xl font-bold">Мария</span>
               </div>
-              <span className="text-sm text-muted-foreground">Классическая съёмка (Новосибирск)</span>
+              <span className="text-sm text-muted-foreground">
+                Классическая съёмка (Новосибирск)
+              </span>
             </Button>
           </div>
         </DialogContent>
@@ -283,7 +298,12 @@ const Index = () => {
               ),
             )}
           </div>
-          <Button variant="default" size="sm" onClick={handleContactClick} className="text-xs sm:text-sm px-3 sm:px-4">
+          <Button
+            variant="default"
+            size="sm"
+            onClick={handleContactClick}
+            className="text-xs sm:text-sm px-3 sm:px-4"
+          >
             Связаться
           </Button>
         </div>
@@ -333,7 +353,9 @@ const Index = () => {
                 />
               </div>
               <CardContent className="p-4 sm:p-6">
-                <h3 className="sm:text-2xl font-bold mb-2 text-base">Александра</h3>
+                <h3 className="sm:text-2xl font-bold mb-2 text-base">
+                  Александра
+                </h3>
                 <p className="font-semibold mb-2 sm:mb-3 text-[#7f68ac] text-sm sm:text-base">
                   AI-фотограф (онлайн из любой точки)
                 </p>
@@ -367,17 +389,28 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="portfolio" className="py-12 sm:py-20 px-3 sm:px-4 bg-muted/30">
+      <section
+        id="portfolio"
+        className="py-12 sm:py-20 px-3 sm:px-4 bg-muted/30"
+      >
         <div className="container mx-auto">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="sm:text-3xl md:text-5xl font-bold mb-2 sm:mb-4 text-2xl">Портфолио</h2>
-            <p className="text-muted-foreground text-sm sm:text-lg">Наши работы</p>
+            <h2 className="sm:text-3xl md:text-5xl font-bold mb-2 sm:mb-4 text-2xl">
+              Портфолио
+            </h2>
+            <p className="text-muted-foreground text-sm sm:text-lg">
+              Наши работы
+            </p>
           </div>
 
           <Tabs defaultValue="alexandra" className="max-w-6xl mx-auto">
             <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8 sm:mb-12">
-              <TabsTrigger value="alexandra" className="text-xs sm:text-sm">Александра (AI-фото)</TabsTrigger>
-              <TabsTrigger value="maria" className="text-xs sm:text-sm">Мария (Классика)</TabsTrigger>
+              <TabsTrigger value="alexandra" className="text-xxs sm:text-sm">
+                Александра (AI-фото)
+              </TabsTrigger>
+              <TabsTrigger value="maria" className="text-xxs sm:text-sm">
+                Мария (Классика)
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent
@@ -401,7 +434,10 @@ const Index = () => {
                 ))}
             </TabsContent>
 
-            <TabsContent value="maria" className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+            <TabsContent
+              value="maria"
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6"
+            >
               {portfolioImages
                 .filter((img) => img.photographer === "maria")
                 .map((img, idx) => (
@@ -437,8 +473,14 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
             <div className="space-y-4 sm:space-y-6">
               <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                <Icon name="Sparkles" size={24} className="text-primary sm:w-7 sm:h-7" />
-                <h3 className="sm:text-2xl font-bold text-base">AI-фотография</h3>
+                <Icon
+                  name="Sparkles"
+                  size={24}
+                  className="text-primary sm:w-7 sm:h-7"
+                />
+                <h3 className="sm:text-2xl font-bold text-base">
+                  AI-фотография
+                </h3>
               </div>
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-start gap-2">
@@ -447,7 +489,9 @@ const Index = () => {
                     className="text-green-500 mt-1 flex-shrink-0"
                     size={18}
                   />
-                  <p className="text-sm sm:text-base">Быстрый результат за 1-2 дня</p>
+                  <p className="text-sm sm:text-base">
+                    Быстрый результат за 1-2 дня
+                  </p>
                 </div>
                 <div className="flex items-start gap-2">
                   <Icon
@@ -455,7 +499,9 @@ const Index = () => {
                     className="text-green-500 mt-1 flex-shrink-0"
                     size={18}
                   />
-                  <p className="text-sm sm:text-base">Уникальные, креативные AI-эффекты</p>
+                  <p className="text-sm sm:text-base">
+                    Уникальные, креативные AI-эффекты
+                  </p>
                 </div>
                 <div className="flex items-start gap-2">
                   <Icon
@@ -466,20 +512,38 @@ const Index = () => {
                   <p className="text-sm sm:text-base">Доступная цена</p>
                 </div>
                 <div className="flex items-start gap-2">
-                  <Icon name="X" className="text-red-500 mt-1 flex-shrink-0" size={18} />
-                  <p className="text-sm sm:text-base">Требуется исходное фото хорошего качества</p>
+                  <Icon
+                    name="X"
+                    className="text-red-500 mt-1 flex-shrink-0"
+                    size={18}
+                  />
+                  <p className="text-sm sm:text-base">
+                    Требуется исходное фото хорошего качества
+                  </p>
                 </div>
                 <div className="flex items-start gap-2">
-                  <Icon name="X" className="text-red-500 mt-1 flex-shrink-0" size={18} />
-                  <p className="text-sm sm:text-base">Сходство с оригиналом фото до 85-95%</p>
+                  <Icon
+                    name="X"
+                    className="text-red-500 mt-1 flex-shrink-0"
+                    size={18}
+                  />
+                  <p className="text-sm sm:text-base">
+                    Сходство с оригиналом фото до 85-95%
+                  </p>
                 </div>
               </div>
             </div>
 
             <div className="space-y-4 sm:space-y-6">
               <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                <Icon name="Camera" size={24} className="text-secondary sm:w-7 sm:h-7" />
-                <h3 className="sm:text-2xl font-bold text-base">Классическая съёмка</h3>
+                <Icon
+                  name="Camera"
+                  size={24}
+                  className="text-secondary sm:w-7 sm:h-7"
+                />
+                <h3 className="sm:text-2xl font-bold text-base">
+                  Классическая съёмка
+                </h3>
               </div>
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-start gap-2">
@@ -488,7 +552,9 @@ const Index = () => {
                     className="text-green-500 mt-1 flex-shrink-0"
                     size={18}
                   />
-                  <p className="text-sm sm:text-base">100% естественные фотографии</p>
+                  <p className="text-sm sm:text-base">
+                    100% естественные фотографии
+                  </p>
                 </div>
                 <div className="flex items-start gap-2">
                   <Icon
@@ -496,7 +562,9 @@ const Index = () => {
                     className="text-green-500 mt-1 flex-shrink-0"
                     size={18}
                   />
-                  <p className="text-sm sm:text-base">Реалистичный результат без искажений</p>
+                  <p className="text-sm sm:text-base">
+                    Реалистичный результат без искажений
+                  </p>
                 </div>
                 <div className="flex items-start gap-2">
                   <Icon
@@ -504,15 +572,29 @@ const Index = () => {
                     className="text-green-500 mt-1 flex-shrink-0"
                     size={18}
                   />
-                  <p className="text-sm sm:text-base">Живая атмосфера и уникальность кадров</p>
+                  <p className="text-sm sm:text-base">
+                    Живая атмосфера и уникальность кадров
+                  </p>
                 </div>
                 <div className="flex items-start gap-2">
-                  <Icon name="X" className="text-red-500 mt-1 flex-shrink-0" size={18} />
-                  <p className="text-sm sm:text-base">Только для жителей Новосибирска</p>
+                  <Icon
+                    name="X"
+                    className="text-red-500 mt-1 flex-shrink-0"
+                    size={18}
+                  />
+                  <p className="text-sm sm:text-base">
+                    Только для жителей Новосибирска
+                  </p>
                 </div>
                 <div className="flex items-start gap-2">
-                  <Icon name="X" className="text-red-500 mt-1 flex-shrink-0" size={18} />
-                  <p className="text-sm sm:text-base">Длительная обработка (5-7 дней)</p>
+                  <Icon
+                    name="X"
+                    className="text-red-500 mt-1 flex-shrink-0"
+                    size={18}
+                  />
+                  <p className="text-sm sm:text-base">
+                    Длительная обработка (5-7 дней)
+                  </p>
                 </div>
               </div>
             </div>
@@ -522,7 +604,10 @@ const Index = () => {
             <p className="text-muted-foreground mb-3 sm:mb-4 text-sm sm:text-base">
               Не уверены? Пройдите короткий тест!
             </p>
-            <Button onClick={() => setQuizDialogOpen(true)} className="text-sm sm:text-base">
+            <Button
+              onClick={() => setQuizDialogOpen(true)}
+              className="text-sm sm:text-base"
+            >
               Помочь выбрать
             </Button>
           </div>
@@ -547,8 +632,14 @@ const Index = () => {
             <Card className="border-2 border-purple-200">
               <CardHeader className="bg-gradient-to-r from-purple-50 to-white p-4 sm:p-6">
                 <div className="flex items-center gap-2 sm:gap-3 mb-2">
-                  <Icon name="Sparkles" size={24} className="text-primary sm:w-8 sm:h-8" />
-                  <CardTitle className="text-xl sm:text-2xl md:text-3xl">AI-фотография</CardTitle>
+                  <Icon
+                    name="Sparkles"
+                    size={24}
+                    className="text-primary sm:w-8 sm:h-8"
+                  />
+                  <CardTitle className="text-xl sm:text-2xl md:text-3xl">
+                    AI-фотография
+                  </CardTitle>
                 </div>
                 <CardDescription className="text-sm sm:text-base">
                   Нейрофотография с Александрой
