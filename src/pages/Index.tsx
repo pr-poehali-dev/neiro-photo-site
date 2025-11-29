@@ -802,7 +802,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                 <div className="flex items-center gap-3 mb-2">
                   <Icon name="Camera" size={32} className="text-secondary" />
                   <CardTitle className="text-xl sm:text-2xl md:text-3xl">
-                    Классическая съёмка
+                    Классическая съемка
                   </CardTitle>
                 </div>
                 <CardDescription className="text-base">
@@ -843,7 +843,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <Icon name="MapPin" size={16} className="text-secondary" />
-                    <span>Съёмка в Новосибирске</span>
+                    <span>Съемка в Новосибирске</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
                     <Icon name="Camera" size={16} className="text-secondary" />
@@ -937,7 +937,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
           <Card className="bg-gradient-to-r from-purple-50 to-white border-2 border-purple-200">
             <CardHeader>
               <CardTitle className="text-center text-base">
-                Условия оплаты классической фотосъёмки
+                Условия оплаты классической фотосъемки
               </CardTitle>
             </CardHeader>
             <CardContent className="text-center space-y-2">
@@ -946,7 +946,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                 <span className="font-bold text-lg text-primary">30%</span>
               </p>
               <p className="text-sm text-gray-600">
-                При отмене съёмки менее чем за 24 часа предоплата не
+                При отмене съемки менее чем за 24 часа предоплата не
                 возвращается
               </p>
             </CardContent>
