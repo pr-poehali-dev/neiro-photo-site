@@ -23,12 +23,12 @@ export const ContactDialog = ({
     alexandra: {
       name: "Александрой",
       telegram: "https://t.me/aleksa25t",
-      whatsapp: "https://wa.me/79998887766",
+      whatsapp: "https://wa.me/79134674356",
     },
     maria: {
       name: "Марией",
-      telegram: "https://t.me/EkaterinaMikhailovnaM",
-      whatsapp: "https://wa.me/79231234567",
+      telegram: "https://t.me/+79139083148",
+      whatsapp: "https://wa.me/79139083148",
     },
   };
 
