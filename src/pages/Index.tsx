@@ -1280,13 +1280,13 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           variant={
                             selectedPackage === "mini" ? "default" : "outline"
                           }
-                          className="w-full justify-between h-auto p-3"
+                          className="w-full justify-between h-auto p-2"
                           onClick={() => setSelectedPackage("mini")}
                         >
-                          <span className="text-left text-xs sm:text-sm">
+                          <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
                             Мини (30 минут, 7 фото в ретуши)
                           </span>
-                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             2 500 ₽
                           </span>
                         </Button>
@@ -1297,13 +1297,13 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                               ? "default"
                               : "outline"
                           }
-                          className="w-full justify-between h-auto p-3"
+                          className="w-full justify-between h-auto p-2"
                           onClick={() => setSelectedPackage("standard")}
                         >
-                          <span className="text-left text-xs sm:text-sm">
+                          <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
                             Стандарт (1 час, 15 фото в ретуши)
                           </span>
-                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             4 000 ₽
                           </span>
                         </Button>
@@ -1314,13 +1314,13 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                               ? "default"
                               : "outline"
                           }
-                          className="w-full justify-between h-auto p-3"
+                          className="w-full justify-between h-auto p-2"
                           onClick={() => setSelectedPackage("premium")}
                         >
-                          <span className="text-left text-xs sm:text-sm">
+                          <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
                             Премиум (2 часа, 30 фото в ретуши)
                           </span>
-                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             7 500 ₽
                           </span>
                         </Button>
@@ -1331,17 +1331,17 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                               ? "default"
                               : "outline"
                           }
-                          className="w-full justify-between h-auto p-3"
+                          className="w-full justify-between h-auto p-2"
                           onClick={() =>
                             setSelectedPackage(
                               "Короткое видео (до 30сек) — 500 ₽",
                             )
                           }
                         >
-                          <span className="text-left text-xs sm:text-sm">
+                          <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
                             Короткое видео (до 30сек)
                           </span>
-                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             500 ₽
                           </span>
                         </Button>
@@ -1354,7 +1354,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                   <>
                     <div className="space-y-2">
                       <label className="text-sm font-semibold">
-                        Дата съёмки
+                        Дата съемки
                       </label>
                       <Calendar
                         mode="single"
