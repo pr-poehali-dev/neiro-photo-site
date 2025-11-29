@@ -1202,7 +1202,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           onClick={() => setSelectedPackage("trial")}
                         >
                           <span className="text-left text-xs sm:text-sm">
-                            Пробный пакет (3 фото, 1 образ)
+                            Пробная (3 фото, 1 образ)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
                             1 000 ₽
