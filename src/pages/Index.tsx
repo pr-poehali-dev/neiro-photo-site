@@ -1209,7 +1209,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           className="w-full justify-between h-auto p-3"
                           onClick={() => setSelectedPackage("trial")}
                         >
-                          <span className="text-left text-xs sm:text-sm">
+                          <span className="text-left text-xs sm:text-xs">
                             Пробная (3 фото, 1 образ)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
@@ -1226,7 +1226,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           className="w-full justify-between h-auto p-3"
                           onClick={() => setSelectedPackage("standard")}
                         >
-                          <span className="text-left text-xs sm:text-sm">
+                          <span className="text-left text-xs sm:text-xs">
                             Стандарт (10 фото, 2-3 образа)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
@@ -1243,7 +1243,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           className="w-full justify-between h-auto p-3"
                           onClick={() => setSelectedPackage("premium")}
                         >
-                          <span className="text-left text-xs sm:text-sm">
+                          <span className="text-left text-xs sm:text-xs">
                             Премиум (20 фото, 5 образов)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
@@ -1264,7 +1264,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                             )
                           }
                         >
-                          <span className="text-left text-xs sm:text-sm">
+                          <span className="text-left text-xs sm:text-xs">
                             Групповая (2 и более человек)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
@@ -1283,7 +1283,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           className="w-full justify-between h-auto p-3"
                           onClick={() => setSelectedPackage("mini")}
                         >
-                          <span className="text-left text-xs sm:text-sm">
+                          <span className="text-left text-xs sm:text-xs">
                             Мини (30 минут, 7 фото в ретуши)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
@@ -1300,7 +1300,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           className="w-full justify-between h-auto p-3"
                           onClick={() => setSelectedPackage("standard")}
                         >
-                          <span className="text-left text-xs sm:text-sm">
+                          <span className="text-left text-xs sm:text-xs">
                             Стандарт (1 час, 15 фото в ретуши)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
@@ -1317,7 +1317,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           className="w-full justify-between h-auto p-3"
                           onClick={() => setSelectedPackage("premium")}
                         >
-                          <span className="text-left text-xs sm:text-sm">
+                          <span className="text-left text-xs sm:text-xs">
                             Премиум (2 часа, 30 фото в ретуши)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
@@ -1338,7 +1338,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                             )
                           }
                         >
-                          <span className="text-left text-xs sm:text-sm">
+                          <span className="text-left text-xs sm:text-xs">
                             Короткое видео (до 30сек)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
@@ -1354,7 +1354,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                   <>
                     <div className="space-y-2">
                       <label className="text-sm font-semibold">
-                        Дата съёмки
+                        Дата съемки
                       </label>
                       <Calendar
                         mode="single"
