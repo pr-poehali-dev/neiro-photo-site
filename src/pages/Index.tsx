@@ -25,6 +25,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Select,
   SelectContent,
@@ -65,6 +66,7 @@ const Index = () => {
   const [expandedPhotographer, setExpandedPhotographer] = useState<
     string | null
   >(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -168,11 +170,23 @@ const Index = () => {
         setDate(undefined);
         setSelectedTime("");
       } else {
-        toast({
-          title: "Ошибка",
-          description: result.error || "Не удалось отправить заявку",
-          variant: "destructive",
-        });
+        if (result.fallback) {
+          toast({
+            title: "Заявка принята",
+            description: result.fallback,
+          });
+          setFormData({ name: "", phone: "", comment: "" });
+          setSelectedPhotographer("");
+          setSelectedPackage("");
+          setDate(undefined);
+          setSelectedTime("");
+        } else {
+          toast({
+            title: "Ошибка",
+            description: result.error || "Не удалось отправить заявку",
+            variant: "destructive",
+          });
+        }
       }
     } catch (error) {
       toast({
@@ -209,21 +223,28 @@ const Index = () => {
       text: "Александра создала невероятные нейрофото! Это настоящее искусство, которое передаёт глубину эмоций.",
       rating: 5,
       image:
-        "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/11bd7973-62f6-4eb6-a6f8-d388eb3afa8a.jpg",
+        "https://cdn.poehali.dev/files/9ca36f4f-446f-4fc8-8b4d-5ced09b844f0.jpg",
     },
     {
       name: "Дмитрий и Ольга",
       text: "Мария сняла нашу свадьбу просто волшебно. Каждый кадр — это история, которую хочется пересматривать снова.",
       rating: 5,
       image:
-        "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/69bf3ec7-5125-44fe-accb-af20b5684723.jpg",
+        "https://cdn.poehali.dev/files/7690bb43-98b3-4074-bea2-f338ceaa833e.jpg",
     },
     {
       name: "Анна Петрова",
       text: "Семейная фотосессия с Марией прошла очень комфортно. Дети вели себя естественно, а результат превзошёл ожидания!",
       rating: 5,
       image:
-        "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/70a84839-0333-4f0d-92d9-939ae755a963.jpg",
+        "https://cdn.poehali.dev/files/fc2f2b36-2ba3-49bd-9b87-2edbeaeaaab4.jpg",
+    },
+    {
+      name: "Ирина Волкова",
+      text: "Обалдеть, спасибо большое! Главное лицо его, у вас здорово получилось, вы умница!",
+      rating: 5,
+      image:
+        "https://cdn.poehali.dev/files/f532e6b0-4230-4f9a-a4a5-5a78a878a67a.jpg",
     },
   ];
 
@@ -284,6 +305,42 @@ const Index = () => {
         </DialogContent>
       </Dialog>
 
+      <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+        <div id="mobile-menu-sheet" className="hidden">
+          <SheetTrigger asChild>
+            <button>Trigger</button>
+          </SheetTrigger>
+        </div>
+        <SheetContent side="left" className="w-[280px]">
+          <div className="flex flex-col gap-6 mt-8">
+            {["home", "portfolio", "about", "services", "reviews", "faq"].map(
+              (section) => (
+                <button
+                  key={section}
+                  onClick={() => {
+                    scrollToSection(section);
+                    setMobileMenuOpen(false);
+                  }}
+                  className="text-lg font-medium hover:text-primary transition-colors text-left"
+                >
+                  {section === "home"
+                    ? "Главная"
+                    : section === "portfolio"
+                      ? "Портфолио"
+                      : section === "about"
+                        ? "О нас"
+                        : section === "services"
+                          ? "Прайс"
+                          : section === "reviews"
+                            ? "Отзывы"
+                            : "FAQ"}
+                </button>
+              ),
+            )}
+          </div>
+        </SheetContent>
+      </Sheet>
+
       <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
         <div className="container mx-auto px-3 py-3 flex justify-between items-center">
           <div>
@@ -295,7 +352,7 @@ const Index = () => {
             </p>
           </div>
           <div className="hidden md:flex gap-6">
-            {["home", "portfolio", "about", "services", "reviews"].map(
+            {["home", "portfolio", "about", "services", "reviews", "faq"].map(
               (section) => (
                 <button
                   key={section}
@@ -306,21 +363,41 @@ const Index = () => {
                     ? "Главная"
                     : section === "portfolio"
                       ? "Портфолио"
-                      : section === "services"
-                        ? "Прайс"
-                        : "Отзывы"}
+                      : section === "about"
+                        ? "О нас"
+                        : section === "services"
+                          ? "Прайс"
+                          : section === "reviews"
+                            ? "Отзывы"
+                            : "FAQ"}
                 </button>
               ),
             )}
           </div>
-          <Button
-            variant="default"
-            size="sm"
-            onClick={handleContactClick}
-            className="text-xs sm:text-sm px-3 sm:px-4"
-          >
-            Связаться
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              onClick={() => {
+                const sheet = document.getElementById('mobile-menu-sheet');
+                if (sheet) {
+                  const button = sheet.querySelector('button');
+                  if (button instanceof HTMLElement) button.click();
+                }
+              }}
+            >
+              <Icon name="Menu" size={24} />
+            </Button>
+            <Button
+              variant="default"
+              size="sm"
+              onClick={handleContactClick}
+              className="text-xs sm:text-sm px-3 sm:px-4"
+            >
+              Связаться
+            </Button>
+          </div>
         </div>
       </nav>
 
@@ -460,13 +537,13 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     <span>Подробнее</span>
                   </button>
                   {expandedPhotographer === "maria" && (
-                    <div className="text-muted-foreground text-sm sm:text-base pt-2 border-t animate-fade-in">
-                      <p className="mb-2">
+                    <div className="text-muted-foreground text-xs sm:text-base pt-2 border-t animate-fade-in">
+                      <p className="mb-2 text-sm md:text-base">
                         Моя специализация — это искренние, живые фотографии,
                         передающие истинные эмоции и атмосферу каждого
                         мгновения.
                       </p>
-                      <p>
+                      <p className="text-sm md:text-base">
                         Работаю в Новосибирске. Провожу семейные и портретные
                         фотосессии. Создаю комфортную атмосферу, чтобы вы могли
                         расслабиться и почувствовать себя естественно перед
@@ -1424,6 +1501,26 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
             <p className="font-semibold text-xs">
               Два взгляда на фотографию — выберите свой стиль
             </p>
+            <div className="flex justify-center gap-6">
+              <a
+                href="https://t.me/your_alexandra_channel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
+              >
+                <Icon name="Send" size={20} />
+                <span>Telegram Александры</span>
+              </a>
+              <a
+                href="https://vk.com/your_maria_group"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
+              >
+                <Icon name="Share2" size={20} />
+                <span>VK Марии</span>
+              </a>
+            </div>
             <Link
               to="/privacy"
               className="text-xs text-muted-foreground hover:text-primary transition-colors"

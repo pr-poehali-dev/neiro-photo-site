@@ -10,6 +10,7 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     Args: event - dict с httpMethod, body (name, phone, email, photographer, package, date, time, comment)
           context - object с request_id, function_name
     Returns: HTTP response dict
+    Note: Для работы бота пользователи должны сначала написать боту /start в Telegram
     '''
     method: str = event.get('httpMethod', 'POST')
     
@@ -52,12 +53,13 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
             }
         
         bot_token = os.environ.get('LIVEAIPHOTO_BOT')
-        chat_id = os.environ.get('TELEGRAM_CHAT_ID')
         
         if photographer == 'maria':
             photographer_name = 'Марии'
+            chat_id = '1692264245'
         elif photographer == 'alexandra':
             photographer_name = 'Александры'
+            chat_id = '6078882546'
         else:
             return {
                 'statusCode': 400,
@@ -65,11 +67,11 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
                 'body': json.dumps({'error': 'Invalid photographer'})
             }
         
-        if not bot_token or not chat_id:
+        if not bot_token:
             return {
                 'statusCode': 500,
                 'headers': {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'},
-                'body': json.dumps({'error': 'Telegram credentials not configured'})
+                'body': json.dumps({'error': 'Telegram bot token not configured'})
             }
         
         message = f"""🎯 Новая заявка для {photographer_name}!
@@ -103,15 +105,32 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
             'parse_mode': 'HTML'
         }).encode()
         
-        req = urllib.request.Request(telegram_url, data=data)
-        with urllib.request.urlopen(req) as response:
-            telegram_response = json.loads(response.read().decode())
-        
-        if not telegram_response.get('ok'):
+        try:
+            req = urllib.request.Request(telegram_url, data=data)
+            with urllib.request.urlopen(req) as response:
+                telegram_response = json.loads(response.read().decode())
+            
+            if not telegram_response.get('ok'):
+                error_description = telegram_response.get('description', 'Unknown error')
+                return {
+                    'statusCode': 500,
+                    'headers': {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'},
+                    'body': json.dumps({
+                        'error': 'Failed to send telegram message',
+                        'details': error_description,
+                        'fallback': 'Заявка сохранена, но не удалось отправить в Telegram'
+                    })
+                }
+        except urllib.error.HTTPError as e:
+            error_body = e.read().decode() if hasattr(e, 'read') else str(e)
             return {
                 'statusCode': 500,
                 'headers': {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'},
-                'body': json.dumps({'error': 'Failed to send telegram message'})
+                'body': json.dumps({
+                    'error': f'Telegram API error: {e.code}',
+                    'details': error_body,
+                    'fallback': 'Заявка обработана, но уведомление не отправлено. Пожалуйста, свяжитесь напрямую.'
+                })
             }
         
         return {

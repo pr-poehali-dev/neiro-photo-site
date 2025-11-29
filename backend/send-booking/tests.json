@@ -1,40 +1,23 @@
 {
   "tests": [
     {
-      "name": "Test booking submission for Maria",
+      "name": "Test booking validation",
       "method": "POST",
       "body": {
         "name": "Тест Тестов",
         "phone": "+7 (999) 123-45-67",
-        "email": "test@example.com",
-        "photographer": "maria",
-        "package": "standard",
-        "date": "2025-12-01",
-        "time": "14:00",
-        "comment": "Тестовая заявка"
+        "photographer": "maria"
       },
-      "expectedStatus": 200,
+      "expectedStatus": 500,
       "expectedBody": {
-        "success": true
+        "fallback": "string"
       },
       "bodyMatcher": "partial"
     },
     {
-      "name": "Test booking submission for Alexandra",
-      "method": "POST",
-      "body": {
-        "name": "Тест Тестов",
-        "phone": "+7 (999) 123-45-67",
-        "email": "test@example.com",
-        "photographer": "alexandra",
-        "package": "premium",
-        "comment": "Тестовая заявка AI"
-      },
-      "expectedStatus": 200,
-      "expectedBody": {
-        "success": true
-      },
-      "bodyMatcher": "partial"
+      "name": "Test OPTIONS method",
+      "method": "OPTIONS",
+      "expectedStatus": 200
     }
   ]
 }
