@@ -747,23 +747,31 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                   Нейрофотография с Александрой
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4 sm:space-y-6 pt-4 sm:pt-6 p-4 sm:p-6">
+              <CardContent className="space-y-6 pt-6">
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span>Пробная (3 фото, 1 образ)</span>
-                    <span className="font-bold text-sm">1 000 ₽</span>
+                    <span className="font-bold text-sm whitespace-nowrap">
+                      1 000 ₽
+                    </span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span>Стандарт (10 фото, 2-3 образа)</span>
-                    <span className="font-bold text-sm">2 500 ₽</span>
+                    <span className="font-bold text-sm whitespace-nowrap">
+                      2 500 ₽
+                    </span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span>Премиум (20 фото, 5 образов)</span>
-                    <span className="font-bold text-sm">3 500 ₽</span>
+                    <span className="font-bold text-sm whitespace-nowrap">
+                      3 500 ₽
+                    </span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span>Групповая (1 фото, 2 и более человек)</span>
-                    <span className="font-bold text-sm">от 500 ₽</span>
+                    <span className="font-bold text-sm whitespace-nowrap">
+                      от 500 ₽
+                    </span>
                   </div>
                 </div>
                 <div className="pt-4 border-t space-y-2">
