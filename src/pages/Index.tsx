@@ -812,19 +812,19 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
               <CardContent className="space-y-6 pt-6">
                 <div className="space-y-3">
                   <div className="flex justify-between items-center gap-2">
-                    <span>Мини (30 минут, 7 обработанных фото)</span>
+                    <span>Мини (30 минут, 7 фото в ретуши)</span>
                     <span className="font-bold text-sm whitespace-nowrap">
                       2 500 ₽
                     </span>
                   </div>
                   <div className="flex justify-between items-center gap-2">
-                    <span>Стандарт (1 час, 15 обработанных фото)</span>
+                    <span>Стандарт (1 час, 15 фото в ретуши)</span>
                     <span className="font-bold text-sm whitespace-nowrap">
                       4 000 ₽
                     </span>
                   </div>
                   <div className="flex justify-between items-center gap-2">
-                    <span>Премиум (2 часа, 30 обработанных фото)</span>
+                    <span>Премиум (2 часа, 30 фото в ретуши)</span>
                     <span className="font-bold text-sm whitespace-nowrap">
                       7 500 ₽
                     </span>
@@ -1250,6 +1250,23 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                             3 500 ₽
                           </span>
                         </Button>
+                        <Button
+                          type="button"
+                          variant={
+                            selectedPackage === "gruppovaya"
+                              ? "default"
+                              : "outline"
+                          }
+                          className="w-full justify-between h-auto p-3"
+                          onClick={() => setSelectedPackage("gruppovaya")}
+                        >
+                          <span className="text-left text-xs sm:text-sm">
+                            Групповая (1 фото, 2 и более человек)
+                          </span>
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                            от 500 ₽
+                          </span>
+                        </Button>
                       </div>
                     )}
                     {selectedPhotographer === "maria" && (
@@ -1301,6 +1318,23 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
                             7 500 ₽
+                          </span>
+                        </Button>
+                        <Button
+                          type="button"
+                          variant={
+                            selectedPackage === "korotkoe video"
+                              ? "default"
+                              : "outline"
+                          }
+                          className="w-full justify-between h-auto p-3"
+                          onClick={() => setSelectedPackage("korotkoe video")}
+                        >
+                          <span className="text-left text-xs sm:text-sm">
+                            Короткое видео (до 30сек)
+                          </span>
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                            500 ₽
                           </span>
                         </Button>
                       </div>
