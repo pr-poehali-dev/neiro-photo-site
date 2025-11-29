@@ -401,7 +401,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     <span>Подробнее </span>
                   </button>
                   {expandedPhotographer === "alexandra" && (
-                    <div className="text-muted-foreground text-sm sm:text-base pt-2 border-t animate-fade-in">
+                    <div className="text-muted-foreground text-xs sm:text-base pt-2 border-t animate-fade-in">
                       <p className="mb-2">
                         Я использую передовые AI-технологии для создания
                         уникальных фотографий, которые выглядят как настоящие
@@ -460,7 +460,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     <span>Подробнее</span>
                   </button>
                   {expandedPhotographer === "maria" && (
-                    <div className="text-muted-foreground text-sm sm:text-base pt-2 border-t animate-fade-in">
+                    <div className="text-muted-foreground text-xs sm:text-base pt-2 border-t animate-fade-in">
                       <p className="mb-2">
                         Моя специализация — это искренние, живые фотографии,
                         передающие истинные эмоции и атмосферу каждого
@@ -468,7 +468,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                       </p>
                       <p>
                         Работаю в Новосибирске. Провожу семейные и портретные
-                        фотосессии. Создаю комфортную атмосферучтобы вы могли
+                        фотосессии. Создаю комфортную атмосферу, чтобы вы могли
                         расслабиться и почувствовать себя естественно перед
                         камерой.
                       </p>
