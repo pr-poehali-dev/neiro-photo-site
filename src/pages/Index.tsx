@@ -1242,6 +1242,23 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                             3 500 ₽
                           </span>
                         </Button>
+                        <Button
+                          type="button"
+                          variant={
+                            selectedPackage === "premium"
+                              ? "default"
+                              : "outline"
+                          }
+                          className="w-full justify-between h-auto p-3"
+                          onClick={() => setSelectedPackage("premium")}
+                        >
+                          <span className="text-left text-xs sm:text-sm">
+                            Групповая (1 фото, 2 и более человек)
+                          </span>
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                            от 500 ₽
+                          </span>
+                        </Button>
                       </div>
                     )}
                     {selectedPhotographer === "maria" && (
@@ -1293,6 +1310,23 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
                             7 500 ₽
+                          </span>
+                        </Button>
+                        <Button
+                          type="button"
+                          variant={
+                            selectedPackage === "premium"
+                              ? "default"
+                              : "outline"
+                          }
+                          className="w-full justify-between h-auto p-3"
+                          onClick={() => setSelectedPackage("premium")}
+                        >
+                          <span className="text-left text-xs sm:text-sm">
+                            Короткое видео (до 30сек)
+                          </span>
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                            500 ₽
                           </span>
                         </Button>
                       </div>
