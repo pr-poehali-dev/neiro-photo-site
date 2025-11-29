@@ -1206,13 +1206,13 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           variant={
                             selectedPackage === "trial" ? "default" : "outline"
                           }
-                          className="w-full justify-between h-auto p-3"
+                          className="w-full justify-between h-auto p-2"
                           onClick={() => setSelectedPackage("trial")}
                         >
-                          <span className="text-left text-xs sm:text-sm">
+                          <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
                             Пробная (3 фото, 1 образ)
                           </span>
-                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             1 000 ₽
                           </span>
                         </Button>
@@ -1223,13 +1223,13 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                               ? "default"
                               : "outline"
                           }
-                          className="w-full justify-between h-auto p-3"
+                          className="w-full justify-between h-auto p-2"
                           onClick={() => setSelectedPackage("standard")}
                         >
-                          <span className="text-left text-xs sm:text-sm">
+                          <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
                             Стандарт (10 фото, 2-3 образа)
                           </span>
-                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             2 500 ₽
                           </span>
                         </Button>
@@ -1240,13 +1240,13 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                               ? "default"
                               : "outline"
                           }
-                          className="w-full justify-between h-auto p-3"
+                          className="w-full justify-between h-auto p-2"
                           onClick={() => setSelectedPackage("premium")}
                         >
-                          <span className="text-left text-xs sm:text-sm">
+                          <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
                             Премиум (20 фото, 5 образов)
                           </span>
-                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             3 500 ₽
                           </span>
                         </Button>
@@ -1257,17 +1257,17 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                               ? "default"
                               : "outline"
                           }
-                          className="w-full justify-between h-auto p-3"
+                          className="w-full justify-between h-auto p-2"
                           onClick={() =>
                             setSelectedPackage(
                               "Групповая (1 фото, 2 и более человек) — от 500 ₽",
                             )
                           }
                         >
-                          <span className="text-left text-xs sm:text-sm">
+                          <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
                             Групповая (2 и более человек)
                           </span>
-                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             от 500 ₽
                           </span>
                         </Button>
