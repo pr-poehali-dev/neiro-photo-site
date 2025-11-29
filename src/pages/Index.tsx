@@ -1258,7 +1258,11 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                               : "outline"
                           }
                           className="w-full justify-between h-auto p-3"
-                          onClick={() => setSelectedPackage("gruppovaya")}
+                          onClick={() =>
+                            setSelectedPackage(
+                              "Групповая (1 фото, 2 и более человек) — от 500 ₽",
+                            )
+                          }
                         >
                           <span className="text-left text-xs sm:text-sm">
                             Групповая (2 и более человек)
