@@ -1332,7 +1332,11 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                               : "outline"
                           }
                           className="w-full justify-between h-auto p-3"
-                          onClick={() => setSelectedPackage("korotkoe video")}
+                          onClick={() =>
+                            setSelectedPackage(
+                              "Короткое видео (до 30сек) — 500 ₽",
+                            )
+                          }
                         >
                           <span className="text-left text-xs sm:text-sm">
                             Короткое видео (до 30сек)
