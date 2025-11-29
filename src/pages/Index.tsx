@@ -401,7 +401,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     <span>Подробнее </span>
                   </button>
                   {expandedPhotographer === "alexandra" && (
-                    <div className="text-muted-foreground text-xs sm:text-base pt-2 border-t animate-fade-in">
+                    <div className="text-muted-foreground text-sm sm:text-base pt-2 border-t animate-fade-in">
                       <p className="mb-2">
                         Я использую передовые AI-технологии для создания
                         уникальных фотографий, которые выглядят как настоящие
@@ -435,7 +435,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                 />
               </div>
               <CardContent className="p-4 sm:p-6">
-                <h3 className="sm:text-2xl font-bold mb-2 text-xs">Мария</h3>
+                <h3 className="sm:text-2xl font-bold mb-2 text-base">Мария</h3>
                 <p className="text-secondary font-semibold mb-2 sm:mb-3 text-sm sm:text-base">
                   Классический фотограф (г. Новосибирск)
                 </p>
@@ -460,7 +460,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     <span>Подробнее</span>
                   </button>
                   {expandedPhotographer === "maria" && (
-                    <div className="text-muted-foreground text-xs sm:text-xs pt-2 border-t animate-fade-in">
+                    <div className="text-muted-foreground text-sm sm:text-base pt-2 border-t animate-fade-in">
                       <p className="mb-2">
                         Моя специализация — это искренние, живые фотографии,
                         передающие истинные эмоции и атмосферу каждого
