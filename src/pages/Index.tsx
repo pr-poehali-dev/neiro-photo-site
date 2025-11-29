@@ -1202,7 +1202,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           onClick={() => setSelectedPackage("trial")}
                         >
                           <span className="text-left text-xs sm:text-sm">
-                            Пробная (3 фото, 1 образ)
+                            Пробный пакет (3 фото, 1 образ)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
                             1 000 ₽
@@ -1255,7 +1255,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           onClick={() => setSelectedPackage("mini")}
                         >
                           <span className="text-left text-xs sm:text-sm">
-                            Мини (30 минут, 7 фото в ретуши)
+                            Мини (30 минут, 7 обработанных фото)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
                             2 500 ₽
@@ -1272,7 +1272,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           onClick={() => setSelectedPackage("standard")}
                         >
                           <span className="text-left text-xs sm:text-sm">
-                            Стандарт (1 час, 15 фото в ретуши)
+                            Стандарт (1 час, 15 обработанных фото)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
                             4 000 ₽
@@ -1289,7 +1289,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           onClick={() => setSelectedPackage("premium")}
                         >
                           <span className="text-left text-xs sm:text-sm">
-                            Премиум (2 часа, 30 фото в ретуши)
+                            Премиум (2 часа, 30 обработанных фото)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
                             7 500 ₽
