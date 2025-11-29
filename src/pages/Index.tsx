@@ -1258,11 +1258,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                               : "outline"
                           }
                           className="w-full justify-between h-auto p-2"
-                          onClick={() =>
-                            setSelectedPackage(
-                              "Групповая (1 фото, 2 и более человек) — от 500 ₽",
-                            )
-                          }
+                          onClick={() => setSelectedPackage("gruppovaya")}
                         >
                           <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
                             Групповая (2 и более человек)
@@ -1332,11 +1328,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                               : "outline"
                           }
                           className="w-full justify-between h-auto p-2"
-                          onClick={() =>
-                            setSelectedPackage(
-                              "Короткое видео (до 30сек) — 500 ₽",
-                            )
-                          }
+                          onClick={() => setSelectedPackage("korotkoe video")}
                         >
                           <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
                             Короткое видео (до 30сек)
