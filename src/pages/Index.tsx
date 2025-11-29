@@ -1167,7 +1167,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                       }}
                     >
                       <div className="flex items-center gap-1.5">
-                        <Icon name="Sparkles" size={20} />
+                        <Icon name="Sparkles" size={16} />
                         <span className="font-bold text-[11px] leading-tight">
                           Александра
                         </span>
@@ -1188,7 +1188,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                       }}
                     >
                       <div className="flex items-center gap-1.5">
-                        <Icon name="Camera" size={20} />
+                        <Icon name="Camera" size={16} />
                         <span className="font-bold text-[11px] leading-tight">
                           Мария
                         </span>
