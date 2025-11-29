@@ -1340,7 +1340,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                 <div className="space-y-2">
                   <label className="text-sm font-semibold">Комментарий</label>
                   <Textarea
-                    placeholder="Расскажите о ваших пожеланиях к съёмке..."
+                    placeholder="Укажите способ связи (ссылку) и расскажите о ваших пожеланиях..."
                     rows={4}
                     value={formData.comment}
                     onChange={(e) =>
