@@ -1280,13 +1280,13 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           variant={
                             selectedPackage === "mini" ? "default" : "outline"
                           }
-                          className="w-full justify-between h-auto p-3"
+                          className="w-full justify-between h-auto p-2"
                           onClick={() => setSelectedPackage("mini")}
                         >
-                          <span className="text-left text-xs sm:text-xs">
+                          <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
                             Мини (30 минут, 7 фото в ретуши)
                           </span>
-                          <span className="font-bold text-xs sm:text-xs whitespace-nowrap">
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             2 500 ₽
                           </span>
                         </Button>
