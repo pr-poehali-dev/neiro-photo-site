@@ -750,7 +750,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
               <CardContent className="space-y-4 sm:space-y-6 pt-4 sm:pt-6 p-4 sm:p-6">
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <<span>Пробная (3 фото, 1 образ)</span>
+                    <span>Пробная (3 фото, 1 образ)</span>
                     <span className="font-bold text-sm">1 000 ₽</span>
                   </div>
                   <div className="flex justify-between items-center">
@@ -820,8 +820,8 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     <span className="font-bold text-sm whitespace-nowrap">
                       7 500 ₽
                     </span>
-                    </div>
-                    <div className="flex justify-between items-center gap-2">
+                  </div>
+                  <div className="flex justify-between items-center gap-2">
                     <span>Короткое видео (до 30сек)</span>
                     <span className="font-bold text-sm whitespace-nowrap">
                       500 ₽
