@@ -1261,7 +1261,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           onClick={() => setSelectedPackage("gruppovaya")}
                         >
                           <span className="text-left text-xs sm:text-sm">
-                            Групповая (1 фото, 2 и более человек)
+                            Групповая (2 и более человек)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
                             от 500 ₽
