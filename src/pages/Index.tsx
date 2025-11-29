@@ -1212,7 +1212,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           <span className="text-left text-xs sm:text-xs">
                             Пробная (3 фото, 1 образ)
                           </span>
-                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                          <span className="font-bold text-xs sm:text-xs whitespace-nowrap">
                             1 000 ₽
                           </span>
                         </Button>
@@ -1229,7 +1229,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           <span className="text-left text-xs sm:text-xs">
                             Стандарт (10 фото, 2-3 образа)
                           </span>
-                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                          <span className="font-bold text-xs sm:text-xs whitespace-nowrap">
                             2 500 ₽
                           </span>
                         </Button>
@@ -1246,7 +1246,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           <span className="text-left text-xs sm:text-xs">
                             Премиум (20 фото, 5 образов)
                           </span>
-                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                          <span className="font-bold text-xs sm:text-xs whitespace-nowrap">
                             3 500 ₽
                           </span>
                         </Button>
@@ -1267,7 +1267,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           <span className="text-left text-xs sm:text-xs">
                             Групповая (2 и более человек)
                           </span>
-                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                          <span className="font-bold text-xs sm:text-xs whitespace-nowrap">
                             от 500 ₽
                           </span>
                         </Button>
@@ -1286,7 +1286,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           <span className="text-left text-xs sm:text-xs">
                             Мини (30 минут, 7 фото в ретуши)
                           </span>
-                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                          <span className="font-bold text-xs sm:text-xs whitespace-nowrap">
                             2 500 ₽
                           </span>
                         </Button>
@@ -1303,7 +1303,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           <span className="text-left text-xs sm:text-xs">
                             Стандарт (1 час, 15 фото в ретуши)
                           </span>
-                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                          <span className="font-bold text-xs sm:text-xs whitespace-nowrap">
                             4 000 ₽
                           </span>
                         </Button>
@@ -1320,7 +1320,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           <span className="text-left text-xs sm:text-xs">
                             Премиум (2 часа, 30 фото в ретуши)
                           </span>
-                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                          <span className="font-bold text-xs sm:text-xs whitespace-nowrap">
                             7 500 ₽
                           </span>
                         </Button>
@@ -1341,7 +1341,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           <span className="text-left text-xs sm:text-xs">
                             Короткое видео (до 30сек)
                           </span>
-                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap">
+                          <span className="font-bold text-xs sm:text-xs whitespace-nowrap">
                             500 ₽
                           </span>
                         </Button>
