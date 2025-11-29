@@ -1163,7 +1163,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-full h-48 object-cover rounded-lg"
+                    className="w-full h-48 object-cover rounded-lg my-0 mx-0 py-0 px-[62px]"
                   />
                   <div className="flex gap-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
