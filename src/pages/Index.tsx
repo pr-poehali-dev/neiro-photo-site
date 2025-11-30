@@ -1603,7 +1603,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
               Два взгляда на фотографию — выберите свой стиль
             </p>
 
-            <div className="space-y-[8px] sm:space-y-2">
+            <div className="space-y-[3px] sm:space-y-2">
               <Link
                 to="/privacy"
                 className="text-xs text-muted-foreground hover:text-primary transition-colors block"
