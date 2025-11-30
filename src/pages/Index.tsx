@@ -1016,7 +1016,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                 <p className="text-sm text-gray-700">
                   <Icon name="Info" size={16} className="inline mr-1" />
                   Реквизиты для оплаты будут высланы после согласования деталей
-                  съёмки
+                  съемки
                 </p>
               </div>
             </CardContent>
@@ -1194,7 +1194,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
       >
         <div className="container mx-auto max-w-4xl">
           <h2 className="md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent text-2xl">
-            Записаться на съёмку
+            Записаться на съемку
           </h2>
           <p className="text-center text-gray-600 mb-12">
             Заполните форму, и мы свяжемся с вами в ближайшее время
