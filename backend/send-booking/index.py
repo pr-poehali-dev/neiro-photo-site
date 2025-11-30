@@ -104,10 +104,14 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
             'text': message
         }).encode()
         
+        print(f"Sending to chat_id: {chat_id}, photographer: {photographer_name}")
+        
         try:
             req = urllib.request.Request(telegram_url, data=data)
             with urllib.request.urlopen(req) as response:
                 telegram_response = json.loads(response.read().decode())
+            
+            print(f"Telegram response: {telegram_response}")
             
             if not telegram_response.get('ok'):
                 error_description = telegram_response.get('description', 'Unknown error')
