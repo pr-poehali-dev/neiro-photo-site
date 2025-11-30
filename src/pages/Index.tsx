@@ -604,7 +604,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                   href="https://t.me/online_photosessiya"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-primary hover:underline text-sm font-medium"
+                  className="inline-flex items-center gap-2 text-primary hover:underline text-xs font-medium"
                 >
                   <Icon name="Send" />
                   Больше работ в Telegram канале Александры
@@ -636,7 +636,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                   href="https://vk.com/club_photograph_novosibirsk"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-secondary hover:underline text-sm font-medium"
+                  className="inline-flex items-center gap-2 text-secondary hover:underline text-xs font-medium"
                 >
                   <svg
                     width="20"
