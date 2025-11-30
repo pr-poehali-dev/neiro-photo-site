@@ -1145,108 +1145,35 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
             </p>
           </div>
 
-          <div className="w-full overflow-hidden">
-            <div className="flex gap-4 md:gap-6 snap-x snap-mandatory scrollbar-hide overflow-x-auto pb-4 md:pb-8 scroll-smooth">
-              {testimonials.map((testimonial, idx) => (
-                <div
-                  key={idx}
-                  className="flex-none w-80 md:w-96 snap-center hover:scale-105 transition-all duration-300"
-                >
-                  <Card className="h-[480px] md:h-[520px] hover:shadow-2xl transition-all duration-300 overflow-hidden backdrop-blur-sm bg-white/80 border-0 shadow-lg">
-                    <CardContent className="p-6 space-y-4 h-full flex flex-col">
-                      <div className="flex-1 min-h-[200px] relative overflow-hidden rounded-xl group">
-                        <img
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 cursor-pointer"
-                          onClick={() =>
-                            openModal(testimonial.image, testimonial.name)
-                          }
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                          <div className="text-white text-lg font-semibold px-4 py-2 bg-black/50 rounded-full backdrop-blur-sm">
-                            Увеличить
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="flex gap-1 pt-2">
-                        {[...Array(testimonial.rating)].map((_, i) => (
-                          <Icon
-                            key={i}
-                            name="Star"
-                            className="text-yellow-500 fill-yellow-500 drop-shadow-sm"
-                            size={20}
-                          />
-                        ))}
-                      </div>
-
-                      <p className="text-muted-foreground flex-1 italic leading-relaxed text-sm md:text-base">
-                        "{testimonial.text}"
-                      </p>
-
-                      <div className="pt-2">
-                        <p className="font-semibold text-base md:text-lg text-gray-900">
-                          {testimonial.name}
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex justify-center mt-8 gap-2 md:hidden">
-            {testimonials.map((_, idx) => (
-              <button
-                key={idx}
-                className="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300 hover:bg-blue-500"
-                style={{
-                  backgroundColor: idx === 0 ? "#3B82F6" : "#D1D5DB",
-                }}
-              />
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, idx) => (
+              <Card key={idx} className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6 space-y-4">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-full h-48 object-cover rounded-lg my-0 mx-0 py-0 px-[62px]"
+                  />
+                  <div className="flex gap-1">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Icon
+                        key={i}
+                        name="Star"
+                        className="text-yellow-500 fill-yellow-500"
+                        size={16}
+                      />
+                    ))}
+                  </div>
+                  <p className="text-muted-foreground mb-4 italic">
+                    &ldquo;{testimonial.text}&rdquo;
+                  </p>
+                  <p className="font-semibold">{testimonial.name}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
-
-      {isModalOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
-          onClick={closeModal}
-        >
-          <div
-            className="relative max-w-4xl max-h-[90vh] w-full h-full flex items-center justify-center"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="absolute -top-12 -right-4 z-10 p-2 rounded-full bg-white/90 hover:bg-white backdrop-blur-sm transition-all duration-200 shadow-lg"
-              onClick={closeModal}
-            >
-              <Icon name="X" size={24} className="text-gray-800" />
-            </button>
-
-            <div className="relative w-full h-full max-w-6xl max-h-[80vh]">
-              <img
-                src={selectedImage.src}
-                alt={selectedImage.name}
-                className="w-full h-full object-contain rounded-2xl shadow-2xl max-h-[80vh]"
-              />
-              <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-xl text-center">
-                <p className="font-semibold text-lg">{selectedImage.name}</p>
-              </div>
-            </div>
-
-            <button className="absolute left-4 p-3 bg-white/20 hover:bg-white/40 rounded-full backdrop-blur-sm transition-all duration-200">
-              <Icon name="ChevronLeft" size={24} className="text-white" />
-            </button>
-            <button className="absolute right-4 p-3 bg-white/20 hover:bg-white/40 rounded-full backdrop-blur-sm transition-all duration-200">
-              <Icon name="ChevronRight" size={24} className="text-white" />
-            </button>
-          </div>
-        </div>
-      )}
 
       <section
         id="booking"
