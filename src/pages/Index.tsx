@@ -527,12 +527,12 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                   </button>
                   {expandedPhotographer === "maria" && (
                     <div className="text-muted-foreground text-xs sm:text-base pt-2 border-t animate-fade-in">
-                      <p className="mb-2 text-sm md:text-base">
+                      <p className="mb-2">
                         Моя специализация — это искренние, живые фотографии,
                         передающие истинные эмоции и атмосферу каждого
                         мгновения.
                       </p>
-                      <p className="text-sm md:text-base">
+                      <p>
                         Работаю в Новосибирске. Провожу семейные и портретные
                         фотосессии. Создаю комфортную атмосферу, чтобы вы могли
                         расслабиться и почувствовать себя естественно перед
@@ -983,7 +983,11 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                   </div>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2">
-                      <Icon name="Building" size={16} className="text-primary" />
+                      <Icon
+                        name="Building"
+                        size={16}
+                        className="text-primary"
+                      />
                       <span>Банковский перевод</span>
                     </div>
                     <div className="flex items-center gap-2">
@@ -999,7 +1003,8 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                   </div>
                   <div className="space-y-2 text-sm">
                     <p>
-                      <span className="font-semibold">Предоплата 30%</span> для классической съемки
+                      <span className="font-semibold">Предоплата 30%</span> для
+                      классической съемки
                     </p>
                     <p className="text-xs text-gray-600">
                       При отмене менее чем за 24 часа предоплата не возвращается
@@ -1011,7 +1016,8 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
               <div className="bg-purple-50 p-4 rounded-lg">
                 <p className="text-sm text-gray-700">
                   <Icon name="Info" size={16} className="inline mr-1" />
-                  Реквизиты для оплаты будут высланы после согласования деталей съёмки
+                  Реквизиты для оплаты будут высланы после согласования деталей
+                  съёмки
                 </p>
               </div>
             </CardContent>
@@ -1152,14 +1158,16 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                   key={idx}
                   className="flex-none w-[280px] md:w-auto group cursor-pointer"
                   onClick={(e) => {
-                    const img = e.currentTarget.querySelector('img');
+                    const img = e.currentTarget.querySelector("img");
                     if (img) {
-                      const overlay = document.createElement('div');
-                      overlay.className = 'fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 cursor-zoom-out';
+                      const overlay = document.createElement("div");
+                      overlay.className =
+                        "fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 cursor-zoom-out";
                       overlay.onclick = () => overlay.remove();
-                      const enlargedImg = document.createElement('img');
+                      const enlargedImg = document.createElement("img");
                       enlargedImg.src = img.src;
-                      enlargedImg.className = 'max-w-full max-h-full object-contain';
+                      enlargedImg.className =
+                        "max-w-full max-h-full object-contain";
                       overlay.appendChild(enlargedImg);
                       document.body.appendChild(overlay);
                     }
@@ -1527,7 +1535,9 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
               </svg>
               <div className="flex-1">
                 <div className="font-semibold">Группа ВКонтакте Марии</div>
-                <div className="text-sm text-gray-600">Подписаться на группу</div>
+                <div className="text-sm text-gray-600">
+                  Подписаться на группу
+                </div>
               </div>
               <Icon name="ExternalLink" size={16} />
             </a>
@@ -1541,7 +1551,9 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
               <Icon name="Send" className="text-blue-500" size={24} />
               <div className="flex-1">
                 <div className="font-semibold">Телеграм канал Александры</div>
-                <div className="text-sm text-gray-600">Подписаться на канал</div>
+                <div className="text-sm text-gray-600">
+                  Подписаться на канал
+                </div>
               </div>
               <Icon name="ExternalLink" size={16} />
             </a>
