@@ -71,11 +71,12 @@ const Index = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const bookingSection = document.getElementById('booking');
+      const bookingSection = document.getElementById("booking");
       if (!bookingSection) return;
 
       const bookingRect = bookingSection.getBoundingClientRect();
-      const isBookingVisible = bookingRect.top < window.innerHeight && bookingRect.bottom > 0;
+      const isBookingVisible =
+        bookingRect.top < window.innerHeight && bookingRect.bottom > 0;
 
       if (isBookingVisible && subscriptionDialogOpen) {
         setSubscriptionDialogOpen(false);
@@ -87,7 +88,11 @@ const Index = () => {
           (document.documentElement.scrollHeight - window.innerHeight)) *
         100;
 
-      if (scrollPercentage >= 90 && !subscriptionDialogOpen && !isBookingVisible) {
+      if (
+        scrollPercentage >= 90 &&
+        !subscriptionDialogOpen &&
+        !isBookingVisible
+      ) {
         const now = Date.now();
         if (!dialogDismissedAt || now - dialogDismissedAt >= 5 * 60 * 1000) {
           setSubscriptionDialogOpen(true);
@@ -1172,20 +1177,22 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                         overlay.className =
                           "fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4";
                         overlay.onclick = () => overlay.remove();
-                        
+
                         const closeBtn = document.createElement("button");
-                        closeBtn.className = "absolute top-4 right-4 text-white bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors z-10";
-                        closeBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+                        closeBtn.className =
+                          "absolute top-4 right-4 text-white bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors z-10";
+                        closeBtn.innerHTML =
+                          '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
                         closeBtn.onclick = (e) => {
                           e.stopPropagation();
                           overlay.remove();
                         };
-                        
+
                         const enlargedImg = document.createElement("img");
                         enlargedImg.src = img.src;
                         enlargedImg.className =
                           "max-w-full max-h-full object-contain";
-                        
+
                         overlay.appendChild(closeBtn);
                         overlay.appendChild(enlargedImg);
                         document.body.appendChild(overlay);
@@ -1596,7 +1603,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
               Два взгляда на фотографию — выберите свой стиль
             </p>
 
-            <div className="space-y-4">
+            <div className="space-y-2">
               <Link
                 to="/privacy"
                 className="text-xs text-muted-foreground hover:text-primary transition-colors block"
