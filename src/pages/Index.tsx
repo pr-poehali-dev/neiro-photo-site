@@ -184,14 +184,10 @@ const Index = () => {
       } else {
         if (result.fallback) {
           toast({
-            title: "Заявка принята",
+            title: "Проблема с отправкой уведомления",
             description: result.fallback,
+            variant: "destructive",
           });
-          setFormData({ name: "", phone: "", comment: "" });
-          setSelectedPhotographer("");
-          setSelectedPackage("");
-          setDate(undefined);
-          setSelectedTime("");
         } else {
           toast({
             title: "Ошибка",
@@ -321,7 +317,7 @@ const Index = () => {
                     scrollToSection(section);
                     setMobileMenuOpen(false);
                   }}
-                  className="text-lg font-medium hover:text-primary transition-colors text-left"
+                  className="text-base font-medium hover:text-primary transition-colors text-left"
                 >
                   {section === "home"
                     ? "Главная"
@@ -1600,14 +1596,16 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
               Два взгляда на фотографию — выберите свой стиль
             </p>
 
-            <Link
-              to="/privacy"
-              className="text-xs text-muted-foreground hover:text-primary transition-colors block"
-            >
-              Политика конфиденциальности
-            </Link>
-            <div className="text-xs text-muted-foreground pt-4 border-t">
-              © 2025 Aleksandra & Maria Photography
+            <div className="space-y-4">
+              <Link
+                to="/privacy"
+                className="text-xs text-muted-foreground hover:text-primary transition-colors block"
+              >
+                Политика конфиденциальности
+              </Link>
+              <div className="text-xs text-muted-foreground">
+                © 2025 Aleksandra & Maria Photography
+              </div>
             </div>
           </div>
         </div>

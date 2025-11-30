@@ -122,13 +122,24 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
                 }
         except urllib.error.HTTPError as e:
             error_body = e.read().decode() if hasattr(e, 'read') else str(e)
+            try:
+                error_json = json.loads(error_body)
+                error_description = error_json.get('description', error_body)
+            except:
+                error_description = error_body
+            
+            if e.code == 404 or 'not found' in error_description.lower():
+                fallback_msg = f'{photographer_name} еще не активировала бота. Попросите ее найти @LiveAIphoto_bot в Telegram и нажать /start'
+            else:
+                fallback_msg = f'Ошибка Telegram: {error_description}'
+            
             return {
                 'statusCode': 500,
                 'headers': {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'},
                 'body': json.dumps({
                     'error': f'Telegram API error: {e.code}',
-                    'details': error_body,
-                    'fallback': 'Заявка обработана, но уведомление не отправлено. Пожалуйста, свяжитесь напрямую.'
+                    'details': error_description,
+                    'fallback': fallback_msg
                 })
             }
         
