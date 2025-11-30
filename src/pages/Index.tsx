@@ -1248,34 +1248,6 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
         </div>
       )}
 
-      <style jsx>{`
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-
-        @media (max-width: 640px) {
-          .flex-none {
-            width: calc(85vw - 16px) !important;
-          }
-        }
-
-        @media (min-width: 640px) and (max-width: 768px) {
-          .flex-none {
-            width: 320px !important;
-          }
-        }
-
-        @media (max-width: 320px) {
-          .flex-none {
-            width: calc(90vw - 16px) !important;
-          }
-        }
-      `}</style>
-
       <section
         id="booking"
         className="py-20 px-6 bg-gradient-to-br from-purple-50 to-white"
