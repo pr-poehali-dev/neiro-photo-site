@@ -1480,6 +1480,26 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                   {isSubmitting ? "Отправка..." : "Отправить заявку"}
                 </Button>
               </form>
+              <div className="flex justify-center gap-6">
+                <a
+                  href="https://t.me/your_alexandra_channel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
+                >
+                  <Icon name="Send" size={20} />
+                  <span>Telegram канал Александры</span>
+                </a>
+                <a
+                  href="https://vk.com/your_maria_group"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
+                >
+                  <Icon name="Share2" size={20} />
+                  <span>VK группа Марии</span>
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -1498,7 +1518,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                 className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
               >
                 <Icon name="Send" size={20} />
-                <span>Telegram Александры</span>
+                <span>Telegram канал Александры</span>
               </a>
               <a
                 href="https://vk.com/your_maria_group"
@@ -1507,7 +1527,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                 className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
               >
                 <Icon name="Share2" size={20} />
-                <span>VK Марии</span>
+                <span>VK группа Марии</span>
               </a>
             </div>
             <Link
