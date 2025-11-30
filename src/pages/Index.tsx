@@ -931,7 +931,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                         500 ₽
                       </span>
                     </div>
-                    <p className="text-xs text-purple-800 flex items-center gap-2">
+                    <p className="font-bold text-xs text-purple-800 flex items-center gap-2">
                       Студия оплачивается отдельно
                     </p>
                   </div>
