@@ -1016,7 +1016,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                 <p className="text-sm text-gray-700">
                   <Icon name="Info" size={16} className="inline mr-1" />
                   Реквизиты для оплаты будут высланы после согласования деталей
-                  съемки
+                  съёмки
                 </p>
               </div>
             </CardContent>
@@ -1194,7 +1194,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
       >
         <div className="container mx-auto max-w-4xl">
           <h2 className="md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent text-2xl">
-            Записаться на съемку
+            Записаться на съёмку
           </h2>
           <p className="text-center text-gray-600 mb-12">
             Заполните форму, и мы свяжемся с вами в ближайшее время
@@ -1500,10 +1500,10 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
 
       <button
         onClick={() => setGiftDialogOpen(true)}
-        className="fixed bottom-6 right-6 bg-purple-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 z-40 animate-bounce"
+        className="fixed bottom-6 right-6 bg-gradient-to-r from-primary to-secondary text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 z-40 animate-bounce"
         aria-label="Получить подарок"
       >
-        <Icon name="Gift" size={20} />
+        <Icon name="Gift" size={28} />
       </button>
 
       <Dialog open={giftDialogOpen} onOpenChange={setGiftDialogOpen}>
@@ -1566,6 +1566,26 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
       <footer className="py-8 px-4 bg-muted/50 border-t">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-4">
+            <div className="flex justify-center gap-6">
+              <a
+                href="https://t.me/your_alexandra_channel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
+              >
+                <Icon name="Send" size={20} />
+                <span>Telegram канал Александры</span>
+              </a>
+              <a
+                href="https://vk.com/your_maria_group"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
+              >
+                <Icon name="Share2" size={20} />
+                <span>VK группа Марии</span>
+              </a>
+            </div>
             <p className="font-semibold text-xs">
               Два взгляда на фотографию — выберите свой стиль
             </p>
