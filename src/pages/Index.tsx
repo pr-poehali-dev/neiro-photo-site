@@ -71,12 +71,23 @@ const Index = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      const bookingSection = document.getElementById('booking');
+      if (!bookingSection) return;
+
+      const bookingRect = bookingSection.getBoundingClientRect();
+      const isBookingVisible = bookingRect.top < window.innerHeight && bookingRect.bottom > 0;
+
+      if (isBookingVisible && subscriptionDialogOpen) {
+        setSubscriptionDialogOpen(false);
+        return;
+      }
+
       const scrollPercentage =
         (window.scrollY /
           (document.documentElement.scrollHeight - window.innerHeight)) *
         100;
 
-      if (scrollPercentage >= 90 && !subscriptionDialogOpen) {
+      if (scrollPercentage >= 90 && !subscriptionDialogOpen && !isBookingVisible) {
         const now = Date.now();
         if (!dialogDismissedAt || now - dialogDismissedAt >= 5 * 60 * 1000) {
           setSubscriptionDialogOpen(true);
@@ -924,14 +935,15 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                       7 500 ₽
                     </span>
                   </div>
-                  <div className="space-y-1">
+                  <div className="space-y-2">
                     <div className="flex justify-between items-center gap-2">
                       <span>Короткое видео (до 30сек)</span>
                       <span className="font-bold text-sm whitespace-nowrap">
                         500 ₽
                       </span>
                     </div>
-                    <p className="font-bold text-xs text-purple-800 flex items-center gap-2">
+                    <p className="text-xs text-orange-600 flex items-center gap-1 mt-3">
+                      <Icon name="AlertCircle" size={14} />
                       Студия оплачивается отдельно
                     </p>
                   </div>
@@ -1150,39 +1162,57 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
             </p>
           </div>
 
-          <div className="overflow-x-auto pb-4 -mx-4 px-4">
-            <div className="flex gap-4 min-w-max md:min-w-0 md:grid md:grid-cols-4">
-              {testimonials.map((testimonial, idx) => (
-                <div
-                  key={idx}
-                  className="flex-none w-[280px] md:w-auto group cursor-pointer"
-                  onClick={(e) => {
-                    const img = e.currentTarget.querySelector("img");
-                    if (img) {
-                      const overlay = document.createElement("div");
-                      overlay.className =
-                        "fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 cursor-zoom-out";
-                      overlay.onclick = () => overlay.remove();
-                      const enlargedImg = document.createElement("img");
-                      enlargedImg.src = img.src;
-                      enlargedImg.className =
-                        "max-w-full max-h-full object-contain";
-                      overlay.appendChild(enlargedImg);
-                      document.body.appendChild(overlay);
-                    }
-                  }}
-                >
-                  <Card className="hover:shadow-lg transition-all h-full">
-                    <CardContent className="p-4">
-                      <img
-                        src={testimonial.image}
-                        alt={`Отзыв ${idx + 1}`}
-                        className="w-full h-[400px] object-contain rounded-lg"
-                      />
-                    </CardContent>
-                  </Card>
-                </div>
-              ))}
+          <div className="relative">
+            <div className="overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
+              <div className="flex gap-4 min-w-max md:min-w-0 md:grid md:grid-cols-4">
+                {testimonials.map((testimonial, idx) => (
+                  <div
+                    key={idx}
+                    className="flex-none w-[280px] md:w-auto group cursor-pointer"
+                    onClick={(e) => {
+                      const img = e.currentTarget.querySelector("img");
+                      if (img) {
+                        const overlay = document.createElement("div");
+                        overlay.className =
+                          "fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4";
+                        overlay.onclick = () => overlay.remove();
+                        
+                        const closeBtn = document.createElement("button");
+                        closeBtn.className = "absolute top-4 right-4 text-white bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors z-10";
+                        closeBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+                        closeBtn.onclick = (e) => {
+                          e.stopPropagation();
+                          overlay.remove();
+                        };
+                        
+                        const enlargedImg = document.createElement("img");
+                        enlargedImg.src = img.src;
+                        enlargedImg.className =
+                          "max-w-full max-h-full object-contain";
+                        
+                        overlay.appendChild(closeBtn);
+                        overlay.appendChild(enlargedImg);
+                        document.body.appendChild(overlay);
+                      }
+                    }}
+                  >
+                    <Card className="hover:shadow-lg transition-all h-full">
+                      <CardContent className="p-4">
+                        <img
+                          src={testimonial.image}
+                          alt={`Отзыв ${idx + 1}`}
+                          className="w-full h-[400px] object-contain rounded-lg"
+                        />
+                      </CardContent>
+                    </Card>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="flex items-center justify-center gap-2 mt-4 text-muted-foreground md:hidden">
+              <Icon name="ChevronLeft" size={20} className="animate-pulse" />
+              <span className="text-sm">Листайте для просмотра</span>
+              <Icon name="ChevronRight" size={20} className="animate-pulse" />
             </div>
           </div>
         </div>
@@ -1565,14 +1595,14 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
 
       <footer className="py-8 px-4 bg-muted/50 border-t">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center space-y-4">
+          <div className="text-center space-y-8">
             <p className="font-semibold text-xs">
               Два взгляда на фотографию — выберите свой стиль
             </p>
 
             <Link
               to="/privacy"
-              className="text-xs text-muted-foreground hover:text-primary transition-colors"
+              className="text-xs text-muted-foreground hover:text-primary transition-colors block"
             >
               Политика конфиденциальности
             </Link>
