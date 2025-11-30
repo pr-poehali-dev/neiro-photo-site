@@ -1211,6 +1211,71 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
         </div>
       </section>
 
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
+          onClick={closeModal}
+        >
+          <div
+            className="relative max-w-4xl max-h-[90vh] w-full h-full flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute -top-12 -right-4 z-10 p-2 rounded-full bg-white/90 hover:bg-white backdrop-blur-sm transition-all duration-200 shadow-lg"
+              onClick={closeModal}
+            >
+              <Icon name="X" size={24} className="text-gray-800" />
+            </button>
+
+            <div className="relative w-full h-full max-w-6xl max-h-[80vh]">
+              <img
+                src={selectedImage.src}
+                alt={selectedImage.name}
+                className="w-full h-full object-contain rounded-2xl shadow-2xl max-h-[80vh]"
+              />
+              <div className="absolute bottom-4 left-4 right-4 bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-xl text-center">
+                <p className="font-semibold text-lg">{selectedImage.name}</p>
+              </div>
+            </div>
+
+            <button className="absolute left-4 p-3 bg-white/20 hover:bg-white/40 rounded-full backdrop-blur-sm transition-all duration-200">
+              <Icon name="ChevronLeft" size={24} className="text-white" />
+            </button>
+            <button className="absolute right-4 p-3 bg-white/20 hover:bg-white/40 rounded-full backdrop-blur-sm transition-all duration-200">
+              <Icon name="ChevronRight" size={24} className="text-white" />
+            </button>
+          </div>
+        </div>
+      )}
+
+      <style jsx>{`
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+
+        @media (max-width: 640px) {
+          .flex-none {
+            width: calc(85vw - 16px) !important;
+          }
+        }
+
+        @media (min-width: 640px) and (max-width: 768px) {
+          .flex-none {
+            width: 320px !important;
+          }
+        }
+
+        @media (max-width: 320px) {
+          .flex-none {
+            width: calc(90vw - 16px) !important;
+          }
+        }
+      `}</style>
+
       <section
         id="booking"
         className="py-20 px-6 bg-gradient-to-br from-purple-50 to-white"
