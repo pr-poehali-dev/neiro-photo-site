@@ -67,6 +67,7 @@ const Index = () => {
     string | null
   >(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [giftDialogOpen, setGiftDialogOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -220,7 +221,7 @@ const Index = () => {
   const testimonials = [
     {
       image:
-        "https://cdn.poehali.dev/files/9ca36f4f-446f-4fc8-8b4d-5ced09b844f0.jpg",
+        "https://cdn.poehali.dev/files/ff37d6c9-caea-4559-9577-be6ef2d07b0f.jpg",
     },
     {
       image:
@@ -466,7 +467,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     <span>Подробнее </span>
                   </button>
                   {expandedPhotographer === "alexandra" && (
-                    <div className="text-muted-foreground text-sm sm:text-base pt-2 border-t animate-fade-in">
+                    <div className="text-muted-foreground text-xs sm:text-base pt-2 border-t animate-fade-in">
                       <p className="mb-2">
                         Я использую передовые AI-технологии для создания
                         уникальных фотографий, которые выглядят как настоящие
@@ -580,46 +581,75 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent
-              value="alexandra"
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6"
-            >
-              {portfolioImages
-                .filter((img) => img.photographer === "alexandra")
-                .map((img, idx) => (
-                  <div
-                    key={idx}
-                    className="group relative overflow-hidden rounded-lg aspect-square"
-                  >
-                    <img
-                      src={img.url}
-                      alt={`Работа ${idx + 1}`}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                ))}
+            <TabsContent value="alexandra">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+                {portfolioImages
+                  .filter((img) => img.photographer === "alexandra")
+                  .map((img, idx) => (
+                    <div
+                      key={idx}
+                      className="group relative overflow-hidden rounded-lg aspect-square"
+                    >
+                      <img
+                        src={img.url}
+                        alt={`Работа ${idx + 1}`}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                  ))}
+              </div>
+              <div className="mt-8 text-center">
+                <a
+                  href="https://t.me/online_photosessiya"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary hover:underline text-lg font-medium"
+                >
+                  <Icon name="Send" size={20} />
+                  Больше работ в Telegram канале Александры
+                  <Icon name="ExternalLink" size={16} />
+                </a>
+              </div>
             </TabsContent>
 
-            <TabsContent
-              value="maria"
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6"
-            >
-              {portfolioImages
-                .filter((img) => img.photographer === "maria")
-                .map((img, idx) => (
-                  <div
-                    key={idx}
-                    className="group relative overflow-hidden rounded-lg aspect-square"
+            <TabsContent value="maria">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+                {portfolioImages
+                  .filter((img) => img.photographer === "maria")
+                  .map((img, idx) => (
+                    <div
+                      key={idx}
+                      className="group relative overflow-hidden rounded-lg aspect-square"
+                    >
+                      <img
+                        src={img.url}
+                        alt={`Работа ${idx + 1}`}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                  ))}
+              </div>
+              <div className="mt-8 text-center">
+                <a
+                  href="https://vk.com/club_photograph_novosibirsk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-secondary hover:underline text-lg font-medium"
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
                   >
-                    <img
-                      src={img.url}
-                      alt={`Работа ${idx + 1}`}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                ))}
+                    <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.48 14.94h-1.39c-.58 0-.76-.47-1.79-1.5-.91-.87-1.31-1-1.53-1-.32 0-.41.09-.41.52v1.37c0 .37-.11.58-1.07.58-1.59 0-3.35-.96-4.59-2.75-1.87-2.59-2.38-4.54-2.38-4.93 0-.22.09-.43.52-.43h1.39c.39 0 .54.18.69.59.76 2.19 2.03 4.11 2.56 4.11.2 0 .29-.09.29-.59v-2.28c-.07-1.13-.65-1.22-.65-1.62 0-.18.15-.36.39-.36h2.18c.33 0 .45.17.45.55v3.08c0 .33.15.45.24.45.2 0 .36-.12.72-.48 1.1-1.24 1.89-3.15 1.89-3.15.11-.22.28-.43.7-.43h1.39c.47 0 .57.24.47.55-.17.78-1.85 3.28-1.85 3.28-.17.27-.23.39 0 .7.17.23.72.71 1.09 1.14.67.77 1.18 1.41 1.32 1.86.13.44-.1.67-.54.67z" />
+                  </svg>
+                  Больше работ в VK группе Марии
+                  <Icon name="ExternalLink" size={16} />
+                </a>
+              </div>
             </TabsContent>
           </Tabs>
         </div>
@@ -849,7 +879,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     <span>Любые образы и стили</span>
                   </div>
                   <div className="flex items-center gap-2 text-sm">
-                    <Icon name="online" size={16} className="text-primary" />
+                    <Icon name="Monitor" size={16} className="text-primary" />
                     <span>Работа онлайн</span>
                   </div>
                 </div>
@@ -894,11 +924,17 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                       7 500 ₽
                     </span>
                   </div>
-                  <div className="flex justify-between items-center gap-2">
-                    <span>Короткое видео (до 30сек)</span>
-                    <span className="font-bold text-sm whitespace-nowrap">
-                      500 ₽
-                    </span>
+                  <div className="space-y-1">
+                    <div className="flex justify-between items-center gap-2">
+                      <span>Короткое видео (до 30сек)</span>
+                      <span className="font-bold text-sm whitespace-nowrap">
+                        500 ₽
+                      </span>
+                    </div>
+                    <p className="text-xs text-orange-600 flex items-center gap-1">
+                      <Icon name="AlertCircle" size={14} />
+                      Студия оплачивается отдельно
+                    </p>
                   </div>
                 </div>
                 <div className="pt-4 border-t space-y-2">
@@ -933,87 +969,51 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
           <h2 className="md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent text-2xl">
             Оплата
           </h2>
-          <p className="text-center text-gray-600 mb-12 text-lg">
-            Оплачивайте услуги удобным для вас способом
+          <p className="text-center text-gray-600 mb-8 text-base">
+            Удобные способы оплаты услуг
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card className="border-2 border-purple-200">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Icon name="CreditCard" className="text-primary" />
-                  Способы оплаты
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-base">
-                  <Icon name="Building" className="text-primary" />
-                  <div>
-                    <div className="font-semibold">Банковский перевод</div>
-                    <div className="text-xs text-gray-600">По реквизитам</div>
+          <Card className="border-2 border-purple-200 mb-6">
+            <CardContent className="p-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <Icon name="CreditCard" className="text-primary" />
+                    <h3 className="font-semibold text-base">Способы оплаты</h3>
                   </div>
-                </div>
-                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-base">
-                  <Icon name="Wallet" className="text-primary" />
-                  <div>
-                    <div className="font-semibold">Наличные</div>
-                    <div className="text-xs text-gray-600">
-                      При реальной фотосъемке
+                  <div className="space-y-2 text-sm">
+                    <div className="flex items-center gap-2">
+                      <Icon name="Building" size={16} className="text-primary" />
+                      <span>Банковский перевод</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Icon name="Wallet" size={16} className="text-primary" />
+                      <span>Наличные (при классической съемке)</span>
                     </div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-purple-200">
-              <CardHeader>
-                <CardTitle className="text-lg flex items-center gap-2">
-                  <Icon name="Shield" className="text-green-500" />
-                  Гарантии
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <Icon
-                    name="Undo2"
-                    className="text-green-500 mt-1"
-                    size={20}
-                  />
-                  <div>
-                    <div className="font-semibold mb-1">Возврат средств</div>
-                    <div className="text-xs text-gray-600">
-                      Возможность вернуть предоплату в течение 14 дней
-                    </div>
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <Icon name="Shield" className="text-green-500" />
+                    <h3 className="font-semibold text-base">Условия</h3>
+                  </div>
+                  <div className="space-y-2 text-sm">
+                    <p>
+                      <span className="font-semibold">Предоплата 30%</span> для классической съемки
+                    </p>
+                    <p className="text-xs text-gray-600">
+                      При отмене менее чем за 24 часа предоплата не возвращается
+                    </p>
                   </div>
                 </div>
-                <Separator className="my-4" />
-                <div className="bg-purple-50 p-4 rounded-lg">
-                  <p className="text-sm text-gray-700">
-                    <Icon name="Info" size={16} className="inline mr-1" />
-                    Для оплаты свяжитесь с фотографом удобным способом.
-                    Реквизиты на оплату будут высланы после согласования деталей
-                    съёмки.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <Card className="bg-gradient-to-r from-purple-50 to-white border-2 border-purple-200">
-            <CardHeader>
-              <CardTitle className="text-center text-base">
-                Условия оплаты классической фотосъемки
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="text-center space-y-2">
-              <p className="font-bold text-base">
-                Предоплата{" "}
-                <span className="font-bold text-lg text-primary">30%</span>
-              </p>
-              <p className="text-sm text-gray-600">
-                При отмене съемки менее чем за 24 часа предоплата не
-                возвращается
-              </p>
+              </div>
+              <Separator className="my-4" />
+              <div className="bg-purple-50 p-4 rounded-lg">
+                <p className="text-sm text-gray-700">
+                  <Icon name="Info" size={16} className="inline mr-1" />
+                  Реквизиты для оплаты будут высланы после согласования деталей съёмки
+                </p>
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -1145,32 +1145,38 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, idx) => (
-              <Card key={idx} className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-6 space-y-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-full h-48 object-cover rounded-lg my-0 mx-0 py-0 px-[62px]"
-                  />
-                  <div className="flex gap-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Icon
-                        key={i}
-                        name="Star"
-                        className="text-yellow-500 fill-yellow-500"
-                        size={16}
+          <div className="overflow-x-auto pb-4 -mx-4 px-4">
+            <div className="flex gap-4 min-w-max md:min-w-0 md:grid md:grid-cols-4">
+              {testimonials.map((testimonial, idx) => (
+                <div
+                  key={idx}
+                  className="flex-none w-[280px] md:w-auto group cursor-pointer"
+                  onClick={(e) => {
+                    const img = e.currentTarget.querySelector('img');
+                    if (img) {
+                      const overlay = document.createElement('div');
+                      overlay.className = 'fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 cursor-zoom-out';
+                      overlay.onclick = () => overlay.remove();
+                      const enlargedImg = document.createElement('img');
+                      enlargedImg.src = img.src;
+                      enlargedImg.className = 'max-w-full max-h-full object-contain';
+                      overlay.appendChild(enlargedImg);
+                      document.body.appendChild(overlay);
+                    }
+                  }}
+                >
+                  <Card className="hover:shadow-lg transition-all h-full">
+                    <CardContent className="p-4">
+                      <img
+                        src={testimonial.image}
+                        alt={`Отзыв ${idx + 1}`}
+                        className="w-full h-[400px] object-contain rounded-lg"
                       />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground mb-4 italic">
-                    &ldquo;{testimonial.text}&rdquo;
-                  </p>
-                  <p className="font-semibold">{testimonial.name}</p>
-                </CardContent>
-              </Card>
-            ))}
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -1484,6 +1490,68 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
           </Card>
         </div>
       </section>
+
+      <button
+        onClick={() => setGiftDialogOpen(true)}
+        className="fixed bottom-6 right-6 bg-gradient-to-r from-purple-600 to-pink-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 z-40 animate-bounce"
+        aria-label="Получить подарок"
+      >
+        <Icon name="Gift" size={28} />
+      </button>
+
+      <Dialog open={giftDialogOpen} onOpenChange={setGiftDialogOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-xl text-center">
+              Дарим 500₽ ! 🎁
+            </DialogTitle>
+            <DialogDescription className="text-center">
+              Подпишитесь на наши соцсети и получите скидку 500₽ на любую услугу
+            </DialogDescription>
+          </DialogHeader>
+          <div className="space-y-3">
+            <a
+              href="https://vk.com/club_photograph_novosibirsk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 p-4 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors"
+            >
+              <svg
+                className="text-blue-600"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.48 14.94h-1.39c-.58 0-.76-.47-1.79-1.5-.91-.87-1.31-1-1.53-1-.32 0-.41.09-.41.52v1.37c0 .37-.11.58-1.07.58-1.59 0-3.35-.96-4.59-2.75-1.87-2.59-2.38-4.54-2.38-4.93 0-.22.09-.43.52-.43h1.39c.39 0 .54.18.69.59.76 2.19 2.03 4.11 2.56 4.11.2 0 .29-.09.29-.59v-2.28c-.07-1.13-.65-1.22-.65-1.62 0-.18.15-.36.39-.36h2.18c.33 0 .45.17.45.55v3.08c0 .33.15.45.24.45.2 0 .36-.12.72-.48 1.1-1.24 1.89-3.15 1.89-3.15.11-.22.28-.43.7-.43h1.39c.47 0 .57.24.47.55-.17.78-1.85 3.28-1.85 3.28-.17.27-.23.39 0 .7.17.23.72.71 1.09 1.14.67.77 1.18 1.41 1.32 1.86.13.44-.1.67-.54.67z" />
+              </svg>
+              <div className="flex-1">
+                <div className="font-semibold">Группа ВКонтакте Марии</div>
+                <div className="text-sm text-gray-600">Подписаться на группу</div>
+              </div>
+              <Icon name="ExternalLink" size={16} />
+            </a>
+
+            <a
+              href="https://t.me/online_photosessiya"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 p-4 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors"
+            >
+              <Icon name="Send" className="text-blue-500" size={24} />
+              <div className="flex-1">
+                <div className="font-semibold">Телеграм канал Александры</div>
+                <div className="text-sm text-gray-600">Подписаться на канал</div>
+              </div>
+              <Icon name="ExternalLink" size={16} />
+            </a>
+          </div>
+          <p className="text-xs text-center text-gray-500 mt-4">
+            После подписки напишите фотографу и получите скидку
+          </p>
+        </DialogContent>
+      </Dialog>
+
       <footer className="py-8 px-4 bg-muted/50 border-t">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-4">
