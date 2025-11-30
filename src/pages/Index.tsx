@@ -219,30 +219,18 @@ const Index = () => {
 
   const testimonials = [
     {
-      name: "Елена Смирнова",
-      text: "Александра создала невероятные нейрофото! Это настоящее искусство, которое передаёт глубину эмоций.",
-      rating: 5,
       image:
         "https://cdn.poehali.dev/files/9ca36f4f-446f-4fc8-8b4d-5ced09b844f0.jpg",
     },
     {
-      name: "Дмитрий и Ольга",
-      text: "Мария сняла нашу свадьбу просто волшебно. Каждый кадр — это история, которую хочется пересматривать снова.",
-      rating: 5,
       image:
         "https://cdn.poehali.dev/files/7690bb43-98b3-4074-bea2-f338ceaa833e.jpg",
     },
     {
-      name: "Анна Петрова",
-      text: "Семейная фотосессия с Марией прошла очень комфортно. Дети вели себя естественно, а результат превзошёл ожидания!",
-      rating: 5,
       image:
         "https://cdn.poehali.dev/files/fc2f2b36-2ba3-49bd-9b87-2edbeaeaaab4.jpg",
     },
     {
-      name: "Ирина Волкова",
-      text: "Обалдеть, спасибо большое! Главное лицо его, у вас здорово получилось, вы умница!",
-      rating: 5,
       image:
         "https://cdn.poehali.dev/files/f532e6b0-4230-4f9a-a4a5-5a78a878a67a.jpg",
     },
@@ -380,9 +368,9 @@ const Index = () => {
               size="icon"
               className="md:hidden"
               onClick={() => {
-                const sheet = document.getElementById('mobile-menu-sheet');
+                const sheet = document.getElementById("mobile-menu-sheet");
                 if (sheet) {
-                  const button = sheet.querySelector('button');
+                  const button = sheet.querySelector("button");
                   if (button instanceof HTMLElement) button.click();
                 }
               }}
@@ -1069,7 +1057,8 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     <AccordionContent>
                       Нужны качественные фото в хорошем освещении, где четко
                       видно лицо. Подойдут селфи или портреты, сделанные на
-                      современный смартфон.
+                      современный смартфон. Желательно показать разные эмоции:
+                      улыбку, удивление, задумчивость или радость.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="ai-3">
@@ -1117,7 +1106,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                       Сколько времени длится съемка?
                     </AccordionTrigger>
                     <AccordionContent>
-                      В зависимости от пакета: от 1 до 4 часов. Этого достаточно
+                      В зависимости от пакета: от 1 до 2 часов. Этого достаточно
                       для создания качественных фотографий в разных образах и
                       локациях.
                     </AccordionContent>
@@ -1156,31 +1145,67 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, idx) => (
-              <Card key={idx} className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-6 space-y-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-full h-48 object-cover rounded-lg my-0 mx-0 py-0 px-[62px]"
-                  />
-                  <div className="flex gap-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Icon
-                        key={i}
-                        name="Star"
-                        className="text-yellow-500 fill-yellow-500"
-                        size={16}
-                      />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground mb-4 italic">
-                    &ldquo;{testimonial.text}&rdquo;
-                  </p>
-                  <p className="font-semibold">{testimonial.name}</p>
-                </CardContent>
-              </Card>
+          <div className="w-full overflow-hidden">
+            <div className="flex gap-4 md:gap-6 snap-x snap-mandatory scrollbar-hide overflow-x-auto pb-4 md:pb-8 scroll-smooth">
+              {testimonials.map((testimonial, idx) => (
+                <div
+                  key={idx}
+                  className="flex-none w-80 md:w-96 snap-center hover:scale-105 transition-all duration-300"
+                >
+                  <Card className="h-[480px] md:h-[520px] hover:shadow-2xl transition-all duration-300 overflow-hidden backdrop-blur-sm bg-white/80 border-0 shadow-lg">
+                    <CardContent className="p-6 space-y-4 h-full flex flex-col">
+                      <div className="flex-1 min-h-[200px] relative overflow-hidden rounded-xl group">
+                        <img
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 cursor-pointer"
+                          onClick={() =>
+                            openModal(testimonial.image, testimonial.name)
+                          }
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
+                          <div className="text-white text-lg font-semibold px-4 py-2 bg-black/50 rounded-full backdrop-blur-sm">
+                            Увеличить
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex gap-1 pt-2">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Icon
+                            key={i}
+                            name="Star"
+                            className="text-yellow-500 fill-yellow-500 drop-shadow-sm"
+                            size={20}
+                          />
+                        ))}
+                      </div>
+
+                      <p className="text-muted-foreground flex-1 italic leading-relaxed text-sm md:text-base">
+                        "{testimonial.text}"
+                      </p>
+
+                      <div className="pt-2">
+                        <p className="font-semibold text-base md:text-lg text-gray-900">
+                          {testimonial.name}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex justify-center mt-8 gap-2 md:hidden">
+            {testimonials.map((_, idx) => (
+              <button
+                key={idx}
+                className="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300 hover:bg-blue-500"
+                style={{
+                  backgroundColor: idx === 0 ? "#3B82F6" : "#D1D5DB",
+                }}
+              />
             ))}
           </div>
         </div>

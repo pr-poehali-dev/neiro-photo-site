@@ -261,7 +261,7 @@ export const QuizDialog = ({ open, onOpenChange }: QuizDialogProps) => {
                       </Button>
                     </a>
                     <a
-                      href="https://wa.me/79231234567"
+                      href="https://wa.me/79139083148"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1"
@@ -296,7 +296,7 @@ export const QuizDialog = ({ open, onOpenChange }: QuizDialogProps) => {
                       </Button>
                     </a>
                     <a
-                      href="https://wa.me/79998887766"
+                      href="https://wa.me/79134674356"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1"
