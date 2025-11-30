@@ -1503,7 +1503,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
         className="fixed bottom-6 right-6 bg-purple-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110 z-40 animate-bounce"
         aria-label="Получить подарок"
       >
-        <Icon name="Gift" size={28} />
+        <Icon name="Gift" size={24} />
       </button>
 
       <Dialog open={giftDialogOpen} onOpenChange={setGiftDialogOpen}>
