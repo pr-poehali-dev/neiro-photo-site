@@ -221,7 +221,7 @@ const Index = () => {
   const testimonials = [
     {
       image:
-        "https://cdn.poehali.dev/files/7690bb43-98b3-4074-bea2-f338ceaa833e.jpg",
+        "https://cdn.poehali.dev/files/9ca36f4f-446f-4fc8-8b4d-5ced09b844f0.jpg",
     },
     {
       image:
