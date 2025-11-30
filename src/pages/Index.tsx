@@ -1566,26 +1566,6 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
       <footer className="py-8 px-4 bg-muted/50 border-t">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-4">
-            <div className="flex justify-center gap-6">
-              <a
-                href="https://t.me/your_alexandra_channel"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
-              >
-                <Icon name="Send" size={20} />
-                <span>Telegram канал Александры</span>
-              </a>
-              <a
-                href="https://vk.com/your_maria_group"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
-              >
-                <Icon name="Share2" size={20} />
-                <span>VK группа Марии</span>
-              </a>
-            </div>
             <p className="font-semibold text-xs">
               Два взгляда на фотографию — выберите свой стиль
             </p>
