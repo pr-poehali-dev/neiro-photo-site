@@ -606,7 +606,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-primary hover:underline text-sm font-medium"
                 >
-                  <Icon name="Send" text-base />
+                  <Icon name="Send" />
                   Больше работ в Telegram канале Александры
                   <Icon name="ExternalLink" size={14} />
                 </a>
