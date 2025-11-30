@@ -2,15 +2,15 @@ import json
 import os
 import urllib.request
 import urllib.parse
-from typing import Dict, Any
+from typing import Dict, Any, List
 
 def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     '''
-    Business: Отправка заявки на фотосъемку в Telegram соответствующему фотографу
+    Business: Отправка заявки на фотосъемку в Telegram фотографу и дублирование на общий чат
     Args: event - dict с httpMethod, body (name, phone, email, photographer, package, date, time, comment)
           context - object с request_id, function_name
     Returns: HTTP response dict
-    Note: Для работы бота пользователи должны сначала написать боту /start в Telegram
+    Note: Заявка отправляется выбранному фотографу + всегда дублируется на TELEGRAM_CHAT_ID
     '''
     method: str = event.get('httpMethod', 'POST')
     
@@ -53,25 +53,26 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
             }
         
         bot_token = os.environ.get('LIVEAIPHOTO_BOT')
-        
-        if photographer == 'maria':
-            photographer_name = 'Марии'
-            chat_id = '1692264245'
-        elif photographer == 'alexandra':
-            photographer_name = 'Александры'
-            chat_id = '6078882546'
-        else:
-            return {
-                'statusCode': 400,
-                'headers': {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'},
-                'body': json.dumps({'error': 'Invalid photographer'})
-            }
+        general_chat_id = os.environ.get('TELEGRAM_CHAT_ID')
         
         if not bot_token:
             return {
                 'statusCode': 500,
                 'headers': {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'},
                 'body': json.dumps({'error': 'Telegram bot token not configured'})
+            }
+        
+        if photographer == 'maria':
+            photographer_name = 'Марии'
+            photographer_chat_id = os.environ.get('TELEGRAM_MARIYA_CHAT_ID', '1692264245')
+        elif photographer == 'alexandra':
+            photographer_name = 'Александры'
+            photographer_chat_id = os.environ.get('TELEGRAM_ALEXANDRA_CHAT_ID', '6078882546')
+        else:
+            return {
+                'statusCode': 400,
+                'headers': {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'},
+                'body': json.dumps({'error': 'Invalid photographer'})
             }
         
         message = f"Новая заявка для {photographer_name}!\n\n"
@@ -85,8 +86,8 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
                 'trial': 'Пробная (3 фото, 1 образ) - 1 000 руб',
                 'standard': 'Стандарт (10 фото, 2-3 образа) - 2 500 руб' if photographer == 'alexandra' else 'Стандарт (1 час, 15 фото в ретуши) - 4 000 руб',
                 'premium': 'Премиум (20 фото, 5 образов) - 3 500 руб' if photographer == 'alexandra' else 'Премиум (2 часа, 30 фото в ретуши) - 7 500 руб',
-                'group': 'Групповая (1 фото, 2 и более человек) - от 500 руб',
-                'video': 'Короткое видео (до 30сек) - 500 руб',
+                'gruppovaya': 'Групповая (2 и более человек) - от 500 руб',
+                'korotkoe video': 'Короткое видео (до 30сек) - 500 руб',
                 'mini': 'Мини (30 мин, 7 фото в ретуши) - 2 500 руб',
                 'other': 'Другое'
             }
@@ -98,62 +99,82 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
         if comment:
             message += f"Комментарий: {comment}\n"
         
+        chat_ids_to_send: List[str] = [photographer_chat_id]
+        if general_chat_id and general_chat_id != photographer_chat_id:
+            chat_ids_to_send.append(general_chat_id)
+        
         telegram_url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-        data = urllib.parse.urlencode({
-            'chat_id': chat_id,
-            'text': message
-        }).encode()
         
-        print(f"Sending to chat_id: {chat_id}, photographer: {photographer_name}")
+        success_count = 0
+        errors = []
         
-        try:
-            req = urllib.request.Request(telegram_url, data=data)
-            with urllib.request.urlopen(req) as response:
-                telegram_response = json.loads(response.read().decode())
+        for chat_id in chat_ids_to_send:
+            data = urllib.parse.urlencode({
+                'chat_id': chat_id,
+                'text': message
+            }).encode()
             
-            print(f"Telegram response: {telegram_response}")
-            
-            if not telegram_response.get('ok'):
-                error_description = telegram_response.get('description', 'Unknown error')
-                return {
-                    'statusCode': 500,
-                    'headers': {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'},
-                    'body': json.dumps({
-                        'error': 'Failed to send telegram message',
-                        'details': error_description,
-                        'fallback': 'Заявка сохранена, но не удалось отправить в Telegram'
-                    })
-                }
-        except urllib.error.HTTPError as e:
-            error_body = e.read().decode() if hasattr(e, 'read') else str(e)
             try:
-                error_json = json.loads(error_body)
-                error_description = error_json.get('description', error_body)
-            except:
-                error_description = error_body
+                req = urllib.request.Request(telegram_url, data=data)
+                with urllib.request.urlopen(req) as response:
+                    telegram_response = json.loads(response.read().decode())
+                
+                if telegram_response.get('ok'):
+                    success_count += 1
+                    print(f"Success: Message sent to chat_id {chat_id}")
+                else:
+                    error_description = telegram_response.get('description', 'Unknown error')
+                    errors.append(f"Chat {chat_id}: {error_description}")
+                    print(f"Error: Failed to send to chat_id {chat_id}: {error_description}")
+                    
+            except urllib.error.HTTPError as e:
+                error_body = e.read().decode() if hasattr(e, 'read') else str(e)
+                try:
+                    error_json = json.loads(error_body)
+                    error_description = error_json.get('description', error_body)
+                except (json.JSONDecodeError, KeyError):
+                    error_description = error_body
+                
+                errors.append(f"Chat {chat_id}: HTTP {e.code} - {error_description}")
+                print(f"HTTPError: Failed to send to chat_id {chat_id}: {e.code} - {error_description}")
             
-            if e.code == 404 or 'not found' in error_description.lower():
-                fallback_msg = f'{photographer_name} еще не активировала бота. Попросите ее найти @LiveAIphoto_bot в Telegram и нажать /start'
-            else:
-                fallback_msg = f'Ошибка Telegram: {error_description}'
-            
+            except Exception as e:
+                errors.append(f"Chat {chat_id}: {str(e)}")
+                print(f"Exception: Failed to send to chat_id {chat_id}: {str(e)}")
+        
+        if success_count == len(chat_ids_to_send):
+            return {
+                'statusCode': 200,
+                'headers': {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'},
+                'body': json.dumps({
+                    'success': True, 
+                    'message': 'Заявка успешно отправлена',
+                    'sent_to': success_count
+                })
+            }
+        elif success_count > 0:
+            return {
+                'statusCode': 207,
+                'headers': {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'},
+                'body': json.dumps({
+                    'success': True,
+                    'message': f'Заявка частично отправлена ({success_count}/{len(chat_ids_to_send)})',
+                    'warnings': errors
+                })
+            }
+        else:
             return {
                 'statusCode': 500,
                 'headers': {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'},
                 'body': json.dumps({
-                    'error': f'Telegram API error: {e.code}',
-                    'details': error_description,
-                    'fallback': fallback_msg
+                    'error': 'Failed to send to any recipient',
+                    'details': errors,
+                    'fallback': 'Не удалось отправить уведомление. Пожалуйста, свяжитесь напрямую с фотографом'
                 })
             }
         
-        return {
-            'statusCode': 200,
-            'headers': {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'},
-            'body': json.dumps({'success': True, 'message': 'Заявка успешно отправлена'})
-        }
-        
     except Exception as e:
+        print(f"Unexpected error: {str(e)}")
         return {
             'statusCode': 500,
             'headers': {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'},

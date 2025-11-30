@@ -1,16 +1,48 @@
 {
   "tests": [
     {
-      "name": "Test booking validation",
+      "name": "Test booking for Maria",
       "method": "POST",
       "body": {
-        "name": "Тест Тестов",
+        "name": "Тест Мария",
         "phone": "+7 (999) 123-45-67",
-        "photographer": "maria"
+        "photographer": "maria",
+        "package": "standard",
+        "comment": "Тестовая заявка для Марии"
       },
-      "expectedStatus": 500,
+      "expectedStatus": 200,
       "expectedBody": {
-        "fallback": "string"
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Test booking for Alexandra",
+      "method": "POST",
+      "body": {
+        "name": "Тест Александра",
+        "phone": "+7 (999) 987-65-43",
+        "photographer": "alexandra",
+        "package": "trial",
+        "comment": "Тестовая заявка для Александры"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "sent_to": 2
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Test missing photographer",
+      "method": "POST",
+      "body": {
+        "name": "Тест",
+        "phone": "+7 (999) 111-22-33"
+      },
+      "expectedStatus": 400,
+      "expectedBody": {
+        "error": "Missing required fields"
       },
       "bodyMatcher": "partial"
     },
