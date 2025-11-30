@@ -900,7 +900,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     Классическая съемка
                   </CardTitle>
                 </div>
-                <CardDescription className="text-base">
+                <CardDescription className="text-sm sm:text-base">
                   Профессиональная фотосессия с Марией
                 </CardDescription>
               </CardHeader>
