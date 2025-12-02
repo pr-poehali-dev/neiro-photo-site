@@ -1128,23 +1128,25 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     </span>
                   </div>
                   <div className="flex justify-between items-center gap-2">
-                    <span>Стандарт (1 час, 15 фото в ретуши)</span>
+                    <span>
+                      Стандарт (1 час, 15 фото в ретуши) + короткое видео (до
+                      30сек) в подарок
+                    </span>
                     <span className="font-bold text-sm whitespace-nowrap">
                       4 000 ₽
                     </span>
                   </div>
-                  <p className="font-bold text-xs text-purple-800 flex items-center gap-1">
-                    + Короткое видео (до 30сек) в подарок
-                  </p>
+
                   <div className="flex justify-between items-center gap-2">
-                    <span>Премиум (2 часа, 30 фото в ретуши)</span>
+                    <span>
+                      Премиум (2 часа, 30 фото в ретуши) + короткое видео (до
+                      30сек) в подарок
+                    </span>
                     <span className="font-bold text-sm whitespace-nowrap">
                       7 500 ₽
                     </span>
                   </div>
-                  <p className="font-bold text-xs text-purple-800 flex items-center gap-1">
-                    + Короткое видео (до 30сек) в подарок
-                  </p>
+
                   <div className="space-y-2">
                     <p className="font-bold text-xs text-purple-800 flex items-center gap-1 mt-3">
                       <Icon name="AlertCircle" size={14} />
