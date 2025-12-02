@@ -68,9 +68,14 @@ const Index = () => {
   >(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [giftDialogOpen, setGiftDialogOpen] = useState(false);
-  const [selectedMediaType, setSelectedMediaType] = useState<'photo' | 'video'>('photo');
+  const [selectedMediaType, setSelectedMediaType] = useState<"photo" | "video">(
+    "photo",
+  );
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedMedia, setSelectedMedia] = useState<{url: string; type: 'photo' | 'video'} | null>(null);
+  const [selectedMedia, setSelectedMedia] = useState<{
+    url: string;
+    type: "photo" | "video";
+  } | null>(null);
   const [portfolioScrollPosition, setPortfolioScrollPosition] = useState(0);
 
   useEffect(() => {
@@ -618,7 +623,14 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
             </p>
           </div>
 
-          <Tabs defaultValue="alexandra" className="max-w-6xl mx-auto" onValueChange={() => {setSelectedMediaType('photo'); setPortfolioScrollPosition(0);}}>
+          <Tabs
+            defaultValue="alexandra"
+            className="max-w-6xl mx-auto"
+            onValueChange={() => {
+              setSelectedMediaType("photo");
+              setPortfolioScrollPosition(0);
+            }}
+          >
             <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-6">
               <TabsTrigger value="alexandra" className="text-xs sm:text-sm">
                 Александра (AI-фото)
@@ -631,18 +643,28 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
             <TabsContent value="alexandra" className="space-y-6">
               <div className="flex justify-center gap-2">
                 <Button
-                  variant={selectedMediaType === 'photo' ? 'default' : 'outline'}
+                  variant={
+                    selectedMediaType === "photo" ? "default" : "outline"
+                  }
                   size="sm"
-                  onClick={() => {setSelectedMediaType('photo'); setPortfolioScrollPosition(0);}}
+                  onClick={() => {
+                    setSelectedMediaType("photo");
+                    setPortfolioScrollPosition(0);
+                  }}
                   className="text-xs sm:text-sm"
                 >
                   <Icon name="Camera" size={16} className="mr-2" />
                   Фото
                 </Button>
                 <Button
-                  variant={selectedMediaType === 'video' ? 'default' : 'outline'}
+                  variant={
+                    selectedMediaType === "video" ? "default" : "outline"
+                  }
                   size="sm"
-                  onClick={() => {setSelectedMediaType('video'); setPortfolioScrollPosition(0);}}
+                  onClick={() => {
+                    setSelectedMediaType("video");
+                    setPortfolioScrollPosition(0);
+                  }}
                   className="text-xs sm:text-sm"
                 >
                   <Icon name="Video" size={16} className="mr-2" />
@@ -651,24 +673,30 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
               </div>
 
               <div className="relative">
-                <div 
+                <div
                   className="flex gap-3 sm:gap-4 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory scrollbar-hide"
-                  style={{ scrollPaddingLeft: '1rem' }}
-                  onScroll={(e) => setPortfolioScrollPosition(e.currentTarget.scrollLeft)}
+                  style={{ scrollPaddingLeft: "1rem" }}
+                  onScroll={(e) =>
+                    setPortfolioScrollPosition(e.currentTarget.scrollLeft)
+                  }
                 >
                   {portfolioMedia
-                    .filter((item) => item.photographer === "alexandra" && item.type === selectedMediaType)
+                    .filter(
+                      (item) =>
+                        item.photographer === "alexandra" &&
+                        item.type === selectedMediaType,
+                    )
                     .map((item, idx) => (
                       <div
                         key={idx}
                         className="flex-shrink-0 w-[280px] sm:w-[320px] snap-start cursor-pointer"
                         onClick={() => {
-                          setSelectedMedia({url: item.url, type: item.type});
+                          setSelectedMedia({ url: item.url, type: item.type });
                           setModalOpen(true);
                         }}
                       >
                         <div className="group relative overflow-hidden rounded-lg bg-muted aspect-square">
-                          {item.type === 'photo' ? (
+                          {item.type === "photo" ? (
                             <img
                               src={item.url}
                               alt={`Работа ${idx + 1}`}
@@ -684,11 +712,19 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                             />
                           )}
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <Icon name="Maximize2" size={32} className="text-white" />
+                            <Icon
+                              name="Maximize2"
+                              size={32}
+                              className="text-white"
+                            />
                           </div>
-                          {item.type === 'video' && (
+                          {item.type === "video" && (
                             <div className="absolute top-2 right-2 bg-black/70 rounded-full p-2">
-                              <Icon name="Play" size={20} className="text-white" />
+                              <Icon
+                                name="Play"
+                                size={20}
+                                className="text-white"
+                              />
                             </div>
                           )}
                         </div>
@@ -714,18 +750,28 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
             <TabsContent value="maria" className="space-y-6">
               <div className="flex justify-center gap-2">
                 <Button
-                  variant={selectedMediaType === 'photo' ? 'default' : 'outline'}
+                  variant={
+                    selectedMediaType === "photo" ? "default" : "outline"
+                  }
                   size="sm"
-                  onClick={() => {setSelectedMediaType('photo'); setPortfolioScrollPosition(0);}}
+                  onClick={() => {
+                    setSelectedMediaType("photo");
+                    setPortfolioScrollPosition(0);
+                  }}
                   className="text-xs sm:text-sm"
                 >
                   <Icon name="Camera" size={16} className="mr-2" />
                   Фото
                 </Button>
                 <Button
-                  variant={selectedMediaType === 'video' ? 'default' : 'outline'}
+                  variant={
+                    selectedMediaType === "video" ? "default" : "outline"
+                  }
                   size="sm"
-                  onClick={() => {setSelectedMediaType('video'); setPortfolioScrollPosition(0);}}
+                  onClick={() => {
+                    setSelectedMediaType("video");
+                    setPortfolioScrollPosition(0);
+                  }}
                   className="text-xs sm:text-sm"
                 >
                   <Icon name="Video" size={16} className="mr-2" />
@@ -734,24 +780,30 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
               </div>
 
               <div className="relative">
-                <div 
+                <div
                   className="flex gap-3 sm:gap-4 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory scrollbar-hide"
-                  style={{ scrollPaddingLeft: '1rem' }}
-                  onScroll={(e) => setPortfolioScrollPosition(e.currentTarget.scrollLeft)}
+                  style={{ scrollPaddingLeft: "1rem" }}
+                  onScroll={(e) =>
+                    setPortfolioScrollPosition(e.currentTarget.scrollLeft)
+                  }
                 >
                   {portfolioMedia
-                    .filter((item) => item.photographer === "maria" && item.type === selectedMediaType)
+                    .filter(
+                      (item) =>
+                        item.photographer === "maria" &&
+                        item.type === selectedMediaType,
+                    )
                     .map((item, idx) => (
                       <div
                         key={idx}
                         className="flex-shrink-0 w-[280px] sm:w-[320px] snap-start cursor-pointer"
                         onClick={() => {
-                          setSelectedMedia({url: item.url, type: item.type});
+                          setSelectedMedia({ url: item.url, type: item.type });
                           setModalOpen(true);
                         }}
                       >
                         <div className="group relative overflow-hidden rounded-lg bg-muted aspect-square">
-                          {item.type === 'photo' ? (
+                          {item.type === "photo" ? (
                             <img
                               src={item.url}
                               alt={`Работа ${idx + 1}`}
@@ -767,11 +819,19 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                             />
                           )}
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                            <Icon name="Maximize2" size={32} className="text-white" />
+                            <Icon
+                              name="Maximize2"
+                              size={32}
+                              className="text-white"
+                            />
                           </div>
-                          {item.type === 'video' && (
+                          {item.type === "video" && (
                             <div className="absolute top-2 right-2 bg-black/70 rounded-full p-2">
-                              <Icon name="Play" size={20} className="text-white" />
+                              <Icon
+                                name="Play"
+                                size={20}
+                                className="text-white"
+                              />
                             </div>
                           )}
                         </div>
@@ -813,7 +873,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
             </button>
             {selectedMedia && (
               <div className="flex items-center justify-center w-full h-full min-h-[50vh] sm:min-h-[70vh]">
-                {selectedMedia.type === 'photo' ? (
+                {selectedMedia.type === "photo" ? (
                   <img
                     src={selectedMedia.url}
                     alt="Увеличенное фото"
@@ -1085,7 +1145,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
               <CardContent className="space-y-6 pt-6">
                 <div className="space-y-3">
                   <div className="flex justify-between items-center gap-2">
-                    <span>Мини (30 минут, 7 фото в ретуши)</span>
+                    <span>Мини (30 минут, 10 фото в ретуши)</span>
                     <span className="font-bold text-sm whitespace-nowrap">
                       2 500 ₽
                     </span>
@@ -1562,7 +1622,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           onClick={() => setSelectedPackage("mini")}
                         >
                           <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
-                            Мини (30 минут, 7 фото в ретуши)
+                            Мини (30 минут, 10 фото в ретуши)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             2 500 ₽

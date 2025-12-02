@@ -236,7 +236,7 @@ const BookingSection = ({
                           onClick={() => setSelectedPackage("mini")}
                         >
                           <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
-                            Мини (30 минут, 7 фото в ретуши)
+                            Мини (30 минут, 10 фото в ретуши)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             2 500 ₽
