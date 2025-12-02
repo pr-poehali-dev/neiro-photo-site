@@ -273,11 +273,6 @@ const ServicesAndAboutSection = ({
                     </span>
                   </div>
                   <div className="space-y-2">
-                    <div className="flex justify-between items-center gap-2">
-                      <span>Короткое видео (до 30сек)</span>
-                      <span className="font-bold text-sm whitespace-nowrap">
-                        500 ₽
-                      </span>
                     </div>
                     <p className="font-bold text-xs text-purple-800 flex items-center gap-1 mt-3">
                       <Icon name="AlertCircle" size={14} />

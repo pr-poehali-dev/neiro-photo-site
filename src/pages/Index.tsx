@@ -1139,13 +1139,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                       7 500 ₽
                     </span>
                   </div>
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-center gap-2">
-                      <span>Короткое видео (до 30сек)</span>
-                      <span className="font-bold text-sm whitespace-nowrap">
-                        500 ₽
-                      </span>
-                    </div>
+                  
                     <p className="font-bold text-xs text-purple-800 flex items-center gap-1 mt-3">
                       <Icon name="AlertCircle" size={14} />
                       Студия оплачивается отдельно
@@ -1639,24 +1633,6 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                             7 500 ₽
                           </span>
                         </Button>
-                        <Button
-                          type="button"
-                          variant={
-                            selectedPackage === "korotkoe video"
-                              ? "default"
-                              : "outline"
-                          }
-                          className="w-full justify-between h-auto p-2"
-                          onClick={() => setSelectedPackage("korotkoe video")}
-                        >
-                          <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
-                            Короткое видео (до 30сек)
-                          </span>
-                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
-                            500 ₽
-                          </span>
-                        </Button>
-                      </div>
                     )}
                   </div>
                 )}
