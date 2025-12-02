@@ -671,7 +671,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           setModalOpen(true);
                         }}
                       >
-                        <div className="group relative overflow-hidden rounded-lg bg-muted aspect-[3/4]">
+                        <div className="group relative overflow-hidden rounded-lg bg-muted aspect-[9/16]">
                           <img
                             src={item.url}
                             alt={`Работа ${idx + 1}`}
@@ -767,7 +767,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           setModalOpen(true);
                         }}
                       >
-                        <div className="group relative overflow-hidden rounded-lg bg-muted aspect-[3/4]">
+                        <div className="group relative overflow-hidden rounded-lg bg-muted aspect-[9/16]">
                           {item.type === "photo" ? (
                             <img
                               src={item.url}
