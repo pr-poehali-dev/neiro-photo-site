@@ -72,9 +72,9 @@ const PortfolioReviewsFaqSection = ({
 
                           const closeBtn = document.createElement("button");
                           closeBtn.className =
-                            "absolute top-4 right-4 text-[#8B5CF6] hover:text-[#7C3AED] rounded-full p-2 transition-colors z-10 font-bold";
+                            "absolute top-4 right-4 rounded-full p-2 transition-opacity hover:opacity-80 z-10";
                           closeBtn.innerHTML =
-                            '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+                            '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
                           closeBtn.onclick = (e) => {
                             e.stopPropagation();
                             overlay.remove();
@@ -137,9 +137,9 @@ const PortfolioReviewsFaqSection = ({
 
                           const closeBtn = document.createElement("button");
                           closeBtn.className =
-                            "absolute top-4 right-4 text-[#8B5CF6] hover:text-[#7C3AED] rounded-full p-2 transition-colors z-10 font-bold";
+                            "absolute top-4 right-4 rounded-full p-2 transition-opacity hover:opacity-80 z-10";
                           closeBtn.innerHTML =
-                            '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+                            '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
                           closeBtn.onclick = (e) => {
                             e.stopPropagation();
                             overlay.remove();
