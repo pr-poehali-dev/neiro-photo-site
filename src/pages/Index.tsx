@@ -641,35 +641,11 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
             </TabsList>
 
             <TabsContent value="alexandra" className="space-y-6">
-              <div className="flex justify-center gap-2">
-                <Button
-                  variant={
-                    selectedMediaType === "photo" ? "default" : "outline"
-                  }
-                  size="sm"
-                  onClick={() => {
-                    setSelectedMediaType("photo");
-                    setPortfolioScrollPosition(0);
-                  }}
-                  className="text-xs sm:text-sm"
-                >
-                  <Icon name="Camera" size={16} className="mr-2" />
-                  Фото
-                </Button>
-                <Button
-                  variant={
-                    selectedMediaType === "video" ? "default" : "outline"
-                  }
-                  size="sm"
-                  onClick={() => {
-                    setSelectedMediaType("video");
-                    setPortfolioScrollPosition(0);
-                  }}
-                  className="text-xs sm:text-sm"
-                >
-                  <Icon name="Video" size={16} className="mr-2" />
-                  Видео
-                </Button>
+              <div className="text-center mb-4">
+                <p className="text-xs sm:text-sm text-muted-foreground flex items-center justify-center gap-2">
+                  <Icon name="ArrowRight" size={16} />
+                  Листайте для просмотра
+                </p>
               </div>
 
               <div className="relative">
@@ -684,33 +660,24 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     .filter(
                       (item) =>
                         item.photographer === "alexandra" &&
-                        item.type === selectedMediaType,
+                        item.type === "photo",
                     )
                     .map((item, idx) => (
                       <div
                         key={idx}
-                        className="flex-shrink-0 w-[280px] sm:w-[320px] snap-start cursor-pointer"
+                        className="flex-shrink-0 w-[240px] sm:w-[280px] snap-start cursor-pointer"
                         onClick={() => {
                           setSelectedMedia({ url: item.url, type: item.type });
                           setModalOpen(true);
                         }}
                       >
-                        <div className="group relative overflow-hidden rounded-lg bg-muted aspect-square">
-                          {item.type === "photo" ? (
-                            <img
-                              src={item.url}
-                              alt={`Работа ${idx + 1}`}
-                              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                              loading="lazy"
-                            />
-                          ) : (
-                            <video
-                              src={item.url}
-                              className="w-full h-full object-cover"
-                              muted
-                              playsInline
-                            />
-                          )}
+                        <div className="group relative overflow-hidden rounded-lg bg-muted aspect-[3/4]">
+                          <img
+                            src={item.url}
+                            alt={`Работа ${idx + 1}`}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            loading="lazy"
+                          />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                             <Icon
                               name="Maximize2"
@@ -718,15 +685,6 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                               className="text-white"
                             />
                           </div>
-                          {item.type === "video" && (
-                            <div className="absolute top-2 right-2 bg-black/70 rounded-full p-2">
-                              <Icon
-                                name="Play"
-                                size={20}
-                                className="text-white"
-                              />
-                            </div>
-                          )}
                         </div>
                       </div>
                     ))}
@@ -779,6 +737,13 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                 </Button>
               </div>
 
+              <div className="text-center mb-4">
+                <p className="text-xs sm:text-sm text-muted-foreground flex items-center justify-center gap-2">
+                  <Icon name="ArrowRight" size={16} />
+                  Листайте для просмотра
+                </p>
+              </div>
+
               <div className="relative">
                 <div
                   className="flex gap-3 sm:gap-4 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory scrollbar-hide"
@@ -796,13 +761,13 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     .map((item, idx) => (
                       <div
                         key={idx}
-                        className="flex-shrink-0 w-[280px] sm:w-[320px] snap-start cursor-pointer"
+                        className="flex-shrink-0 w-[240px] sm:w-[280px] snap-start cursor-pointer"
                         onClick={() => {
                           setSelectedMedia({ url: item.url, type: item.type });
                           setModalOpen(true);
                         }}
                       >
-                        <div className="group relative overflow-hidden rounded-lg bg-muted aspect-square">
+                        <div className="group relative overflow-hidden rounded-lg bg-muted aspect-[3/4]">
                           {item.type === "photo" ? (
                             <img
                               src={item.url}
