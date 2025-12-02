@@ -3,7 +3,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Calendar } from "@/components/ui/calendar";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import Icon from "@/components/ui/icon";
 import { Link } from "react-router-dom";
 
@@ -55,7 +61,10 @@ const BookingSection = ({
 
   return (
     <>
-      <section id="booking" className="py-20 px-6 bg-gradient-to-br from-purple-50 to-white">
+      <section
+        id="booking"
+        className="py-20 px-6 bg-gradient-to-br from-purple-50 to-white"
+      >
         <div className="container mx-auto max-w-4xl">
           <h2 className="md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent text-2xl">
             Записаться на съемку
@@ -72,7 +81,9 @@ const BookingSection = ({
                   <Input
                     placeholder="Введите ваше имя"
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                     required
                   />
                 </div>
@@ -82,17 +93,25 @@ const BookingSection = ({
                   <Input
                     placeholder="+7 (___) ___-__-__"
                     value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
                     required
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-semibold">Выберите фотографа</label>
+                  <label className="text-sm font-semibold">
+                    Выберите фотографа
+                  </label>
                   <div className="grid grid-cols-2 gap-4">
                     <Button
                       type="button"
-                      variant={selectedPhotographer === "alexandra" ? "default" : "outline"}
+                      variant={
+                        selectedPhotographer === "alexandra"
+                          ? "default"
+                          : "outline"
+                      }
                       className="h-auto p-4 flex-col items-start gap-2"
                       onClick={() => {
                         setSelectedPhotographer("alexandra");
@@ -101,13 +120,19 @@ const BookingSection = ({
                     >
                       <div className="flex items-center gap-1.5">
                         <Icon name="Sparkles" size={14} />
-                        <span className="font-bold text-[11px] leading-tight">Александра</span>
+                        <span className="font-bold text-[11px] leading-tight">
+                          Александра
+                        </span>
                       </div>
-                      <span className="text-[9px] leading-tight">Нейрофото</span>
+                      <span className="text-[9px] leading-tight">
+                        Нейрофото
+                      </span>
                     </Button>
                     <Button
                       type="button"
-                      variant={selectedPhotographer === "maria" ? "default" : "outline"}
+                      variant={
+                        selectedPhotographer === "maria" ? "default" : "outline"
+                      }
                       className="h-auto p-4 flex-col items-start gap-2"
                       onClick={() => {
                         setSelectedPhotographer("maria");
@@ -116,7 +141,9 @@ const BookingSection = ({
                     >
                       <div className="flex items-center gap-1.5">
                         <Icon name="Camera" size={14} />
-                        <span className="font-bold text-[11px] leading-tight">Мария</span>
+                        <span className="font-bold text-[11px] leading-tight">
+                          Мария
+                        </span>
                       </div>
                       <span className="text-[9px] leading-tight">Классика</span>
                     </Button>
@@ -125,12 +152,16 @@ const BookingSection = ({
 
                 {selectedPhotographer && (
                   <div className="space-y-2">
-                    <label className="text-sm font-semibold">Выберите тариф</label>
+                    <label className="text-sm font-semibold">
+                      Выберите тариф
+                    </label>
                     {selectedPhotographer === "alexandra" && (
                       <div className="space-y-2">
                         <Button
                           type="button"
-                          variant={selectedPackage === "trial" ? "default" : "outline"}
+                          variant={
+                            selectedPackage === "trial" ? "default" : "outline"
+                          }
                           className="w-full justify-between h-auto p-2"
                           onClick={() => setSelectedPackage("trial")}
                         >
@@ -143,7 +174,11 @@ const BookingSection = ({
                         </Button>
                         <Button
                           type="button"
-                          variant={selectedPackage === "standard" ? "default" : "outline"}
+                          variant={
+                            selectedPackage === "standard"
+                              ? "default"
+                              : "outline"
+                          }
                           className="w-full justify-between h-auto p-2"
                           onClick={() => setSelectedPackage("standard")}
                         >
@@ -156,7 +191,11 @@ const BookingSection = ({
                         </Button>
                         <Button
                           type="button"
-                          variant={selectedPackage === "premium" ? "default" : "outline"}
+                          variant={
+                            selectedPackage === "premium"
+                              ? "default"
+                              : "outline"
+                          }
                           className="w-full justify-between h-auto p-2"
                           onClick={() => setSelectedPackage("premium")}
                         >
@@ -169,7 +208,11 @@ const BookingSection = ({
                         </Button>
                         <Button
                           type="button"
-                          variant={selectedPackage === "gruppovaya" ? "default" : "outline"}
+                          variant={
+                            selectedPackage === "gruppovaya"
+                              ? "default"
+                              : "outline"
+                          }
                           className="w-full justify-between h-auto p-2"
                           onClick={() => setSelectedPackage("gruppovaya")}
                         >
@@ -186,7 +229,9 @@ const BookingSection = ({
                       <div className="space-y-2">
                         <Button
                           type="button"
-                          variant={selectedPackage === "mini" ? "default" : "outline"}
+                          variant={
+                            selectedPackage === "mini" ? "default" : "outline"
+                          }
                           className="w-full justify-between h-auto p-2"
                           onClick={() => setSelectedPackage("mini")}
                         >
@@ -199,7 +244,11 @@ const BookingSection = ({
                         </Button>
                         <Button
                           type="button"
-                          variant={selectedPackage === "standard" ? "default" : "outline"}
+                          variant={
+                            selectedPackage === "standard"
+                              ? "default"
+                              : "outline"
+                          }
                           className="w-full justify-between h-auto p-2"
                           onClick={() => setSelectedPackage("standard")}
                         >
@@ -212,7 +261,11 @@ const BookingSection = ({
                         </Button>
                         <Button
                           type="button"
-                          variant={selectedPackage === "premium" ? "default" : "outline"}
+                          variant={
+                            selectedPackage === "premium"
+                              ? "default"
+                              : "outline"
+                          }
                           className="w-full justify-between h-auto p-2"
                           onClick={() => setSelectedPackage("premium")}
                         >
@@ -225,7 +278,11 @@ const BookingSection = ({
                         </Button>
                         <Button
                           type="button"
-                          variant={selectedPackage === "korotkoe video" ? "default" : "outline"}
+                          variant={
+                            selectedPackage === "korotkoe video"
+                              ? "default"
+                              : "outline"
+                          }
                           className="w-full justify-between h-auto p-2"
                           onClick={() => setSelectedPackage("korotkoe video")}
                         >
@@ -244,7 +301,9 @@ const BookingSection = ({
                 {selectedPhotographer === "maria" && (
                   <>
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold">Дата съемки</label>
+                      <label className="text-sm font-semibold">
+                        Желаемая дата съемки
+                      </label>
                       <Calendar
                         mode="single"
                         selected={date}
@@ -254,8 +313,13 @@ const BookingSection = ({
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-sm font-semibold">Время съемки</label>
-                      <Select value={selectedTime} onValueChange={setSelectedTime}>
+                      <label className="text-sm font-semibold">
+                        Время съемки
+                      </label>
+                      <Select
+                        value={selectedTime}
+                        onValueChange={setSelectedTime}
+                      >
                         <SelectTrigger>
                           <SelectValue placeholder="Выберите время" />
                         </SelectTrigger>
@@ -272,16 +336,25 @@ const BookingSection = ({
                 )}
 
                 <div className="space-y-2">
-                  <label className="text-sm font-semibold">Комментарий (опционально)</label>
+                  <label className="text-sm font-semibold">
+                    Комментарий (опционально)
+                  </label>
                   <Textarea
                     placeholder="Расскажите о ваших пожеланиях"
                     value={formData.comment}
-                    onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, comment: e.target.value })
+                    }
                     rows={4}
                   />
                 </div>
 
-                <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
+                <Button
+                  type="submit"
+                  className="w-full"
+                  size="lg"
+                  disabled={isSubmitting}
+                >
                   {isSubmitting ? "Отправка..." : "Отправить заявку"}
                 </Button>
               </form>
@@ -289,7 +362,11 @@ const BookingSection = ({
           </Card>
 
           <div className="mt-8 text-center">
-            <Button variant="outline" onClick={() => setGiftDialogOpen(true)} className="gap-2">
+            <Button
+              variant="outline"
+              onClick={() => setGiftDialogOpen(true)}
+              className="gap-2"
+            >
               <Icon name="Gift" size={18} />
               Подарочный сертификат
             </Button>

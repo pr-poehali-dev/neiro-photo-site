@@ -1463,7 +1463,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                   <>
                     <div className="space-y-2">
                       <label className="text-sm font-semibold">
-                        Дата съемки
+                        Желаемая дата съемки
                       </label>
                       <Calendar
                         mode="single"
