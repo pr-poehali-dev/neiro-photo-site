@@ -545,7 +545,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
               </CardContent>
             </Card>
             <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in [animation-delay:150ms]">
-              <div className="h-22 sm:h-50 md:h-86 bg-gradient-to-br from-secondary/20 to-primary/20 relative overflow-hidden">
+              <div className="h-32 sm:h-40 md:h-96 bg-gradient-to-br from-secondary/20 to-primary/20 relative overflow-hidden">
                 <img
                   src="https://cdn.poehali.dev/files/f1d599d1-68de-48eb-aa1f-27f6e01b7894.JPG"
                   alt="Мария"
