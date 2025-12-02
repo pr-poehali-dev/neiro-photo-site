@@ -1129,8 +1129,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                   </div>
                   <div className="flex justify-between items-center gap-2">
                     <span>
-                      Стандарт (1 час, 15 фото в ретуши) + короткое видео (до
-                      30сек) в подарок
+                      Стандарт (1 час, 15 фото в ретуши) + рилс в подарок
                     </span>
                     <span className="font-bold text-sm whitespace-nowrap">
                       4 000 ₽
@@ -1139,8 +1138,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
 
                   <div className="flex justify-between items-center gap-2">
                     <span>
-                      Премиум (2 часа, 30 фото в ретуши) + короткое видео (до
-                      30сек) в подарок
+                      Премиум (2 часа, 30 фото в ретуши) + рилс в подарок
                     </span>
                     <span className="font-bold text-sm whitespace-nowrap">
                       7 500 ₽
