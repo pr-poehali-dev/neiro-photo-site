@@ -68,6 +68,10 @@ const Index = () => {
   >(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [giftDialogOpen, setGiftDialogOpen] = useState(false);
+  const [selectedMediaType, setSelectedMediaType] = useState<'photo' | 'video'>('photo');
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedMedia, setSelectedMedia] = useState<{url: string; type: 'photo' | 'video'} | null>(null);
+  const [portfolioScrollPosition, setPortfolioScrollPosition] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -213,50 +217,50 @@ const Index = () => {
     }
   };
 
-  const portfolioImages = [
+  const portfolioMedia = [
     {
       url: "https://cdn.poehali.dev/files/2d93b9e7-3984-41bc-81e0-69c60b7cd7c7.JPG",
-      category: "neuro",
+      type: "photo" as const,
       photographer: "alexandra",
     },
     {
       url: "https://cdn.poehali.dev/files/a57ab8d5-c2f0-4387-9df3-407ace4ce9e9.JPG",
-      category: "neuro",
+      type: "photo" as const,
       photographer: "alexandra",
     },
     {
       url: "https://cdn.poehali.dev/files/7b361cd6-c1e1-4221-8e38-e9630cd8a123.JPG",
-      category: "neuro",
+      type: "photo" as const,
       photographer: "alexandra",
     },
     {
       url: "https://cdn.poehali.dev/files/8c684d10-e14c-487a-8811-9ca9ea44f023.JPG",
-      category: "neuro",
+      type: "photo" as const,
       photographer: "alexandra",
     },
     {
       url: "https://cdn.poehali.dev/files/147eda3a-d1b9-413c-a81f-e3fda5351305.JPG",
-      category: "neuro",
+      type: "photo" as const,
       photographer: "alexandra",
     },
     {
       url: "https://cdn.poehali.dev/files/f6d30502-8377-486a-9052-1c46bc77197f.JPG",
-      category: "neuro",
+      type: "photo" as const,
       photographer: "alexandra",
     },
     {
       url: "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/d4bee983-4720-43ee-bcb8-8fad54d8cfc9.jpg",
-      category: "wedding",
+      type: "photo" as const,
       photographer: "maria",
     },
     {
       url: "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/d4bee983-4720-43ee-bcb8-8fad54d8cfc9.jpg",
-      category: "wedding",
+      type: "photo" as const,
       photographer: "maria",
     },
     {
       url: "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/647c12fe-b2d4-4576-938b-8568acf1de25.jpg",
-      category: "portrait",
+      type: "photo" as const,
       photographer: "maria",
     },
   ];
@@ -604,7 +608,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
         id="portfolio"
         className="py-12 sm:py-20 px-3 sm:px-4 bg-muted/30"
       >
-        <div className="container mx-auto">
+        <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="sm:text-3xl md:text-5xl font-bold mb-2 sm:mb-4 text-2xl">
               Портфолио
@@ -614,8 +618,8 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
             </p>
           </div>
 
-          <Tabs defaultValue="alexandra" className="max-w-6xl mx-auto">
-            <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8 sm:mb-6">
+          <Tabs defaultValue="alexandra" className="max-w-6xl mx-auto" onValueChange={() => {setSelectedMediaType('photo'); setPortfolioScrollPosition(0);}}>
+            <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-6">
               <TabsTrigger value="alexandra" className="text-xs sm:text-sm">
                 Александра (AI-фото)
               </TabsTrigger>
@@ -624,24 +628,75 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="alexandra">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-                {portfolioImages
-                  .filter((img) => img.photographer === "alexandra")
-                  .map((img, idx) => (
-                    <div
-                      key={idx}
-                      className="group relative overflow-hidden rounded-lg aspect-square"
-                    >
-                      <img
-                        src={img.url}
-                        alt={`Работа ${idx + 1}`}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </div>
-                  ))}
+            <TabsContent value="alexandra" className="space-y-6">
+              <div className="flex justify-center gap-2">
+                <Button
+                  variant={selectedMediaType === 'photo' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => {setSelectedMediaType('photo'); setPortfolioScrollPosition(0);}}
+                  className="text-xs sm:text-sm"
+                >
+                  <Icon name="Camera" size={16} className="mr-2" />
+                  Фото
+                </Button>
+                <Button
+                  variant={selectedMediaType === 'video' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => {setSelectedMediaType('video'); setPortfolioScrollPosition(0);}}
+                  className="text-xs sm:text-sm"
+                >
+                  <Icon name="Video" size={16} className="mr-2" />
+                  Видео
+                </Button>
               </div>
+
+              <div className="relative">
+                <div 
+                  className="flex gap-3 sm:gap-4 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory scrollbar-hide"
+                  style={{ scrollPaddingLeft: '1rem' }}
+                  onScroll={(e) => setPortfolioScrollPosition(e.currentTarget.scrollLeft)}
+                >
+                  {portfolioMedia
+                    .filter((item) => item.photographer === "alexandra" && item.type === selectedMediaType)
+                    .map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="flex-shrink-0 w-[280px] sm:w-[320px] snap-start cursor-pointer"
+                        onClick={() => {
+                          setSelectedMedia({url: item.url, type: item.type});
+                          setModalOpen(true);
+                        }}
+                      >
+                        <div className="group relative overflow-hidden rounded-lg bg-muted aspect-square">
+                          {item.type === 'photo' ? (
+                            <img
+                              src={item.url}
+                              alt={`Работа ${idx + 1}`}
+                              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                              loading="lazy"
+                            />
+                          ) : (
+                            <video
+                              src={item.url}
+                              className="w-full h-full object-cover"
+                              muted
+                              playsInline
+                            />
+                          )}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <Icon name="Maximize2" size={32} className="text-white" />
+                          </div>
+                          {item.type === 'video' && (
+                            <div className="absolute top-2 right-2 bg-black/70 rounded-full p-2">
+                              <Icon name="Play" size={20} className="text-white" />
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+
               <div className="mt-8 text-center">
                 <a
                   href="https://t.me/online_photosessiya"
@@ -656,24 +711,75 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
               </div>
             </TabsContent>
 
-            <TabsContent value="maria">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-                {portfolioImages
-                  .filter((img) => img.photographer === "maria")
-                  .map((img, idx) => (
-                    <div
-                      key={idx}
-                      className="group relative overflow-hidden rounded-lg aspect-square"
-                    >
-                      <img
-                        src={img.url}
-                        alt={`Работа ${idx + 1}`}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </div>
-                  ))}
+            <TabsContent value="maria" className="space-y-6">
+              <div className="flex justify-center gap-2">
+                <Button
+                  variant={selectedMediaType === 'photo' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => {setSelectedMediaType('photo'); setPortfolioScrollPosition(0);}}
+                  className="text-xs sm:text-sm"
+                >
+                  <Icon name="Camera" size={16} className="mr-2" />
+                  Фото
+                </Button>
+                <Button
+                  variant={selectedMediaType === 'video' ? 'default' : 'outline'}
+                  size="sm"
+                  onClick={() => {setSelectedMediaType('video'); setPortfolioScrollPosition(0);}}
+                  className="text-xs sm:text-sm"
+                >
+                  <Icon name="Video" size={16} className="mr-2" />
+                  Видео
+                </Button>
               </div>
+
+              <div className="relative">
+                <div 
+                  className="flex gap-3 sm:gap-4 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory scrollbar-hide"
+                  style={{ scrollPaddingLeft: '1rem' }}
+                  onScroll={(e) => setPortfolioScrollPosition(e.currentTarget.scrollLeft)}
+                >
+                  {portfolioMedia
+                    .filter((item) => item.photographer === "maria" && item.type === selectedMediaType)
+                    .map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="flex-shrink-0 w-[280px] sm:w-[320px] snap-start cursor-pointer"
+                        onClick={() => {
+                          setSelectedMedia({url: item.url, type: item.type});
+                          setModalOpen(true);
+                        }}
+                      >
+                        <div className="group relative overflow-hidden rounded-lg bg-muted aspect-square">
+                          {item.type === 'photo' ? (
+                            <img
+                              src={item.url}
+                              alt={`Работа ${idx + 1}`}
+                              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                              loading="lazy"
+                            />
+                          ) : (
+                            <video
+                              src={item.url}
+                              className="w-full h-full object-cover"
+                              muted
+                              playsInline
+                            />
+                          )}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <Icon name="Maximize2" size={32} className="text-white" />
+                          </div>
+                          {item.type === 'video' && (
+                            <div className="absolute top-2 right-2 bg-black/70 rounded-full p-2">
+                              <Icon name="Play" size={20} className="text-white" />
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+
               <div className="mt-8 text-center">
                 <a
                   href="https://vk.com/club_photograph_novosibirsk"
@@ -696,6 +802,35 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
             </TabsContent>
           </Tabs>
         </div>
+
+        <Dialog open={modalOpen} onOpenChange={setModalOpen}>
+          <DialogContent className="max-w-[95vw] max-h-[95vh] sm:max-w-4xl p-0 overflow-hidden bg-black/95">
+            <button
+              onClick={() => setModalOpen(false)}
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors"
+            >
+              <Icon name="X" size={24} className="text-white" />
+            </button>
+            {selectedMedia && (
+              <div className="flex items-center justify-center w-full h-full min-h-[50vh] sm:min-h-[70vh]">
+                {selectedMedia.type === 'photo' ? (
+                  <img
+                    src={selectedMedia.url}
+                    alt="Увеличенное фото"
+                    className="max-w-full max-h-[95vh] object-contain"
+                  />
+                ) : (
+                  <video
+                    src={selectedMedia.url}
+                    controls
+                    autoPlay
+                    className="max-w-full max-h-[95vh] object-contain"
+                  />
+                )}
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
       </section>
 
       <section id="about" className="py-12 sm:py-20 px-3 sm:px-6 bg-white/50">
