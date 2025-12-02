@@ -178,7 +178,8 @@ const Index = () => {
       if (response.ok) {
         toast({
           title: "Заявка отправлена!",
-          description: "Мы свяжемся с вами в ближайшее время",
+          description:
+            "Мы свяжемся с вами в ближайшее время и подтвердим запись",
         });
 
         setFormData({ name: "", phone: "", comment: "" });
