@@ -1,7 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import Icon from "@/components/ui/icon";
 
 interface PortfolioImage {
@@ -25,87 +30,132 @@ const PortfolioReviewsFaqSection = ({
 }: PortfolioReviewsFaqSectionProps) => {
   return (
     <>
-      <section id="portfolio" className="py-12 sm:py-20 px-3 sm:px-4 bg-muted/30">
+      <section
+        id="portfolio"
+        className="py-12 sm:py-20 px-3 sm:px-4 bg-gradient-to-br from-slate-50/50 to-indigo-50/30"
+      >
         <div className="container mx-auto">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="sm:text-3xl md:text-5xl font-bold mb-2 sm:mb-4 text-2xl">
+            <h2 className="sm:text-3xl md:text-5xl font-bold mb-2 sm:mb-4 text-2xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
               Портфолио
             </h2>
-            <p className="text-muted-foreground text-sm sm:text-lg">Наши работы</p>
+            <p className="text-muted-foreground text-sm sm:text-lg max-w-md mx-auto leading-relaxed">
+              Наши работы, созданные с душой и современными технологиями
+            </p>
           </div>
 
           <Tabs defaultValue="alexandra" className="max-w-6xl mx-auto">
-            <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8 sm:mb-6">
-              <TabsTrigger value="alexandra" className="text-xs sm:text-sm">
+            <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8 sm:mb-12 rounded-2xl p-1 bg-gradient-to-r from-indigo-500/10 to-purple-500/10 border border-indigo-200/50 backdrop-blur-sm shadow-xl">
+              <TabsTrigger
+                value="alexandra"
+                className="text-xs sm:text-sm data-[state=active]:bg-white data-[state=active]:text-indigo-700 data-[state=active]:shadow-lg rounded-xl py-3 font-semibold transition-all duration-300 hover:scale-105 hover:shadow-md"
+              >
                 Александра (AI-фото)
               </TabsTrigger>
-              <TabsTrigger value="maria" className="text-xs sm:text-sm">
+              <TabsTrigger
+                value="maria"
+                className="text-xs sm:text-sm data-[state=active]:bg-white data-[state=active]:text-purple-700 data-[state=active]:shadow-lg rounded-xl py-3 font-semibold transition-all duration-300 hover:scale-105 hover:shadow-md"
+              >
                 Мария (Классика)
               </TabsTrigger>
             </TabsList>
 
-            <TabsContent value="alexandra">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+            <TabsContent value="alexandra" className="mt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                 {portfolioImages
                   .filter((img) => img.photographer === "alexandra")
                   .map((img, idx) => (
                     <div
                       key={idx}
-                      className="group relative overflow-hidden rounded-lg aspect-square"
+                      className="group relative overflow-hidden rounded-2xl aspect-square shadow-lg hover:shadow-2xl bg-gradient-to-br from-slate-100 to-indigo-50 transition-all duration-500 hover:-translate-y-2 hover:rotate-1 border-4 border-white/50 backdrop-blur-sm"
                     >
                       <img
                         src={img.url}
-                        alt={`Работа ${idx + 1}`}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        alt={`Работа Александры ${idx + 1}`}
+                        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-125 group-hover:contrast-125 group-hover:grayscale-0 group-grayscale group-saturate-50"
+                        loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/60 via-purple-900/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 backdrop-blur-sm flex items-end p-6" />
+                      <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-700 transform translate-y-4 group-hover:translate-y-0">
+                        <p className="text-white/90 text-sm font-medium bg-white/10 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20">
+                          AI-магия ✨
+                        </p>
+                      </div>
                     </div>
                   ))}
               </div>
-              <div className="mt-8 text-center">
+              <div className="mt-12 text-center">
                 <a
                   href="https://t.me/online_photosessiya"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-primary hover:underline text-xs font-medium"
+                  className="inline-flex items-center gap-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-2xl font-semibold text-sm shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-indigo-500/20 backdrop-blur-sm"
                 >
-                  <Icon name="Send" size={14} />
-                  Больше работ в Telegram канале Александры
-                  <Icon name="ExternalLink" size={14} />
+                  <svg
+                    className="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z" />
+                  </svg>
+                  Больше AI-шедевров в Telegram
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M10 6L8.09 9.91L4 10l5.05 4.95L10 18l5.95-5.05L20 10l-4.09-.09z" />
+                  </svg>
                 </a>
               </div>
             </TabsContent>
 
-            <TabsContent value="maria">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+            <TabsContent value="maria" className="mt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
                 {portfolioImages
                   .filter((img) => img.photographer === "maria")
                   .map((img, idx) => (
                     <div
                       key={idx}
-                      className="group relative overflow-hidden rounded-lg aspect-square"
+                      className="group relative overflow-hidden rounded-2xl aspect-square shadow-xl hover:shadow-3xl bg-gradient-to-br from-rose-50 to-amber-50/80 transition-all duration-500 hover:-translate-y-3 hover:rotate-[-2deg] ring-2 ring-amber-100/50 hover:ring-amber-200/70 backdrop-blur-sm"
                     >
                       <img
                         src={img.url}
-                        alt={`Работа ${idx + 1}`}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                        alt={`Работа Марии ${idx + 1}`}
+                        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-115 group-hover:brightness-110 group-hover:contrast-125 group-hover:warmth-10 group-sepia group-saturate-150"
+                        loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-amber-900/50 via-rose-800/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 backdrop-blur-md flex items-end p-6" />
+                      <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-700 transform translate-y-6 group-hover:translate-y-0 delay-150">
+                        <p className="text-white text-sm font-semibold bg-gradient-to-r from-amber-400 to-rose-400 bg-clip-text text-transparent drop-shadow-lg">
+                          Классическая красота 📸
+                        </p>
+                      </div>
                     </div>
                   ))}
               </div>
-              <div className="mt-8 text-center">
+              <div className="mt-12 text-center">
                 <a
                   href="https://vk.com/club_photograph_novosibirsk"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-secondary hover:underline text-xs font-medium"
+                  className="inline-flex items-center gap-3 bg-gradient-to-r from-rose-500 via-amber-500 to-orange-500 hover:from-rose-600 hover:via-amber-600 hover:to-orange-600 text-white px-8 py-4 rounded-2xl font-semibold text-sm shadow-2xl hover:shadow-3xl hover:-translate-y-1 transition-all duration-300 ring-2 ring-amber-200/50 backdrop-blur-sm"
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14c5.6 0 6.93-1.33 6.93-6.93V8.93C22 3.33 20.67 2 15.07 2zm3.48 14.94h-1.39c-.58 0-.76-.47-1.79-1.5-.91-.87-1.31-1-1.53-1-.32 0-.41.09-.41.52v1.37c0 .37-.11.58-1.07.58-1.59 0-3.35-.96-4.59-2.75-1.87-2.59-2.38-4.54-2.38-4.93 0-.22.09-.43.52-.43h1.39c.39 0 .54.18.69.59.76 2.19 2.03 4.11 2.56 4.11.2 0 .29-.09.29-.59v-2.28c-.07-1.13-.65-1.22-.65-1.62 0-.18.15-.36.39-.36h2.18c.33 0 .45.17.45.55v3.08c0 .33.15.45.24.45.2 0 .36-.12.72-.48 1.10-1.24 1.89-3.15 1.89-3.15.11-.22.28-.43.7-.43h1.39c.47 0 .57.24.47.55-.17.78-1.85 3.28-1.85 3.28-.17.27-.23.39 0 .7.17.23.72.71 1.09 1.14.67.77 1.18 1.41 1.32 1.86.13.44-.1.67-.54.67z" />
+                  <svg
+                    className="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9.25l-6 6z" />
                   </svg>
-                  Больше работ в VK группе Марии
-                  <Icon name="ExternalLink" size={14} />
+                  Классические работы Марии в VK
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M10 6L8.09 9.91L4 10l5.05 4.95L10 18l5.95-5.05L20 10l-4.09-.09z" />
+                  </svg>
                 </a>
               </div>
             </TabsContent>
@@ -117,7 +167,9 @@ const PortfolioReviewsFaqSection = ({
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="md:text-5xl font-bold mb-4 text-2xl">Отзывы</h2>
-            <p className="text-muted-foreground text-lg">Что говорят наши клиенты</p>
+            <p className="text-muted-foreground text-lg">
+              Что говорят наши клиенты
+            </p>
           </div>
 
           <div className="relative">
@@ -147,7 +199,8 @@ const PortfolioReviewsFaqSection = ({
 
                         const enlargedImg = document.createElement("img");
                         enlargedImg.src = img.src;
-                        enlargedImg.className = "max-w-full max-h-full object-contain";
+                        enlargedImg.className =
+                          "max-w-full max-h-full object-contain";
 
                         overlay.appendChild(closeBtn);
                         overlay.appendChild(enlargedImg);
@@ -196,7 +249,11 @@ const PortfolioReviewsFaqSection = ({
                   </div>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2">
-                      <Icon name="Building" size={16} className="text-primary" />
+                      <Icon
+                        name="Building"
+                        size={16}
+                        className="text-primary"
+                      />
                       <span>Банковский перевод</span>
                     </div>
                     <div className="flex items-center gap-2">
@@ -212,7 +269,8 @@ const PortfolioReviewsFaqSection = ({
                   </div>
                   <div className="space-y-2 text-sm">
                     <p>
-                      <span className="font-semibold">Предоплата 30%</span> для классической съемки
+                      <span className="font-semibold">Предоплата 30%</span> для
+                      классической съемки
                     </p>
                     <p className="text-xs text-gray-600">
                       При отмене менее чем за 24 часа предоплата не возвращается
@@ -224,7 +282,8 @@ const PortfolioReviewsFaqSection = ({
               <div className="bg-purple-50 p-4 rounded-lg">
                 <p className="text-sm text-gray-700">
                   <Icon name="Info" size={16} className="inline mr-1" />
-                  Реквизиты для оплаты будут высланы после согласования деталей съемки
+                  Реквизиты для оплаты будут высланы после согласования деталей
+                  съемки
                 </p>
               </div>
             </CardContent>
@@ -238,7 +297,9 @@ const PortfolioReviewsFaqSection = ({
             <h2 className="md:text-5xl font-bold mb-4 text-2xl">
               Часто задаваемые вопросы
             </h2>
-            <p className="text-muted-foreground text-lg">Ответы на популярные вопросы</p>
+            <p className="text-muted-foreground text-lg">
+              Ответы на популярные вопросы
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -256,8 +317,9 @@ const PortfolioReviewsFaqSection = ({
                       Как работает AI-фотография?
                     </AccordionTrigger>
                     <AccordionContent>
-                      Вы отправляете нам свои исходные фотографии, а мы с помощью нейросетей
-                      создаем уникальные художественные образы, сохраняя ваши черты лица.
+                      Вы отправляете нам свои исходные фотографии, а мы с
+                      помощью нейросетей создаем уникальные художественные
+                      образы, сохраняя ваши черты лица.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="ai-2">
@@ -265,10 +327,10 @@ const PortfolioReviewsFaqSection = ({
                       Какие фото нужны для AI-обработки?
                     </AccordionTrigger>
                     <AccordionContent>
-                      Нужны качественные фото в хорошем освещении, где четко видно лицо.
-                      Подойдут селфи или портреты, сделанные на современный смартфон.
-                      Желательно показать разные эмоции: улыбку, удивление, задумчивость или
-                      радость.
+                      Нужны качественные фото в хорошем освещении, где четко
+                      видно лицо. Подойдут селфи или портреты, сделанные на
+                      современный смартфон. Желательно показать разные эмоции:
+                      улыбку, удивление, задумчивость или радость.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="ai-3">
@@ -276,7 +338,8 @@ const PortfolioReviewsFaqSection = ({
                       Сколько времени занимает обработка?
                     </AccordionTrigger>
                     <AccordionContent>
-                      Обычно 1-2 дня. В некоторых случаях можем сделать за несколько часов.
+                      Обычно 1-2 дня. В некоторых случаях можем сделать за
+                      несколько часов.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="ai-4">
@@ -284,8 +347,9 @@ const PortfolioReviewsFaqSection = ({
                       Можно ли выбрать стиль обработки?
                     </AccordionTrigger>
                     <AccordionContent>
-                      Да! Вы можете выбрать любой стиль: от классического портрета до фэнтези
-                      или аниме. Мы обсудим это перед началом работы.
+                      Да! Вы можете выбрать любой стиль: от классического
+                      портрета до фэнтези или аниме. Мы обсудим это перед
+                      началом работы.
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
@@ -305,8 +369,8 @@ const PortfolioReviewsFaqSection = ({
                       Где проходит фотосъемка?
                     </AccordionTrigger>
                     <AccordionContent>
-                      Съемка проходит в Новосибирске. Мы можем выбрать локацию вместе: студия,
-                      парк, городские улицы или ваше место.
+                      Съемка проходит в Новосибирске. Мы можем выбрать локацию
+                      вместе: студия, парк, городские улицы или ваше место.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="real-2">
@@ -314,8 +378,9 @@ const PortfolioReviewsFaqSection = ({
                       Сколько времени длится съемка?
                     </AccordionTrigger>
                     <AccordionContent>
-                      В зависимости от пакета: от 1 до 2 часов. Этого достаточно для создания
-                      качественных фотографий в разных образах и локациях.
+                      В зависимости от пакета: от 1 до 2 часов. Этого достаточно
+                      для создания качественных фотографий в разных образах и
+                      локациях.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="real-3">
@@ -323,8 +388,8 @@ const PortfolioReviewsFaqSection = ({
                       Когда я получу готовые фото?
                     </AccordionTrigger>
                     <AccordionContent>
-                      Все исходные фото вы получаете в день съемки. Обработанные фотографии будут
-                      готовы через 5-7 дней.
+                      Все исходные фото вы получаете в день съемки. Обработанные
+                      фотографии будут готовы через 5-7 дней.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="real-4">
@@ -332,8 +397,9 @@ const PortfolioReviewsFaqSection = ({
                       Нужно ли готовиться к съемке?
                     </AccordionTrigger>
                     <AccordionContent>
-                      Подготовьте несколько образов одежды, продумайте макияж. Мы обсудим детали
-                      заранее и дадим рекомендации по подготовке.
+                      Подготовьте несколько образов одежды, продумайте макияж.
+                      Мы обсудим детали заранее и дадим рекомендации по
+                      подготовке.
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
