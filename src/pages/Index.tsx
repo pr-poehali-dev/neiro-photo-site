@@ -264,19 +264,19 @@ const Index = () => {
   const testimonials = [
     {
       image:
-        "https://cdn.poehali.dev/files/9ca36f4f-446f-4fc8-8b4d-5ced09b844f0.jpg",
+        "https://cdn.poehali.dev/files/fdcf9ff5-20d2-44ec-a2aa-a0e871c91606.JPG",
     },
     {
       image:
-        "https://cdn.poehali.dev/files/7690bb43-98b3-4074-bea2-f338ceaa833e.jpg",
+        "https://cdn.poehali.dev/files/9fa03b26-e212-4b05-9915-a9f19c4f5b91.JPG",
     },
     {
       image:
-        "https://cdn.poehali.dev/files/fc2f2b36-2ba3-49bd-9b87-2edbeaeaaab4.jpg",
+        "https://cdn.poehali.dev/files/167549e4-47b2-4648-a60a-c4d22f11069e.JPG",
     },
     {
       image:
-        "https://cdn.poehali.dev/files/f532e6b0-4230-4f9a-a4a5-5a78a878a67a.jpg",
+        "https://cdn.poehali.dev/files/9d1bc2fd-6303-4408-9268-5862ae177750.JPG",
     },
   ];
 
