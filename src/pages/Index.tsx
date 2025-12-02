@@ -1060,19 +1060,19 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
               <CardContent className="space-y-6 pt-6">
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span>Пробная (3 фото, 1 образ)</span>
+                    <span>Пробная (3 индивидуальных фото, 1 образ)</span>
                     <span className="font-bold text-sm whitespace-nowrap">
                       1 000 ₽
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span>Стандарт (10 фото, 2-3 образа)</span>
+                    <span>Стандарт (10 индивидуальных фото, 2-3 образа)</span>
                     <span className="font-bold text-sm whitespace-nowrap">
                       2 500 ₽
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span>Премиум (20 фото, 5 образов)</span>
+                    <span>Премиум (20 индивидуальных фото, 5 образов)</span>
                     <span className="font-bold text-sm whitespace-nowrap">
                       3 500 ₽
                     </span>
@@ -1529,7 +1529,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           onClick={() => setSelectedPackage("trial")}
                         >
                           <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
-                            Пробная (3 фото, 1 образ)
+                            Пробная (3 индивидуальных фото, 1 образ)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             1 000 ₽
@@ -1546,7 +1546,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           onClick={() => setSelectedPackage("standard")}
                         >
                           <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
-                            Стандарт (10 фото, 2-3 образа)
+                            Стандарт (10 индивидуальных фото, 2-3 образа)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             2 500 ₽
@@ -1563,7 +1563,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           onClick={() => setSelectedPackage("premium")}
                         >
                           <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
-                            Премиум (20 фото, 5 образов)
+                            Премиум (20 индивидуальных фото, 5 образов)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             3 500 ₽
