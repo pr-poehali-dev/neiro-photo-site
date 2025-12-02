@@ -61,7 +61,35 @@ const PortfolioReviewsFaqSection = ({
                   .map((img, idx) => (
                     <div
                       key={idx}
-                      className="group relative overflow-hidden rounded-lg aspect-square"
+                      className="group relative overflow-hidden rounded-lg aspect-square cursor-pointer"
+                      onClick={(e) => {
+                        const imgElement = e.currentTarget.querySelector("img");
+                        if (imgElement) {
+                          const overlay = document.createElement("div");
+                          overlay.className =
+                            "fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 cursor-pointer";
+                          overlay.onclick = () => overlay.remove();
+
+                          const closeBtn = document.createElement("button");
+                          closeBtn.className =
+                            "absolute top-4 right-4 text-[#8B5CF6] hover:text-[#7C3AED] rounded-full p-2 transition-colors z-10 font-bold";
+                          closeBtn.innerHTML =
+                            '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+                          closeBtn.onclick = (e) => {
+                            e.stopPropagation();
+                            overlay.remove();
+                          };
+
+                          const enlargedImg = document.createElement("img");
+                          enlargedImg.src = imgElement.src;
+                          enlargedImg.className =
+                            "max-w-full max-h-full object-contain";
+
+                          overlay.appendChild(closeBtn);
+                          overlay.appendChild(enlargedImg);
+                          document.body.appendChild(overlay);
+                        }
+                      }}
                     >
                       <img
                         src={img.url}
@@ -69,6 +97,11 @@ const PortfolioReviewsFaqSection = ({
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div className="bg-white/90 rounded-full p-3">
+                          <Icon name="Maximize2" size={24} className="text-primary" />
+                        </div>
+                      </div>
                     </div>
                   ))}
               </div>
@@ -93,7 +126,35 @@ const PortfolioReviewsFaqSection = ({
                   .map((img, idx) => (
                     <div
                       key={idx}
-                      className="group relative overflow-hidden rounded-lg aspect-square"
+                      className="group relative overflow-hidden rounded-lg aspect-square cursor-pointer"
+                      onClick={(e) => {
+                        const imgElement = e.currentTarget.querySelector("img");
+                        if (imgElement) {
+                          const overlay = document.createElement("div");
+                          overlay.className =
+                            "fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 cursor-pointer";
+                          overlay.onclick = () => overlay.remove();
+
+                          const closeBtn = document.createElement("button");
+                          closeBtn.className =
+                            "absolute top-4 right-4 text-[#8B5CF6] hover:text-[#7C3AED] rounded-full p-2 transition-colors z-10 font-bold";
+                          closeBtn.innerHTML =
+                            '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+                          closeBtn.onclick = (e) => {
+                            e.stopPropagation();
+                            overlay.remove();
+                          };
+
+                          const enlargedImg = document.createElement("img");
+                          enlargedImg.src = imgElement.src;
+                          enlargedImg.className =
+                            "max-w-full max-h-full object-contain";
+
+                          overlay.appendChild(closeBtn);
+                          overlay.appendChild(enlargedImg);
+                          document.body.appendChild(overlay);
+                        }
+                      }}
                     >
                       <img
                         src={img.url}
@@ -101,6 +162,11 @@ const PortfolioReviewsFaqSection = ({
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div className="bg-white/90 rounded-full p-3">
+                          <Icon name="Maximize2" size={24} className="text-primary" />
+                        </div>
+                      </div>
                     </div>
                   ))}
               </div>
@@ -149,14 +215,14 @@ const PortfolioReviewsFaqSection = ({
                       if (img) {
                         const overlay = document.createElement("div");
                         overlay.className =
-                          "fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4";
+                          "fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 cursor-pointer";
                         overlay.onclick = () => overlay.remove();
 
                         const closeBtn = document.createElement("button");
                         closeBtn.className =
-                          "absolute top-4 right-4 text-white bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors z-10";
+                          "absolute top-4 right-4 text-[#8B5CF6] hover:text-[#7C3AED] rounded-full p-2 transition-colors z-10 font-bold";
                         closeBtn.innerHTML =
-                          '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+                          '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
                         closeBtn.onclick = (e) => {
                           e.stopPropagation();
                           overlay.remove();
@@ -173,13 +239,20 @@ const PortfolioReviewsFaqSection = ({
                       }
                     }}
                   >
-                    <Card className="hover:shadow-lg transition-all h-full">
+                    <Card className="hover:shadow-lg transition-all h-full relative group">
                       <CardContent className="p-4">
-                        <img
-                          src={testimonial.image}
-                          alt={`Отзыв ${idx + 1}`}
-                          className="w-full h-[400px] object-contain rounded-lg"
-                        />
+                        <div className="relative">
+                          <img
+                            src={testimonial.image}
+                            alt={`Отзыв ${idx + 1}`}
+                            className="w-full h-[400px] object-contain rounded-lg"
+                          />
+                          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20 rounded-lg">
+                            <div className="bg-white/90 rounded-full p-3">
+                              <Icon name="Maximize2" size={24} className="text-primary" />
+                            </div>
+                          </div>
+                        </div>
                       </CardContent>
                     </Card>
                   </div>
