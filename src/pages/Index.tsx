@@ -215,14 +215,44 @@ const Index = () => {
 
   const portfolioImages = [
     {
+      url: "https://cdn.poehali.dev/files/2d93b9e7-3984-41bc-81e0-69c60b7cd7c7.JPG",
+      category: "neuro",
+      photographer: "alexandra",
+    },
+    {
+      url: "https://cdn.poehali.dev/files/a57ab8d5-c2f0-4387-9df3-407ace4ce9e9.JPG",
+      category: "neuro",
+      photographer: "alexandra",
+    },
+    {
+      url: "https://cdn.poehali.dev/files/7b361cd6-c1e1-4221-8e38-e9630cd8a123.JPG",
+      category: "neuro",
+      photographer: "alexandra",
+    },
+    {
+      url: "https://cdn.poehali.dev/files/8c684d10-e14c-487a-8811-9ca9ea44f023.JPG",
+      category: "neuro",
+      photographer: "alexandra",
+    },
+    {
+      url: "https://cdn.poehali.dev/files/147eda3a-d1b9-413c-a81f-e3fda5351305.JPG",
+      category: "neuro",
+      photographer: "alexandra",
+    },
+    {
+      url: "https://cdn.poehali.dev/files/f6d30502-8377-486a-9052-1c46bc77197f.JPG",
+      category: "neuro",
+      photographer: "alexandra",
+    },
+    {
       url: "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/d4bee983-4720-43ee-bcb8-8fad54d8cfc9.jpg",
       category: "wedding",
       photographer: "maria",
     },
     {
-      url: "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/ae83c122-3d9f-4040-85f8-cbdcff5516e7.jpg",
-      category: "neuro",
-      photographer: "alexandra",
+      url: "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/d4bee983-4720-43ee-bcb8-8fad54d8cfc9.jpg",
+      category: "wedding",
+      photographer: "maria",
     },
     {
       url: "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/647c12fe-b2d4-4576-938b-8568acf1de25.jpg",
