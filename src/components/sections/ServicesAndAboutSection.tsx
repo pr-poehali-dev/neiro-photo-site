@@ -248,6 +248,7 @@ const ServicesAndAboutSection = ({
                     Классическая съемка
                   </CardTitle>
                 </div>
+                <p className="text-sm sm:text-base">г. Новосибирск</p>
                 <CardDescription className="text-sm sm:text-base">
                   Профессиональная фотосессия с Марией
                 </CardDescription>

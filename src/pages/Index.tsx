@@ -1507,6 +1507,9 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                         <span className="font-bold text-[11px] leading-tight">
                           Мария
                         </span>
+                        <span className="font-bold text-[8px] leading-tight">
+                          г. Новосибирск
+                        </span>
                       </div>
                       <span className="text-[9px] leading-tight">Классика</span>
                     </Button>
