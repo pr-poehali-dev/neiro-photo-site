@@ -211,7 +211,7 @@ const ServicesAndAboutSection = ({
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span>Групповая (1 фото, 2 и более человек)</span>
+                    <span>Портрет поколения (оплата за каждого человека)</span>
                     <span className="font-bold text-sm whitespace-nowrap">
                       от 500 ₽
                     </span>

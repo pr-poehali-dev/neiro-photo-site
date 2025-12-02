@@ -1078,7 +1078,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span>Групповая (1 фото, 2 и более человек)</span>
+                    <span>Портрет поколения (оплата за каждого человека)</span>
                     <span className="font-bold text-sm whitespace-nowrap">
                       от 500 ₽
                     </span>
@@ -1574,7 +1574,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           onClick={() => setSelectedPackage("gruppovaya")}
                         >
                           <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
-                            Групповая (2 и более человек)
+                            Портрет поколения (оплата за каждого человека)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             от 500 ₽
