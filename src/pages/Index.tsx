@@ -1078,7 +1078,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span>Групповая (1 фото, 2 и более человек)</span>
+                    <span>Портрет поколения (оплата за каждого человека)</span>
                     <span className="font-bold text-sm whitespace-nowrap">
                       от 500 ₽
                     </span>
@@ -1133,19 +1133,21 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                       4 000 ₽
                     </span>
                   </div>
+                  <p className="font-bold text-xs text-purple-800 flex items-center gap-1">
+                    <Icon name="Gift" size={14} />
+                    Короткое видео (до 30сек) в подарок
+                  </p>
                   <div className="flex justify-between items-center gap-2">
                     <span>Премиум (2 часа, 30 фото в ретуши)</span>
                     <span className="font-bold text-sm whitespace-nowrap">
                       7 500 ₽
                     </span>
                   </div>
+                  <p className="font-bold text-xs text-purple-800 flex items-center gap-1">
+                    <Icon name="Gift" size={14} />
+                    Короткое видео (до 30сек) в подарок
+                  </p>
                   <div className="space-y-2">
-                    <div className="flex justify-between items-center gap-2">
-                      <span>Короткое видео (до 30сек)</span>
-                      <span className="font-bold text-sm whitespace-nowrap">
-                        500 ₽
-                      </span>
-                    </div>
                     <p className="font-bold text-xs text-purple-800 flex items-center gap-1 mt-3">
                       <Icon name="AlertCircle" size={14} />
                       Студия оплачивается отдельно
@@ -1580,7 +1582,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           onClick={() => setSelectedPackage("gruppovaya")}
                         >
                           <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
-                            Групповая (2 и более человек)
+                            Портрет поколения (оплата за каждого человека)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             от 500 ₽
@@ -1637,23 +1639,6 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             7 500 ₽
-                          </span>
-                        </Button>
-                        <Button
-                          type="button"
-                          variant={
-                            selectedPackage === "korotkoe video"
-                              ? "default"
-                              : "outline"
-                          }
-                          className="w-full justify-between h-auto p-2"
-                          onClick={() => setSelectedPackage("korotkoe video")}
-                        >
-                          <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
-                            Короткое видео (до 30сек)
-                          </span>
-                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
-                            500 ₽
                           </span>
                         </Button>
                       </div>
@@ -1802,25 +1787,25 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
       <footer className="py-8 px-4 bg-muted/50 border-t">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-8">
-            <div className="flex flex-wrap items-center justify-center gap-6 mb-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-4 max-w-2xl mx-auto">
               <a
                 href="https://t.me/sasha_is_photographer"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
+                className="flex items-center justify-center gap-1.5 text-[11px] sm:text-xs hover:text-primary transition-colors"
               >
-                <Icon name="Send" size={18} />
+                <Icon name="Send" size={14} />
                 <span>Telegram Александры</span>
               </a>
               <a
                 href="https://vk.com/mary_is94"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
+                className="flex items-center justify-center gap-1.5 text-[11px] sm:text-xs hover:text-primary transition-colors"
               >
                 <svg
-                  width="18"
-                  height="18"
+                  width="14"
+                  height="14"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
@@ -1832,9 +1817,9 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                 href="https://www.instagram.com/mary_is94"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm hover:text-primary transition-colors"
+                className="flex items-center justify-center gap-1.5 text-[11px] sm:text-xs hover:text-primary transition-colors"
               >
-                <Icon name="Instagram" size={18} />
+                <Icon name="Instagram" size={14} />
                 <span>Instagram Марии</span>
               </a>
             </div>
