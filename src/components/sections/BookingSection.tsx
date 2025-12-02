@@ -217,7 +217,7 @@ const BookingSection = ({
                           onClick={() => setSelectedPackage("gruppovaya")}
                         >
                           <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
-                            Портрет поколения (оплата за каждого человека)
+                            Групповая (2 и более человек)
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             от 500 ₽
