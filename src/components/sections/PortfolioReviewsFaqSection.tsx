@@ -67,7 +67,7 @@ const PortfolioReviewsFaqSection = ({
                   .map((img, idx) => (
                     <div
                       key={idx}
-                      className="group relative overflow-hidden rounded-2xl aspect-square shadow-lg hover:shadow-2xl bg-gradient-to-br from-slate-100 to-indigo-50 transition-all duration-500 hover:-translate-y-2 hover:rotate-1 border-4 border-white/50 backdrop-blur-sm"
+                      className="group relative overflow-hidden rounded-2xl aspect-vertical shadow-lg hover:shadow-2xl bg-gradient-to-br from-slate-100 to-indigo-50 transition-all duration-500 hover:-translate-y-2 hover:rotate-1 border-4 border-white/50 backdrop-blur-sm"
                     >
                       <img
                         src={img.url}
@@ -117,7 +117,7 @@ const PortfolioReviewsFaqSection = ({
                   .map((img, idx) => (
                     <div
                       key={idx}
-                      className="group relative overflow-hidden rounded-2xl aspect-square shadow-xl hover:shadow-3xl bg-gradient-to-br from-rose-50 to-amber-50/80 transition-all duration-500 hover:-translate-y-3 hover:rotate-[-2deg] ring-2 ring-amber-100/50 hover:ring-amber-200/70 backdrop-blur-sm"
+                      className="group relative overflow-hidden rounded-2xl aspect-vertical shadow-xl hover:shadow-3xl bg-gradient-to-br from-rose-50 to-amber-50/80 transition-all duration-500 hover:-translate-y-3 hover:rotate-[-2deg] ring-2 ring-amber-100/50 hover:ring-amber-200/70 backdrop-blur-sm"
                     >
                       <img
                         src={img.url}
