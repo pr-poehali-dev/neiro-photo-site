@@ -253,7 +253,7 @@ const BookingSection = ({
                           onClick={() => setSelectedPackage("standard")}
                         >
                           <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
-                            Стандарт (1 час, 15 фото в ретуши)
+                            Стандарт (1 час, 15 фото в ретуши) + рилс в подарок
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             4 000 ₽
@@ -270,7 +270,7 @@ const BookingSection = ({
                           onClick={() => setSelectedPackage("premium")}
                         >
                           <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
-                            Премиум (2 часа, 30 фото в ретуши)
+                            Премиум (2 часа, 30 фото в ретуши) + рилс в подарок
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             7 500 ₽
