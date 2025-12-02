@@ -64,7 +64,7 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
         
         if photographer == 'maria':
             photographer_name = 'Марии'
-            photographer_chat_id = os.environ.get('TELEGRAM_MARIYA_CHAT_ID', '1324179163')
+            photographer_chat_id = os.environ.get('TELEGRAM_MARIYA_CHAT_ID', '1692264245')
         elif photographer == 'alexandra':
             photographer_name = 'Александры'
             photographer_chat_id = os.environ.get('TELEGRAM_ALEXANDRA_CHAT_ID', '6078882546')
