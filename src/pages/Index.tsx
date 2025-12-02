@@ -549,7 +549,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                 <img
                   src="https://cdn.poehali.dev/files/9ed65423-3618-4959-8e6b-1db4cacd6d13.JPG"
                   alt="Мария"
-                  className="w-full h-full object-cover opacity-90"
+                  className="w-full h-full object-cover opacity-90 transform scale-110"
                 />
               </div>
               <CardContent className="p-4 sm:p-6">
