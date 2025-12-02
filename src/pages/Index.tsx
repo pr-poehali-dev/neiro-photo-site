@@ -641,13 +641,6 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
             </TabsList>
 
             <TabsContent value="alexandra" className="space-y-6">
-              <div className="text-center mb-4">
-                <p className="text-xs sm:text-sm text-muted-foreground flex items-center justify-center gap-2">
-                  <Icon name="ArrowRight" size={16} />
-                  Листайте для просмотра
-                </p>
-              </div>
-
               <div className="relative">
                 <div
                   className="flex gap-3 sm:gap-4 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory scrollbar-hide"
@@ -688,6 +681,11 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                         </div>
                       </div>
                     ))}
+                </div>
+                <div className="flex items-center justify-center gap-2 mt-4 md:hidden text-sm text-muted-foreground animate-bounce">
+                  <Icon name="ChevronLeft" size={16} />
+                  <span>Листайте для просмотра</span>
+                  <Icon name="ChevronRight" size={16} />
                 </div>
               </div>
 
@@ -735,13 +733,6 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                   <Icon name="Video" size={16} className="mr-2" />
                   Видео
                 </Button>
-              </div>
-
-              <div className="text-center mb-4">
-                <p className="text-xs sm:text-sm text-muted-foreground flex items-center justify-center gap-2">
-                  <Icon name="ArrowRight" size={16} />
-                  Листайте для просмотра
-                </p>
               </div>
 
               <div className="relative">
@@ -802,6 +793,11 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                         </div>
                       </div>
                     ))}
+                </div>
+                <div className="flex items-center justify-center gap-2 mt-4 md:hidden text-sm text-muted-foreground animate-bounce">
+                  <Icon name="ChevronLeft" size={16} />
+                  <span>Листайте для просмотра</span>
+                  <Icon name="ChevronRight" size={16} />
                 </div>
               </div>
 
