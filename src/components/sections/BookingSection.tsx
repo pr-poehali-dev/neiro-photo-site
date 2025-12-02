@@ -139,13 +139,16 @@ const BookingSection = ({
                         setSelectedPackage("");
                       }}
                     >
-                      <div className="flex items-center gap-1.5">
-                        <Icon name="Camera" size={14} />
-                        <span className="font-bold text-[11px] leading-tight">
-                          Мария
-                        </span>
+                      <div className="flex flex-col items-start gap-1">
+                        <div className="flex items-center gap-1.5">
+                          <Icon name="Camera" size={14} />
+                          <span className="font-bold text-[11px] leading-tight">
+                            Мария
+                          </span>
+                        </div>
+                        <span className="text-[9px] leading-tight">Классика</span>
+                        <span className="text-[8px] text-muted-foreground leading-tight">г. Новосибирск</span>
                       </div>
-                      <span className="text-[9px] leading-tight">Классика</span>
                     </Button>
                   </div>
                 </div>
@@ -253,7 +256,7 @@ const BookingSection = ({
                           onClick={() => setSelectedPackage("standard")}
                         >
                           <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
-                            Стандарт (1 час, 15 фото в ретуши) + рилс в подарок
+                            Стандарт (1 час, 15 фото в ретуши) + видео до 30сек в подарок
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             4 000 ₽
@@ -270,7 +273,7 @@ const BookingSection = ({
                           onClick={() => setSelectedPackage("premium")}
                         >
                           <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
-                            Премиум (2 часа, 30 фото в ретуши) + рилс в подарок
+                            Премиум (2 часа, 30 фото в ретуши) + видео до 30сек в подарок
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             7 500 ₽
