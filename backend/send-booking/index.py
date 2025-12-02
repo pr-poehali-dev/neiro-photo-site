@@ -87,6 +87,7 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
                 'standard': 'Стандарт (10 фото, 2-3 образа) - 2 500 руб' if photographer == 'alexandra' else 'Стандарт (1 час, 15 фото в ретуши) - 4 000 руб',
                 'premium': 'Премиум (20 фото, 5 образов) - 3 500 руб' if photographer == 'alexandra' else 'Премиум (2 часа, 30 фото в ретуши) - 7 500 руб',
                 'gruppovaya': 'Групповая (2 и более человек) - от 500 руб',
+                'korotkoe video': 'Короткое видео (до 30сек) - 500 руб',
                 'mini': 'Мини (30 мин, 10 фото в ретуши) - 2 500 руб',
                 'other': 'Другое'
             }

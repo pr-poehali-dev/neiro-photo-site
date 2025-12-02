@@ -276,7 +276,22 @@ const BookingSection = ({
                             7 500 ₽
                           </span>
                         </Button>
-                       
+                        <Button
+                          type="button"
+                          variant={
+                            selectedPackage === "korotkoe video"
+                              ? "default"
+                              : "outline"
+                          }
+                          className="w-full justify-between h-auto p-2"
+                          onClick={() => setSelectedPackage("korotkoe video")}
+                        >
+                          <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
+                            Короткое видео (до 30сек)
+                          </span>
+                          <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
+                            500 ₽
+                          </span>
                         </Button>
                       </div>
                     )}
