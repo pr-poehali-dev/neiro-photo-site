@@ -641,13 +641,6 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
             </TabsList>
 
             <TabsContent value="alexandra" className="space-y-6">
-              <div className="text-center mb-4">
-                <p className="text-xs sm:text-sm text-muted-foreground flex items-center justify-center gap-2">
-                  <Icon name="ArrowRight" size={16} />
-                  Листайте для просмотра
-                </p>
-              </div>
-
               <div className="relative">
                 <div
                   className="flex gap-3 sm:gap-4 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory scrollbar-hide"
@@ -671,7 +664,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           setModalOpen(true);
                         }}
                       >
-                        <div className="group relative overflow-hidden rounded-lg bg-muted aspect-[3/4]">
+                        <div className="group relative overflow-hidden rounded-lg bg-muted aspect-[4/5]">
                           <img
                             src={item.url}
                             alt={`Работа ${idx + 1}`}
@@ -688,6 +681,12 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                         </div>
                       </div>
                     ))}
+                </div>
+                <div className="text-center mb-4">
+                  <p className="text-xs sm:text-sm text-muted-foreground flex items-center justify-center gap-2">
+                    <Icon name="ArrowRight" size={16} />
+                    Листайте для просмотра
+                  </p>
                 </div>
               </div>
 
@@ -737,13 +736,6 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                 </Button>
               </div>
 
-              <div className="text-center mb-4">
-                <p className="text-xs sm:text-sm text-muted-foreground flex items-center justify-center gap-2">
-                  <Icon name="ArrowRight" size={16} />
-                  Листайте для просмотра
-                </p>
-              </div>
-
               <div className="relative">
                 <div
                   className="flex gap-3 sm:gap-4 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory scrollbar-hide"
@@ -767,7 +759,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           setModalOpen(true);
                         }}
                       >
-                        <div className="group relative overflow-hidden rounded-lg bg-muted aspect-[3/4]">
+                        <div className="group relative overflow-hidden rounded-lg bg-muted aspect-[4/5]">
                           {item.type === "photo" ? (
                             <img
                               src={item.url}
@@ -802,6 +794,12 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                         </div>
                       </div>
                     ))}
+                </div>
+                <div className="text-center mb-4">
+                  <p className="text-xs sm:text-sm text-muted-foreground flex items-center justify-center gap-2">
+                    <Icon name="ArrowRight" size={16} />
+                    Листайте для просмотра
+                  </p>
                 </div>
               </div>
 
