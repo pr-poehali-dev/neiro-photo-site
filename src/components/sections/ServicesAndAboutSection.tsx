@@ -263,7 +263,8 @@ const ServicesAndAboutSection = ({
                   </div>
                   <div className="flex justify-between items-center gap-2">
                     <span>
-                      Стандарт (1 час, 15 фото в ретуши) + рилс в подарок
+                      Стандарт (1 час, 15 фото в ретуши) + видео до 30сек в
+                      подарок
                     </span>
                     <span className="font-bold text-sm whitespace-nowrap">
                       4 000 ₽
