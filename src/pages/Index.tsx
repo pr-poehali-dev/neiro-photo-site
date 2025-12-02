@@ -1416,9 +1416,9 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
               </div>
             </div>
             <div className="flex items-center justify-center gap-2 mt-4 text-muted-foreground md:hidden">
-              <Icon name="ChevronLeft" size={20} className="animate-pulse" />
+              <Icon name="ChevronLeft" size={16} className="animate-pulse" />
               <span className="text-sm">Листайте для просмотра</span>
-              <Icon name="ChevronRight" size={20} className="animate-pulse" />
+              <Icon name="ChevronRight" size={16} className="animate-pulse" />
             </div>
           </div>
         </div>
