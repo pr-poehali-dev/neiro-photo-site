@@ -844,9 +844,9 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
           <DialogContent className="max-w-[95vw] max-h-[95vh] sm:max-w-4xl p-0 overflow-hidden bg-black/95">
             <button
               onClick={() => setModalOpen(false)}
-              className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 rounded-full p-2 transition-colors hover:opacity-80"
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors"
             >
-              <Icon name="X" size={32} className="text-[#8B5CF6]" strokeWidth={3} />
+              <Icon name="X" size={24} className="text-white" />
             </button>
             {selectedMedia && (
               <div className="flex items-center justify-center w-full h-full min-h-[50vh] sm:min-h-[70vh]">
@@ -1129,7 +1129,8 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                   </div>
                   <div className="flex justify-between items-center gap-2">
                     <span>
-                      Стандарт (1 час, 15 фото в ретуши) + видео до 30сек в подарок
+                      Стандарт (1 час, 15 фото в ретуши) + видео до 30сек в
+                      подарок
                     </span>
                     <span className="font-bold text-sm whitespace-nowrap">
                       4 000 ₽
@@ -1138,7 +1139,8 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
 
                   <div className="flex justify-between items-center gap-2">
                     <span>
-                      Премиум (2 часа, 30 фото в ретуши) + видео до 30сек в подарок
+                      Премиум (2 часа, 30 фото в ретуши) + видео до 30сек в
+                      подарок
                     </span>
                     <span className="font-bold text-sm whitespace-nowrap">
                       7 500 ₽
@@ -1383,7 +1385,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
 
                         const closeBtn = document.createElement("button");
                         closeBtn.className =
-                          "absolute top-4 right-4 text-white bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors z-10";
+                          "absolute top-4 right-4 text-purple rounded-full p-2 transition-colors z-10";
                         closeBtn.innerHTML =
                           '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
                         closeBtn.onclick = (e) => {
@@ -1509,8 +1511,12 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                             Мария
                           </span>
                         </div>
-                        <span className="text-[9px] leading-tight">Классика</span>
-                        <span className="text-[8px] text-muted-foreground leading-tight">г. Новосибирск</span>
+                        <span className="text-[9px] leading-tight">
+                          Классика
+                        </span>
+                        <span className="text-[8px] text-muted-foreground leading-tight">
+                          г. Новосибирск
+                        </span>
                       </div>
                     </Button>
                   </div>
@@ -1619,7 +1625,8 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           onClick={() => setSelectedPackage("standard")}
                         >
                           <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
-                            Стандарт (1 час, 15 фото в ретуши) + видео до 30сек в подарок
+                            Стандарт (1 час, 15 фото в ретуши) + видео до 30сек
+                            в подарок
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             4 000 ₽
@@ -1636,7 +1643,8 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           onClick={() => setSelectedPackage("premium")}
                         >
                           <span className="text-left text-xs sm:text-sm leading-tight line-clamp-2">
-                            Премиум (2 часа, 30 фото в ретуши) + видео до 30сек в подарок
+                            Премиум (2 часа, 30 фото в ретуши) + видео до 30сек
+                            в подарок
                           </span>
                           <span className="font-bold text-xs sm:text-sm whitespace-nowrap leading-tight">
                             7 500 ₽
@@ -1795,7 +1803,11 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-1.5 text-[9px] min-[320px]:text-[9px] sm:text-xs hover:text-primary transition-colors"
               >
-                <Icon name="Send" size={12} className="sm:w-[14px] sm:h-[14px]" />
+                <Icon
+                  name="Send"
+                  size={12}
+                  className="sm:w-[14px] sm:h-[14px]"
+                />
                 <span>Telegram канал Александры</span>
               </a>
               <a
@@ -1821,7 +1833,11 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-1.5 text-[9px] min-[320px]:text-[9px] sm:text-xs hover:text-primary transition-colors"
               >
-                <Icon name="Instagram" size={12} className="sm:w-[14px] sm:h-[14px]" />
+                <Icon
+                  name="Instagram"
+                  size={12}
+                  className="sm:w-[14px] sm:h-[14px]"
+                />
                 <span>Instagram Марии</span>
               </a>
             </div>
