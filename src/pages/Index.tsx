@@ -277,10 +277,6 @@ const Index = () => {
     },
     {
       image:
-        "https://cdn.poehali.dev/files/9fa03b26-e212-4b05-9915-a9f19c4f5b91.JPG",
-    },
-    {
-      image:
         "https://cdn.poehali.dev/files/167549e4-47b2-4648-a60a-c4d22f11069e.JPG",
     },
     {
