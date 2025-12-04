@@ -844,9 +844,9 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
           <DialogContent className="max-w-[95vw] max-h-[95vh] sm:max-w-4xl p-0 overflow-hidden bg-black/95">
             <button
               onClick={() => setModalOpen(false)}
-              className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 bg-white/10 hover:bg-white/20 rounded-full p-2 transition-colors"
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 z-50 rounded-full p-2 transition-colors hover:opacity-80"
             >
-              <Icon name="X" size={24} className="text-white" />
+              <Icon name="X" size={32} className="text-[#8B5CF6]" strokeWidth={3} />
             </button>
             {selectedMedia && (
               <div className="flex items-center justify-center w-full h-full min-h-[50vh] sm:min-h-[70vh]">
