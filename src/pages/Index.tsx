@@ -273,16 +273,19 @@ const Index = () => {
       url: "https://vk.com/clip-228566396_456239023",
       type: "video" as const,
       photographer: "maria",
+      thumbnail: "https://cdn.poehali.dev/files/acf3fd8b-6312-4b81-9526-2dd0e7e1c59e.jpg",
     },
     {
       url: "https://vk.com/clip-228566396_456239021",
       type: "video" as const,
       photographer: "maria",
+      thumbnail: "https://cdn.poehali.dev/files/e791bc59-06f9-45ff-91d1-734e59e98218.jpg",
     },
     {
       url: "https://vk.com/clip-228566396_456239024",
       type: "video" as const,
       photographer: "maria",
+      thumbnail: "https://cdn.poehali.dev/files/e791bc59-06f9-45ff-91d1-734e59e98218.jpg",
     },
   ];
 
@@ -793,7 +796,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           ) : item.url.includes("vk.com") ? (
                             <div className="relative w-full h-full">
                               <img
-                                src="https://cdn.poehali.dev/files/e791bc59-06f9-45ff-91d1-734e59e98218.jpg"
+                                src={("thumbnail" in item && item.thumbnail) || "https://cdn.poehali.dev/files/e791bc59-06f9-45ff-91d1-734e59e98218.jpg"}
                                 alt="Превью видео"
                                 className="w-full h-full object-cover"
                               />
