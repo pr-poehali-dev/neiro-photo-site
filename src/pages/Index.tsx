@@ -771,6 +771,10 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                               loading="lazy"
                             />
+                          ) : item.url.includes('vk.com') ? (
+                            <div className="w-full h-full bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
+                              <Icon name="Play" size={48} className="text-purple-600" />
+                            </div>
                           ) : (
                             <video
                               src={item.url}
@@ -858,6 +862,16 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     alt="Увеличенное фото"
                     className="max-w-full max-h-[95vh] object-contain"
                   />
+                ) : selectedMedia.url.includes('vk.com') ? (
+                  <iframe
+                    src={`https://vk.com/video_ext.php?oid=342866396&id=456239456&hd=2`}
+                    width="100%"
+                    height="500"
+                    allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+                    frameBorder="0"
+                    allowFullScreen
+                    className="max-w-full max-h-[95vh]"
+                  ></iframe>
                 ) : (
                   <video
                     src={selectedMedia.url}
