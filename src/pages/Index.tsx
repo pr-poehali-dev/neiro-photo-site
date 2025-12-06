@@ -269,7 +269,7 @@ const Index = () => {
       photographer: "maria",
     },
     {
-      url: "https://disk.yandex.ru/i/VblWdWI8Mb406A",
+      url: "https://vk.com/clip342866396_456239456",
       type: "video" as const,
       photographer: "maria",
     },
