@@ -77,6 +77,7 @@ const Index = () => {
     type: "photo" | "video";
   } | null>(null);
   const [portfolioScrollPosition, setPortfolioScrollPosition] = useState(0);
+  const [videoLoading, setVideoLoading] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -771,6 +772,9 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                         onClick={() => {
                           setSelectedMedia({ url: item.url, type: item.type });
                           setModalOpen(true);
+                          if (item.type === "video") {
+                            setVideoLoading(true);
+                          }
                         }}
                       >
                         <div className="group relative overflow-hidden rounded-lg bg-muted aspect-[9/16]">
@@ -782,8 +786,17 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                               loading="lazy"
                             />
                           ) : item.url.includes('vk.com') ? (
-                            <div className="w-full h-full bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
-                              <Icon name="Play" size={48} className="text-purple-600" />
+                            <div className="relative w-full h-full">
+                              <img
+                                src="https://cdn.poehali.dev/files/e791bc59-06f9-45ff-91d1-734e59e98218.jpg"
+                                alt="Превью видео"
+                                className="w-full h-full object-cover"
+                              />
+                              <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                                <div className="bg-white/90 rounded-full p-4">
+                                  <Icon name="Play" size={48} className="text-purple-600" />
+                                </div>
+                              </div>
                             </div>
                           ) : (
                             <video
@@ -851,7 +864,10 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
           </Tabs>
         </div>
 
-        <Dialog open={modalOpen} onOpenChange={setModalOpen}>
+        <Dialog open={modalOpen} onOpenChange={(open) => {
+          setModalOpen(open);
+          if (!open) setVideoLoading(false);
+        }}>
           <DialogContent className="max-w-[95vw] max-h-[95vh] sm:max-w-4xl p-0 overflow-hidden bg-black/95">
             <button
               onClick={() => setModalOpen(false)}
@@ -873,21 +889,32 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     className="max-w-full max-h-[95vh] object-contain"
                   />
                 ) : selectedMedia.url.includes('vk.com') ? (
-                  <iframe
-                    src={(() => {
-                      const match = selectedMedia.url.match(/clip(-?\d+)_(\d+)/);
-                      if (match) {
-                        return `https://vk.com/video_ext.php?oid=${match[1]}&id=${match[2]}&hd=2`;
-                      }
-                      return selectedMedia.url;
-                    })()}
-                    width="100%"
-                    height="500"
-                    allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
-                    frameBorder="0"
-                    allowFullScreen
-                    className="max-w-full max-h-[95vh]"
-                  ></iframe>
+                  <div className="relative w-full h-full">
+                    {videoLoading && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/90 z-10">
+                        <div className="text-center">
+                          <Icon name="Loader2" size={48} className="text-purple-500 animate-spin mb-4 mx-auto" />
+                          <p className="text-white text-lg">Видео загружается, подождите...</p>
+                        </div>
+                      </div>
+                    )}
+                    <iframe
+                      src={(() => {
+                        const match = selectedMedia.url.match(/clip(-?\d+)_(\d+)/);
+                        if (match) {
+                          return `https://vk.com/video_ext.php?oid=${match[1]}&id=${match[2]}&hd=2`;
+                        }
+                        return selectedMedia.url;
+                      })()}
+                      width="100%"
+                      height="500"
+                      allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+                      frameBorder="0"
+                      allowFullScreen
+                      className="max-w-full max-h-[95vh]"
+                      onLoad={() => setVideoLoading(false)}
+                    ></iframe>
+                  </div>
                 ) : (
                   <video
                     src={selectedMedia.url}
