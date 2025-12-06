@@ -268,6 +268,11 @@ const Index = () => {
       type: "photo" as const,
       photographer: "maria",
     },
+    {
+      url: "https://disk.yandex.ru/i/VblWdWI8Mb406A",
+      type: "video" as const,
+      photographer: "maria",
+    },
   ];
 
   const testimonials = [
