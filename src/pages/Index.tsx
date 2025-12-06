@@ -270,12 +270,17 @@ const Index = () => {
       photographer: "maria",
     },
     {
-      url: "https://vk.com/clip342866396_456239456",
+      url: "https://vk.com/clip-228566396_456239023",
       type: "video" as const,
       photographer: "maria",
     },
     {
       url: "https://vk.com/clip-228566396_456239021",
+      type: "video" as const,
+      photographer: "maria",
+    },
+    {
+      url: "https://vk.com/clip-228566396_456239024",
       type: "video" as const,
       photographer: "maria",
     },
@@ -785,7 +790,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                               loading="lazy"
                             />
-                          ) : item.url.includes('vk.com') ? (
+                          ) : item.url.includes("vk.com") ? (
                             <div className="relative w-full h-full">
                               <img
                                 src="https://cdn.poehali.dev/files/e791bc59-06f9-45ff-91d1-734e59e98218.jpg"
@@ -794,7 +799,11 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                               />
                               <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                                 <div className="bg-white/90 rounded-full p-4">
-                                  <Icon name="Play" size={48} className="text-purple-600" />
+                                  <Icon
+                                    name="Play"
+                                    size={48}
+                                    className="text-purple-600"
+                                  />
                                 </div>
                               </div>
                             </div>
@@ -864,10 +873,13 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
           </Tabs>
         </div>
 
-        <Dialog open={modalOpen} onOpenChange={(open) => {
-          setModalOpen(open);
-          if (!open) setVideoLoading(false);
-        }}>
+        <Dialog
+          open={modalOpen}
+          onOpenChange={(open) => {
+            setModalOpen(open);
+            if (!open) setVideoLoading(false);
+          }}
+        >
           <DialogContent className="max-w-[95vw] max-h-[95vh] sm:max-w-4xl p-0 overflow-hidden bg-black/95">
             <button
               onClick={() => setModalOpen(false)}
@@ -888,19 +900,26 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     alt="Увеличенное фото"
                     className="max-w-full max-h-[95vh] object-contain"
                   />
-                ) : selectedMedia.url.includes('vk.com') ? (
+                ) : selectedMedia.url.includes("vk.com") ? (
                   <div className="relative w-full h-full">
                     {videoLoading && (
                       <div className="absolute inset-0 flex items-center justify-center bg-black/90 z-10">
                         <div className="text-center">
-                          <Icon name="Loader2" size={48} className="text-purple-500 animate-spin mb-4 mx-auto" />
-                          <p className="text-white text-lg">Видео загружается, подождите...</p>
+                          <Icon
+                            name="Loader2"
+                            size={48}
+                            className="text-purple-500 animate-spin mb-4 mx-auto"
+                          />
+                          <p className="text-white text-lg">
+                            Видео загружается, подождите...
+                          </p>
                         </div>
                       </div>
                     )}
                     <iframe
                       src={(() => {
-                        const match = selectedMedia.url.match(/clip(-?\d+)_(\d+)/);
+                        const match =
+                          selectedMedia.url.match(/clip(-?\d+)_(\d+)/);
                         if (match) {
                           return `https://vk.com/video_ext.php?oid=${match[1]}&id=${match[2]}&hd=2`;
                         }
