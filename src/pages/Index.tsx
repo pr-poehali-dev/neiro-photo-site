@@ -270,6 +270,31 @@ const Index = () => {
       photographer: "maria",
     },
     {
+      url: "https://cdn.poehali.dev/files/c3d153a5-89fe-4975-aa30-feb630eb380d.jpg",
+      type: "photo" as const,
+      photographer: "maria",
+    },
+    {
+      url: "https://cdn.poehali.dev/files/4638e313-d319-4fbb-b37f-4de9e3877a7e.jpg",
+      type: "photo" as const,
+      photographer: "maria",
+    },
+    {
+      url: "https://cdn.poehali.dev/files/c21313d9-d931-4fa1-94e0-66ed789fe9e6.jpg",
+      type: "photo" as const,
+      photographer: "maria",
+    },
+    {
+      url: "https://cdn.poehali.dev/files/d89aef8a-4aa1-4df5-8f5d-490192fd5977.jpg",
+      type: "photo" as const,
+      photographer: "maria",
+    },
+    {
+      url: "https://cdn.poehali.dev/files/74c213c8-f8b0-4a50-b641-c372bcbde7c3.jpg",
+      type: "photo" as const,
+      photographer: "maria",
+    },
+    {
       url: "https://vk.com/clip-228566396_456239023",
       type: "video" as const,
       photographer: "maria",
