@@ -798,7 +798,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           }
                         }}
                       >
-                        <div className="group relative overflow-hidden rounded-lg bg-muted aspect-[9/16]">
+                        <div className={`group relative overflow-hidden rounded-lg bg-muted ${item.type === "photo" ? "aspect-square" : "aspect-[9/16]"}`}>
                           {item.type === "photo" ? (
                             <img
                               src={item.url}
