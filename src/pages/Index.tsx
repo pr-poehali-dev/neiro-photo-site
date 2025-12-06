@@ -269,7 +269,7 @@ const Index = () => {
       photographer: "maria",
     },
     {
-      url: "https://vk.com/clip-228566396_456239021",
+      url: `https://vk.com/clip-228566396_456239021`,
       type: "video" as const,
       photographer: "maria",
     },
@@ -871,7 +871,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     alt="Увеличенное фото"
                     className="max-w-full max-h-[95vh] object-contain"
                   />
-                ) : selectedMedia.url.includes("vk.com") ? (
+                ) : selectedMedia.url.includes(`vk.com`) ? (
                   <iframe
                     src={`https://vk.com/video_ext.php?oid=228566396&id=456239021&hd=2`}
                     width="100%"
