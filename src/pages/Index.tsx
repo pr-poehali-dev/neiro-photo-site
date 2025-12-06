@@ -273,6 +273,11 @@ const Index = () => {
       type: "video" as const,
       photographer: "maria",
     },
+    {
+      url: "https://vk.com/clip-228566396_456239021",
+      type: "video" as const,
+      photographer: "maria",
+    },
   ];
 
   const testimonials = [
@@ -869,7 +874,13 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                   />
                 ) : selectedMedia.url.includes('vk.com') ? (
                   <iframe
-                    src={`https://vk.com/video_ext.php?oid=342866396&id=456239456&hd=2`}
+                    src={(() => {
+                      const match = selectedMedia.url.match(/clip(-?\d+)_(\d+)/);
+                      if (match) {
+                        return `https://vk.com/video_ext.php?oid=${match[1]}&id=${match[2]}&hd=2`;
+                      }
+                      return selectedMedia.url;
+                    })()}
                     width="100%"
                     height="500"
                     allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
