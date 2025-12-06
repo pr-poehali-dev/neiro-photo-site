@@ -268,6 +268,11 @@ const Index = () => {
       type: "photo" as const,
       photographer: "maria",
     },
+    {
+      url: "https://vk.com/clip342866396_456239456",
+      type: "video" as const,
+      photographer: "maria",
+    },
   ];
 
   const testimonials = [
