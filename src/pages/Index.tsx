@@ -285,7 +285,7 @@ const Index = () => {
       url: "https://vk.com/clip-228566396_456239024",
       type: "video" as const,
       photographer: "maria",
-      thumbnail: "https://cdn.poehali.dev/files/e791bc59-06f9-45ff-91d1-734e59e98218.jpg",
+      thumbnail: "https://cdn.poehali.dev/files/03fff970-0a14-44a4-8f4f-c98b3e1998af.jpg",
     },
   ];
 
