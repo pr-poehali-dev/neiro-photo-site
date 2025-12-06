@@ -255,21 +255,6 @@ const Index = () => {
       photographer: "alexandra",
     },
     {
-      url: "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/d4bee983-4720-43ee-bcb8-8fad54d8cfc9.jpg",
-      type: "photo" as const,
-      photographer: "maria",
-    },
-    {
-      url: "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/d4bee983-4720-43ee-bcb8-8fad54d8cfc9.jpg",
-      type: "photo" as const,
-      photographer: "maria",
-    },
-    {
-      url: "https://cdn.poehali.dev/projects/fd4a0664-6167-4055-91b3-61ca5fd95ac8/files/647c12fe-b2d4-4576-938b-8568acf1de25.jpg",
-      type: "photo" as const,
-      photographer: "maria",
-    },
-    {
       url: "https://cdn.poehali.dev/files/c3d153a5-89fe-4975-aa30-feb630eb380d.jpg",
       type: "photo" as const,
       photographer: "maria",
@@ -298,19 +283,22 @@ const Index = () => {
       url: "https://vk.com/clip-228566396_456239023",
       type: "video" as const,
       photographer: "maria",
-      thumbnail: "https://cdn.poehali.dev/files/acf3fd8b-6312-4b81-9526-2dd0e7e1c59e.jpg",
+      thumbnail:
+        "https://cdn.poehali.dev/files/acf3fd8b-6312-4b81-9526-2dd0e7e1c59e.jpg",
     },
     {
       url: "https://vk.com/clip-228566396_456239021",
       type: "video" as const,
       photographer: "maria",
-      thumbnail: "https://cdn.poehali.dev/files/e791bc59-06f9-45ff-91d1-734e59e98218.jpg",
+      thumbnail:
+        "https://cdn.poehali.dev/files/e791bc59-06f9-45ff-91d1-734e59e98218.jpg",
     },
     {
       url: "https://vk.com/clip-228566396_456239024",
       type: "video" as const,
       photographer: "maria",
-      thumbnail: "https://cdn.poehali.dev/files/03fff970-0a14-44a4-8f4f-c98b3e1998af.jpg",
+      thumbnail:
+        "https://cdn.poehali.dev/files/03fff970-0a14-44a4-8f4f-c98b3e1998af.jpg",
     },
   ];
 
@@ -821,7 +809,10 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           ) : item.url.includes("vk.com") ? (
                             <div className="relative w-full h-full">
                               <img
-                                src={("thumbnail" in item && item.thumbnail) || "https://cdn.poehali.dev/files/e791bc59-06f9-45ff-91d1-734e59e98218.jpg"}
+                                src={
+                                  ("thumbnail" in item && item.thumbnail) ||
+                                  "https://cdn.poehali.dev/files/e791bc59-06f9-45ff-91d1-734e59e98218.jpg"
+                                }
                                 alt="Превью видео"
                                 className="w-full h-full object-cover"
                               />
