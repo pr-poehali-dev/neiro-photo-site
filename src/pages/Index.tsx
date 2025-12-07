@@ -300,6 +300,54 @@ const Index = () => {
       thumbnail:
         "https://cdn.poehali.dev/files/03fff970-0a14-44a4-8f4f-c98b3e1998af.jpg",
     },
+
+    {
+      url: "https://vk.com/clip-228566396_456239027",
+      type: "video" as const,
+      photographer: "maria",
+      thumbnail:
+        "https://cdn.poehali.dev/files/03fff970-0a14-44a4-8f4f-c98b3e1998af.jpg",
+    },
+
+    {
+      url: "https://vk.com/clip-228566396_456239026",
+      type: "video" as const,
+      photographer: "maria",
+      thumbnail:
+        "https://cdn.poehali.dev/files/03fff970-0a14-44a4-8f4f-c98b3e1998af.jpg",
+    },
+
+    {
+      url: "https://vk.com/clip-228566396_456239025",
+      type: "video" as const,
+      photographer: "maria",
+      thumbnail:
+        "https://cdn.poehali.dev/files/03fff970-0a14-44a4-8f4f-c98b3e1998af.jpg",
+    },
+
+    {
+      url: "https://vk.com/clip-228566396_456239025",
+      type: "video" as const,
+      photographer: "maria",
+      thumbnail:
+        "https://cdn.poehali.dev/files/03fff970-0a14-44a4-8f4f-c98b3e1998af.jpg",
+    },
+
+    {
+      url: "https://vk.com/clip-228566396_456239029",
+      type: "video" as const,
+      photographer: "maria",
+      thumbnail:
+        "https://cdn.poehali.dev/files/03fff970-0a14-44a4-8f4f-c98b3e1998af.jpg",
+    },
+
+    {
+      url: "https://vk.com/clip-228566396_456239024",
+      type: "video" as const,
+      photographer: "maria",
+      thumbnail:
+        "https://cdn.poehali.dev/files/03fff970-0a14-44a4-8f4f-c98b3e1998af.jpg",
+    },
   ];
 
   const testimonials = [
@@ -798,7 +846,9 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                           }
                         }}
                       >
-                        <div className={`group relative overflow-hidden rounded-lg bg-muted ${item.type === "photo" ? "aspect-square" : "aspect-[9/16]"}`}>
+                        <div
+                          className={`group relative overflow-hidden rounded-lg bg-muted ${item.type === "photo" ? "aspect-square" : "aspect-[9/16]"}`}
+                        >
                           {item.type === "photo" ? (
                             <img
                               src={item.url}
