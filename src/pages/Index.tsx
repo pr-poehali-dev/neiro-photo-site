@@ -298,21 +298,21 @@ const Index = () => {
       type: "video" as const,
       photographer: "maria",
       thumbnail:
-        "https://cdn.poehali.dev/files/03fff970-0a14-44a4-8f4f-c98b3e1998af.jpg",
+        "https://cdn.poehali.dev/files/IMG_2170.jpg",
     },
     {
       url: "https://vk.com/clip-228566396_456239027",
       type: "video" as const,
       photographer: "maria",
       thumbnail:
-        "https://cdn.poehali.dev/files/03fff970-0a14-44a4-8f4f-c98b3e1998af.jpg",
+        "https://cdn.poehali.dev/files/IMG_4205.jpg",
     },
     {
       url: "https://vk.com/clip-228566396_456239033",
       type: "video" as const,
       photographer: "maria",
       thumbnail:
-        "https://cdn.poehali.dev/files/03fff970-0a14-44a4-8f4f-c98b3e1998af.jpg",
+        "https://cdn.poehali.dev/files/IMG_7768.jpg",
     },
     {
       url: "https://vk.com/clip-228566396_456239023",
@@ -340,7 +340,7 @@ const Index = () => {
       type: "video" as const,
       photographer: "maria",
       thumbnail:
-        "https://cdn.poehali.dev/files/03fff970-0a14-44a4-8f4f-c98b3e1998af.jpg",
+        "https://cdn.poehali.dev/files/IMG_3224.jpg",
     },
 
     {
@@ -348,7 +348,7 @@ const Index = () => {
       type: "video" as const,
       photographer: "maria",
       thumbnail:
-        "https://cdn.poehali.dev/files/03fff970-0a14-44a4-8f4f-c98b3e1998af.jpg",
+        "https://cdn.poehali.dev/files/IMG_5481.jpg",
     },
 
     {
