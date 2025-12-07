@@ -79,16 +79,6 @@ const Index = () => {
   const [portfolioScrollPosition, setPortfolioScrollPosition] = useState(0);
   const [videoLoading, setVideoLoading] = useState(false);
 
-  const scrollPortfolio = (direction: 'left' | 'right', photographer: 'alexandra' | 'maria') => {
-    const containerId = photographer === 'alexandra' ? 'portfolio-alexandra' : 'portfolio-maria';
-    const container = document.getElementById(containerId);
-    if (!container) return;
-    
-    const itemWidth = 240 + 12; // width + gap
-    const scrollAmount = direction === 'left' ? -itemWidth : itemWidth;
-    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-  };
-
   useEffect(() => {
     const handleScroll = () => {
       const bookingSection = document.getElementById("booking");
@@ -336,7 +326,7 @@ const Index = () => {
     },
 
     {
-      url: "https://vk.com/clip-228566396_456239025",
+      url: "https://vk.com/clip-228566396_456239030",
       type: "video" as const,
       photographer: "maria",
       thumbnail:
@@ -348,7 +338,7 @@ const Index = () => {
       type: "video" as const,
       photographer: "maria",
       thumbnail:
-        "https://cdn.poehali.dev/files/acf3fd8b-6312-4b81-9526-2dd0e7e1c59e.jpg",
+        "https://cdn.poehali.dev/files/03fff970-0a14-44a4-8f4f-c98b3e1998af.jpg",
     },
 
     {
@@ -730,7 +720,6 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
             <TabsContent value="alexandra" className="space-y-6">
               <div className="relative">
                 <div
-                  id="portfolio-alexandra"
                   className="flex gap-3 sm:gap-4 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory scrollbar-hide"
                   style={{ scrollPaddingLeft: "1rem" }}
                   onScroll={(e) =>
@@ -771,29 +760,17 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     ))}
                 </div>
                 <div className="flex items-center justify-center gap-2 mt-4 text-muted-foreground">
-                  <button
-                    onClick={() => scrollPortfolio('left', 'alexandra')}
-                    className="hover:text-primary transition-colors cursor-pointer"
-                    aria-label="Предыдущее фото"
-                  >
-                    <Icon
-                      name="ChevronLeft"
-                      size={20}
-                      className="animate-pulse"
-                    />
-                  </button>
+                  <Icon
+                    name="ChevronLeft"
+                    size={16}
+                    className="animate-pulse"
+                  />
                   <span className="text-sm">Листайте для просмотра</span>
-                  <button
-                    onClick={() => scrollPortfolio('right', 'alexandra')}
-                    className="hover:text-primary transition-colors cursor-pointer"
-                    aria-label="Следующее фото"
-                  >
-                    <Icon
-                      name="ChevronRight"
-                      size={20}
-                      className="animate-pulse"
-                    />
-                  </button>
+                  <Icon
+                    name="ChevronRight"
+                    size={16}
+                    className="animate-pulse"
+                  />
                 </div>
               </div>
 
@@ -845,7 +822,6 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
 
               <div className="relative">
                 <div
-                  id="portfolio-maria"
                   className="flex gap-3 sm:gap-4 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory scrollbar-hide"
                   style={{ scrollPaddingLeft: "1rem" }}
                   onScroll={(e) =>
@@ -929,29 +905,17 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     ))}
                 </div>
                 <div className="flex items-center justify-center gap-2 mt-4 text-muted-foreground">
-                  <button
-                    onClick={() => scrollPortfolio('left', 'maria')}
-                    className="hover:text-secondary transition-colors cursor-pointer"
-                    aria-label="Предыдущее фото"
-                  >
-                    <Icon
-                      name="ChevronLeft"
-                      size={20}
-                      className="animate-pulse"
-                    />
-                  </button>
+                  <Icon
+                    name="ChevronLeft"
+                    size={16}
+                    className="animate-pulse"
+                  />
                   <span className="text-sm">Листайте для просмотра</span>
-                  <button
-                    onClick={() => scrollPortfolio('right', 'maria')}
-                    className="hover:text-secondary transition-colors cursor-pointer"
-                    aria-label="Следующее фото"
-                  >
-                    <Icon
-                      name="ChevronRight"
-                      size={20}
-                      className="animate-pulse"
-                    />
-                  </button>
+                  <Icon
+                    name="ChevronRight"
+                    size={16}
+                    className="animate-pulse"
+                  />
                 </div>
               </div>
 
