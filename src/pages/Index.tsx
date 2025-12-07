@@ -620,15 +620,29 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     </div>
                   )}
                 </div>
-                <Button
-                  className="w-full mt-4"
-                  onClick={() => {
-                    setContactPhotographer("alexandra");
-                    scrollToSection("booking");
-                  }}
-                >
-                  Записаться
-                </Button>
+                <div className="flex gap-2 mt-4">
+                  <Button
+                    className="flex-1"
+                    onClick={() => {
+                      setContactPhotographer("alexandra");
+                      scrollToSection("booking");
+                    }}
+                  >
+                    Записаться
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={() =>
+                      window.open(
+                        "https://max.ru/u/f9LHodD0cOKltHesJSFTYiwol-CUKOakGS_kEiFrs593Sq2oB-mL2dGG9lw",
+                        "_blank",
+                      )
+                    }
+                  >
+                    <Icon name="MessageCircle" size={20} />
+                  </Button>
+                </div>
               </CardContent>
             </Card>
             <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 animate-scale-in [animation-delay:150ms]">
