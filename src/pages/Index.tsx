@@ -356,7 +356,7 @@ const Index = () => {
       type: "video" as const,
       photographer: "maria",
       thumbnail:
-        "https://cdn.poehali.dev/files/acf3fd8b-6312-4b81-9526-2dd0e7e1c59e.jpg",
+        "https://cdn.poehali.dev/files/IMG_5999.jpg",
     },
   ];
 
