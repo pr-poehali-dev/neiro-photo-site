@@ -297,19 +297,22 @@ const Index = () => {
       url: "https://vk.com/clip-228566396_456239025",
       type: "video" as const,
       photographer: "maria",
-      thumbnail: "https://cdn.poehali.dev/files/IMG_2170.jpg",
+      thumbnail:
+        "https://cdn.poehali.dev/files/IMG_2170.jpg",
     },
     {
       url: "https://vk.com/clip-228566396_456239027",
       type: "video" as const,
       photographer: "maria",
-      thumbnail: "https://cdn.poehali.dev/files/IMG_4205.jpg",
+      thumbnail:
+        "https://cdn.poehali.dev/files/IMG_4205.jpg",
     },
     {
       url: "https://vk.com/clip-228566396_456239033",
       type: "video" as const,
       photographer: "maria",
-      thumbnail: "https://cdn.poehali.dev/files/IMG_7768.jpg",
+      thumbnail:
+        "https://cdn.poehali.dev/files/IMG_7768.jpg",
     },
     {
       url: "https://vk.com/clip-228566396_456239023",
@@ -336,21 +339,24 @@ const Index = () => {
       url: "https://vk.com/clip-228566396_456239026",
       type: "video" as const,
       photographer: "maria",
-      thumbnail: "https://cdn.poehali.dev/files/IMG_3224.jpg",
+      thumbnail:
+        "https://cdn.poehali.dev/files/IMG_3224.jpg",
     },
 
     {
       url: "https://vk.com/clip-228566396_456239030",
       type: "video" as const,
       photographer: "maria",
-      thumbnail: "https://cdn.poehali.dev/files/IMG_5481.jpg",
+      thumbnail:
+        "https://cdn.poehali.dev/files/IMG_5481.jpg",
     },
 
     {
       url: "https://vk.com/clip-228566396_456239029",
       type: "video" as const,
       photographer: "maria",
-      thumbnail: "https://cdn.poehali.dev/files/IMG_5999.jpg",
+      thumbnail:
+        "https://cdn.poehali.dev/files/IMG_5999.jpg",
     },
   ];
 
@@ -623,6 +629,18 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     }}
                   >
                     Записаться
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={() =>
+                      window.open(
+                        "https://max.ru/u/f9LHodD0cOKltHesJSFTYiwol-CUKOakGS_kEiFrs593Sq2oB-mL2dGG9lw",
+                        "_blank",
+                      )
+                    }
+                  >
+                    <Icon name="MessageCircle" size={20} />
                   </Button>
                 </div>
               </CardContent>
