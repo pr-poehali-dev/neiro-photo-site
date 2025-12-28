@@ -1990,7 +1990,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                 <span>Telegram канал Александры</span>
               </a>
               <a
-                href="https://vk.com/mary_is94"
+                href="https://vk.com/club_photograph_novosibirsk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-1.5 text-[9px] min-[320px]:text-[9px] sm:text-xs hover:text-primary transition-colors"
