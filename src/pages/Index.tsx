@@ -516,7 +516,7 @@ const Index = () => {
               onClick={handleContactClick}
               className="text-xs sm:text-sm px-3 sm:px-4"
             >
-              Связаться
+              Связаться напрямую
             </Button>
           </div>
         </div>
