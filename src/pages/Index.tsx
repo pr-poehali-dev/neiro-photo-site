@@ -1276,6 +1276,10 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
                     <Icon name="Monitor" size={16} className="text-primary" />
                     <span>Работа онлайн</span>
                   </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <Icon name="CreditCard" size={16} className="text-primary" />
+                    <span>Оплата по готовности фото</span>
+                  </div>
                 </div>
                 <Button
                   className="w-full"
@@ -1360,66 +1364,7 @@ grid-cols-2 gap-4 sm:gap-8 mt-8 sm:mt-20 max-w-5xl mx-auto
         </div>
       </section>
 
-      <section id="payment" className="py-10 px-6 bg-white/50">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent text-2xl">
-            Оплата
-          </h2>
-          <p className="text-center text-gray-600 mb-8 text-base">
-            Удобные способы оплаты услуг
-          </p>
 
-          <Card className="border-2 border-purple-200 mb-6">
-            <CardContent className="p-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <Icon name="CreditCard" className="text-primary" />
-                    <h3 className="font-semibold text-base">Способы оплаты</h3>
-                  </div>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2">
-                      <Icon
-                        name="Building"
-                        size={16}
-                        className="text-primary"
-                      />
-                      <span>Банковский перевод</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Icon name="Wallet" size={16} className="text-primary" />
-                      <span>Наличные (при классической съемке)</span>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <Icon name="Shield" className="text-green-500" />
-                    <h3 className="font-semibold text-base">Условия</h3>
-                  </div>
-                  <div className="space-y-2 text-sm">
-                    <p>
-                      <span className="font-semibold">Предоплата 30%</span> для
-                      классической съемки
-                    </p>
-                    <p className="text-xs text-gray-600">
-                      При отмене менее чем за 24 часа предоплата не возвращается
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <Separator className="my-4" />
-              <div className="bg-purple-50 p-4 rounded-lg">
-                <p className="text-sm text-gray-700">
-                  <Icon name="Info" size={16} className="inline mr-1" />
-                  Реквизиты для оплаты будут высланы после согласования деталей
-                  съемки
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
 
       <section id="faq" className="py-20 px-6 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
